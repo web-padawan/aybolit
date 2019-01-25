@@ -1,0 +1,154 @@
+.range {
+  width: 100%;
+  height: 1.4rem;
+  padding: 0;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &:focus {
+    outline: none;
+    // Pseudo-elements must be split across multiple rulesets to have an effect.
+    &::-webkit-slider-thumb {
+      box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+    &::-moz-range-thumb {
+      box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+    &::-ms-thumb {
+      box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+  }
+
+  &::-moz-focus-outer {
+    border: 0;
+  }
+
+  &::-webkit-slider-thumb {
+    width: 1rem;
+    height: 1rem;
+    margin-top: -0.25rem;
+    background-color: var(--abs-range-thumb-bg, #007bff);
+    border: 0;
+    border-radius: 1rem;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -webkit-appearance: none;
+    appearance: none;
+
+    &:active {
+      background-color: var(--abs-range-active-thumb-bg, #b3d7ff);
+    }
+  }
+
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 0.5rem;
+    color: transparent;
+    cursor: pointer;
+    background-color: var(--abs-range-track-bg, #dee2e6);
+    border-color: transparent;
+    border-radius: 1rem;
+  }
+
+  &::-moz-range-thumb {
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--abs-range-thumb-bg, #007bff);
+    border: 0;
+    border-radius: 1rem;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -moz-appearance: none;
+    appearance: none;
+
+    &:active {
+      background-color: var(--abs-range-active-thumb-bg, #b3d7ff);
+    }
+  }
+
+  &::-moz-range-track {
+    width: 100%;
+    height: 0.5rem;
+    color: transparent;
+    cursor: pointer;
+    background-color: var(--abs-range-track-bg, #dee2e6);
+    border-color: transparent;
+    border-radius: 1rem;
+  }
+
+  // NOTE: custom CSS properties do not apply to these pseudo-elements in Edge
+  // https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/12837456/
+  &::-ms-thumb {
+    width: 1rem;
+    height: 1rem;
+    margin-top: 0;
+    margin-right: 0.2rem;
+    margin-left: 0.2rem;
+    background-color: var(--abs-range-thumb-bg, #007bff);
+    border: 0;
+    border-radius: 1rem;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    appearance: none;
+
+    &:active {
+      background-color: var(--abs-range-active-thumb-bg, #b3d7ff);
+    }
+  }
+
+  &::-ms-track {
+    width: 100%;
+    height: 0.5rem;
+    color: transparent;
+    cursor: pointer;
+    background-color: transparent;
+    border-color: transparent;
+    border-width: 0.5rem;
+  }
+
+  &::-ms-fill-lower {
+    background-color: var(--abs-range-track-bg, #dee2e6);
+    border-radius: 1rem;
+  }
+
+  &::-ms-fill-upper {
+    margin-right: 15px;
+    background-color: var(--abs-range-track-bg, #dee2e6);
+    border-radius: 1rem;
+  }
+
+  &:disabled {
+    &::-webkit-slider-thumb {
+      background-color: var(--abs-range-disabled-thumb-bg, #adb5bd);
+    }
+
+    &::-webkit-slider-runnable-track {
+      cursor: default;
+    }
+
+    &::-moz-range-thumb {
+      background-color: var(--abs-range-disabled-thumb-bg, #adb5bd);
+    }
+
+    &::-moz-range-track {
+      cursor: default;
+    }
+
+    &::-ms-thumb {
+      background-color: var(--abs-range-disabled-thumb-bg, #adb5bd);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .range::-webkit-slider-thumb {
+    transition: none;
+  }
+
+  .range::-moz-range-thumb {
+    transition: none;
+  }
+
+  .range::-ms-thumb {
+    transition: none;
+  }
+}
