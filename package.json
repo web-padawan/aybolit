@@ -1,0 +1,23 @@
+{
+  "name": "aybolit-workspace",
+  "private": true,
+  "description": "Web Components library built with LitElement",
+  "author": "Serhii Kulykov <serguey.kulikov@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn build-styling",
+    "build-styling": "./scripts/build-styling.sh",
+    "watch": "node scripts/watcher.js"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "command-line-args": "^5.0.2",
+    "command-line-usage": "^5.0.5",
+    "lerna": "^3.10.7",
+    "node-sass-import": "^2.0.1",
+    "node-watch": "^0.6.0",
+    "sass": "^1.16.1"
+  }
+}
