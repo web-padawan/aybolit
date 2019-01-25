@@ -2713,6 +2713,18 @@ libnpmteam@^1.0.1:
     get-stream "^4.0.0"
     npm-registry-fetch "^3.8.0"
 
+lit-element@^2.0.0-rc.5:
+  version "2.0.0-rc.5"
+  resolved "https://registry.yarnpkg.com/lit-element/-/lit-element-2.0.0-rc.5.tgz#3e4323c9ace59d49c3a0950551a3f923e0ccf86b"
+  integrity sha512-cMmWNWSFyYfXAd09bnqFhqDr5kuR/5guImD5ZRTk223EiBJaoo7naZnQngSYAMjgDn1CSbTE1LRtzviMS+g0RA==
+  dependencies:
+    lit-html "^1.0.0-rc.2"
+
+lit-html@^1.0.0-rc.2:
+  version "1.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-1.0.0-rc.2.tgz#b9c904520fe005d349aa737a86d83645d97d5a89"
+  integrity sha512-4bq34lhVmwWly1zBXicOBJLOwaWfjOVbchEEmFnZLuztxjh5wRd2WqV0URX8Q47MQ7PaIjn/eXyTRKsYhSAeRw==
+
 load-json-file@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/load-json-file/-/load-json-file-1.1.0.tgz#956905708d58b4bab4c2261b04f59f31c99374c0"
