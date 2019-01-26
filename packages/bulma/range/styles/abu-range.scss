@@ -1,0 +1,237 @@
+@import "../../common/variables";
+
+$slider-radius: $radius;
+$slider-track-bg: var(--abu-range-track-bg, $grey-lighter);
+$slider-track-radius: $radius;
+
+$slider-thumb-background: var(--abu-range-thumb-bg, $white);
+$slider-thumb-radius: $radius;
+$slider-thumb-border: 1px solid $grey-light;
+$slider-thumb-to-track-ratio: 2;
+
+@mixin slider-size($size) {
+  $track-height: $size / $slider-thumb-to-track-ratio;
+  $thumb-size: $size;
+
+  min-height: calc(( #{$size} + 2px ) * 1.25);
+
+  &::-webkit-slider-runnable-track {
+    height: $track-height;
+  }
+
+  &::-moz-range-track {
+    height: $track-height;
+  }
+
+  &::-ms-track {
+    height: $track-height;
+  }
+
+  &::-webkit-slider-thumb {
+    height: $thumb-size;
+    width: $thumb-size;
+    margin-top: -($thumb-size / 4);
+  }
+
+  &::-moz-range-thumb {
+    height: $thumb-size;
+    width: $thumb-size;
+  }
+
+  &::-ms-thumb {
+    height: $thumb-size;
+    width: $thumb-size;
+    margin-top: 0;
+  }
+}
+
+:host {
+  display: block;
+  margin: 1rem 0;
+  outline: none;
+}
+
+.range {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+
+  &:focus {
+    outline: none;
+
+    &:not(:active) {
+      // Pseudo-elements must be split across multiple rulesets to have an effect.
+      &::-webkit-slider-thumb {
+        box-shadow: 0 0 0 0.15rem $grey-lighter;
+      }
+      &::-moz-range-thumb {
+        box-shadow: 0 0 0 0.15rem $grey-lighter;
+      }
+      &::-ms-thumb {
+        box-shadow: 0 0 0 0.15rem $grey-lighter;
+      }
+    }
+  }
+
+  &::-moz-focus-outer {
+    border: 0;
+  }
+
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    cursor: pointer;
+    background-color: $slider-track-bg;
+    border: 0;
+    border-radius: $slider-radius;
+  }
+
+  &::-moz-range-track {
+    width: 100%;
+    cursor: pointer;
+    background-color: $slider-track-bg;
+    border: 0;
+    border-radius: $slider-radius;
+  }
+
+  &::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    color: transparent;
+    background-color: $slider-track-bg;
+    border: 0;
+    border-radius: $slider-radius;
+  }
+
+  &::-ms-fill-lower,
+  &::-ms-fill-upper {
+    background-color: $slider-track-bg;
+    border-radius: $slider-radius;
+  }
+
+  &::-webkit-slider-thumb {
+    border: $slider-thumb-border;
+    border-radius: $slider-thumb-radius;
+    background-color: $slider-thumb-background;
+    cursor: pointer;
+    -webkit-appearance: none;
+    transition: transform 0.2s ease;
+  }
+
+  &::-moz-range-thumb {
+    border: $slider-thumb-border;
+    background-color: $slider-thumb-background;
+    border-radius: $slider-thumb-radius;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  &::-ms-thumb {
+    border: $slider-thumb-border;
+    background-color: $slider-thumb-background;
+    border-radius: $slider-thumb-radius;
+    cursor: pointer;
+    appearance: none;
+    transition: transform 0.2s ease;
+  }
+
+  &:active {
+    &::-webkit-slider-thumb {
+      -webkit-transform: scale(1.25);
+      transform: scale(1.25);
+    }
+
+    &::-moz-range-thumb {
+      transform: scale(1.25);
+    }
+
+    &::-ms-thumb {
+      -ms-transform: scale(1.25);
+      transform: scale(1.25);
+    }
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  @include slider-size($size-normal);
+}
+
+:host([theme~="circle"]) {
+  .range {
+    &::-webkit-slider-thumb {
+      border-radius: 50%;
+    }
+
+    &::-moz-range-thumb {
+      border-radius: 50%;
+    }
+
+    &::-ms-thumb {
+      border-radius: 50%;
+    }
+  }
+}
+
+:host([theme~="small"]) {
+  .range {
+    @include slider-size($size-small);
+  }
+}
+
+:host([theme~="medium"]) {
+  .range {
+    @include slider-size($size-medium);
+  }
+}
+
+:host([theme~="large"]) {
+  .range {
+    @include slider-size($size-large);
+  }
+}
+
+@each $name, $pair in $colors {
+  $color: nth($pair, 1);
+  $color-invert: nth($pair, 2);
+
+  :host([theme~="#{$name}"]) {
+    .range {
+      &::-moz-range-track {
+        background: $color;
+      }
+
+      &::-webkit-slider-runnable-track {
+        background: $color;
+      }
+
+      &::-ms-track {
+        background: $color;
+      }
+
+      &::-ms-fill-lower,
+      &::-ms-fill-upper {
+        background: $color;
+      }
+
+      &:focus {
+        &:not(:active) {
+          &::-webkit-slider-thumb {
+            box-shadow: 0 0 0 0.15rem $color-invert;
+          }
+          &::-moz-range-thumb {
+            box-shadow: 0 0 0 0.15rem $color-invert;
+          }
+          &::-ms-thumb {
+            box-shadow: 0 0 0 0.15rem $color-invert;
+          }
+        }
+      }
+    }
+  }
+}

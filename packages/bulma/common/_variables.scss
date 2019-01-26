@@ -1,0 +1,44 @@
+$grey-light: #b5b5b5;
+$grey-lighter: #dbdbdb;
+$white: #fff;
+
+$red: #ff3860;
+$yellow: #ffdd57;
+$green: #23d160;
+$cyan: #209cee;
+$turquoise: #00d1b2;
+
+$primary: $turquoise;
+$info: $cyan;
+$success: $green;
+$warning: $yellow;
+$danger: $red;
+
+$primary-invert: rgba(0, 209, 178, 0.25);
+$info-invert: rgba(32, 156, 238, 0.25);
+$success-invert: rgba(35, 209, 96, 0.25);
+$warning-invert: rgba(255, 221, 87, 0.25);
+$danger-invert: rgba(255, 56, 96, 0.25);
+
+$colors: (
+  "primary": ($primary, $primary-invert),
+  "info": ($info, $info-invert),
+  "success": ($success, $success-invert),
+  "warning": ($warning, $warning-invert),
+  "danger": ($danger, $danger-invert)
+);
+
+$radius: 4px;
+
+$size-1: 3rem;
+$size-2: 2.5rem;
+$size-3: 2rem;
+$size-4: 1.5rem;
+$size-5: 1.25rem;
+$size-6: 1rem;
+$size-7: 0.75rem;
+
+$size-small: $size-7;
+$size-normal: $size-6;
+$size-medium: $size-5;
+$size-large: $size-4;
