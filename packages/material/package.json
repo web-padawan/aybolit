@@ -1,0 +1,14 @@
+{
+  "name": "@aybolit/material",
+  "version": "0.0.0",
+  "author": "Serhii Kulykov <serguey.kulikov@gmail.com>",
+  "license": "MIT",
+  "main": "index.js",
+  "dependencies": {
+    "@aybolit/core": "^0.0.0",
+    "lit-element": "^2.0.0-rc.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
