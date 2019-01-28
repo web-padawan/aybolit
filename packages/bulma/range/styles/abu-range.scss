@@ -46,19 +46,10 @@ $slider-thumb-to-track-ratio: 2;
 }
 
 :host {
-  display: block;
   margin: 1rem 0;
-  outline: none;
 }
 
 .range {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: transparent;
 
   &:focus {
     outline: none;
@@ -77,12 +68,7 @@ $slider-thumb-to-track-ratio: 2;
     }
   }
 
-  &::-moz-focus-outer {
-    border: 0;
-  }
-
   &::-webkit-slider-runnable-track {
-    width: 100%;
     cursor: pointer;
     background-color: $slider-track-bg;
     border: 0;
@@ -90,7 +76,6 @@ $slider-thumb-to-track-ratio: 2;
   }
 
   &::-moz-range-track {
-    width: 100%;
     cursor: pointer;
     background-color: $slider-track-bg;
     border: 0;
@@ -98,9 +83,7 @@ $slider-thumb-to-track-ratio: 2;
   }
 
   &::-ms-track {
-    width: 100%;
     cursor: pointer;
-    color: transparent;
     background-color: $slider-track-bg;
     border: 0;
     border-radius: $slider-radius;
@@ -117,7 +100,6 @@ $slider-thumb-to-track-ratio: 2;
     border-radius: $slider-thumb-radius;
     background-color: $slider-thumb-background;
     cursor: pointer;
-    -webkit-appearance: none;
     transition: transform 0.2s ease;
   }
 
@@ -134,7 +116,6 @@ $slider-thumb-to-track-ratio: 2;
     background-color: $slider-thumb-background;
     border-radius: $slider-thumb-radius;
     cursor: pointer;
-    appearance: none;
     transition: transform 0.2s ease;
   }
 

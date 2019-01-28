@@ -12,7 +12,8 @@ export class AbuRange extends RangeElement {
   }
 
   static get styles() {
-    return abuRangeStyles;
+    const [baseStyles] = super.styles;
+    return [baseStyles, abuRangeStyles];
   }
 }
 
