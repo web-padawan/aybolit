@@ -19,6 +19,10 @@
     border: 0;
   }
 
+  &::-ms-tooltip {
+    display: none;
+  }
+
   &::-webkit-slider-runnable-track {
     width: 100%;
   }
