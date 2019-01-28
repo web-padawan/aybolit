@@ -12,7 +12,8 @@ export class AbmRange extends RangeElement {
   }
 
   static get styles() {
-    return abmRangeStyles;
+    const [baseStyles] = super.styles;
+    return [baseStyles, abmRangeStyles];
   }
 }
 

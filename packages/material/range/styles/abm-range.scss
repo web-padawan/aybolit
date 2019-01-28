@@ -1,31 +1,15 @@
 :host {
-  display: block;
-  outline: none;
-
   --abm-range-hover-webkit-shadow: rgba(var(--abm-primary-color, 33, 150, 243), 0.12);
   --abm-range-focus-webkit-shadow: rgba(var(--abm-primary-color, 33, 150, 243), 0.16);
   --abm-range-active-webkit-shadow: rgba(var(--abm-primary-color, 33, 150, 243), 0.24);
 }
 
 .range {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  display: block;
-  width: 100%;
   height: 48px;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-
-  &::-moz-focus-outer {
-    border: 0;
-  }
 
   &::-webkit-slider-runnable-track {
     margin: 17px 0;
     border-radius: 1px;
-    width: 100%;
     height: 2px;
     background-color: rgba(var(--abm-primary-color, 33, 150, 243), 0.24);
   }
@@ -33,7 +17,6 @@
   &::-moz-range-track {
     margin: 17px 0;
     border-radius: 1px;
-    width: 100%;
     height: 2px;
     background-color: rgba(var(--abm-primary-color, 33, 150, 243), 0.24);
   }
@@ -44,9 +27,7 @@
     border: none;
     border-radius: 1px;
     padding: 0 17px;
-    width: 100%;
     height: 2px;
-    color: transparent;
   }
 
   &::-ms-fill-lower,
@@ -57,9 +38,6 @@
   }
 
   &::-webkit-slider-thumb {
-    appearance: none;
-    -webkit-appearance: none;
-    border: none;
     border-radius: 50%;
     height: 2px;
     width: 2px;
@@ -69,9 +47,6 @@
   }
 
   &::-moz-range-thumb {
-    appearance: none;
-    -moz-appearance: none;
-    border: none;
     border-radius: 50%;
     height: 2px;
     width: 2px;
@@ -81,9 +56,7 @@
   }
 
   &::-ms-thumb {
-    appearance: none;
     margin: 0 17px;
-    border: none;
     border-radius: 50%;
     height: 2px;
     width: 2px;
