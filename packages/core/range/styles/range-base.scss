@@ -1,0 +1,51 @@
+:host {
+  display: block;
+}
+
+:host([hidden]) {
+  display: none !important;
+}
+
+.range {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+
+  &::-moz-focus-outer {
+    border: 0;
+  }
+
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+  }
+
+  &::-moz-range-track {
+    width: 100%;
+  }
+
+  &::-ms-track {
+    width: 100%;
+    color: transparent;
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+  }
+
+  &::-moz-range-thumb {
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+  }
+
+  &::-ms-thumb {
+    appearance: none;
+    border: none;
+  }
+}

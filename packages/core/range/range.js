@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit-element';
 import { ifDefined } from 'lit-html/directives/if-defined';
+import rangeBaseStyles from './styles/range-base-css.js';
 
 export class RangeElement extends LitElement {
 
@@ -25,6 +26,10 @@ export class RangeElement extends LitElement {
         type: Boolean
       }
     }
+  }
+
+  static get styles() {
+    return [rangeBaseStyles];
   }
 
   constructor() {
