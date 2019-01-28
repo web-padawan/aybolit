@@ -1,11 +1,5 @@
 .range {
-  width: 100%;
   height: 1.4rem;
-  padding: 0;
-  background-color: transparent;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
 
   &:focus {
     outline: none;
@@ -21,20 +15,13 @@
     }
   }
 
-  &::-moz-focus-outer {
-    border: 0;
-  }
-
   &::-webkit-slider-thumb {
     width: 1rem;
     height: 1rem;
     margin-top: -0.25rem;
     background-color: var(--abs-range-thumb-bg, #007bff);
-    border: 0;
     border-radius: 1rem;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    -webkit-appearance: none;
-    appearance: none;
 
     &:active {
       background-color: var(--abs-range-active-thumb-bg, #b3d7ff);
@@ -42,7 +29,6 @@
   }
 
   &::-webkit-slider-runnable-track {
-    width: 100%;
     height: 0.5rem;
     color: transparent;
     cursor: pointer;
@@ -55,11 +41,8 @@
     width: 1rem;
     height: 1rem;
     background-color: var(--abs-range-thumb-bg, #007bff);
-    border: 0;
     border-radius: 1rem;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    -moz-appearance: none;
-    appearance: none;
 
     &:active {
       background-color: var(--abs-range-active-thumb-bg, #b3d7ff);
@@ -67,7 +50,6 @@
   }
 
   &::-moz-range-track {
-    width: 100%;
     height: 0.5rem;
     color: transparent;
     cursor: pointer;
@@ -88,7 +70,6 @@
     border: 0;
     border-radius: 1rem;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    appearance: none;
 
     &:active {
       background-color: var(--abs-range-active-thumb-bg, #b3d7ff);
@@ -96,9 +77,7 @@
   }
 
   &::-ms-track {
-    width: 100%;
     height: 0.5rem;
-    color: transparent;
     cursor: pointer;
     background-color: transparent;
     border-color: transparent;
