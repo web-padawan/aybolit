@@ -7,6 +7,7 @@
   "scripts": {
     "build": "yarn build-styling",
     "build-styling": "./scripts/build-styling.sh",
+    "lint": "eslint *.js packages",
     "test": "karma start",
     "watch": "node scripts/watcher.js"
   },
@@ -19,10 +20,16 @@
     "@babel/preset-env": "^7.3.1",
     "@babel/runtime": "^7.3.1",
     "@webcomponents/webcomponentsjs": "^2.2.4",
+    "babel-eslint": "^10.0.0",
     "babel-loader": "^8.0.5",
     "chai": "^4.2.0",
     "command-line-args": "^5.0.2",
     "command-line-usage": "^5.0.5",
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-import": "^2.15.0",
+    "husky": "^1.3.1",
     "istanbul-instrumenter-loader": "^3.0.1",
     "karma": "^4.0.0",
     "karma-chrome-launcher": "^2.2.0",
@@ -35,12 +42,26 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^4.0.0-rc.5",
     "lerna": "^3.10.7",
+    "lint-staged": "^8.1.1",
     "mocha": "^5.2.0",
     "node-sass-import": "^2.0.1",
     "node-watch": "^0.6.0",
+    "prettier": "^1.16.1",
     "sass": "^1.16.1",
     "sinon": "^7.2.3",
     "sinon-chai": "^3.3.0",
     "webpack": "^4.29.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
   }
 }
