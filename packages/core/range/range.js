@@ -6,7 +6,6 @@ import rangeMinimalStyles from './styles/range-minimal-css.js';
 const isNumeric = n => !isNaN(parseFloat(n)) && isFinite(n);
 
 export class RangeElement extends LitElement {
-
   static get properties() {
     return {
       value: {
@@ -28,7 +27,7 @@ export class RangeElement extends LitElement {
       disabled: {
         type: Boolean
       }
-    }
+    };
   }
 
   static get styles() {
