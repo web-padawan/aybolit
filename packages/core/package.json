@@ -8,6 +8,9 @@
     "lit-element": "^2.0.0-rc.5",
     "lit-html": "^1.0.0-rc.2"
   },
+  "devDependencies": {
+    "@open-wc/testing-helpers": "^0.7.9"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   }

@@ -1,3 +1,4 @@
 node_modules
 lerna-debug.log
 packages/**/**/styles/*-css.js
+coverage
