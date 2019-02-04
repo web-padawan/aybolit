@@ -1,0 +1,20 @@
+{
+  "name": "@aybolit/storybook",
+  "private": true,
+  "version": "0.1.0",
+  "author": "Serhii Kulykov <serguey.kulikov@gmail.com>",
+  "license": "MIT",
+  "main": "index.stories.js",
+  "dependencies": {
+    "@aybolit/bootstrap": "^0.0.0",
+    "@aybolit/bulma": "^0.0.0",
+    "@aybolit/material": "^0.0.0",
+    "@storybook/addon-knobs": "^5.0.0-beta.1",
+    "@storybook/addons": "^5.0.0-beta.1",
+    "@storybook/polymer": "^5.0.0-beta.1",
+    "lit-html": "^1.0.0-rc.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
