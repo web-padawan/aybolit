@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "author": "Serhii Kulykov <serguey.kulikov@gmail.com>",
   "license": "MIT",
-  "main": "index.js",
+  "main": "src/index.js",
   "dependencies": {
     "lit-element": "^2.0.0-rc.5",
     "lit-html": "^1.0.0-rc.2"

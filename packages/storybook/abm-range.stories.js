@@ -1,4 +1,4 @@
-import '@aybolit/material/range/abm-range.js';
+import '@aybolit/material';
 import { storiesOf } from '@storybook/polymer';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { html } from 'lit-html';

@@ -1,4 +1,4 @@
-import '@aybolit/bulma/range/abu-range.js';
+import '@aybolit/bulma';
 import { storiesOf } from '@storybook/polymer';
 import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import { html } from 'lit-html';

@@ -1,4 +1,4 @@
-import '@aybolit/bootstrap/range/abs-range.js';
+import '@aybolit/bootstrap';
 import { storiesOf } from '@storybook/polymer';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { html } from 'lit-html';

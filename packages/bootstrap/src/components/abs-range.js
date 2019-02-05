@@ -2,7 +2,6 @@ import { RangeElement } from '@aybolit/core';
 import absRangeStyles from './styles/abs-range-css.js';
 
 export class AbsRange extends RangeElement {
-
   static get is() {
     return 'abs-range';
   }
