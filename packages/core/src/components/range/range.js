@@ -1,11 +1,12 @@
 import { LitElement, html } from 'lit-element';
 import { ifDefined } from 'lit-html/directives/if-defined';
+import { DelegateFocusMixin } from '../../mixins/delegate-focus-mixin/delegate-focus-mixin.js';
 import rangeBaseStyles from './styles/range-base-css.js';
 import rangeMinimalStyles from './styles/range-minimal-css.js';
 
 const isNumeric = n => !isNaN(parseFloat(n)) && isFinite(n);
 
-export class RangeElement extends LitElement {
+export class RangeElement extends DelegateFocusMixin(LitElement) {
   static get properties() {
     return {
       value: {
@@ -22,10 +23,6 @@ export class RangeElement extends LitElement {
 
       step: {
         type: Number
-      },
-
-      disabled: {
-        type: Boolean
       }
     };
   }
@@ -107,6 +104,10 @@ export class RangeElement extends LitElement {
         })
       );
     }
+  }
+
+  get focusElement() {
+    return this.shadowRoot.querySelector('.range');
   }
 
   _onChange(e) {

@@ -9,7 +9,7 @@ describe('range', () => {
 
   beforeEach(async () => {
     range = await fixture(`<${AyboRange}></${AyboRange}>`);
-    input = range.shadowRoot.querySelector('input[type="range"]');
+    input = range.focusElement;
   });
 
   it('should render input with type range to the shadow root', () => {
