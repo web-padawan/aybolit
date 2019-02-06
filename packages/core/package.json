@@ -12,6 +12,7 @@
     "lit-html": "^1.0.0"
   },
   "devDependencies": {
+    "@aybolit/test-helpers": "^0.0.0",
     "@open-wc/testing-helpers": "^0.7.9"
   },
   "scripts": {
