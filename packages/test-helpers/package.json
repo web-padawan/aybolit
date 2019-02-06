@@ -1,0 +1,11 @@
+{
+  "name": "@aybolit/test-helpers",
+  "private": true,
+  "version": "0.0.0",
+  "author": "Serhii Kulykov <serguey.kulikov@gmail.com>",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
