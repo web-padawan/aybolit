@@ -12,7 +12,7 @@
     "@storybook/addon-knobs": "^5.0.0-beta.1",
     "@storybook/addons": "^5.0.0-beta.1",
     "@storybook/polymer": "^5.0.0-beta.1",
-    "lit-html": "^1.0.0-rc.2"
+    "lit-html": "^1.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
