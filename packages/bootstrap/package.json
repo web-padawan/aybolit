@@ -4,6 +4,9 @@
   "author": "Serhii Kulykov <serguey.kulikov@gmail.com>",
   "license": "MIT",
   "main": "src/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@aybolit/core": "^0.0.0",
     "lit-element": "^2.0.1"
