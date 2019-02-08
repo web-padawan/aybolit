@@ -1,0 +1,122 @@
+:host {
+  outline: none;
+}
+
+.switch {
+  position: relative;
+  display: block;
+  min-height: 1.5rem;
+  padding-left: 2.25rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+
+  &:checked {
+    ~ .label {
+      &::before {
+        color: #fff;
+        border-color: #007bff;
+        background-color: #007bff;
+      }
+
+      &::after {
+        background-color: #fff;
+        -webkit-transform: translateX(0.75rem);
+        transform: translateX(0.75rem);
+      }
+    }
+  }
+
+  &:focus {
+    ~ .label {
+      &::before {
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      }
+    }
+
+    &:not(:checked) {
+      ~ .label::before {
+        border-color: #80bdff;
+      }
+    }
+  }
+
+  &:active {
+    &:not(:disabled) {
+      ~ .label {
+        &::before {
+          color: #fff;
+          background-color: #b3d7ff;
+          border-color: #b3d7ff;
+        }
+      }
+    }
+  }
+
+  &:disabled {
+    ~ .label {
+      color: #6c757d;
+
+      &::before {
+        background-color: #e9ecef;
+      }
+    }
+
+    &:checked {
+      ~ .label {
+        &::before {
+          background-color: rgba(0, 123, 255, 0.5);
+        }
+      }
+    }
+  }
+}
+
+.label {
+  position: relative;
+  margin-bottom: 0;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 1rem;
+  line-height: 1.5;
+
+  &::before {
+    position: absolute;
+    display: block;
+    content: '';
+    box-sizing: border-box;
+    top: 0.25rem;
+    left: -2.25rem;
+    width: 1.75rem;
+    height: 1rem;
+    background-color: #fff;
+    border: #adb5bd solid 1px;
+    border-radius: 0.5rem;
+  }
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: '';
+    top: calc(0.25rem + 2px);
+    left: calc(-2.25rem + 2px);
+    width: calc(1rem - 4px);
+    height: calc(1rem - 4px);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    background-color: #adb5bd;
+    border-radius: 0.5rem;
+    transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .label::after {
+    transition: none;
+  }
+}
