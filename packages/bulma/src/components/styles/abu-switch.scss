@@ -1,0 +1,204 @@
+@import "../../common/variables";
+
+$switch-background: $grey-light;
+$switch-border: 0.1rem solid transparent;
+$switch-background-active: $primary;
+$switch-radius: $radius;
+$switch-paddle-background: $white;
+$switch-paddle-background-active: $primary;
+$switch-paddle-offset: 0.25rem;
+$switch-paddle-transition: all 0.25s ease-out;
+$switch-focus: 1px dotted $grey-light;
+
+@mixin switch-size($size) {
+  $switch-height: $size * 1.5;
+  $switch-width: $switch-height * 2;
+  $paddle-height: $switch-height - $switch-paddle-offset * 2;
+  $paddle-width: $switch-height - $switch-paddle-offset * 2;
+  $paddle-active-offset: $switch-width - $paddle-width - $switch-paddle-offset * 1.5;
+
+  .label {
+    font-size: $size;
+    padding-left: $switch-width + 0.5;
+
+    &::before {
+      width: $switch-width;
+      height: $switch-height;
+    }
+
+    &::after {
+      top: $switch-height / 2 - $paddle-height / 2;
+      left: $switch-paddle-offset;
+      width: $paddle-width;
+      height: $paddle-height;
+    }
+  }
+
+  .input:checked {
+    + .label {
+      &::after {
+        left: $paddle-active-offset;
+      }
+    }
+  }
+}
+
+.switch {
+  line-height: 1.5;
+}
+
+.input {
+  outline: 0;
+  user-select: none;
+  display: inline-block;
+  position: absolute;
+  opacity: 0;
+
+  &:focus {
+    + .label {
+      &::before {
+        outline: $switch-focus;
+      }
+    }
+  }
+
+  &[disabled] {
+    cursor: default;
+
+    + .label {
+      opacity: 0.5;
+
+      &::before {
+        opacity: 0.5;
+      }
+
+      &::after {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &:checked {
+    + .label {
+      &::before {
+        background: $switch-background-active;
+      }
+    }
+  }
+}
+
+.label {
+  position: relative;
+  display: initial;
+  line-height: initial;
+  padding-top: 0.2rem;
+  cursor: pointer;
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+  &::before {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    border: $switch-border;
+    border-radius: $switch-radius;
+    background: $switch-background;
+  }
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: "";
+    transform: translate3d(0, 0, 0);
+    border-radius: $switch-radius;
+    background: $switch-paddle-background;
+    transition: $switch-paddle-transition;
+  }
+}
+
+:host {
+  outline: none;
+  @include switch-size($size-normal);
+}
+
+:host([theme~="small"]) {
+  @include switch-size($size-small);
+}
+
+:host([theme~="medium"]) {
+  @include switch-size($size-medium);
+}
+
+:host([theme~="large"]) {
+  @include switch-size($size-large);
+}
+
+:host([theme~="rounded"]) {
+  .label {
+    &::before {
+      border-radius: $radius-large * 4;
+    }
+
+    &::after {
+      border-radius: 50%;
+    }
+  }
+}
+
+:host([theme~="outlined"]) {
+  .label {
+    &::before {
+      background-color: transparent;
+      border-color: $switch-background;
+    }
+
+    &::after {
+      background: $switch-background;
+    }
+  }
+
+  .input:checked {
+    + .label {
+      &::before {
+        background-color: transparent;
+        border-color: $switch-background-active;
+      }
+
+      &::after {
+        background: $switch-paddle-background-active;
+      }
+    }
+  }
+}
+
+@each $name, $pair in $colors {
+  $color: nth($pair, 1);
+  $color-invert: nth($pair, 2);
+
+  :host([theme~="#{$name}"]) {
+    .input:checked {
+      + .label {
+        &::before {
+          background: $color;
+        }
+      }
+    }
+  }
+
+  :host([theme~="#{$name}"][theme~="outlined"]) {
+    .input:checked {
+      + .label {
+        &::before {
+          background-color: transparent;
+          border-color: $color !important;
+        }
+
+        &::after {
+          background: $color;
+        }
+      }
+    }
+  }
+}
