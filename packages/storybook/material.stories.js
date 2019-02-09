@@ -3,9 +3,15 @@ import { storiesOf } from '@storybook/polymer';
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 import { html } from 'lit-html';
 
-storiesOf('abm-switch', module)
+storiesOf('Material', module)
   .addDecorator(withKnobs)
-  .add('default', () => {
+  .add('<abm-range>', () => {
+    const disabled = boolean('Disabled', false);
+    return html`
+      <abm-range .disabled="${disabled}"></abm-range>
+    `;
+  })
+  .add('<abm-switch>', () => {
     const disabled = boolean('Disabled', false);
     const label = text('Label', 'Switch');
     return html`

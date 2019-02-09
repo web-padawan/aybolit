@@ -3,9 +3,15 @@ import { storiesOf } from '@storybook/polymer';
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 import { html } from 'lit-html';
 
-storiesOf('abs-switch', module)
+storiesOf('Bootstrap', module)
   .addDecorator(withKnobs)
-  .add('default', () => {
+  .add('<abs-range>', () => {
+    const disabled = boolean('Disabled', false);
+    return html`
+      <abs-range .disabled="${disabled}"></abs-range>
+    `;
+  })
+  .add('<abs-switch>', () => {
     const disabled = boolean('Disabled', false);
     const label = text('Label', 'Switch');
     return html`

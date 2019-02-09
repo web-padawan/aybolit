@@ -1,6 +1,6 @@
-import '@aybolit/bootstrap';
+import '@aybolit/bulma';
 import { storiesOf } from '@storybook/polymer';
-import { withKnobs, boolean, text, select } from '@storybook/addon-knobs';
+import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 import { html } from 'lit-html';
 
 const COLORS = {
@@ -19,21 +19,33 @@ const SIZES = {
   normal: ''
 };
 
-storiesOf('abu-switch', module)
+storiesOf('Bulma', module)
   .addDecorator(withKnobs)
-  .add('default', () => {
-    const label = text('Label', 'Switch');
-    const size = select('Type', SIZES, SIZES.normal);
-    const color = select('Color', COLORS, COLORS.none);
+  .add('<abu-range>', () => {
     const disabled = boolean('Disabled', false);
+    const size = select('Size', SIZES, SIZES.normal);
+    const color = select('Color', COLORS, COLORS.none);
+    const circle = boolean('Circle', false);
+    return html`
+      <abu-range
+        theme="${size} ${color} ${circle ? 'circle' : ''}"
+        .disabled="${disabled}"
+      ></abu-range>
+    `;
+  })
+  .add('<abu-switch>', () => {
+    const disabled = boolean('Disabled', false);
+    const size = select('Size', SIZES, SIZES.normal);
+    const color = select('Color', COLORS, COLORS.none);
+    const label = text('Label', 'Switch');
     const outlined = boolean('Outlined', false);
     const rounded = boolean('Rounded', false);
-
     return html`
       <abu-switch
         theme="${size} ${color} ${outlined ? 'outlined' : ''} ${rounded ? 'rounded' : ''}"
         .disabled="${disabled}"
-        >${label}</abu-switch
       >
+        ${label}
+      </abu-switch>
     `;
   });
