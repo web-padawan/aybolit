@@ -2,7 +2,6 @@ import { LitElement, html } from 'lit-element';
 import { ifDefined } from 'lit-html/directives/if-defined';
 import { DelegateFocusMixin } from '../../mixins/delegate-focus-mixin/delegate-focus-mixin.js';
 import rangeBaseStyles from './styles/range-base-css.js';
-import rangeMinimalStyles from './styles/range-minimal-css.js';
 
 const isNumeric = n => !isNaN(parseFloat(n)) && isFinite(n);
 
@@ -28,7 +27,7 @@ export class RangeElement extends DelegateFocusMixin(LitElement) {
   }
 
   static get styles() {
-    return [rangeBaseStyles, rangeMinimalStyles];
+    return [rangeBaseStyles];
   }
 
   constructor() {
