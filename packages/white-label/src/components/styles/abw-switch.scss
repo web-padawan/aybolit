@@ -1,0 +1,92 @@
+:host {
+  outline: none;
+  box-sizing: border-box;
+}
+
+.switch {
+  line-height: 1.5;
+}
+
+.input {
+  outline: 0;
+  user-select: none;
+  display: inline-block;
+  position: absolute;
+  opacity: 0;
+
+  &:focus {
+    + .label {
+      &::before {
+        outline: 0 0 0 2px Highlight;
+      }
+    }
+  }
+
+  &[disabled] {
+    cursor: default;
+
+    + .label {
+      opacity: 0.5;
+
+      &::before {
+        opacity: 0.75;
+      }
+
+      &::after {
+        opacity: 0.75;
+      }
+    }
+  }
+
+  &:checked {
+    + .label {
+      &::before {
+        background: #fff;
+      }
+    }
+  }
+}
+
+.label {
+  position: relative;
+  display: inline-block;
+  font-size: 1rem;
+  padding-left: 3.5rem;
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+  &::before {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 3rem;
+    height: 1.5rem;
+    border: solid 1px #ccc;
+    border-radius: 24px;
+    background: #e2e2e2;
+  }
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0.25rem;
+    left: 0.25rem;
+    width: 1rem;
+    height: 1rem;
+    transform: translate3d(0, 0, 0);
+    border: solid 1px #ccc;
+    border-radius: 50%;
+    background: #fff;
+    transition: all 0.25s ease-out;
+  }
+}
+
+.input:checked {
+  + .label {
+    &::after {
+      left: 1.625rem;
+    }
+  }
+}
