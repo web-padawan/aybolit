@@ -4,7 +4,6 @@
   "version": "0.1.0",
   "author": "Serhii Kulykov <serguey.kulikov@gmail.com>",
   "license": "MIT",
-  "main": "index.stories.js",
   "dependencies": {
     "@aybolit/bootstrap": "^0.0.0",
     "@aybolit/bulma": "^0.0.0",
