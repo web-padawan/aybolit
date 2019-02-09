@@ -11,8 +11,7 @@ export class AbsRange extends RangeElement {
   }
 
   static get styles() {
-    const [baseStyles] = super.styles;
-    return [baseStyles, absRangeStyles];
+    return [super.styles, absRangeStyles];
   }
 }
 

@@ -11,8 +11,7 @@ export class AbsSwitch extends SwitchElement {
   }
 
   static get styles() {
-    const [baseStyles] = super.styles;
-    return [baseStyles, absSwitchStyles];
+    return [super.styles, absSwitchStyles];
   }
 }
 
