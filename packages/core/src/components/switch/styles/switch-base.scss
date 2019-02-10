@@ -5,3 +5,29 @@
 :host([hidden]) {
   display: none !important;
 }
+
+.switch {
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.input {
+  outline: none;
+  position: absolute;
+  opacity: 0;
+}
+
+.label {
+  display: inline-block;
+  position: relative;
+
+  &::before {
+    display: block;
+    content: "";
+  }
+
+  &::after {
+    display: block;
+    content: "";
+  }
+}
