@@ -62,7 +62,7 @@ $switch-focus: 1px dotted $grey-light;
     }
   }
 
-  &[disabled] {
+  &:disabled {
     cursor: default;
 
     + .label {
