@@ -81,15 +81,15 @@
     outline: none;
 
     &::-webkit-slider-thumb {
-      box-shadow: 0 0 0 2px Highlight;
+      box-shadow: 0 0 0 2px rgba(59, 153, 252, 0.5);
     }
 
     &::-moz-range-thumb {
-      box-shadow: 0 0 0 2px Highlight;
+      box-shadow: 0 0 0 2px rgba(59, 153, 252, 0.5);
     }
 
     &::-ms-thumb {
-      box-shadow: 0 0 0 2px Highlight;
+      box-shadow: 0 0 0 2px rgba(59, 153, 252, 0.5);
     }
   }
 
