@@ -48,11 +48,6 @@ $switch-focus: 1px dotted $grey-light;
 }
 
 .input {
-  outline: 0;
-  user-select: none;
-  display: inline-block;
-  position: absolute;
-  opacity: 0;
 
   &:focus {
     + .label {
@@ -88,17 +83,11 @@ $switch-focus: 1px dotted $grey-light;
 }
 
 .label {
-  position: relative;
-  display: initial;
-  line-height: initial;
-  padding-top: 0.2rem;
   cursor: pointer;
   font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 
   &::before {
     position: absolute;
-    display: block;
-    content: "";
     top: 0;
     left: 0;
     box-sizing: border-box;
@@ -109,8 +98,6 @@ $switch-focus: 1px dotted $grey-light;
 
   &::after {
     position: absolute;
-    display: block;
-    content: "";
     transform: translate3d(0, 0, 0);
     border-radius: $switch-radius;
     background: $switch-paddle-background;
