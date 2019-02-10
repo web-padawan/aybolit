@@ -32,7 +32,7 @@ export class SwitchElement extends DelegateFocusMixin(LitElement) {
           class="input"
           ?checked="${this.checked}"
           ?disabled="${this.disabled}"
-          @change="${this._inputChangeHandler}"
+          @change="${this._onChange}"
           role="presentation"
           tabindex="-1"
         />
@@ -46,8 +46,6 @@ export class SwitchElement extends DelegateFocusMixin(LitElement) {
 
     this.setAttribute('role', 'switch');
     this.setAttribute('data-action', 'aria-switch');
-
-    this.addEventListener('click', this._handleClick.bind(this));
   }
 
   update(props) {
@@ -71,16 +69,19 @@ export class SwitchElement extends DelegateFocusMixin(LitElement) {
     );
   }
 
-  _inputChangeHandler(e) {
+  _onChange(e) {
     const target = e.composedPath()[0];
     this.checked = target.checked;
-  }
 
-  _handleClick(e) {
-    const target = e.composedPath()[0];
-    if (!this.disabled && target.localName !== 'a' && target !== this.focusElement) {
-      e.preventDefault();
-      this.checked = !this.checked;
-    }
+    // In the Shadow DOM, the `change` event is not leaked
+    // into the ancestor tree, so we must do this manually.
+    const changeEvent = new CustomEvent('change', {
+      detail: {
+        sourceEvent: e
+      },
+      bubbles: e.bubbles,
+      cancelable: e.cancelable
+    });
+    this.dispatchEvent(changeEvent);
   }
 }

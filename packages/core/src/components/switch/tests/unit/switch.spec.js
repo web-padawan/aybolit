@@ -12,10 +12,12 @@ describe('switch', () => {
 
   let element;
   let input;
+  let label;
 
   beforeEach(async () => {
     element = await fixture(`<${Switch}>Switch with <a href="#">link</a></${Switch}>`);
     input = element.focusElement;
+    label = element.shadowRoot.querySelector('label');
   });
 
   it('should propagate disabled attribute to the native checkbox', async () => {
@@ -24,11 +26,11 @@ describe('switch', () => {
     expect(input.hasAttribute('disabled')).to.be.eql(true);
   });
 
-  it('should toggle on host click', () => {
-    element.click();
+  it('should toggle on label click', () => {
+    label.click();
     expect(element.checked).to.be.true;
 
-    element.click();
+    label.click();
     expect(element.checked).to.be.false;
   });
 
@@ -41,7 +43,7 @@ describe('switch', () => {
   it('should not toggle on click when disabled', async () => {
     element.disabled = true;
     await element.updateComplete;
-    element.click();
+    label.click();
     expect(element.checked).to.be.false;
   });
 
@@ -49,6 +51,15 @@ describe('switch', () => {
     const spy = sinon.spy();
     element.addEventListener('checked-changed', spy);
     element.checked = true;
+    await element.updateComplete;
+    expect(spy).to.be.calledOnce;
+  });
+
+  it('should forward change event from the input on the host element', async () => {
+    const spy = sinon.spy();
+    element.addEventListener('change', spy);
+    element.checked = true;
+    input.dispatchEvent(new CustomEvent('change', { bubbles: true }));
     await element.updateComplete;
     expect(spy).to.be.calledOnce;
   });
