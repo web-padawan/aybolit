@@ -43,7 +43,7 @@
 
 .label {
   font-size: 1rem;
-  padding-left: 3.5rem;
+  padding-left: 3.25rem;
   font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 
   &::before {
@@ -51,7 +51,7 @@
     box-sizing: border-box;
     top: 0;
     left: 0;
-    width: 3rem;
+    width: 2.75rem;
     height: 1.5rem;
     border: solid 1px #ccc;
     border-radius: 24px;
@@ -61,10 +61,10 @@
   &::after {
     position: absolute;
     box-sizing: border-box;
-    top: 0.25rem;
-    left: 0.25rem;
-    width: 1rem;
-    height: 1rem;
+    top: 0.125rem;
+    left: 0.125rem;
+    width: 1.25rem;
+    height: 1.25em;
     transform: translate3d(0, 0, 0);
     border: solid 1px #ccc;
     border-radius: 50%;
@@ -76,7 +76,7 @@
 .input:checked {
   + .label {
     &::after {
-      left: 1.625rem;
+      left: 1.375rem;
     }
   }
 }
