@@ -1,6 +1,5 @@
 :host {
   outline: none;
-  box-sizing: border-box;
 }
 
 .switch {
@@ -8,11 +7,6 @@
 }
 
 .input {
-  outline: 0;
-  user-select: none;
-  display: inline-block;
-  position: absolute;
-  opacity: 0;
 
   &:focus {
     + .label {
@@ -48,16 +42,13 @@
 }
 
 .label {
-  position: relative;
-  display: inline-block;
   font-size: 1rem;
   padding-left: 3.5rem;
   font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 
   &::before {
     position: absolute;
-    display: block;
-    content: "";
+    box-sizing: border-box;
     top: 0;
     left: 0;
     width: 3rem;
@@ -69,8 +60,7 @@
 
   &::after {
     position: absolute;
-    display: block;
-    content: "";
+    box-sizing: border-box;
     top: 0.25rem;
     left: 0.25rem;
     width: 1rem;
