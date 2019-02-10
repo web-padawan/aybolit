@@ -5,7 +5,6 @@
 .switch {
   z-index: 0;
   position: relative;
-  display: inline-block;
   color: rgba(0, 0, 0, 0.87);
   font-family: "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system;
   font-size: 16px;
@@ -30,7 +29,6 @@
   -moz-appearance: none;
   -webkit-appearance: none;
   z-index: -1;
-  position: absolute;
   right: 6px;
   top: -8px;
   display: block;
@@ -39,8 +37,6 @@
   width: 40px;
   height: 40px;
   background-color: rgba(0, 0, 0, 0.38);
-  outline: none;
-  opacity: 0;
   transform: scale(1);
   pointer-events: none;
   transition: opacity 0.3s 0.1s, transform 0.2s 0.1s;
@@ -112,12 +108,11 @@
 
 /* Span */
 .label {
-  display: inline-block;
+  position: static;
   width: 100%;
   cursor: pointer;
 
   &::before {
-    content: "";
     float: right;
     margin: 5px 0 5px 10px;
     border-radius: 7px;
@@ -129,7 +124,6 @@
   }
 
   &::after {
-    content: "";
     position: absolute;
     top: 2px;
     right: 16px;
