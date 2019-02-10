@@ -22,7 +22,7 @@
     }
   }
 
-  &[disabled] {
+  &:disabled {
     cursor: default;
 
     + .label {
