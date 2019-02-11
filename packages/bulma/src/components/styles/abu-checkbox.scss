@@ -167,7 +167,8 @@ $checkbox-top-offset: 0rem;
         }
       }
 
-      &:checked {
+      &:checked,
+      &:indeterminate {
         + .label {
           &::after {
             border-color: $color;
@@ -204,7 +205,8 @@ $checkbox-top-offset: 0rem;
   }
 
   .input {
-    &:checked {
+    &:checked,
+    &:indeterminate {
       + .label {
         &::before {
           border-color: transparent;
