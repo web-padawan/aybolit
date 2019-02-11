@@ -1,0 +1,219 @@
+@import "../../common/variables";
+
+$checkbox-radius: $radius;
+$checkbox-border: 0.1rem solid $grey-lighter;
+$checkbox-block-background: $white-ter;
+$checkbox-focus: 1px dotted $grey-light;
+$checkbox-top-offset: 0rem;
+
+@mixin checkbox-size($size) {
+  $newSize: $size * 1.5;
+  $height: $newSize / 2.5;
+  $width: $newSize / 4;
+
+  .label {
+    font-size: $size;
+    padding-left: $size * 2;
+
+    &::before {
+      width: $newSize;
+      height: $newSize;
+    }
+
+    &::after {
+      width: $width;
+      height: $height;
+      top: ($newSize / 2 - $height / 2) * 0.9;
+      left: $height;
+    }
+  }
+}
+
+.input {
+  outline: 0;
+  user-select: none;
+  display: inline-block;
+  position: absolute;
+  opacity: 0;
+
+  &:focus {
+    + .label {
+      &::before {
+        outline: $checkbox-focus;
+      }
+    }
+  }
+
+  &:hover:not(:disabled) {
+    + .label {
+      &::before {
+        border-color: $primary;
+      }
+    }
+  }
+
+  &:checked {
+    + .label {
+      &::before {
+        border: $checkbox-border;
+        animation-name: none;
+      }
+
+      &::after {
+        display: inline-block;
+      }
+    }
+  }
+
+  &:indeterminate {
+    + .label {
+      &::after {
+        display: inline-block;
+        transform: rotate(90deg);
+        border-bottom: none;
+      }
+    }
+  }
+
+  &:disabled {
+    + .label {
+      opacity: 0.5;
+      cursor: default;
+    }
+
+    &:hover {
+      &::before {
+        animation-name: none;
+      }
+    }
+  }
+}
+
+.label {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  vertical-align: middle;
+  margin: 0.5em;
+  padding: 0.2rem 0.5rem 0.2rem 0;
+  border-radius: $checkbox-radius;
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+  &:first-of-type {
+    margin-left: 0;
+  }
+
+  &:hover {
+    &::before {
+      animation-duration: 0.4s;
+      animation-fill-mode: both;
+      animation-name: hover-color;
+    }
+  }
+
+  &::before {
+    position: absolute;
+    box-sizing: border-box;
+    left: 0;
+    top: $checkbox-top-offset;
+    content: "";
+    border: $checkbox-border;
+    border-radius: $checkbox-radius;
+  }
+
+  &::after {
+    position: absolute;
+    display: none;
+    content: "";
+    top: $checkbox-top-offset;
+    box-sizing: border-box;
+    transform: rotate(45deg);
+    border-width: 0.1rem;
+    border-style: solid;
+    border-color: $primary;
+    border-top: 0;
+    border-left: 0;
+  }
+}
+
+:host {
+  outline: none;
+  @include checkbox-size($size-normal);
+}
+
+:host([theme~="small"]) {
+  @include checkbox-size($size-small);
+}
+
+:host([theme~="medium"]) {
+  @include checkbox-size($size-medium);
+}
+
+:host([theme~="large"]) {
+  @include checkbox-size($size-large);
+}
+
+@each $name, $pair in $colors {
+  $color: nth($pair, 1);
+  $color-invert: nth($pair, 2);
+
+  :host([theme~="#{$name}"]) {
+    .input {
+      &:hover:not(:disabled) {
+        + .label {
+          &::before {
+            border-color: $color;
+          }
+        }
+      }
+
+      &:checked {
+        + .label {
+          &::after {
+            border-color: $color;
+          }
+        }
+      }
+    }
+  }
+
+  :host([theme~="#{$name}"][theme~="filled"]) {
+    .label {
+      &::before {
+        background-color: $color;
+      }
+
+      &::after {
+        background-color: $color;
+      }
+    }
+  }
+}
+
+:host([theme~="filled"]) {
+  .label {
+    &::before {
+      border-color: transparent;
+      background-color: $primary;
+    }
+
+    &::after {
+      border-color: #fff;
+      background-color: $primary;
+    }
+  }
+
+  .input {
+    &:checked {
+      + .label {
+        &::before {
+          border-color: transparent;
+        }
+
+        &::after {
+          border-color: #fff;
+        }
+      }
+    }
+  }
+}
