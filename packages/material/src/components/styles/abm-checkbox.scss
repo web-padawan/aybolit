@@ -1,0 +1,153 @@
+:host {
+  outline: none;
+}
+
+.checkbox {
+  z-index: 0;
+  position: relative;
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.87);
+  font-family: "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system;
+  font-size: 16px;
+  line-height: 1.5;
+
+  &:hover {
+    .input:not(:disabled) {
+      opacity: 0.04;
+
+      &:focus {
+        opacity: 0.16;
+      }
+    }
+  }
+}
+
+.input {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  z-index: -1;
+  position: absolute;
+  left: -10px;
+  top: -8px;
+  display: block;
+  margin: 0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: none;
+  outline: none;
+  opacity: 0;
+  transform: scale(1);
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.2s;
+
+  &:checked,
+  &:indeterminate {
+    background-color: rgb(var(--abm-primary-color, 33, 150, 243));
+
+    + .label {
+      &::before {
+        border-color: rgb(var(--abm-primary-color, 33, 150, 243));
+        background-color: rgb(var(--abm-primary-color, 33, 150, 243));
+      }
+
+      &::after {
+        border-color: rgb(255, 255, 255);
+      }
+    }
+
+    &:disabled {
+      + .label {
+        &::before {
+          border-color: transparent;
+          background-color: currentColor;
+        }
+      }
+    }
+  }
+
+  &:checked {
+    &:active:not(:disabled) {
+      + .label {
+        &::before {
+          border-color: transparent;
+          background-color: rgba(0, 0, 0, 0.6);
+        }
+      }
+    }
+  }
+
+  &:indeterminate {
+    + .label {
+      &::after {
+        border-left: none;
+        transform: translate(4px, 3px);
+      }
+    }
+  }
+
+  &:focus {
+    opacity: 0.12;
+  }
+
+  &:active:not(:disabled) {
+    opacity: 1;
+    transform: scale(0);
+    transition: transform 0s, opacity 0s;
+
+    + .label {
+      &::before {
+        border-color: rgb(var(--abm-primary-color, 33, 150, 243));
+      }
+    }
+  }
+
+  &:disabled {
+    opacity: 0;
+
+    + .label {
+      color: rgba(0, 0, 0, 0.38);
+      cursor: initial;
+
+      &::before {
+        border-color: currentColor;
+      }
+    }
+  }
+}
+
+.label {
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 3px 11px 3px 1px;
+    border: solid 2px; /* Safari */
+    border-color: rgba(0, 0, 0, 0.6);
+    border-radius: 2px;
+    width: 18px;
+    height: 18px;
+    vertical-align: top;
+    transition: border-color 0.2s, background-color 0.2s;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 1px;
+    width: 10px;
+    height: 5px;
+    border: solid 2px transparent;
+    border-right: none;
+    border-top: none;
+    transform: translate(3px, 4px) rotate(-45deg);
+  }
+}
