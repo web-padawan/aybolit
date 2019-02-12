@@ -6,10 +6,6 @@ export class AbsRange extends RangeElement {
     return 'abs-range';
   }
 
-  static get version() {
-    return '0.0.0';
-  }
-
   static get styles() {
     return [super.styles, absRangeStyles];
   }

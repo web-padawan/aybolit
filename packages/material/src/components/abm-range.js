@@ -6,10 +6,6 @@ export class AbmRange extends RangeElement {
     return 'abm-range';
   }
 
-  static get version() {
-    return '0.0.0';
-  }
-
   static get styles() {
     return [super.styles, abmRangeStyles];
   }

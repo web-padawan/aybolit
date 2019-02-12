@@ -6,10 +6,6 @@ export class AbmSwitch extends SwitchElement {
     return 'abm-switch';
   }
 
-  static get version() {
-    return '0.0.0';
-  }
-
   static get styles() {
     return [super.styles, abmSwitchStyles];
   }

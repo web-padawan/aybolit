@@ -6,10 +6,6 @@ export class AbuCheckbox extends CheckboxElement {
     return 'abu-checkbox';
   }
 
-  static get version() {
-    return '0.0.0';
-  }
-
   static get styles() {
     return [super.styles, abuCheckboxStyles];
   }

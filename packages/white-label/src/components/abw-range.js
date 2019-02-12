@@ -6,10 +6,6 @@ export class AbwRange extends RangeElement {
     return 'abw-range';
   }
 
-  static get version() {
-    return '0.0.0';
-  }
-
   static get styles() {
     return [super.styles, abwRangeStyles];
   }

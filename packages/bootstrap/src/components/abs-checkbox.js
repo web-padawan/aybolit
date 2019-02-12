@@ -6,10 +6,6 @@ export class AbsCheckbox extends CheckboxElement {
     return 'abs-checkbox';
   }
 
-  static get version() {
-    return '0.0.0';
-  }
-
   static get styles() {
     return [super.styles, absCheckboxStyles];
   }

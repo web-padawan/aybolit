@@ -6,10 +6,6 @@ export class AbwSwitch extends SwitchElement {
     return 'abw-switch';
   }
 
-  static get version() {
-    return '0.0.0';
-  }
-
   static get styles() {
     return [super.styles, abwSwitchStyles];
   }

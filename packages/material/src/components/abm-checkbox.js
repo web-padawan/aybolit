@@ -6,10 +6,6 @@ export class AbmCheckbox extends CheckboxElement {
     return 'abm-checkbox';
   }
 
-  static get version() {
-    return '0.0.0';
-  }
-
   static get styles() {
     return [super.styles, abmCheckboxStyles];
   }

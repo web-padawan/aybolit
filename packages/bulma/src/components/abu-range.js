@@ -6,10 +6,6 @@ export class AbuRange extends RangeElement {
     return 'abu-range';
   }
 
-  static get version() {
-    return '0.0.0';
-  }
-
   static get styles() {
     return [super.styles, abuRangeStyles];
   }

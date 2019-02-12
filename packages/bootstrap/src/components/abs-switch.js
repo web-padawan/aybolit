@@ -6,10 +6,6 @@ export class AbsSwitch extends SwitchElement {
     return 'abs-switch';
   }
 
-  static get version() {
-    return '0.0.0';
-  }
-
   static get styles() {
     return [super.styles, absSwitchStyles];
   }
