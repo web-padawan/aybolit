@@ -5,6 +5,13 @@ import { html } from 'lit-html';
 
 storiesOf('Material', module)
   .addDecorator(withKnobs)
+  .add('<abm-checkbox>', () => {
+    const disabled = boolean('Disabled', false);
+    const label = text('Label', 'Checkbox');
+    return html`
+      <abm-checkbox .disabled="${disabled}">${label}</abm-checkbox>
+    `;
+  })
   .add('<abm-range>', () => {
     const disabled = boolean('Disabled', false);
     return html`

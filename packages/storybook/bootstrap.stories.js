@@ -5,6 +5,13 @@ import { html } from 'lit-html';
 
 storiesOf('Bootstrap', module)
   .addDecorator(withKnobs)
+  .add('<abs-checkbox>', () => {
+    const disabled = boolean('Disabled', false);
+    const label = text('Label', 'Checkbox');
+    return html`
+      <abs-checkbox .disabled="${disabled}">${label}</abs-checkbox>
+    `;
+  })
   .add('<abs-range>', () => {
     const disabled = boolean('Disabled', false);
     return html`

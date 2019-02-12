@@ -21,6 +21,18 @@ const SIZES = {
 
 storiesOf('Bulma', module)
   .addDecorator(withKnobs)
+  .add('<abu-checkbox>', () => {
+    const disabled = boolean('Disabled', false);
+    const size = select('Size', SIZES, SIZES.normal);
+    const color = select('Color', COLORS, COLORS.none);
+    const label = text('Label', 'Checkbox');
+    const filled = boolean('Filled', false);
+    return html`
+      <abu-checkbox theme="${size} ${color} ${filled ? 'filled' : ''}" .disabled="${disabled}">
+        ${label}
+      </abu-checkbox>
+    `;
+  })
   .add('<abu-range>', () => {
     const disabled = boolean('Disabled', false);
     const size = select('Size', SIZES, SIZES.normal);
