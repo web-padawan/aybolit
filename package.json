@@ -8,6 +8,7 @@
     "build": "yarn build-styling",
     "build-styling": "./scripts/build-styling.sh",
     "lint": "eslint *.js packages",
+    "lint:scss": "stylelint packages/**/*.scss",
     "storybook": "start-storybook -p 6006",
     "test": "karma start",
     "watch": "node scripts/watcher.js"
@@ -59,6 +60,8 @@
     "sass": "^1.17.0",
     "sinon": "^7.2.3",
     "sinon-chai": "^3.3.0",
+    "stylelint": "^9.10.1",
+    "stylelint-config-twbs-bootstrap": "^0.3.0",
     "webpack": "^4.29.3"
   },
   "husky": {
