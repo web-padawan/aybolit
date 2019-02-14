@@ -5,6 +5,8 @@
   "rules": {
     "scss/dollar-variable-default": null,
     "number-leading-zero": null,
-    "property-no-vendor-prefix": /
+    "property-no-vendor-prefix": [true, {
+      "ignoreProperties": ["appearance"]
+    }]
   }
 }
