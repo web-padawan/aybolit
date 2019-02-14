@@ -16,13 +16,12 @@
     ~ .label {
       &::before {
         color: #fff;
-        border-color: #007bff;
         background-color: #007bff;
+        border-color: #007bff;
       }
 
       &::after {
         background-color: #fff;
-        -webkit-transform: translateX(0.75rem);
         transform: translateX(0.75rem);
       }
     }
@@ -75,15 +74,15 @@
 
 .label {
   margin-bottom: 0;
-  vertical-align: top;
   font-size: 1rem;
   line-height: 1.5;
+  vertical-align: top;
 
   &::before {
     position: absolute;
-    box-sizing: border-box;
     top: 0.25rem;
     left: -2.25rem;
+    box-sizing: border-box;
     width: 1.75rem;
     height: 1rem;
     background-color: #fff;
@@ -97,10 +96,10 @@
     left: calc(-2.25rem + 2px);
     width: calc(1rem - 4px);
     height: calc(1rem - 4px);
+    background-color: #adb5bd;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 50% 50%;
-    background-color: #adb5bd;
     border-radius: 0.5rem;
     transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
