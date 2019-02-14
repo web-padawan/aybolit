@@ -121,7 +121,6 @@ $slider-thumb-to-track-ratio: 2;
 
   &:active {
     &::-webkit-slider-thumb {
-      -webkit-transform: scale(1.25);
       transform: scale(1.25);
     }
 
@@ -130,7 +129,6 @@ $slider-thumb-to-track-ratio: 2;
     }
 
     &::-ms-thumb {
-      -ms-transform: scale(1.25);
       transform: scale(1.25);
     }
   }
