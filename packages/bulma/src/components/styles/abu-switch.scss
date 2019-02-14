@@ -18,8 +18,8 @@ $switch-focus: 1px dotted $grey-light;
   $paddle-active-offset: $switch-width - $paddle-width - $switch-paddle-offset * 1.5;
 
   .label {
-    font-size: $size;
     padding-left: $switch-width + 0.5;
+    font-size: $size;
 
     &::before {
       width: $switch-width;
@@ -83,25 +83,25 @@ $switch-focus: 1px dotted $grey-light;
 }
 
 .label {
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
   cursor: pointer;
-  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 
   &::before {
     position: absolute;
     top: 0;
     left: 0;
     box-sizing: border-box;
+    background: $switch-background;
     border: $switch-border;
     border-radius: $switch-radius;
-    background: $switch-background;
   }
 
   &::after {
     position: absolute;
-    transform: translate3d(0, 0, 0);
-    border-radius: $switch-radius;
     background: $switch-paddle-background;
+    border-radius: $switch-radius;
     transition: $switch-paddle-transition;
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -179,7 +179,7 @@ $switch-focus: 1px dotted $grey-light;
       + .label {
         &::before {
           background-color: transparent;
-          border-color: $color !important;
+          border-color: $color;
         }
 
         &::after {
