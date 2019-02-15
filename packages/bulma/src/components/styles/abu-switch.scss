@@ -48,6 +48,9 @@ $switch-focus: 1px dotted $grey-light;
 }
 
 .input {
+  position: absolute;
+  outline: none;
+  opacity: 0;
 
   &:focus {
     + .label {
