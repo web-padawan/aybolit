@@ -3,23 +3,17 @@
 }
 
 :host([hidden]) {
-  display: none !important;
+  display: none !important; /* stylelint-disable-line declaration-no-important */
 }
 
 .switch {
-  display: inline-block;
   box-sizing: border-box;
-}
-
-.input {
-  outline: none;
-  position: absolute;
-  opacity: 0;
+  display: inline-block;
 }
 
 .label {
-  display: inline-block;
   position: relative;
+  display: inline-block;
 
   &::before {
     display: block;

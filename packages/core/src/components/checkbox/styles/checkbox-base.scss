@@ -3,5 +3,5 @@
 }
 
 :host([hidden]) {
-  display: none !important;
+  display: none !important; /* stylelint-disable-line declaration-no-important */
 }

@@ -3,17 +3,17 @@
 }
 
 :host([hidden]) {
-  display: none !important;
+  display: none !important; /* stylelint-disable-line declaration-no-important */
 }
 
 .range {
   width: 100%;
-  margin: 0;
   padding: 0;
+  margin: 0;
+  background-color: transparent;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-color: transparent;
 
   &::-moz-focus-outer {
     border: 0;
@@ -37,19 +37,19 @@
   }
 
   &::-webkit-slider-thumb {
+    border: none;
     -webkit-appearance: none;
     appearance: none;
-    border: none;
   }
 
   &::-moz-range-thumb {
+    border: none;
     -moz-appearance: none;
     appearance: none;
-    border: none;
   }
 
   &::-ms-thumb {
-    appearance: none;
     border: none;
+    appearance: none;
   }
 }
