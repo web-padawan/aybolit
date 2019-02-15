@@ -10,7 +10,10 @@
 }
 
 .input {
+  position: absolute;
   z-index: -1;
+  outline: none;
+  opacity: 0;
 
   &:checked {
     ~ .label {
