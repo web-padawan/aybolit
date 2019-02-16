@@ -61,6 +61,7 @@
     "sinon": "^7.2.3",
     "sinon-chai": "^3.3.0",
     "stylelint": "^9.10.1",
+    "stylelint-config-prettier": "^4.0.0",
     "stylelint-config-twbs-bootstrap": "^0.3.0",
     "webpack": "^4.29.3"
   },
@@ -73,6 +74,11 @@
     "*.js": [
       "eslint --fix",
       "prettier --write",
+      "git add"
+    ],
+    "*.scss": [
+      "stylelint --syntax=scss",
+      "prettier --single-quote=false --write",
       "git add"
     ]
   }

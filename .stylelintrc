@@ -1,6 +1,7 @@
 {
   "extends": [
-    "stylelint-config-twbs-bootstrap/scss"
+    "stylelint-config-twbs-bootstrap/scss",
+    "stylelint-config-prettier"
   ],
   "rules": {
     "scss/dollar-variable-default": null,
