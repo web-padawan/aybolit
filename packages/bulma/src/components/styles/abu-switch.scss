@@ -8,7 +8,6 @@ $switch-paddle-background: $white;
 $switch-paddle-background-active: $primary;
 $switch-paddle-offset: 0.25rem;
 $switch-paddle-transition: all 0.25s ease-out;
-$switch-focus: 1px dotted $grey-light;
 
 @mixin switch-size($size) {
   $switch-height: $size * 1.5;
@@ -55,7 +54,7 @@ $switch-focus: 1px dotted $grey-light;
   &:focus {
     + .label {
       &::before {
-        outline: $switch-focus;
+        box-shadow: 0 0 0 0.125rem $link-invert;
       }
     }
   }
@@ -80,6 +79,14 @@ $switch-focus: 1px dotted $grey-light;
     + .label {
       &::before {
         background: $switch-background-active;
+      }
+    }
+
+    &:focus {
+      + .label {
+        &::before {
+          box-shadow: 0 0 0 0.125rem $primary-invert;
+        }
       }
     }
   }
@@ -168,10 +175,20 @@ $switch-focus: 1px dotted $grey-light;
   $color-invert: nth($pair, 2);
 
   :host([theme~="#{$name}"]) {
-    .input:checked {
-      + .label {
-        &::before {
-          background: $color;
+    .input {
+      &:checked {
+        + .label {
+          &::before {
+            background: $color;
+          }
+        }
+
+        &:focus {
+          + .label {
+            &::before {
+              box-shadow: 0 0 0 0.125rem $color-invert;
+            }
+          }
         }
       }
     }

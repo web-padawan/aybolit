@@ -47,6 +47,7 @@ $slider-thumb-to-track-ratio: 2;
 
 :host {
   margin: 1rem 0;
+  outline: none;
 }
 
 .range {
@@ -57,13 +58,13 @@ $slider-thumb-to-track-ratio: 2;
     &:not(:active) {
       // Pseudo-elements must be split across multiple rulesets to have an effect.
       &::-webkit-slider-thumb {
-        box-shadow: 0 0 0 0.15rem $grey-lighter;
+        box-shadow: 0 0 0 0.125rem $link-invert;
       }
       &::-moz-range-thumb {
-        box-shadow: 0 0 0 0.15rem $grey-lighter;
+        box-shadow: 0 0 0 0.125rem $link-invert;
       }
       &::-ms-thumb {
-        box-shadow: 0 0 0 0.15rem $grey-lighter;
+        box-shadow: 0 0 0 0.125rem $link-invert;
       }
     }
   }
@@ -201,13 +202,13 @@ $slider-thumb-to-track-ratio: 2;
       &:focus {
         &:not(:active) {
           &::-webkit-slider-thumb {
-            box-shadow: 0 0 0 0.15rem $color-invert;
+            box-shadow: 0 0 0 0.125rem $color-invert;
           }
           &::-moz-range-thumb {
-            box-shadow: 0 0 0 0.15rem $color-invert;
+            box-shadow: 0 0 0 0.125rem $color-invert;
           }
           &::-ms-thumb {
-            box-shadow: 0 0 0 0.15rem $color-invert;
+            box-shadow: 0 0 0 0.125rem $color-invert;
           }
         }
       }

@@ -3,7 +3,6 @@
 $checkbox-radius: $radius;
 $checkbox-border: 0.1rem solid $grey-lighter;
 $checkbox-block-background: $white-ter;
-$checkbox-focus: 1px dotted $grey-light;
 
 @mixin checkbox-size($size) {
   $newSize: $size * 1.5;
@@ -38,7 +37,7 @@ $checkbox-focus: 1px dotted $grey-light;
   &:focus {
     + .label {
       &::before {
-        outline: $checkbox-focus;
+        box-shadow: 0 0 0 0.125rem $primary-invert;
       }
     }
   }
@@ -141,6 +140,14 @@ $checkbox-focus: 1px dotted $grey-light;
 
   :host([theme~="#{$name}"]) {
     .input {
+      &:focus {
+        + .label {
+          &::before {
+            box-shadow: 0 0 0 0.125rem $color-invert;
+          }
+        }
+      }
+
       &:hover:not(:disabled) {
         + .label {
           &::before {
