@@ -1,0 +1,22 @@
+:host {
+  display: inline-block;
+}
+
+:host([hidden]) {
+  display: none !important; /* stylelint-disable-line declaration-no-important */
+}
+
+/**
+ * 1. Remove the margin in Firefox and Safari.
+ * 2. Show the overflow in IE.
+ * 3. Change the font styles in all browsers.
+ * 4. Remove the inheritance of text transform in Edge, Firefox, and IE.
+ */
+button {
+  margin: 0; /* 1 */
+  overflow: visible; /* 2 */
+  font-family: inherit; /* 3 */
+  font-size: 100%; /* 3 */
+  line-height: 1.15; /* 3 */
+  text-transform: none; /* 4 */
+}
