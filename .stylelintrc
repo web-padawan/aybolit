@@ -7,7 +7,7 @@
     "scss/dollar-variable-default": null,
     "number-leading-zero": null,
     "property-no-vendor-prefix": [true, {
-      "ignoreProperties": ["appearance"]
+      "ignoreProperties": ["appearance", "user-select"]
     }]
   }
 }
