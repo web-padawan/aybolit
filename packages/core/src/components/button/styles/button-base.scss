@@ -19,4 +19,8 @@ button {
   font-size: 100%; /* 3 */
   line-height: 1.15; /* 3 */
   text-transform: none; /* 4 */
+
+  &::-moz-focus-inner {
+    border: none;
+  }
 }
