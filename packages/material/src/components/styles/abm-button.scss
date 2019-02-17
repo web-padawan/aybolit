@@ -1,0 +1,155 @@
+:host {
+  outline: none;
+}
+
+.button {
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+  min-width: 64px;
+  height: 36px;
+  padding: 0 8px;
+  margin: 0;
+  font-family: var(--abm-font, Roboto, "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 36px;
+  color: rgb(var(--abm-primary-rgb, 33, 150, 243));
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  transition: background-color 0.2s;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+    background: radial-gradient(circle at center, currentColor 1%, transparent 1%) (center / 10000%)
+      10000% no-repeat;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 1s, background-size 0.5s;
+  }
+
+  &:hover {
+    background-color: rgba(var(--abm-primary-rgb, 33, 150, 243), 0.04);
+
+    &:focus {
+      background-color: rgba(var(--abm-primary-rgb, 33, 150, 243), 0.16);
+    }
+  }
+
+  &:focus {
+    background-color: rgba(var(--abm-primary-rgb, 33, 150, 243), 0.12);
+  }
+
+  &:active:not([disabled]) {
+    &::before {
+      background-size: 100% 100%;
+      opacity: 0.16;
+      transition: background-size 0s;
+    }
+  }
+
+  &[disabled] {
+    color: rgba(var(--abm-onsurface-rgb, 0, 0, 0), 0.38);
+    pointer-events: none;
+    cursor: initial;
+    background-color: transparent;
+
+    &::before {
+      opacity: 0;
+    }
+  }
+}
+
+:host([theme="contained"]) {
+  .button {
+    padding: 0 16px;
+    color: rgb(var(--abm-onprimary-rgb, 255, 255, 255));
+    background-color: rgb(var(--abm-primary-rgb, 33, 150, 243));
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+      0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    transition: background-image 0.2s, box-shadow 0.2s;
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+        0 1px 10px 0 rgba(0, 0, 0, 0.12);
+    }
+
+    &:hover {
+      text-decoration: none;
+      background-image: linear-gradient(
+        rgba(var(--abm-onprimary-rgb, 255, 255, 255), 0.08),
+        rgba(var(--abm-onprimary-rgb, 255, 255, 255), 0.08)
+      );
+
+      &:focus {
+        background-image: linear-gradient(
+          rgba(var(--abm-onprimary-rgb, 255, 255, 255), 0.32),
+          rgba(var(--abm-onprimary-rgb, 255, 255, 255), 0.32)
+        );
+      }
+    }
+
+    &:focus {
+      background-image: linear-gradient(
+        rgba(var(--abm-onprimary-rgb, 255, 255, 255), 0.24),
+        rgba(var(--abm-onprimary-rgb, 255, 255, 255), 0.24)
+      );
+    }
+
+    &:active:not([disabled]) {
+      box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+        0 3px 14px 2px rgba(0, 0, 0, 0.12);
+
+      &::before {
+        opacity: 0.32;
+      }
+    }
+
+    &[disabled] {
+      color: rgba(var(--abm-onsurface-rgb, 0, 0, 0), 0.38);
+      background-color: rgba(var(--abm-onsurface-rgb, 0, 0, 0), 0.12);
+      box-shadow: none;
+    }
+  }
+}
+
+:host([theme="outlined"]) {
+  .button {
+    padding: 0 16px;
+    line-height: 34px;
+    background-clip: padding-box;
+    border: solid 1px;
+    border-color: rgba(var(--abm-onsurface-rgb, 0, 0, 0), 0.24);
+
+    &:hover {
+      background-color: rgba(var(--abm-primary-rgb, 33, 150, 243), 0.04);
+
+      &:focus {
+        background-color: rgba(var(--abm-primary-rgb, 33, 150, 243), 0.16);
+      }
+    }
+
+    &:focus {
+      background-color: rgba(var(--abm-primary-rgb, 33, 150, 243), 0.12);
+    }
+
+    &[disabled] {
+      color: rgba(var(--abm-onsurface-rgb, 0, 0, 0), 0.38);
+      background-color: transparent;
+    }
+  }
+}
