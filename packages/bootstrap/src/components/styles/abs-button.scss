@@ -1,0 +1,113 @@
+@import "../../common/variables";
+@import "../../common/functions";
+
+:host {
+  outline: none;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--abs-button-color, #212529);
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: var(--abs-button-bg, transparent);
+  border-color: var(--abs-button-border, transparent);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  &:hover {
+    color: var(--abs-button-hover-color, #212529);
+    text-decoration: none;
+    background-color: var(--abs-button-hover-bg, transparent);
+    border-color: var(--abs-button-hover-border, transparent);
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem var(--abs-button-focus-ring, rgba(0, 123, 255, 0.25));
+  }
+
+  &[disabled] {
+    pointer-events: none;
+    opacity: 0.65;
+  }
+
+  &:not([disabled]):active {
+    color: var(--abs-button-active-color, #212529);
+    background-color: var(--abs-button-active-bg, transparent);
+    border-color: var(--abs-button-active-border, transparent);
+  }
+}
+
+@each $name, $color in $colors {
+  $hover-background: darken($color, 7.5%);
+  $hover-border: darken($color, 10%);
+  $active-background: darken($color, 10%);
+  $active-border: darken($color, 12.5%);
+
+  :host([theme~="#{$name}"]) {
+    --abs-button-bg: #{$color};
+    --abs-button-color: #{color-yiq($color)};
+    --abs-button-border: #{$color};
+    --abs-button-focus-ring: #{rgba(mix(color-yiq($color), $color, 15%), 0.5)};
+    --abs-button-hover-bg: #{$hover-background};
+    --abs-button-hover-color: #{color-yiq($color)};
+    --abs-button-hover-border: #{$hover-border};
+    --abs-button-active-bg: #{$active-background};
+    --abs-button-active-color: #{color-yiq($color)};
+    --abs-button-active-border: #{$active-border};
+  }
+
+  :host([theme~="#{$name}"][theme~="outline"]) {
+    --abs-button-color: #{$color};
+    --abs-button-focus-ring: #{rgba($color, 0.5)};
+    --abs-button-hover-bg: #{$color};
+    --abs-button-hover-color: #{color-yiq($color)};
+    --abs-button-hover-border: #{$color};
+    --abs-button-active-bg: #{$active-background};
+    --abs-button-active-color: #{color-yiq($color)};
+    --abs-button-active-border: #{$active-border};
+  }
+}
+
+:host([theme~="outline"]) {
+  --abs-button-bg: transparent;
+}
+
+:host([theme~="large"]) {
+  .button {
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: 0.3rem;
+  }
+}
+
+:host([theme~="small"]) {
+  .button {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+}
