@@ -1,4 +1,5 @@
 @import "../../common/variables";
+@import "../../common/functions";
 
 $checkbox-radius: $radius;
 $checkbox-border: 0.1rem solid $grey-lighter;
@@ -87,7 +88,8 @@ $checkbox-block-background: $white-ter;
 .label {
   position: relative;
   display: inline-block;
-  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
   line-height: 1.5;
   cursor: pointer;
   border-radius: $checkbox-radius;
@@ -175,6 +177,18 @@ $checkbox-block-background: $white-ter;
 
       &::after {
         background-color: $color;
+        border-color: color-yiq($color);
+      }
+    }
+
+    .input {
+      &:checked,
+      &:indeterminate {
+        + .label {
+          &::after {
+            border-color: color-yiq($color);
+          }
+        }
       }
     }
   }
