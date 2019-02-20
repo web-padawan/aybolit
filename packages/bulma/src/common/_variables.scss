@@ -1,5 +1,7 @@
 $grey-light: #b5b5b5;
 $grey-lighter: #dbdbdb;
+$grey-dark: #4a4a4a;
+$grey-darker: #363636;
 $white-ter: #f5f5f5;
 $white: #fff;
 
@@ -47,8 +49,10 @@ $colors: (
   )
 );
 
+$radius-small: 2px;
 $radius: 4px;
 $radius-large: 6px;
+$radius-rounded: 290486px;
 
 $size-1: 3rem;
 $size-2: 2.5rem;
@@ -62,3 +66,14 @@ $size-small: $size-7;
 $size-normal: $size-6;
 $size-medium: $size-5;
 $size-large: $size-4;
+
+$link: $blue;
+
+$link-hover: $grey-darker;
+$link-hover-border: $grey-light;
+
+$link-focus: $grey-darker;
+$link-focus-border: $blue;
+
+$link-active: $grey-darker;
+$link-active-border: $grey-dark;

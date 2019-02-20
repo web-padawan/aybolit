@@ -1,0 +1,152 @@
+@import "../../common/variables";
+@import "../../common/functions";
+
+:host {
+  outline: none;
+}
+
+.button {
+  position: relative;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.25em;
+  padding: calc(0.375em - 1px) 0.75em;
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  font-size: $size-normal;
+  line-height: 1.5;
+  color: $grey-darker;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  vertical-align: top;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: $white;
+  border: 1px solid $grey-lighter;
+  border-radius: $radius;
+  outline: none;
+  box-shadow: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  &:hover {
+    color: $link-hover;
+    border-color: $link-hover-border;
+  }
+
+  &:focus {
+    color: $link-focus;
+    border-color: $link-focus-border;
+
+    &:not(:active) {
+      box-shadow: 0 0 0 0.125em rgba($link, 0.25);
+    }
+  }
+
+  &:active {
+    color: $link-active;
+    border-color: $link-active-border;
+  }
+
+  &[disabled] {
+    pointer-events: none;
+    cursor: default;
+    background-color: $white;
+    border-color: $grey-lighter;
+    box-shadow: none;
+    opacity: 0.5;
+  }
+}
+
+:host([theme~="small"]) {
+  .button {
+    font-size: $size-small;
+    border-radius: $radius-small;
+  }
+}
+
+:host([theme~="normal"]) {
+  .button {
+    font-size: $size-normal;
+  }
+}
+
+:host([theme~="medium"]) {
+  .button {
+    font-size: $size-medium;
+  }
+}
+
+:host([theme~="large"]) {
+  .button {
+    font-size: $size-large;
+  }
+}
+
+:host([theme~="rounded"]) {
+  .button {
+    padding-right: 1em;
+    padding-left: 1em;
+    border-radius: $radius-rounded;
+  }
+}
+
+@each $name, $pair in $colors {
+  $color: nth($pair, 1);
+  $contrast: color-yiq($color);
+
+  :host([theme~="#{$name}"]) {
+    .button {
+      color: $contrast;
+      background-color: $color;
+      border-color: transparent;
+
+      &:hover {
+        background-color: darken($color, 5%);
+      }
+
+      &:focus {
+        &:not(:active) {
+          box-shadow: 0 0 0 0.125em rgba($color, 0.25);
+        }
+      }
+
+      &:active {
+        background-color: darken($color, 5%);
+      }
+
+      &[disabled] {
+        background-color: $color;
+        box-shadow: none;
+      }
+    }
+  }
+
+  :host([theme~="#{$name}"][theme~="outlined"]) {
+    .button {
+      color: $color;
+      background-color: transparent;
+      border-color: $color;
+
+      &:hover,
+      &:focus {
+        color: $contrast;
+        background-color: $color;
+        border-color: $color;
+      }
+
+      &[disabled] {
+        color: $color;
+        background-color: transparent;
+        border-color: $color;
+      }
+    }
+  }
+}
