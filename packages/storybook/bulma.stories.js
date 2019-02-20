@@ -21,6 +21,24 @@ const SIZES = {
 
 storiesOf('Bulma', module)
   .addDecorator(withKnobs)
+  .add('<abu-button>', () => {
+    const disabled = boolean('Disabled', false);
+    const size = select('Size', SIZES, SIZES.normal);
+    const color = select('Color', COLORS, COLORS.none);
+    const label = text('Label', 'Button');
+    const link = text('Link', '');
+    const outlined = boolean('Outlined', false);
+    const rounded = boolean('Rounded', false);
+    return html`
+      <abu-button
+        theme="${size} ${color} ${outlined ? 'outlined' : ''} ${rounded ? 'rounded' : ''}"
+        .disabled="${disabled}"
+        .link="${link}"
+      >
+        ${label}
+      </abu-button>
+    `;
+  })
   .add('<abu-checkbox>', () => {
     const disabled = boolean('Disabled', false);
     const size = select('Size', SIZES, SIZES.normal);

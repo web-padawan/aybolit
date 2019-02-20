@@ -1,10 +1,27 @@
 import '@aybolit/material';
 import { storiesOf } from '@storybook/polymer';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
+import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 import { html } from 'lit-html';
+
+const BUTTON_TYPES = {
+  outlined: 'outlined',
+  contained: 'contained',
+  text: ''
+};
 
 storiesOf('Material', module)
   .addDecorator(withKnobs)
+  .add('<abm-button>', () => {
+    const disabled = boolean('Disabled', false);
+    const type = select('Type', BUTTON_TYPES, BUTTON_TYPES.text);
+    const label = text('Label', 'Button');
+    const link = text('Link', '');
+    return html`
+      <abm-button theme="${type}" .disabled="${disabled}" .link="${link}">
+        ${label}
+      </abm-button>
+    `;
+  })
   .add('<abm-checkbox>', () => {
     const disabled = boolean('Disabled', false);
     const label = text('Label', 'Checkbox');
