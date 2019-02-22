@@ -37,14 +37,4 @@ describe('button', () => {
   it('should set role="presentation" on the native button', () => {
     expect(button.focusElement.getAttribute('role')).to.be.eql('presentation');
   });
-
-  it('should use button text as the native button aria-label', () => {
-    expect(button.focusElement.getAttribute('aria-label')).to.be.eql('Button');
-  });
-
-  it('should set button aria-label to native button aria-label', async () => {
-    button.setAttribute('aria-label', 'accessible');
-    await button.updateComplete;
-    expect(button.focusElement.getAttribute('aria-label')).to.be.eql('accessible');
-  });
 });

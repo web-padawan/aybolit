@@ -11,14 +11,6 @@ export class ButtonElement extends DelegateFocusMixin(LitElement) {
       link: {
         type: String,
         reflect: true
-      },
-
-      /**
-       * Internal property to observe aria-label attribute.
-       */
-      _ariaLabel: {
-        type: String,
-        attribute: 'aria-label'
       }
     };
   }
@@ -36,13 +28,7 @@ export class ButtonElement extends DelegateFocusMixin(LitElement) {
             </a>
           `
         : html`
-            <button
-              type="button"
-              class="button"
-              ?disabled="${this.disabled}"
-              aria-label="${this._ariaLabel}"
-              role="presentation"
-            >
+            <button type="button" class="button" ?disabled="${this.disabled}" role="presentation">
               <slot></slot>
             </button>
           `}
@@ -52,7 +38,6 @@ export class ButtonElement extends DelegateFocusMixin(LitElement) {
   firstUpdated() {
     super.firstUpdated();
     this.setAttribute('role', 'button');
-    this._ariaLabel = this._ariaLabel || this.innerText.trim();
   }
 
   /**
