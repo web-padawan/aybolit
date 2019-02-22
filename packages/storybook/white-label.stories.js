@@ -5,6 +5,16 @@ import { html } from 'lit-html';
 
 storiesOf('White label', module)
   .addDecorator(withKnobs)
+  .add('<abw-button>', () => {
+    const disabled = boolean('Disabled', false);
+    const label = text('Label', 'Button');
+    const link = text('Link', '');
+    return html`
+      <abw-button .disabled="${disabled}" .link="${link}">
+        ${label}
+      </abw-button>
+    `;
+  })
   .add('<abw-checkbox>', () => {
     const disabled = boolean('Disabled', false);
     const label = text('Label', 'Checkbox');
