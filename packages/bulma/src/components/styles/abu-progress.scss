@@ -1,0 +1,100 @@
+@import "../../common/variables";
+
+progress {
+  display: block;
+  width: 100%;
+  height: $size-normal;
+  padding: 0;
+  overflow: hidden;
+  border: none;
+  border-radius: $radius-rounded;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  &::-webkit-progress-bar {
+    background-color: $grey-lighter;
+  }
+
+  &::-webkit-progress-value {
+    background-color: $grey-dark;
+  }
+
+  &::-moz-progress-bar {
+    background-color: $grey-dark;
+  }
+
+  &::-ms-fill {
+    background-color: $grey-dark;
+    border: none;
+  }
+
+  &:indeterminate {
+    background-color: $grey-lighter;
+    background-image: linear-gradient(to right, $grey-dark 30%, $grey-lighter 30%);
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 150% 150%;
+    animation: abu-progress 1.5s infinite linear;
+
+    &::-webkit-progress-bar {
+      background-color: transparent;
+    }
+
+    &::-moz-progress-bar {
+      background-color: transparent;
+    }
+  }
+}
+
+@keyframes abu-progress {
+  from {
+    background-position: 200% 0;
+  }
+
+  to {
+    background-position: (-200%) 0;
+  }
+}
+
+:host([theme~="small"]) {
+  progress {
+    height: $size-small;
+  }
+}
+
+:host([theme~="medium"]) {
+  progress {
+    height: $size-medium;
+  }
+}
+
+:host([theme~="large"]) {
+  progress {
+    height: $size-large;
+  }
+}
+
+@each $name, $pair in $colors {
+  $color: nth($pair, 1);
+
+  :host([theme~="#{$name}"]) {
+    progress {
+      &::-webkit-progress-value {
+        background-color: $color;
+      }
+
+      &::-moz-progress-bar {
+        background-color: $color;
+      }
+
+      &::-ms-fill {
+        background-color: $color;
+      }
+
+      &:indeterminate {
+        background-image: linear-gradient(to right, $color 30%, $grey-lighter 30%);
+      }
+    }
+  }
+}
