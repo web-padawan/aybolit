@@ -1,16 +1,8 @@
 @import "../../common/variables";
 
 progress {
-  display: block;
-  width: 100%;
   height: $size-normal;
-  padding: 0;
-  overflow: hidden;
-  border: none;
   border-radius: $radius-rounded;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
 
   &::-webkit-progress-bar {
     background-color: $grey-lighter;
@@ -26,7 +18,6 @@ progress {
 
   &::-ms-fill {
     background-color: $grey-dark;
-    border: none;
   }
 
   &:indeterminate {
