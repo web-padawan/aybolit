@@ -5,3 +5,23 @@
 :host([hidden]) {
   display: none !important; /* stylelint-disable-line declaration-no-important */
 }
+
+progress {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  &::-ms-fill {
+    border: none;
+  }
+
+  &:indeterminate {
+    &::-ms-fill {
+      animation-name: none;
+    }
+  }
+}
