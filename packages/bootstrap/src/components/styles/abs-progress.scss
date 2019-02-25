@@ -1,0 +1,97 @@
+@import "../../common/variables";
+
+progress {
+  display: block;
+  width: 100%;
+  height: 1rem;
+  overflow: hidden;
+  color: #007bff;
+  background-color: #e9ecef;
+  border-radius: 0.25rem;
+
+  &::-webkit-progress-bar {
+    background-color: transparent;
+  }
+
+  &::-webkit-progress-value {
+    background-color: currentColor;
+    transition: width 0.6s ease;
+  }
+
+  &::-moz-progress-bar {
+    background-color: currentColor;
+    transition: width 0.6s ease;
+  }
+
+  &::-ms-fill {
+    background-color: currentColor;
+    border: none;
+    transition: width 0.6s ease;
+  }
+}
+
+:host([theme~="striped"]) {
+  progress {
+    &::-webkit-progress-value {
+      background-image: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.15) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.15) 75%,
+        transparent 75%,
+        transparent
+      );
+      background-size: 1rem 1rem;
+    }
+
+    &::-moz-progress-bar {
+      background-image: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.15) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.15) 75%,
+        transparent 75%,
+        transparent
+      );
+      background-size: 1rem 1rem;
+    }
+
+    &::-ms-fill {
+      background-image: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.15) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.15) 75%,
+        transparent 75%,
+        transparent
+      );
+      background-size: 1rem 1rem;
+    }
+  }
+}
+
+:host([theme~="large"]) {
+  progress {
+    height: 1.25rem;
+  }
+}
+
+:host([theme~="small"]) {
+  progress {
+    height: 0.875rem;
+  }
+}
+
+@each $name, $color in $colors {
+  :host([theme~="#{$name}"]) {
+    progress {
+      color: $color;
+    }
+  }
+}
