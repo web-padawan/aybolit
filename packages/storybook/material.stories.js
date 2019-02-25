@@ -1,6 +1,6 @@
 import '@aybolit/material';
 import { storiesOf } from '@storybook/polymer';
-import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
+import { withKnobs, boolean, number, select, text } from '@storybook/addon-knobs';
 import { html } from 'lit-html';
 
 const BUTTON_TYPES = {
@@ -27,6 +27,13 @@ storiesOf('Material', module)
     const label = text('Label', 'Checkbox');
     return html`
       <abm-checkbox .disabled="${disabled}">${label}</abm-checkbox>
+    `;
+  })
+  .add('<abm-progress>', () => {
+    const value = number('Value', 10);
+    const max = number('Max', 100);
+    return html`
+      <abm-progress .value="${value}" .max="${max}"></abm-progress>
     `;
   })
   .add('<abm-range>', () => {

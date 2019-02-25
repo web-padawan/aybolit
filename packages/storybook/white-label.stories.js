@@ -1,6 +1,6 @@
 import '@aybolit/white-label';
 import { storiesOf } from '@storybook/polymer';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
+import { withKnobs, boolean, number, text } from '@storybook/addon-knobs';
 import { html } from 'lit-html';
 
 storiesOf('White label', module)
@@ -20,6 +20,13 @@ storiesOf('White label', module)
     const label = text('Label', 'Checkbox');
     return html`
       <abw-checkbox .disabled="${disabled}">${label}</abw-checkbox>
+    `;
+  })
+  .add('<abw-progress>', () => {
+    const value = number('Value', 10);
+    const max = number('Max', 100);
+    return html`
+      <abw-progress .value="${value}" .max="${max}"></abw-progress>
     `;
   })
   .add('<abw-range>', () => {

@@ -1,6 +1,6 @@
 import '@aybolit/bulma';
 import { storiesOf } from '@storybook/polymer';
-import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
+import { withKnobs, boolean, number, select, text } from '@storybook/addon-knobs';
 import { html } from 'lit-html';
 
 const COLORS = {
@@ -49,6 +49,15 @@ storiesOf('Bulma', module)
       <abu-checkbox theme="${size} ${color} ${filled ? 'filled' : ''}" .disabled="${disabled}">
         ${label}
       </abu-checkbox>
+    `;
+  })
+  .add('<abu-progress>', () => {
+    const value = number('Value', 10);
+    const max = number('Max', 100);
+    const size = select('Size', SIZES, SIZES.normal);
+    const color = select('Color', COLORS, COLORS.none);
+    return html`
+      <abu-progress .value="${value}" .max="${max}" theme="${size} ${color}"></abu-progress>
     `;
   })
   .add('<abu-range>', () => {

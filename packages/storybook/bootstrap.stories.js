@@ -1,6 +1,6 @@
 import '@aybolit/bootstrap';
 import { storiesOf } from '@storybook/polymer';
-import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
+import { withKnobs, boolean, number, select, text } from '@storybook/addon-knobs';
 import { html } from 'lit-html';
 
 const COLORS = {
@@ -44,6 +44,20 @@ storiesOf('Bootstrap', module)
     const label = text('Label', 'Checkbox');
     return html`
       <abs-checkbox .disabled="${disabled}">${label}</abs-checkbox>
+    `;
+  })
+  .add('<abs-progress>', () => {
+    const value = number('Value', 10);
+    const max = number('Max', 100);
+    const size = select('Size', SIZES, SIZES.normal);
+    const color = select('Color', COLORS, COLORS.primary);
+    const striped = boolean('Striped', false);
+    return html`
+      <abs-progress
+        .value="${value}"
+        .max="${max}"
+        theme="${color} ${size} ${striped ? 'striped' : ''}"
+      ></abs-progress>
     `;
   })
   .add('<abs-range>', () => {
