@@ -38,7 +38,7 @@ $checkbox-block-background: $white-ter;
   &:focus {
     + .label {
       &::before {
-        box-shadow: 0 0 0 0.125rem $primary-invert;
+        box-shadow: 0 0 0 0.125rem rgba($primary, 0.25);
       }
     }
   }
@@ -136,16 +136,13 @@ $checkbox-block-background: $white-ter;
   @include checkbox-size($size-large);
 }
 
-@each $name, $pair in $colors {
-  $color: nth($pair, 1);
-  $color-invert: nth($pair, 2);
-
+@each $name, $color in $colors {
   :host([theme~="#{$name}"]) {
     .input {
       &:focus {
         + .label {
           &::before {
-            box-shadow: 0 0 0 0.125rem $color-invert;
+            box-shadow: 0 0 0 0.125rem rgba($color, 0.25);
           }
         }
       }

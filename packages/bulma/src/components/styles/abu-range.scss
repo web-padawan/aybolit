@@ -13,7 +13,7 @@ $slider-thumb-to-track-ratio: 2;
   $track-height: $size / $slider-thumb-to-track-ratio;
   $thumb-size: $size;
 
-  min-height: calc(( #{$size} + 2px ) * 1.25);
+  min-height: calc((#{$size} + 2px) * 1.25);
 
   &::-webkit-slider-runnable-track {
     height: $track-height;
@@ -51,20 +51,19 @@ $slider-thumb-to-track-ratio: 2;
 }
 
 .range {
-
   &:focus {
     outline: none;
 
     &:not(:active) {
       // Pseudo-elements must be split across multiple rulesets to have an effect.
       &::-webkit-slider-thumb {
-        box-shadow: 0 0 0 0.125rem $link-invert;
+        box-shadow: 0 0 0 0.125rem rgba($link, 0.25);
       }
       &::-moz-range-thumb {
-        box-shadow: 0 0 0 0.125rem $link-invert;
+        box-shadow: 0 0 0 0.125rem rgba($link, 0.25);
       }
       &::-ms-thumb {
-        box-shadow: 0 0 0 0.125rem $link-invert;
+        box-shadow: 0 0 0 0.125rem rgba($link, 0.25);
       }
     }
   }
@@ -176,10 +175,7 @@ $slider-thumb-to-track-ratio: 2;
   }
 }
 
-@each $name, $pair in $colors {
-  $color: nth($pair, 1);
-  $color-invert: nth($pair, 2);
-
+@each $name, $color in $colors {
   :host([theme~="#{$name}"]) {
     .range {
       &::-moz-range-track {
@@ -202,13 +198,13 @@ $slider-thumb-to-track-ratio: 2;
       &:focus {
         &:not(:active) {
           &::-webkit-slider-thumb {
-            box-shadow: 0 0 0 0.125rem $color-invert;
+            box-shadow: 0 0 0 0.125rem rgba($color, 0.25);
           }
           &::-moz-range-thumb {
-            box-shadow: 0 0 0 0.125rem $color-invert;
+            box-shadow: 0 0 0 0.125rem rgba($color, 0.25);
           }
           &::-ms-thumb {
-            box-shadow: 0 0 0 0.125rem $color-invert;
+            box-shadow: 0 0 0 0.125rem rgba($color, 0.25);
           }
         }
       }

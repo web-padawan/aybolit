@@ -54,7 +54,7 @@ $switch-paddle-transition: all 0.25s ease-out;
   &:focus {
     + .label {
       &::before {
-        box-shadow: 0 0 0 0.125rem $link-invert;
+        box-shadow: 0 0 0 0.125rem rgba($link, 0.25);
       }
     }
   }
@@ -85,7 +85,7 @@ $switch-paddle-transition: all 0.25s ease-out;
     &:focus {
       + .label {
         &::before {
-          box-shadow: 0 0 0 0.125rem $primary-invert;
+          box-shadow: 0 0 0 0.125rem rgba($primary, 0.25);
         }
       }
     }
@@ -93,7 +93,8 @@ $switch-paddle-transition: all 0.25s ease-out;
 }
 
 .label {
-  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
   cursor: pointer;
 
   &::before {
@@ -170,10 +171,7 @@ $switch-paddle-transition: all 0.25s ease-out;
   }
 }
 
-@each $name, $pair in $colors {
-  $color: nth($pair, 1);
-  $color-invert: nth($pair, 2);
-
+@each $name, $color in $colors {
   :host([theme~="#{$name}"]) {
     .input {
       &:checked {
@@ -186,7 +184,7 @@ $switch-paddle-transition: all 0.25s ease-out;
         &:focus {
           + .label {
             &::before {
-              box-shadow: 0 0 0 0.125rem $color-invert;
+              box-shadow: 0 0 0 0.125rem rgba($color, 0.25);
             }
           }
         }
