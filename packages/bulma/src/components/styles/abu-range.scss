@@ -141,7 +141,7 @@ $slider-thumb-to-track-ratio: 2;
   @include slider-size($size-normal);
 }
 
-:host([theme~="circle"]) {
+:host([rounded]) {
   .range {
     &::-webkit-slider-thumb {
       border-radius: 50%;
@@ -157,26 +157,26 @@ $slider-thumb-to-track-ratio: 2;
   }
 }
 
-:host([theme~="small"]) {
+:host([size="small"]) {
   .range {
     @include slider-size($size-small);
   }
 }
 
-:host([theme~="medium"]) {
+:host([size="medium"]) {
   .range {
     @include slider-size($size-medium);
   }
 }
 
-:host([theme~="large"]) {
+:host([size="large"]) {
   .range {
     @include slider-size($size-large);
   }
 }
 
 @each $name, $color in $colors {
-  :host([theme~="#{$name}"]) {
+  :host([theme="#{$name}"]) {
     .range {
       &::-moz-range-track {
         background: $color;

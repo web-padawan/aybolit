@@ -65,32 +65,26 @@
   }
 }
 
-:host([theme~="small"]) {
+:host([size="small"]) {
   .button {
     font-size: $size-small;
     border-radius: $radius-small;
   }
 }
 
-:host([theme~="normal"]) {
-  .button {
-    font-size: $size-normal;
-  }
-}
-
-:host([theme~="medium"]) {
+:host([size="medium"]) {
   .button {
     font-size: $size-medium;
   }
 }
 
-:host([theme~="large"]) {
+:host([size="large"]) {
   .button {
     font-size: $size-large;
   }
 }
 
-:host([theme~="rounded"]) {
+:host([rounded]) {
   .button {
     padding-right: 1em;
     padding-left: 1em;
@@ -102,7 +96,7 @@
   $color: nth($pair, 1);
   $contrast: color-yiq($color);
 
-  :host([theme~="#{$name}"]) {
+  :host([theme="#{$name}"]) {
     .button {
       color: $contrast;
       background-color: $color;
@@ -129,7 +123,7 @@
     }
   }
 
-  :host([theme~="#{$name}"][theme~="outlined"]) {
+  :host([theme="#{$name}"][outlined]) {
     .button {
       color: $color;
       background-color: transparent;

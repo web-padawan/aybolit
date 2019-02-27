@@ -121,19 +121,19 @@ $switch-paddle-transition: all 0.25s ease-out;
   @include switch-size($size-normal);
 }
 
-:host([theme~="small"]) {
+:host([size="small"]) {
   @include switch-size($size-small);
 }
 
-:host([theme~="medium"]) {
+:host([size="medium"]) {
   @include switch-size($size-medium);
 }
 
-:host([theme~="large"]) {
+:host([size="large"]) {
   @include switch-size($size-large);
 }
 
-:host([theme~="rounded"]) {
+:host([rounded]) {
   .label {
     &::before {
       border-radius: $radius-large * 4;
@@ -145,7 +145,7 @@ $switch-paddle-transition: all 0.25s ease-out;
   }
 }
 
-:host([theme~="outlined"]) {
+:host([outlined]) {
   .label {
     &::before {
       background-color: transparent;
@@ -172,7 +172,7 @@ $switch-paddle-transition: all 0.25s ease-out;
 }
 
 @each $name, $color in $colors {
-  :host([theme~="#{$name}"]) {
+  :host([theme="#{$name}"]) {
     .input {
       &:checked {
         + .label {
@@ -192,7 +192,7 @@ $switch-paddle-transition: all 0.25s ease-out;
     }
   }
 
-  :host([theme~="#{$name}"][theme~="outlined"]) {
+  :host([theme="#{$name}"][outlined]) {
     .input:checked {
       + .label {
         &::before {

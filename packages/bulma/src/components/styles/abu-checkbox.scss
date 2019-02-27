@@ -124,20 +124,20 @@ $checkbox-block-background: $white-ter;
   @include checkbox-size($size-normal);
 }
 
-:host([theme~="small"]) {
+:host([size="small"]) {
   @include checkbox-size($size-small);
 }
 
-:host([theme~="medium"]) {
+:host([size="medium"]) {
   @include checkbox-size($size-medium);
 }
 
-:host([theme~="large"]) {
+:host([size="large"]) {
   @include checkbox-size($size-large);
 }
 
 @each $name, $color in $colors {
-  :host([theme~="#{$name}"]) {
+  :host([theme="#{$name}"]) {
     .input {
       &:focus {
         + .label {
@@ -166,7 +166,7 @@ $checkbox-block-background: $white-ter;
     }
   }
 
-  :host([theme~="#{$name}"][theme~="filled"]) {
+  :host([theme="#{$name}"][filled]) {
     .label {
       &::before {
         background-color: $color;
@@ -191,7 +191,7 @@ $checkbox-block-background: $white-ter;
   }
 }
 
-:host([theme~="filled"]) {
+:host([filled]) {
   .label {
     &::before {
       background-color: $primary;

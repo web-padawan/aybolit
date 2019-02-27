@@ -48,19 +48,19 @@ progress {
   }
 }
 
-:host([theme~="small"]) {
+:host([size="small"]) {
   progress {
     height: $size-small;
   }
 }
 
-:host([theme~="medium"]) {
+:host([size="medium"]) {
   progress {
     height: $size-medium;
   }
 }
 
-:host([theme~="large"]) {
+:host([size="large"]) {
   progress {
     height: $size-large;
   }
@@ -69,7 +69,7 @@ progress {
 @each $name, $pair in $colors {
   $color: nth($pair, 1);
 
-  :host([theme~="#{$name}"]) {
+  :host([theme="#{$name}"]) {
     progress {
       &::-webkit-progress-value {
         background-color: $color;
