@@ -62,9 +62,8 @@ $switch-thumb-offset: 0.25rem;
   }
 
   &:disabled {
-    cursor: default;
-
     + .label {
+      cursor: default;
       opacity: 0.5;
 
       &::before {
