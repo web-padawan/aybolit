@@ -1,28 +1,35 @@
 @import "../../common/variables";
 
+$progress-bar-color: var(--abu-progress-bar-color, #{$grey-lighter});
+$progress-value-color: var(--abu-progress-value-color, #{$grey-dark});
+
 progress {
   height: $size-normal;
   border-radius: $radius-rounded;
 
   &::-webkit-progress-bar {
-    background-color: $grey-lighter;
+    background-color: $progress-bar-color;
   }
 
   &::-webkit-progress-value {
-    background-color: $grey-dark;
+    background-color: var(--abu-color, #{$progress-value-color});
   }
 
   &::-moz-progress-bar {
-    background-color: $grey-dark;
+    background-color: var(--abu-color, #{$progress-value-color});
   }
 
   &::-ms-fill {
-    background-color: $grey-dark;
+    background-color: var(--abu-color, #{$progress-value-color});
   }
 
   &:indeterminate {
-    background-color: $grey-lighter;
-    background-image: linear-gradient(to right, $grey-dark 30%, $grey-lighter 30%);
+    background-color: $progress-bar-color;
+    background-image: linear-gradient(
+      to right,
+      var(--abu-color, #{$progress-value-color}) 30%,
+      $progress-bar-color 30%
+    );
     background-repeat: no-repeat;
     background-position: top left;
     background-size: 150% 150%;
@@ -63,29 +70,5 @@ progress {
 :host([size="large"]) {
   progress {
     height: $size-large;
-  }
-}
-
-@each $name, $pair in $colors {
-  $color: nth($pair, 1);
-
-  :host([theme="#{$name}"]) {
-    progress {
-      &::-webkit-progress-value {
-        background-color: $color;
-      }
-
-      &::-moz-progress-bar {
-        background-color: $color;
-      }
-
-      &::-ms-fill {
-        background-color: $color;
-      }
-
-      &:indeterminate {
-        background-image: linear-gradient(to right, $color 30%, $grey-lighter 30%);
-      }
-    }
   }
 }

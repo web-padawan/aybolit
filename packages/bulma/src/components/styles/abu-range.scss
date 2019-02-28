@@ -1,10 +1,9 @@
 @import "../../common/variables";
 
 $slider-radius: $radius;
-$slider-track-bg: var(--abu-range-track-bg, $grey-lighter);
+$slider-track-bg: var(--abu-range-track-bg, #{$grey-lighter});
 $slider-track-radius: $radius;
-
-$slider-thumb-background: var(--abu-range-thumb-bg, $white);
+$slider-thumb-bg: var(--abu-range-thumb-bg, #{$white});
 $slider-thumb-radius: $radius;
 $slider-thumb-border: 1px solid $grey-light;
 $slider-thumb-to-track-ratio: 2;
@@ -48,6 +47,12 @@ $slider-thumb-to-track-ratio: 2;
 :host {
   margin: 1rem 0;
   outline: none;
+
+  /* Safari requires this */
+  --abu-range-focus-shadow: hsla(
+    var(--abu-hsl, #{$link-h}, calc(#{$link-s} * 1%), calc(#{$link-l} * 1%)),
+    0.25
+  );
 }
 
 .range {
@@ -57,47 +62,47 @@ $slider-thumb-to-track-ratio: 2;
     &:not(:active) {
       // Pseudo-elements must be split across multiple rulesets to have an effect.
       &::-webkit-slider-thumb {
-        box-shadow: 0 0 0 0.125rem rgba($link, 0.25);
+        box-shadow: 0 0 0 0.125rem var(--abu-range-focus-shadow);
       }
       &::-moz-range-thumb {
-        box-shadow: 0 0 0 0.125rem rgba($link, 0.25);
+        box-shadow: 0 0 0 0.125rem var(--abu-range-focus-shadow);
       }
       &::-ms-thumb {
-        box-shadow: 0 0 0 0.125rem rgba($link, 0.25);
+        box-shadow: 0 0 0 0.125rem var(--abu-range-focus-shadow);
       }
     }
   }
 
   &::-webkit-slider-runnable-track {
     cursor: pointer;
-    background-color: $slider-track-bg;
+    background-color: var(--abu-color, #{$slider-track-bg});
     border: 0;
     border-radius: $slider-radius;
   }
 
   &::-moz-range-track {
     cursor: pointer;
-    background-color: $slider-track-bg;
+    background-color: var(--abu-color, #{$slider-track-bg});
     border: 0;
     border-radius: $slider-radius;
   }
 
   &::-ms-track {
     cursor: pointer;
-    background-color: $slider-track-bg;
+    background-color: var(--abu-color, #{$slider-track-bg});
     border: 0;
     border-radius: $slider-radius;
   }
 
   &::-ms-fill-lower,
   &::-ms-fill-upper {
-    background-color: $slider-track-bg;
+    background-color: var(--abu-color, #{$slider-track-bg});
     border-radius: $slider-radius;
   }
 
   &::-webkit-slider-thumb {
     cursor: pointer;
-    background-color: $slider-thumb-background;
+    background-color: $slider-thumb-bg;
     border: $slider-thumb-border;
     border-radius: $slider-thumb-radius;
     transition: transform 0.2s ease;
@@ -105,7 +110,7 @@ $slider-thumb-to-track-ratio: 2;
 
   &::-moz-range-thumb {
     cursor: pointer;
-    background-color: $slider-thumb-background;
+    background-color: $slider-thumb-bg;
     border: $slider-thumb-border;
     border-radius: $slider-thumb-radius;
     transition: transform 0.2s ease;
@@ -113,7 +118,7 @@ $slider-thumb-to-track-ratio: 2;
 
   &::-ms-thumb {
     cursor: pointer;
-    background-color: $slider-thumb-background;
+    background-color: $slider-thumb-bg;
     border: $slider-thumb-border;
     border-radius: $slider-thumb-radius;
     transition: transform 0.2s ease;
@@ -172,42 +177,5 @@ $slider-thumb-to-track-ratio: 2;
 :host([size="large"]) {
   .range {
     @include slider-size($size-large);
-  }
-}
-
-@each $name, $color in $colors {
-  :host([theme="#{$name}"]) {
-    .range {
-      &::-moz-range-track {
-        background: $color;
-      }
-
-      &::-webkit-slider-runnable-track {
-        background: $color;
-      }
-
-      &::-ms-track {
-        background: $color;
-      }
-
-      &::-ms-fill-lower,
-      &::-ms-fill-upper {
-        background: $color;
-      }
-
-      &:focus {
-        &:not(:active) {
-          &::-webkit-slider-thumb {
-            box-shadow: 0 0 0 0.125rem rgba($color, 0.25);
-          }
-          &::-moz-range-thumb {
-            box-shadow: 0 0 0 0.125rem rgba($color, 0.25);
-          }
-          &::-ms-thumb {
-            box-shadow: 0 0 0 0.125rem rgba($color, 0.25);
-          }
-        }
-      }
-    }
   }
 }

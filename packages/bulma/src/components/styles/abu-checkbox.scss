@@ -1,9 +1,6 @@
 @import "../../common/variables";
-@import "../../common/functions";
 
-$checkbox-radius: $radius;
-$checkbox-border: 0.1rem solid $grey-lighter;
-$checkbox-block-background: $white-ter;
+$checkbox-border: var(--abu-checkbox-border-color, #{$grey-lighter});
 
 @mixin checkbox-size($size) {
   $newSize: $size * 1.5;
@@ -37,8 +34,14 @@ $checkbox-block-background: $white-ter;
 
   &:focus {
     + .label {
+      /* Safari requires this */
+      --abu-focus-shadow: hsla(
+        var(--abu-hsl, #{$primary-h}, calc(#{$primary-s} * 1%), calc(#{$primary-l} * 1%)),
+        0.25
+      );
+
       &::before {
-        box-shadow: 0 0 0 0.125rem rgba($primary, 0.25);
+        box-shadow: 0 0 0 0.125rem var(--abu-focus-shadow);
       }
     }
   }
@@ -46,7 +49,7 @@ $checkbox-block-background: $white-ter;
   &:hover:not(:disabled) {
     + .label {
       &::before {
-        border-color: $primary;
+        border-color: var(--abu-color, $primary);
       }
     }
   }
@@ -63,7 +66,7 @@ $checkbox-block-background: $white-ter;
   &:checked {
     + .label {
       &::before {
-        border: $checkbox-border;
+        border: 0.125rem solid $checkbox-border;
       }
     }
   }
@@ -92,7 +95,7 @@ $checkbox-block-background: $white-ter;
     Arial, sans-serif;
   line-height: 1.5;
   cursor: pointer;
-  border-radius: $checkbox-radius;
+  border-radius: $radius;
 
   &::before {
     position: absolute;
@@ -100,8 +103,8 @@ $checkbox-block-background: $white-ter;
     left: 0;
     box-sizing: border-box;
     content: "";
-    border: $checkbox-border;
-    border-radius: $checkbox-radius;
+    border: 0.125rem solid $checkbox-border;
+    border-radius: $radius;
   }
 
   &::after {
@@ -110,9 +113,9 @@ $checkbox-block-background: $white-ter;
     box-sizing: border-box;
     display: none;
     content: "";
-    border-color: $primary;
+    border-color: var(--abu-color, #{$primary});
     border-style: solid;
-    border-width: 0.1rem;
+    border-width: 0.125rem;
     border-top: 0;
     border-left: 0;
     transform: rotate(45deg);
@@ -136,71 +139,26 @@ $checkbox-block-background: $white-ter;
   @include checkbox-size($size-large);
 }
 
-@each $name, $color in $colors {
-  :host([theme="#{$name}"]) {
-    .input {
-      &:focus {
-        + .label {
-          &::before {
-            box-shadow: 0 0 0 0.125rem rgba($color, 0.25);
-          }
-        }
-      }
-
-      &:hover:not(:disabled) {
-        + .label {
-          &::before {
-            border-color: $color;
-          }
-        }
-      }
-
-      &:checked,
-      &:indeterminate {
-        + .label {
-          &::after {
-            border-color: $color;
-          }
-        }
-      }
-    }
-  }
-
-  :host([theme="#{$name}"][filled]) {
-    .label {
-      &::before {
-        background-color: $color;
-      }
-
-      &::after {
-        background-color: $color;
-        border-color: color-yiq($color);
-      }
-    }
-
-    .input {
-      &:checked,
-      &:indeterminate {
-        + .label {
-          &::after {
-            border-color: color-yiq($color);
-          }
-        }
-      }
-    }
-  }
-}
-
 :host([filled]) {
+  /* Use contrast for checkmark */
+  --abu-primary-contrast: hsl(
+    #{$primary-h},
+    calc(#{$primary-s} * 1%),
+    calc(
+      (-2500 * (var(--contrast-ratio) * 1% / 100 + 1%)) / (#{$primary-l} - 49.999) + #{$primary-l} *
+        1%
+    )
+  );
+
   .label {
     &::before {
-      background-color: $primary;
+      background-color: var(--abu-color, #{$primary});
       border-color: transparent;
     }
 
     &::after {
-      background-color: $primary;
-      border-color: #fff;
+      background-color: var(--abu-color, #{$primary});
+      border-color: var(--abu-contrast, var(--abu-primary-contrast));
     }
   }
 
@@ -213,7 +171,7 @@ $checkbox-block-background: $white-ter;
         }
 
         &::after {
-          border-color: #fff;
+          border-color: var(--abu-contrast, var(--abu-primary-contrast));
         }
       }
     }
