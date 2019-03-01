@@ -24,6 +24,7 @@
     color: $white;
     background-color: $primary;
     border-color: $primary;
+    box-shadow: none;
   }
 
   &:focus {
@@ -40,6 +41,7 @@
     color: $white;
     background-color: lighten($primary, 35%);
     border-color: lighten($primary, 35%);
+    box-shadow: none;
   }
 
   &:disabled ~ .label {
@@ -92,6 +94,8 @@
     background-color: $white;
     border: solid 1px $gray-500;
     border-radius: 0.25rem;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+      box-shadow 0.15s ease-in-out;
   }
 
   &::after {

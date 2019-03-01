@@ -24,6 +24,7 @@
         color: $white;
         background-color: $primary;
         border-color: $primary;
+        box-shadow: none;
       }
 
       &::after {
@@ -54,6 +55,7 @@
           color: $white;
           background-color: lighten($primary, 35%);
           border-color: lighten($primary, 35%);
+          box-shadow: none;
         }
       }
     }
