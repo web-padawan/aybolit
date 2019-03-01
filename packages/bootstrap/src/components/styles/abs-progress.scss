@@ -26,7 +26,7 @@ progress {
   }
 }
 
-:host([theme~="striped"]) {
+:host([striped]) {
   progress {
     &::-webkit-progress-value {
       background-image: linear-gradient(
@@ -72,20 +72,20 @@ progress {
   }
 }
 
-:host([theme~="large"]) {
+:host([size="large"]) {
   progress {
     height: 1.25rem;
   }
 }
 
-:host([theme~="small"]) {
+:host([size="small"]) {
   progress {
     height: 0.875rem;
   }
 }
 
 @each $name, $color in $colors {
-  :host([theme~="#{$name}"]) {
+  :host([theme="#{$name}"]) {
     progress {
       color: $color;
     }

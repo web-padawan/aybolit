@@ -59,7 +59,7 @@
   $active-background: darken($color, 10%);
   $active-border: darken($color, 12.5%);
 
-  :host([theme~="#{$name}"]) {
+  :host([theme="#{$name}"]) {
     --abs-button-bg: #{$color};
     --abs-button-color: #{color-yiq($color)};
     --abs-button-border: #{$color};
@@ -72,7 +72,7 @@
     --abs-button-active-border: #{$active-border};
   }
 
-  :host([theme~="#{$name}"][theme~="outline"]) {
+  :host([theme="#{$name}"][outline]) {
     --abs-button-color: #{$color};
     --abs-button-focus-ring: #{rgba($color, 0.5)};
     --abs-button-hover-bg: #{$color};
@@ -84,11 +84,11 @@
   }
 }
 
-:host([theme~="outline"]) {
+:host([outline]) {
   --abs-button-bg: transparent;
 }
 
-:host([theme~="large"]) {
+:host([size="large"]) {
   .button {
     padding: 0.5rem 1rem;
     font-size: 1.25rem;
@@ -97,7 +97,7 @@
   }
 }
 
-:host([theme~="small"]) {
+:host([size="small"]) {
   .button {
     padding: 0.25rem 0.5rem;
     font-size: 0.875rem;

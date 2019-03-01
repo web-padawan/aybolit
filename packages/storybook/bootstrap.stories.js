@@ -25,15 +25,17 @@ storiesOf('Bootstrap', module)
   .add('<abs-button>', () => {
     const disabled = boolean('Disabled', false);
     const size = select('Size', SIZES, SIZES.normal);
-    const color = select('Color', COLORS, COLORS.primary);
+    const theme = select('Theme', COLORS, COLORS.primary);
     const outline = boolean('Outline', false);
     const label = text('Label', 'Button');
     const link = text('Link', '');
     return html`
       <abs-button
-        theme="${color} ${size} ${outline ? 'outline' : ''}"
         .disabled="${disabled}"
         .link="${link}"
+        theme="${theme}"
+        size="${size}"
+        ?outline="${outline}"
       >
         ${label}
       </abs-button>
@@ -50,13 +52,15 @@ storiesOf('Bootstrap', module)
     const value = number('Value', 10);
     const max = number('Max', 100);
     const size = select('Size', SIZES, SIZES.normal);
-    const color = select('Color', COLORS, COLORS.primary);
+    const theme = select('Theme', COLORS, COLORS.primary);
     const striped = boolean('Striped', false);
     return html`
       <abs-progress
         .value="${value}"
         .max="${max}"
-        theme="${color} ${size} ${striped ? 'striped' : ''}"
+        theme="${theme}"
+        size="${size}"
+        ?striped="${striped}"
       ></abs-progress>
     `;
   })
