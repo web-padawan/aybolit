@@ -1,3 +1,5 @@
+@import "../../common/variables";
+
 :host {
   outline: none;
 }
@@ -8,7 +10,8 @@
   display: inline-block;
   min-height: 1.5rem;
   padding-left: 1.5rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
   line-height: 1.5;
 }
 
@@ -18,32 +21,32 @@
   opacity: 0;
 
   &:checked ~ .label::before {
-    color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
+    color: $white;
+    background-color: $primary;
+    border-color: $primary;
   }
 
   &:focus {
     ~ .label::before {
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      box-shadow: 0 0 0 0.2rem rgba($primary, 0.25);
     }
 
     &:not(:checked) ~ .label::before {
-      border-color: #80bdff;
+      border-color: lighten($primary, 25%);
     }
   }
 
   &:not(:disabled):active ~ .label::before {
-    color: #fff;
-    background-color: #b3d7ff;
-    border-color: #b3d7ff;
+    color: $white;
+    background-color: lighten($primary, 35%);
+    border-color: lighten($primary, 35%);
   }
 
   &:disabled ~ .label {
-    color: #6c757d;
+    color: $gray-600;
 
     &::before {
-      background-color: #e9ecef;
+      background-color: $gray-200;
     }
   }
 
@@ -53,8 +56,8 @@
 
   &:indeterminate ~ .label {
     &::before {
-      background-color: #007bff;
-      border-color: #007bff;
+      background-color: $primary;
+      border-color: $primary;
     }
 
     &::after {
@@ -65,7 +68,7 @@
   &:disabled {
     &:checked ~ .label::before,
     &:indeterminate ~ .label::before {
-      background-color: rgba(0, 123, 255, 0.5);
+      background-color: rgba($primary, 0.5);
     }
   }
 }
@@ -86,8 +89,8 @@
     height: 1rem;
     pointer-events: none;
     content: "";
-    background-color: #fff;
-    border: #adb5bd solid 1px;
+    background-color: $white;
+    border: solid 1px $gray-500;
     border-radius: 0.25rem;
   }
 

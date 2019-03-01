@@ -13,7 +13,7 @@
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: var(--abs-button-color, #212529);
+  color: var(--abs-button-color, $gray-900);
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
@@ -30,7 +30,7 @@
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
   &:hover {
-    color: var(--abs-button-hover-color, #212529);
+    color: var(--abs-button-hover-color, $gray-900);
     text-decoration: none;
     background-color: var(--abs-button-hover-bg, transparent);
     border-color: var(--abs-button-hover-border, transparent);
@@ -38,7 +38,7 @@
 
   &:focus {
     outline: 0;
-    box-shadow: 0 0 0 0.2rem var(--abs-button-focus-ring, rgba(0, 123, 255, 0.25));
+    box-shadow: 0 0 0 0.2rem var(--abs-button-focus-ring, rgba($primary, 0.25));
   }
 
   &[disabled] {
@@ -47,7 +47,7 @@
   }
 
   &:not([disabled]):active {
-    color: var(--abs-button-active-color, #212529);
+    color: var(--abs-button-active-color, $gray-900);
     background-color: var(--abs-button-active-bg, transparent);
     border-color: var(--abs-button-active-border, transparent);
   }

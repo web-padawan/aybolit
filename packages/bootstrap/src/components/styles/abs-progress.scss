@@ -2,8 +2,8 @@
 
 progress {
   height: 1rem;
-  color: #007bff;
-  background-color: #e9ecef;
+  color: $primary;
+  background-color: $gray-200;
   border-radius: 0.25rem;
 
   &::-webkit-progress-bar {
