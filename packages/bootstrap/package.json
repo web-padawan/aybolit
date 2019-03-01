@@ -7,6 +7,11 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/web-padawan/aybolit.git",
+    "directory": "packages/bootstrap"
+  },
   "dependencies": {
     "@aybolit/core": "^0.0.0",
     "lit-element": "^2.0.1"
