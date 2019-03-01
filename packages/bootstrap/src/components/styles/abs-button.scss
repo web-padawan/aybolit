@@ -1,5 +1,8 @@
 @import "../../common/variables";
-@import "../../common/functions";
+
+$button-color: var(--abs-button-color, #{$gray-900});
+$button-background: var(--abs-button-bg-color, #{$white});
+$button-border-color: var(--abs-button-border-color, transparent);
 
 :host {
   outline: none;
@@ -13,7 +16,7 @@
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: var(--abs-button-color, $gray-900);
+  color: var(--abs-contrast, #{$button-color});
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
@@ -21,24 +24,28 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: var(--abs-button-bg, transparent);
-  border-color: var(--abs-button-border, transparent);
+  background-color: var(--abs-color, #{$button-background});
+  border-color: var(--abs-color, #{$button-border-color});
   border-style: solid;
   border-width: 1px;
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
+  /* Safari requires this */
+  --abs-focus-shadow: hsla(
+    var(--abs-hsl, #{$primary-h}, calc(#{$primary-s} * 1%), calc(#{$primary-l} * 1%)),
+    0.25
+  );
+
   &:hover {
-    color: var(--abs-button-hover-color, $gray-900);
+    color: $button-color;
     text-decoration: none;
-    background-color: var(--abs-button-hover-bg, transparent);
-    border-color: var(--abs-button-hover-border, transparent);
   }
 
   &:focus {
     outline: 0;
-    box-shadow: 0 0 0 0.2rem var(--abs-button-focus-ring, rgba($primary, 0.25));
+    box-shadow: 0 0 0 0.2rem var(--abs-focus-shadow);
   }
 
   &[disabled] {
@@ -47,45 +54,8 @@
   }
 
   &:not([disabled]):active {
-    color: var(--abs-button-active-color, $gray-900);
-    background-color: var(--abs-button-active-bg, transparent);
-    border-color: var(--abs-button-active-border, transparent);
+    color: $button-color;
   }
-}
-
-@each $name, $color in $colors {
-  $hover-background: darken($color, 7.5%);
-  $hover-border: darken($color, 10%);
-  $active-background: darken($color, 10%);
-  $active-border: darken($color, 12.5%);
-
-  :host([theme="#{$name}"]) {
-    --abs-button-bg: #{$color};
-    --abs-button-color: #{color-yiq($color)};
-    --abs-button-border: #{$color};
-    --abs-button-focus-ring: #{rgba(mix(color-yiq($color), $color, 15%), 0.5)};
-    --abs-button-hover-bg: #{$hover-background};
-    --abs-button-hover-color: #{color-yiq($color)};
-    --abs-button-hover-border: #{$hover-border};
-    --abs-button-active-bg: #{$active-background};
-    --abs-button-active-color: #{color-yiq($color)};
-    --abs-button-active-border: #{$active-border};
-  }
-
-  :host([theme="#{$name}"][outline]) {
-    --abs-button-color: #{$color};
-    --abs-button-focus-ring: #{rgba($color, 0.5)};
-    --abs-button-hover-bg: #{$color};
-    --abs-button-hover-color: #{color-yiq($color)};
-    --abs-button-hover-border: #{$color};
-    --abs-button-active-bg: #{$active-background};
-    --abs-button-active-color: #{color-yiq($color)};
-    --abs-button-active-border: #{$active-border};
-  }
-}
-
-:host([outline]) {
-  --abs-button-bg: transparent;
 }
 
 :host([size="large"]) {
@@ -109,5 +79,65 @@
 @media (prefers-reduced-motion: reduce) {
   .button {
     transition: none;
+  }
+}
+
+%button-theme {
+  .button {
+    border-color: transparent;
+
+    &:hover {
+      color: var(--abs-contrast);
+      border-color: transparent;
+    }
+
+    &:focus {
+      color: var(--abs-contrast);
+    }
+  }
+}
+
+%button-theme-outline {
+  .button {
+    color: var(--abs-color);
+    background-color: transparent;
+    border-color: var(--abs-color);
+
+    &:hover,
+    &:focus {
+      color: var(--abs-contrast);
+      background-color: var(--abs-color);
+      border-color: var(--abs-color);
+    }
+
+    &[disabled] {
+      color: var(--abs-color);
+      background-color: transparent;
+      border-color: var(--abs-color);
+    }
+  }
+}
+
+@each $theme, $hsl in $themes {
+  $l: nth($hsl, 3);
+
+  :host([theme="#{$theme}"]) {
+    @extend %button-theme;
+  }
+
+  :host([theme="#{$theme}"]:hover) {
+    --abs-l: calc(#{$l} - 7.5);
+  }
+
+  :host([theme="#{$theme}"]:active) {
+    --abs-l: calc(#{$l} - 10);
+  }
+
+  :host([theme="#{$theme}"][outline]) {
+    @extend %button-theme-outline;
+  }
+
+  :host([theme="#{$theme}"][outline]:hover) {
+    --abs-l: calc(#{$l});
   }
 }

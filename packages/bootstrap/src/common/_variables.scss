@@ -10,33 +10,57 @@ $gray-800: #343a40;
 $gray-900: #212529;
 $black: #000;
 
-$blue: #007bff;
-$indigo: #6610f2;
-$purple: #6f42c1;
-$pink: #e83e8c;
-$red: #dc3545;
-$orange: #fd7e14;
-$yellow: #ffc107;
-$green: #28a745;
-$teal: #20c997;
-$cyan: #17a2b8;
+/* Colors in the format for contrast calculation */
+$primary-h: var(--abs-primary-h, 211);
+$primary-s: var(--abs-primary-s, 100);
+$primary-l: var(--abs-primary-l, 48);
 
-$primary: $blue;
-$secondary: $gray-600;
-$success: $green;
-$info: $cyan;
-$warning: $yellow;
-$danger: $red;
-$light: $gray-100;
-$dark: $gray-800;
+$info-h: var(--abs-info-h, 188);
+$info-s: var(--abs-info-s, 78);
+$info-l: var(--abs-info-l, 41);
 
-$colors: (
-  "primary": $primary,
-  "secondary": $secondary,
-  "success": $success,
-  "info": $info,
-  "warning": $warning,
-  "danger": $danger,
-  "light": $light,
-  "dark": $dark
+$success-h: var(--abs-success-h, 134);
+$success-s: var(--abs-success-s, 61);
+$success-l: var(--abs-success-l, 41);
+
+$warning-h: var(--abs-warning-h, 45);
+$warning-s: var(--abs-warning-s, 100);
+$warning-l: var(--abs-warning-l, 60);
+
+$danger-h: var(--abs-danger-h, 354);
+$danger-s: var(--abs-danger-s, 70);
+$danger-l: var(--abs-danger-l, 48);
+
+$themes: (
+  "primary": (
+    $primary-h,
+    $primary-s,
+    $primary-l
+  ),
+  "info": (
+    $info-h,
+    $info-s,
+    $info-l
+  ),
+  "success": (
+    $success-h,
+    $success-s,
+    $success-l
+  ),
+  "warning": (
+    $warning-h,
+    $warning-s,
+    $warning-l
+  ),
+  "danger": (
+    $danger-h,
+    $danger-s,
+    $danger-l
+  )
 );
+
+$primary: hsl(#{$primary-h}, calc(#{$primary-s} * 1%), calc(#{$primary-l} * 1%));
+$info: hsl(#{$info-h}, calc(#{$info-s} * 1%), calc(#{$info-l} * 1%));
+$success: hsl(#{$success-h}, calc(#{$success-s} * 1%), calc(#{$success-l} * 1%));
+$warning: hsl(#{$warning-h}, calc(#{$warning-s} * 1%), calc(#{$warning-l} * 1%));
+$danger: hsl(#{$danger-h}, calc(#{$danger-s} * 1%), calc(#{$danger-l} * 1%));

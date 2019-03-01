@@ -1,19 +1,34 @@
 @import "../../common/variables";
 
+$range-thumb-bg: var(--abs-color, #{$primary});
+$range-active-color: hsl(
+  var(--abs-h, #{$primary-h}),
+  calc(var(--abs-s, #{$primary-s}) * 1%),
+  calc((var(--abs-l, #{$primary-l}) + 35) * 1%)
+);
+$range-track-bg: var(--abs-range-track-bg, $gray-300);
+$range-disabled-bg: var(--abs-range-disabled-bg, $gray-500);
+
 .range {
   height: 1.4rem;
+
+  /* Safari requires this */
+  --abs-focus-shadow: hsla(
+    var(--abs-hsl, #{$primary-h}, calc(#{$primary-s} * 1%), calc(#{$primary-l} * 1%)),
+    0.25
+  );
 
   &:focus {
     outline: none;
     // Pseudo-elements must be split across multiple rulesets to have an effect.
     &::-webkit-slider-thumb {
-      box-shadow: 0 0 0 1px $white, 0 0 0 0.2rem rgba($primary, 0.25);
+      box-shadow: 0 0 0 1px $white, 0 0 0 0.2rem var(--abs-focus-shadow);
     }
     &::-moz-range-thumb {
-      box-shadow: 0 0 0 1px $white, 0 0 0 0.2rem rgba($primary, 0.25);
+      box-shadow: 0 0 0 1px $white, 0 0 0 0.2rem var(--abs-focus-shadow);
     }
     &::-ms-thumb {
-      box-shadow: 0 0 0 1px $white, 0 0 0 0.2rem rgba($primary, 0.25);
+      box-shadow: 0 0 0 1px $white, 0 0 0 0.2rem var(--abs-focus-shadow);
     }
   }
 
@@ -21,13 +36,13 @@
     width: 1rem;
     height: 1rem;
     margin-top: -0.25rem;
-    background-color: var(--abs-range-thumb-bg, $primary);
+    background-color: $range-thumb-bg;
     border-radius: 1rem;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
       box-shadow 0.15s ease-in-out;
 
     &:active {
-      background-color: var(--abs-range-active-thumb-bg, lighten($primary, 35%));
+      background-color: $range-active-color;
     }
   }
 
@@ -35,7 +50,7 @@
     height: 0.5rem;
     color: transparent;
     cursor: pointer;
-    background-color: var(--abs-range-track-bg, $gray-300);
+    background-color: $range-track-bg;
     border-color: transparent;
     border-radius: 1rem;
   }
@@ -43,13 +58,13 @@
   &::-moz-range-thumb {
     width: 1rem;
     height: 1rem;
-    background-color: var(--abs-range-thumb-bg, $primary);
+    background-color: $range-thumb-bg;
     border-radius: 1rem;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
       box-shadow 0.15s ease-in-out;
 
     &:active {
-      background-color: var(--abs-range-active-thumb-bg, lighten($primary, 35%));
+      background-color: $range-active-color;
     }
   }
 
@@ -57,7 +72,7 @@
     height: 0.5rem;
     color: transparent;
     cursor: pointer;
-    background-color: var(--abs-range-track-bg, $gray-300);
+    background-color: $range-track-bg;
     border-color: transparent;
     border-radius: 1rem;
   }
@@ -70,14 +85,14 @@
     margin-top: 0;
     margin-right: 0.2rem;
     margin-left: 0.2rem;
-    background-color: var(--abs-range-thumb-bg, $primary);
+    background-color: $range-thumb-bg;
     border: 0;
     border-radius: 1rem;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
       box-shadow 0.15s ease-in-out;
 
     &:active {
-      background-color: var(--abs-range-active-thumb-bg, lighten($primary, 35%));
+      background-color: $range-active-color;
     }
   }
 
@@ -90,19 +105,19 @@
   }
 
   &::-ms-fill-lower {
-    background-color: var(--abs-range-track-bg, $gray-300);
+    background-color: $range-track-bg;
     border-radius: 1rem;
   }
 
   &::-ms-fill-upper {
     margin-right: 15px;
-    background-color: var(--abs-range-track-bg, $gray-300);
+    background-color: $range-track-bg;
     border-radius: 1rem;
   }
 
   &:disabled {
     &::-webkit-slider-thumb {
-      background-color: var(--abs-range-disabled-thumb-bg, $gray-500);
+      background-color: $range-disabled-bg;
     }
 
     &::-webkit-slider-runnable-track {
@@ -110,7 +125,7 @@
     }
 
     &::-moz-range-thumb {
-      background-color: var(--abs-range-disabled-thumb-bg, $gray-500);
+      background-color: $range-disabled-bg;
     }
 
     &::-moz-range-track {
@@ -118,7 +133,7 @@
     }
 
     &::-ms-thumb {
-      background-color: var(--abs-range-disabled-thumb-bg, $gray-500);
+      background-color: $range-disabled-bg;
     }
   }
 }

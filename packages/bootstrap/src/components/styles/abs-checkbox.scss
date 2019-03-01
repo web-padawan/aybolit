@@ -1,5 +1,23 @@
 @import "../../common/variables";
 
+$checkbox-background: var(--abs-color, #{$primary});
+$checkbox-focus-border: hsl(
+  var(--abs-h, #{$primary-h}),
+  calc(var(--abs-s, #{$primary-s}) * 1%),
+  calc((var(--abs-l, #{$primary-l}) + 25) * 1%)
+);
+$checkbox-active-color: hsl(
+  var(--abs-h, #{$primary-h}),
+  calc(var(--abs-s, #{$primary-s}) * 1%),
+  calc((var(--abs-l, #{$primary-l}) + 35) * 1%)
+);
+$checkbox-disabled-bg: hsla(
+  var(--abs-h, #{$primary-h}),
+  calc(var(--abs-s, #{$primary-s}) * 1%),
+  calc(var(--abs-l, #{$primary-l}) * 1%),
+  0.5
+);
+
 :host {
   outline: none;
 }
@@ -21,26 +39,32 @@
   opacity: 0;
 
   &:checked ~ .label::before {
-    color: $white;
-    background-color: $primary;
-    border-color: $primary;
+    background-color: $checkbox-background;
+    border-color: $checkbox-background;
     box-shadow: none;
   }
 
   &:focus {
-    ~ .label::before {
-      box-shadow: 0 0 0 0.2rem rgba($primary, 0.25);
+    ~ .label {
+      /* Safari requires this */
+      --abs-focus-shadow: hsla(
+        var(--abs-hsl, #{$primary-h}, calc(#{$primary-s} * 1%), calc(#{$primary-l} * 1%)),
+        0.25
+      );
+
+      &::before {
+        box-shadow: 0 0 0 0.2rem var(--abs-focus-shadow);
+      }
     }
 
     &:not(:checked) ~ .label::before {
-      border-color: lighten($primary, 25%);
+      border-color: $checkbox-focus-border;
     }
   }
 
   &:not(:disabled):active ~ .label::before {
-    color: $white;
-    background-color: lighten($primary, 35%);
-    border-color: lighten($primary, 35%);
+    background-color: $checkbox-active-color;
+    border-color: $checkbox-active-color;
     box-shadow: none;
   }
 
@@ -53,24 +77,26 @@
   }
 
   &:checked ~ .label::after {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+    display: inline-block;
   }
 
   &:indeterminate ~ .label {
     &::before {
-      background-color: $primary;
-      border-color: $primary;
+      background-color: $checkbox-background;
+      border-color: $checkbox-background;
     }
 
     &::after {
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3e%3cpath stroke='%23fff' d='M0 2h4'/%3e%3c/svg%3e");
+      display: inline-block;
+      border-bottom: none;
+      transform: rotate(90deg);
     }
   }
 
   &:disabled {
     &:checked ~ .label::before,
     &:indeterminate ~ .label::before {
-      background-color: rgba($primary, 0.5);
+      background-color: $checkbox-disabled-bg;
     }
   }
 }
@@ -80,6 +106,16 @@
   display: inline-block;
   margin-bottom: 0;
   vertical-align: top;
+
+  /* Use contrast for checkmark */
+  --abs-primary-contrast: hsl(
+    #{$primary-h},
+    calc(#{$primary-s} * 1%),
+    calc(
+      (-2500 * (var(--contrast-ratio) * 1% / 100 + 1%)) / (#{$primary-l} - 49.999) + #{$primary-l} *
+        1%
+    )
+  );
 
   &::before {
     position: absolute;
@@ -100,15 +136,18 @@
 
   &::after {
     position: absolute;
-    top: 0.25rem;
-    left: -1.5rem;
+    top: 0.45rem;
+    left: -1.125rem;
     box-sizing: border-box;
-    display: block;
-    width: 1rem;
-    height: 1rem;
+    display: none;
+    width: 0.25rem;
+    height: 0.5rem;
     content: "";
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 50% 50%;
+    border-color: var(--abs-contrast, var(--abs-primary-contrast));
+    border-style: solid;
+    border-width: 0.125rem;
+    border-top: 0;
+    border-left: 0;
+    transform: rotate(45deg);
   }
 }

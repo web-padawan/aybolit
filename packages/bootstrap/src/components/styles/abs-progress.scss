@@ -1,9 +1,12 @@
 @import "../../common/variables";
 
+$progress-bar-color: var(--abs-progress-bar-color, #{$gray-200});
+$progress-value-color: var(--abs-color, #{$primary});
+
 progress {
   height: 1rem;
-  color: $primary;
-  background-color: $gray-200;
+  color: $progress-value-color;
+  background-color: $progress-bar-color;
   border-radius: 0.25rem;
 
   &::-webkit-progress-bar {
@@ -81,13 +84,5 @@ progress {
 :host([size="small"]) {
   progress {
     height: 0.875rem;
-  }
-}
-
-@each $name, $color in $colors {
-  :host([theme="#{$name}"]) {
-    progress {
-      color: $color;
-    }
   }
 }

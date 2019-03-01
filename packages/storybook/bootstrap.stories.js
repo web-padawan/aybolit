@@ -9,8 +9,6 @@ const COLORS = {
   success: 'success',
   warning: 'warning',
   danger: 'danger',
-  light: 'light',
-  dark: 'dark',
   none: ''
 };
 
@@ -44,8 +42,9 @@ storiesOf('Bootstrap', module)
   .add('<abs-checkbox>', () => {
     const disabled = boolean('Disabled', false);
     const label = text('Label', 'Checkbox');
+    const theme = select('Theme', COLORS, COLORS.primary);
     return html`
-      <abs-checkbox .disabled="${disabled}">${label}</abs-checkbox>
+      <abs-checkbox .disabled="${disabled}" theme="${theme}">${label}</abs-checkbox>
     `;
   })
   .add('<abs-progress>', () => {
@@ -66,14 +65,16 @@ storiesOf('Bootstrap', module)
   })
   .add('<abs-range>', () => {
     const disabled = boolean('Disabled', false);
+    const theme = select('Theme', COLORS, COLORS.primary);
     return html`
-      <abs-range .disabled="${disabled}"></abs-range>
+      <abs-range .disabled="${disabled}" theme="${theme}"></abs-range>
     `;
   })
   .add('<abs-switch>', () => {
     const disabled = boolean('Disabled', false);
     const label = text('Label', 'Switch');
+    const theme = select('Theme', COLORS, COLORS.primary);
     return html`
-      <abs-switch .disabled="${disabled}">${label}</abs-switch>
+      <abs-switch .disabled="${disabled}" theme="${theme}">${label}</abs-switch>
     `;
   });

@@ -1,5 +1,23 @@
 @import "../../common/variables";
 
+$switch-background: var(--abs-color, #{$primary});
+$switch-focus-border: hsl(
+  var(--abs-h, #{$primary-h}),
+  calc(var(--abs-s, #{$primary-s}) * 1%),
+  calc((var(--abs-l, #{$primary-l}) + 25) * 1%)
+);
+$switch-active-color: hsl(
+  var(--abs-h, #{$primary-h}),
+  calc(var(--abs-s, #{$primary-s}) * 1%),
+  calc((var(--abs-l, #{$primary-l}) + 35) * 1%)
+);
+$switch-disabled-bg: hsla(
+  var(--abs-h, #{$primary-h}),
+  calc(var(--abs-s, #{$primary-s}) * 1%),
+  calc(var(--abs-l, #{$primary-l}) * 1%),
+  0.5
+);
+
 :host {
   outline: none;
 }
@@ -22,8 +40,8 @@
     ~ .label {
       &::before {
         color: $white;
-        background-color: $primary;
-        border-color: $primary;
+        background-color: $switch-background;
+        border-color: $switch-background;
         box-shadow: none;
       }
 
@@ -36,14 +54,20 @@
 
   &:focus {
     ~ .label {
+      /* Safari requires this */
+      --abs-focus-shadow: hsla(
+        var(--abs-hsl, #{$primary-h}, calc(#{$primary-s} * 1%), calc(#{$primary-l} * 1%)),
+        0.25
+      );
+
       &::before {
-        box-shadow: 0 0 0 0.2rem rgba($primary, 0.25);
+        box-shadow: 0 0 0 0.2rem var(--abs-focus-shadow);
       }
     }
 
     &:not(:checked) {
       ~ .label::before {
-        border-color: lighten($primary, 25%);
+        border-color: $switch-focus-border;
       }
     }
   }
@@ -53,8 +77,8 @@
       ~ .label {
         &::before {
           color: $white;
-          background-color: lighten($primary, 35%);
-          border-color: lighten($primary, 35%);
+          background-color: $switch-active-color;
+          border-color: $switch-active-color;
           box-shadow: none;
         }
       }
@@ -73,7 +97,7 @@
     &:checked {
       ~ .label {
         &::before {
-          background-color: rgba($primary, 0.5);
+          background-color: $switch-disabled-bg;
         }
       }
     }
