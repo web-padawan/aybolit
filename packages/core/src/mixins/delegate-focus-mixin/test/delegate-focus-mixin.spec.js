@@ -1,16 +1,6 @@
 import { LitElement } from 'lit-element';
-import {
-  focusin,
-  focusout,
-  shiftTabDown,
-  shiftTabEvent,
-  shiftTabUp,
-  spaceDown,
-  spaceUp,
-  tabDown,
-  tabUp
-} from '@aybolit/test-helpers';
-import { defineCE, fixture, html, nextFrame, unsafeStatic } from '@open-wc/testing-helpers';
+import { focusin, shiftTabDown, shiftTabEvent } from '@aybolit/test-helpers';
+import { defineCE, fixture, html } from '@open-wc/testing-helpers';
 import { DelegateFocusMixin } from '../delegate-focus-mixin.js';
 
 const TestElement = defineCE(
@@ -83,76 +73,6 @@ describe('delegate-focus-mixin', () => {
     });
   });
 
-  describe('_tabPressed and focus-ring', () => {
-    it('should set and unset _tabPressed when press Tab', () => {
-      tabDown(document.body);
-      expect(customElement._tabPressed).to.be.true;
-      tabUp(document.body);
-      expect(customElement._tabPressed).to.be.false;
-    });
-
-    it('should set and unset _tabPressed when press Shift+Tab', () => {
-      shiftTabDown(document.body);
-      expect(customElement._tabPressed).to.be.true;
-      shiftTabUp(document.body);
-      expect(customElement._tabPressed).to.be.false;
-    });
-
-    it('should set _isShiftTabbing when pressing Shift+Tab', () => {
-      const event = shiftTabEvent();
-      customElement.dispatchEvent(event);
-      expect(customElement._isShiftTabbing).to.be.true;
-    });
-
-    it('should skip setting _isShiftTabbing if event is defaultPrevented', () => {
-      const event = shiftTabEvent();
-      // In Edge just calling preventDefault() does not work because of the polyfilled dispatchEvent
-      Object.defineProperty(event, 'defaultPrevented', {
-        get() {
-          return true;
-        }
-      });
-      customElement.dispatchEvent(event);
-      expect(customElement._isShiftTabbing).not.to.be.ok;
-    });
-
-    it('should not change _tabPressed on any other key except Tab', () => {
-      spaceDown(document.body);
-      expect(customElement._tabPressed).to.be.false;
-      spaceUp(document.body);
-      expect(customElement._tabPressed).to.be.false;
-    });
-
-    it('should set the focus-ring attribute when Tab is pressed and focus is received', () => {
-      tabDown(document.body);
-      focusin(focusable);
-      expect(customElement.hasAttribute('focus-ring')).to.be.true;
-      focusout(focusable);
-      expect(customElement.hasAttribute('focus-ring')).to.be.false;
-    });
-
-    it('should set the focus-ring attribute when Shift+Tab is pressed and focus is received', () => {
-      shiftTabDown(document.body);
-      focusin(focusable);
-      expect(customElement.hasAttribute('focus-ring')).to.be.true;
-      focusout(focusable);
-      expect(customElement.hasAttribute('focus-ring')).to.be.false;
-    });
-
-    it('should refocus the field', done => {
-      focusin(customElement);
-      shiftTabDown(document.body);
-
-      // Shift + Tab disables refocusing temporarily, normal behavior is restored asynchronously.
-      setTimeout(() => {
-        const spy = sinon.spy(focusable, 'focus');
-        focusin(customElement);
-        expect(spy.called).to.be.true;
-        done();
-      }, 0);
-    });
-  });
-
   describe('disabled', () => {
     beforeEach(async () => {
       customElement.disabled = true;
@@ -189,97 +109,66 @@ describe('delegate-focus-mixin', () => {
       await customElement.updateComplete;
       expect(customElement.getAttribute('tabindex')).to.be.equal('3');
     });
-
-    it('should not invoke focus on the focus element when disabled', () => {
-      const spy = sinon.spy(focusable, 'focus');
-      customElement.focus();
-      expect(spy).to.not.be.called;
-    });
   });
 
   describe('focus', () => {
-    it('should not set focused attribute on host click', () => {
-      customElement.click();
-      expect(customElement.hasAttribute('focused')).to.be.false;
+    it('should invoke focus on the focus element when focused', () => {
+      const spy = sinon.spy(focusable, 'focus');
+      customElement.focus();
+      expect(spy).to.be.calledOnce;
     });
 
-    it('should set focused attribute on focusin event dispatched', () => {
-      focusin(focusable);
-      expect(customElement.hasAttribute('focused')).to.be.true;
-    });
-
-    it('should not set focused attribute on focusin event dispatched when disabled', () => {
+    it('should not invoke focus on the focus element when disabled', async () => {
+      const spy = sinon.spy(focusable, 'focus');
       customElement.disabled = true;
+      await customElement.updateComplete;
+      customElement.focus();
+      expect(spy).to.not.be.called;
+    });
+
+    it('should invoke focus on the focus element on focusin event', () => {
+      const spy = sinon.spy(focusable, 'focus');
+      focusin(customElement);
+      expect(spy).to.be.calledOnce;
+    });
+
+    it('should not invoke focus on the focus element on focusin when disabled', async () => {
+      const spy = sinon.spy(focusable, 'focus');
+      customElement.disabled = true;
+      await customElement.updateComplete;
       focusin(focusable);
-      expect(customElement.hasAttribute('focused')).to.be.false;
+      expect(spy).to.not.be.called;
     });
 
-    it('should not set focused attribute on focusin event dispatched from other focusable element inside component', () => {
-      const secondFocusable = customElement.shadowRoot.querySelector('#secondInput');
-      focusin(secondFocusable);
-      expect(customElement.hasAttribute('focused')).to.be.false;
+    it('should set _isShiftTabbing when pressing shift-tab', () => {
+      const event = shiftTabEvent();
+      customElement.dispatchEvent(event);
+      expect(customElement._isShiftTabbing).to.be.true;
     });
 
-    it('should remove focused attribute when disconnected from the DOM', () => {
-      focusin(focusable);
-      customElement.parentNode.removeChild(customElement);
-      window.ShadyDOM && window.ShadyDOM.flush();
-      expect(customElement.hasAttribute('focused')).to.be.false;
+    it('should skip setting _isShiftTabbing if event is defaultPrevented', () => {
+      const event = shiftTabEvent();
+      // In Edge just calling preventDefault() does not work because of the polyfilled dispatchEvent
+      Object.defineProperty(event, 'defaultPrevented', {
+        get() {
+          return true;
+        }
+      });
+      customElement.dispatchEvent(event);
+      expect(customElement._isShiftTabbing).not.to.be.ok;
     });
-  });
-});
 
-describe('autofocus', () => {
-  let customElement;
+    it('should refocus the field', done => {
+      focusin(customElement);
+      shiftTabDown(document.body);
 
-  beforeEach(async () => {
-    customElement = await fixture(`<${TestElement} autofocus></${TestElement}>`);
-  });
-
-  it('should have focused and focus-ring set', async () => {
-    await nextFrame();
-    expect(customElement.hasAttribute('focused')).to.be.true;
-    expect(customElement.hasAttribute('focus-ring')).to.be.true;
-  });
-});
-
-describe('focused with nested focusable elements', () => {
-  const tagName = unsafeStatic(TestElement);
-  const Wrapper = defineCE(
-    class extends DelegateFocusMixin(LitElement) {
-      render() {
-        return html`
-          <${tagName} id="testElement"></${tagName}>
-        `;
-      }
-
-      get focusElement() {
-        return this.shadowRoot.querySelector('#testElement');
-      }
-    }
-  );
-
-  let wrapper;
-  let customElement;
-  let focusable;
-
-  beforeEach(async () => {
-    wrapper = await fixture(`<${Wrapper}></${Wrapper}>`);
-    customElement = wrapper.focusElement;
-    await customElement.updateComplete;
-    focusable = customElement.focusElement;
-  });
-
-  it('should set focused attribute on focusin event dispatched from an element inside focusElement', () => {
-    focusin(focusable);
-    expect(wrapper.hasAttribute('focused')).to.be.true;
-  });
-
-  it('should remove focused attribute on focusout event dispatched from an element inside focusElement', () => {
-    focusin(focusable);
-    expect(wrapper.hasAttribute('focused')).to.be.true;
-
-    focusout(focusable);
-    expect(wrapper.hasAttribute('focused')).to.be.false;
+      // Shift + Tab disables refocusing temporarily, normal behavior is restored asynchronously.
+      setTimeout(() => {
+        const spy = sinon.spy(focusable, 'focus');
+        focusin(customElement);
+        expect(spy.called).to.be.true;
+        done();
+      }, 0);
+    });
   });
 });

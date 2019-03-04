@@ -1,17 +1,11 @@
 const $$tabindex = Symbol('tabindex');
+const $$oldTabindex = Symbol('oldTabindex');
+const $$newTabindex = Symbol('newTabindex');
 
 export const DelegateFocusMixin = superClass =>
   class extends superClass {
     static get properties() {
       return {
-        /**
-         * Specify that this control should have input focus when the page loads.
-         */
-        autofocus: {
-          type: Boolean,
-          reflect: true
-        },
-
         tabIndex: {
           converter: {
             fromAttribute: Number,
@@ -27,22 +21,12 @@ export const DelegateFocusMixin = superClass =>
         disabled: {
           type: Boolean,
           reflect: true
-        },
-
-        _previousTabIndex: {
-          hasChanged: () => false
-        },
-
-        _isShiftTabbing: {
-          hasChanged: () => false
         }
       };
     }
 
     constructor() {
       super();
-      this._boundKeydownListener = this._bodyKeydownListener.bind(this);
-      this._boundKeyupListener = this._bodyKeyupListener.bind(this);
       if (!this.hasAttribute('tabindex')) {
         this.tabIndex = 0;
       }
@@ -58,63 +42,24 @@ export const DelegateFocusMixin = superClass =>
       this.requestUpdate('tabIndex', oldValue);
     }
 
-    /**
-     * @protected
-     */
-    connectedCallback() {
-      super.connectedCallback();
-
-      document.body.addEventListener('keydown', this._boundKeydownListener, true);
-      document.body.addEventListener('keyup', this._boundKeyupListener, true);
-    }
-
-    /**
-     * @protected
-     */
-    disconnectedCallback() {
-      super.disconnectedCallback();
-
-      document.body.removeEventListener('keydown', this._boundKeydownListener, true);
-      document.body.removeEventListener('keyup', this._boundKeyupListener, true);
-
-      // in non-Chrome browsers, blur does not fire on the element when it is disconnected.
-      // reproducible in `<vaadin-date-picker>` when closing on `Cancel` or `Today` click.
-      if (this.hasAttribute('focused')) {
-        this._setFocused(false);
-      }
-    }
-
     firstUpdated() {
       this.addEventListener('focusin', e => {
         if (e.composedPath()[0] === this) {
-          this._focus(e);
-        } else if (e.composedPath().indexOf(this.focusElement) !== -1 && !this.disabled) {
-          this._setFocused(true);
+          this._focus();
         }
       });
-
-      this.addEventListener('focusout', () => this._setFocused(false));
 
       this.addEventListener('keydown', e => {
         if (!e.defaultPrevented && e.shiftKey && e.keyCode === 9) {
           // Flag is checked in _focus event handler.
           this._isShiftTabbing = true;
           HTMLElement.prototype.focus.apply(this);
-          this._setFocused(false);
           // Event handling in IE is asynchronous and the flag is removed asynchronously as well
           setTimeout(() => {
             this._isShiftTabbing = false;
           }, 0);
         }
       });
-
-      if (this.autofocus && !this.disabled) {
-        window.requestAnimationFrame(() => {
-          this._focus();
-          this._setFocused(true);
-          this.setAttribute('focus-ring', '');
-        });
-      }
     }
 
     update(props) {
@@ -125,7 +70,7 @@ export const DelegateFocusMixin = superClass =>
       if (props.has('tabIndex')) {
         // save value of tabindex, as it can be overridden to
         // undefined in case if the element is disabled
-        this.__tabIndexValue = this.tabIndex;
+        this[$$newTabindex] = this.tabIndex;
         this._tabIndexChanged(this.tabIndex);
       }
 
@@ -142,32 +87,10 @@ export const DelegateFocusMixin = superClass =>
         }
       }
 
-      if (props.has('tabIndex') && this.__tabIndexValue !== undefined) {
-        this.focusElement.tabIndex = this.__tabIndexValue;
+      if (props.has('tabIndex') && this[$$newTabindex] !== undefined) {
+        this.focusElement.tabIndex = this[$$newTabindex];
+        this[$$newTabindex] = undefined;
       }
-    }
-
-    _setFocused(focused) {
-      if (focused) {
-        this.setAttribute('focused', '');
-      } else {
-        this.removeAttribute('focused');
-      }
-
-      // focus-ring is true when the element was focused from the keyboard.
-      if (focused && this._tabPressed) {
-        this.setAttribute('focus-ring', '');
-      } else {
-        this.removeAttribute('focus-ring');
-      }
-    }
-
-    _bodyKeydownListener(e) {
-      this._tabPressed = e.keyCode === 9;
-    }
-
-    _bodyKeyupListener() {
-      this._tabPressed = false;
     }
 
     /**
@@ -185,7 +108,6 @@ export const DelegateFocusMixin = superClass =>
       }
 
       this.focusElement.focus();
-      this._setFocused(true);
     }
 
     /**
@@ -198,7 +120,6 @@ export const DelegateFocusMixin = superClass =>
       }
 
       this.focusElement.focus();
-      this._setFocused(true);
     }
 
     /**
@@ -208,17 +129,16 @@ export const DelegateFocusMixin = superClass =>
      */
     blur() {
       this.focusElement.blur();
-      this._setFocused(false);
     }
 
     _disabledChanged(disabled, oldDisabled) {
       if (disabled) {
-        this._previousTabIndex = this.tabIndex;
+        this[$$oldTabindex] = this.tabIndex;
         this.tabIndex = -1;
         this.setAttribute('aria-disabled', 'true');
       } else if (oldDisabled) {
-        if (this._previousTabIndex !== undefined) {
-          this.tabIndex = this._previousTabIndex;
+        if (this[$$oldTabindex] !== undefined) {
+          this.tabIndex = this[$$oldTabindex];
         }
         this.removeAttribute('aria-disabled');
       }
@@ -228,7 +148,7 @@ export const DelegateFocusMixin = superClass =>
       if (this.disabled && tabindex) {
         // If tabindex attribute was changed while checkbox was disabled
         if (this.tabIndex !== -1) {
-          this._previousTabIndex = this.tabIndex;
+          this[$$oldTabindex] = this.tabIndex;
         }
         this.tabIndex = null;
       }
