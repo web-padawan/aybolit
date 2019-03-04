@@ -77,7 +77,7 @@ module.exports = config => {
             test: /\.js$/,
             loader: 'istanbul-instrumenter-loader',
             enforce: 'post',
-            include: path.resolve('./packages'),
+            include: path.resolve('./packages/core'),
             exclude: /node_modules|\.spec\.js$/,
             options: {
               esModules: true
