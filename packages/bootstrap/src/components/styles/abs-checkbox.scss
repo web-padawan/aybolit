@@ -18,6 +18,10 @@ $checkbox-disabled-bg: hsla(
   0.5
 );
 
+$checkbox-border-color: var(--abs-checkbox-border-color, $gray-500);
+$checkbox-disabled-text: var(--abs-checkbox-disabled-text, $gray-600);
+$checkbox-disabled-unchecked-bg: var(--abs-checkbox-disabled-bg, $gray-200);
+
 :host {
   outline: none;
 }
@@ -69,10 +73,10 @@ $checkbox-disabled-bg: hsla(
   }
 
   &:disabled ~ .label {
-    color: $gray-600;
+    color: $checkbox-disabled-text;
 
     &::before {
-      background-color: $gray-200;
+      background-color: $checkbox-disabled-unchecked-bg;
     }
   }
 
@@ -128,7 +132,7 @@ $checkbox-disabled-bg: hsla(
     pointer-events: none;
     content: "";
     background-color: $white;
-    border: solid 1px $gray-500;
+    border: solid 1px $checkbox-border-color;
     border-radius: 0.25rem;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
       box-shadow 0.15s ease-in-out;

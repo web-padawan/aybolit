@@ -18,6 +18,13 @@ $switch-disabled-bg: hsla(
   0.5
 );
 
+$switch-disabled-text: var(--abs-switch-disabled-text, $gray-600);
+$switch-disabled-off-bg: var(--abs-switch-disabled-bg, $gray-200);
+$switch-off-thumb-bg: var(--abs-switch-off-thumb-bg, $gray-500);
+$switch-off-track-bg: var(--abs-switch-off-track-bg, $white);
+$switch-off-track-border: var(--abs-switch-off-track-border, $gray-500);
+$switch-on-thumb-bg: var(--abs-switch-on-thumb-bg, $white);
+
 :host {
   outline: none;
 }
@@ -39,14 +46,13 @@ $switch-disabled-bg: hsla(
   &:checked {
     ~ .label {
       &::before {
-        color: $white;
         background-color: $switch-background;
         border-color: $switch-background;
         box-shadow: none;
       }
 
       &::after {
-        background-color: $white;
+        background-color: $switch-on-thumb-bg;
         transform: translateX(0.75rem);
       }
     }
@@ -76,7 +82,6 @@ $switch-disabled-bg: hsla(
     &:not(:disabled) {
       ~ .label {
         &::before {
-          color: $white;
           background-color: $switch-active-color;
           border-color: $switch-active-color;
           box-shadow: none;
@@ -87,10 +92,10 @@ $switch-disabled-bg: hsla(
 
   &:disabled {
     ~ .label {
-      color: $gray-600;
+      color: $switch-disabled-text;
 
       &::before {
-        background-color: $gray-200;
+        background-color: $switch-disabled-off-bg;
       }
     }
 
@@ -117,8 +122,8 @@ $switch-disabled-bg: hsla(
     box-sizing: border-box;
     width: 1.75rem;
     height: 1rem;
-    background-color: $white;
-    border: solid 1px $gray-500;
+    background-color: $switch-off-track-bg;
+    border: solid 1px $switch-off-track-border;
     border-radius: 0.5rem;
   }
 
@@ -128,7 +133,7 @@ $switch-disabled-bg: hsla(
     left: calc(-2.25rem + 2px);
     width: calc(1rem - 4px);
     height: calc(1rem - 4px);
-    background-color: $gray-500;
+    background-color: $switch-off-thumb-bg;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 50% 50%;
