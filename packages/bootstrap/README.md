@@ -8,7 +8,7 @@ Bootstrap 4 is used as a base, but Aybolit does not preserve the original CSS, c
 
 The upcoming Bootstrap 5, expected to land this year, will likely introduce a lot of changes to be adapted by Aybolit. The first-class Web Components support for Bootstrap was requested, and is considered by maintainers as [possible for v6](https://github.com/twbs/bootstrap/issues/28131#issuecomment-458453934).
 
-## Get Started
+## Installation
 
 Aybolit Bootstrap is available as [npm package](https://www.npmjs.com/package/@aybolit/bootstrap):
 
@@ -48,11 +48,36 @@ You can also use get Aybolit Bootstrap from the CDN:
 - [x] [Progress](https://getbootstrap.com/docs/4.3/components/progress/)
   - [x] [Backgrounds](https://getbootstrap.com/docs/4.3/components/progress/#backgrounds)
   - [x] [Sizes](https://getbootstrap.com/docs/4.3/components/progress/#height)
-  - [ ] [Animated stripes](https://getbootstrap.com/docs/4.3/components/progress/#animated-stripes)- not currently supported
-  - [ ] [Labels](https://getbootstrap.com/docs/4.3/components/progress/#labels) - not currently supported
+  - [ ] [Animated stripes](https://getbootstrap.com/docs/4.3/components/progress/#animated-stripes) - not currently supported.
+  - [ ] [Labels](https://getbootstrap.com/docs/4.3/components/progress/#labels) - not currently supported.
   - [ ] [Multiple bars](https://getbootstrap.com/docs/4.3/components/progress/#multiple-bars) - not planned.
 - [x] [Range](https://getbootstrap.com/docs/4.3/components/forms/#range)
 - [x] [Switch](https://getbootstrap.com/docs/4.3/components/forms/#switches)
+
+## Examples
+
+```html
+<!-- Button -->
+<abs-button>Button</abs-button>
+<abs-button theme="primary">Primary theme</abs-button>
+<abs-button size="small">Small size</abs-button>
+<abs-button link="https://example.com">Link</abs-button>
+
+<!-- Checkbox -->
+<abs-checkbox>Unchecked</abs-checkbox>
+<abs-checkbox checked>Checked</abs-checkbox>
+<abs-checkbox indeterminate>Indeterminate</abs-checkbox>
+
+<!-- Progress -->
+<abs-progress value="50" max="100"></abs-progress>
+
+<!-- Range -->
+<abs-range min="0" max="10" value="5"></abs-range>
+
+<!-- Switch -->
+<abs-switch>Unchecked</abs-switch>
+<abs-switch checked>Checked</abs-switch>
+```
 
 ## Theme Variants
 
