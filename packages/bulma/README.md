@@ -6,7 +6,7 @@ Aybolit Bulma is a set of the web components inspired by [Bulma](https://bulma.i
 
 Bulma framework and [Bulma-extensions](https://wikiki.github.io) are used as a base, but Aybolit does not preserve all the original CSS and makes certain adjustments. The main idea behind these changes is flexible theming support, with reasonable bundle size.
 
-## Get Started
+## Installation
 
 Aybolit Bulma is available as [npm package](https://www.npmjs.com/package/@aybolit/bulma):
 
@@ -67,6 +67,31 @@ You can also use get Aybolit Bulma from the CDN:
   - [x] Outlined style
   - [x] Rounded style
   - [ ] Thin style - not currently supported.
+
+## Examples
+
+```html
+<!-- Button -->
+<abu-button>Button</abu-button>
+<abu-button theme="primary">Primary theme</abu-button>
+<abu-button size="small">Small size</abu-button>
+<abu-button link="https://example.com">Link</abu-button>
+
+<!-- Checkbox -->
+<abu-checkbox>Unchecked</abu-checkbox>
+<abu-checkbox checked>Checked</abu-checkbox>
+<abu-checkbox indeterminate>Indeterminate</abu-checkbox>
+
+<!-- Progress -->
+<abu-progress value="50" max="100"></abu-progress>
+
+<!-- Range -->
+<abu-range min="0" max="10" value="5"></abu-range>
+
+<!-- Switch -->
+<abu-switch>Unchecked</abu-switch>
+<abu-switch checked>Checked</abu-switch>
+```
 
 ## Theme Variants
 
