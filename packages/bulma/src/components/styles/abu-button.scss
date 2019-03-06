@@ -7,6 +7,8 @@
 $button-color: var(--abu-button-color, #{$grey-darker});
 $button-background: var(--abu-button-bg-color, #{$white});
 $button-border-color: var(--abu-button-border-color, #{$grey-lighter});
+$button-hover-border-color: var(--abu-button-hover-border-color, #{$grey-light});
+$button-active-border-color: var(--abu-button-active-border-color, #{$grey-dark});
 
 .button {
   position: relative;
@@ -41,7 +43,7 @@ $button-border-color: var(--abu-button-border-color, #{$grey-lighter});
 
   &:hover {
     color: $button-color;
-    border-color: $grey-light;
+    border-color: $button-hover-border-color;
   }
 
   &:focus {
@@ -61,7 +63,7 @@ $button-border-color: var(--abu-button-border-color, #{$grey-lighter});
 
   &:active {
     color: $button-color;
-    border-color: $grey-dark;
+    border-color: $button-active-border-color;
   }
 
   &[disabled] {
