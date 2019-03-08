@@ -14,14 +14,14 @@ Aybolit Bulma is available as [npm package](https://www.npmjs.com/package/@aybol
 # with npm
 npm i @aybolit/bulma --save
 
-#with yarn
+# with yarn
 yarn add @aybolit/bulma
 ```
 
-Import either whole library or individual components:
+Import either all or individual components:
 
 ```js
-// whole library
+// all components
 import '@aybolit/bulma';
 
 // button only

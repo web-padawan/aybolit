@@ -13,17 +13,17 @@ The styles from Matter are preserved as much as possible, but the components var
 Aybolit Material is available as [npm package](https://www.npmjs.com/package/@aybolit/material):
 
 ```sh
-# with material
+# with npm
 npm i @aybolit/material --save
 
-#with yarn
+# with yarn
 yarn add @aybolit/material
 ```
 
-Import either whole library or individual components:
+Import either all or individual components:
 
 ```js
-// whole library
+// all components
 import '@aybolit/material';
 
 // button only

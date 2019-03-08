@@ -16,14 +16,14 @@ Aybolit Bootstrap is available as [npm package](https://www.npmjs.com/package/@a
 # with npm
 npm i @aybolit/bootstrap --save
 
-#with yarn
+# with yarn
 yarn add @aybolit/bootstrap
 ```
 
-Import either whole library or individual components:
+Import either all or individual components:
 
 ```js
-// whole library
+// all components
 import '@aybolit/bootstrap';
 
 // button only

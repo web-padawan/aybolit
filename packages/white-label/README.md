@@ -18,10 +18,10 @@ npm i @aybolit/white-label --save
 yarn add @aybolit/white-label
 ```
 
-Import either whole library or individual components:
+Import either all or individual components:
 
 ```js
-// whole library
+// all components
 import '@aybolit/white-label';
 
 // button only
