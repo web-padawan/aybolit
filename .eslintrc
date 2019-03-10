@@ -4,9 +4,7 @@
     "prettier"
   ],
   "env": {
-    "browser": true,
-    "node": true,
-    "es6": true
+    "browser": true
   },
   "rules": {
     "class-methods-use-this": [
@@ -37,7 +35,7 @@
   ],
   "parser": "babel-eslint",
   "parserOptions": {
-    "ecmaVersion": 7,
+    "ecmaVersion": 8,
     "sourceType": "module"
   }
 }
