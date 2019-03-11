@@ -34,17 +34,13 @@ export class ProgressElement extends LitElement {
   }
 
   render() {
-    return html`
-      <progress value="${ifDefined(this.value)}" max="${this.max}"></progress>
-    `;
-  }
-
-  update(props) {
-    // set value to undefined to make progress indeterminate
-    if ((props.has('value') && this.value === null) || this.value === '') {
-      this.value = undefined;
+    let { value } = this;
+    // make progress bar indeterminate
+    if (value === null || value === '') {
+      value = undefined;
     }
-
-    super.update(props);
+    return html`
+      <progress value="${ifDefined(value)}" max="${this.max}"></progress>
+    `;
   }
 }
