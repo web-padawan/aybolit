@@ -1,5 +1,7 @@
 {
   "extends": [
+    "plugin:import/recommended",
+    "plugin:lit/recommended",
     "airbnb-base",
     "prettier"
   ],
