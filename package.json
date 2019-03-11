@@ -26,7 +26,6 @@
     "@storybook/core": "^5.0.1",
     "@storybook/polymer": "^5.0.1",
     "@webcomponents/webcomponentsjs": "^2.2.4",
-    "babel-eslint": "^10.0.0",
     "babel-loader": "^8.0.5",
     "chai": "^4.2.0",
     "command-line-args": "^5.0.2",
