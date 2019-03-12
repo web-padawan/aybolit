@@ -1,6 +1,6 @@
 {
   "name": "@aybolit/white-label",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "Serhii Kulykov <serguey.kulikov@gmail.com>",
   "license": "MIT",
   "main": "src/index.js",
@@ -13,7 +13,7 @@
     "directory": "packages/white-label"
   },
   "dependencies": {
-    "@aybolit/core": "^0.0.0",
+    "@aybolit/core": "^0.1.0",
     "lit-element": "^2.0.1"
   },
   "devDependencies": {
@@ -24,9 +24,15 @@
   },
   "@pika/pack": {
     "pipeline": [
-      ["@pika/plugin-standard-pkg"],
-      ["@pika/plugin-build-web"],
-      ["@pika/plugin-bundle-web"]
+      [
+        "@pika/plugin-standard-pkg"
+      ],
+      [
+        "@pika/plugin-build-web"
+      ],
+      [
+        "@pika/plugin-bundle-web"
+      ]
     ]
   },
   "scripts": {

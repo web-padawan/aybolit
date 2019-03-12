@@ -1,6 +1,6 @@
 {
   "name": "@aybolit/core",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "Serhii Kulykov <serguey.kulikov@gmail.com>",
   "license": "MIT",
   "main": "src/index.js",
@@ -17,7 +17,7 @@
     "lit-html": "^1.0.0"
   },
   "devDependencies": {
-    "@aybolit/test-helpers": "^0.0.0",
+    "@aybolit/test-helpers": "^0.1.0",
     "@open-wc/testing-helpers": "^0.7.9",
     "@pika/pack": "^0.3.0",
     "@pika/plugin-build-web": "^0.3.0",
@@ -26,9 +26,15 @@
   },
   "@pika/pack": {
     "pipeline": [
-      ["@pika/plugin-standard-pkg"],
-      ["@pika/plugin-build-web"],
-      ["@pika/plugin-bundle-web"]
+      [
+        "@pika/plugin-standard-pkg"
+      ],
+      [
+        "@pika/plugin-build-web"
+      ],
+      [
+        "@pika/plugin-bundle-web"
+      ]
     ]
   },
   "scripts": {
