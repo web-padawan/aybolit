@@ -7,6 +7,7 @@
   "scripts": {
     "build": "yarn build-styling",
     "build-styling": "./scripts/build-styling.sh",
+    "deploy-storybook": "storybook-to-ghpages",
     "lint": "eslint *.js packages",
     "lint:scss": "stylelint packages/**/*.scss",
     "storybook": "start-storybook -p 6006",
@@ -25,6 +26,7 @@
     "@storybook/addons": "^5.0.1",
     "@storybook/core": "^5.0.1",
     "@storybook/polymer": "^5.0.1",
+    "@storybook/storybook-deployer": "^2.8.1",
     "@webcomponents/webcomponentsjs": "^2.2.4",
     "babel-loader": "^8.0.5",
     "chai": "^4.2.0",
