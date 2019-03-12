@@ -18,9 +18,20 @@
   },
   "devDependencies": {
     "@aybolit/test-helpers": "^0.0.0",
-    "@open-wc/testing-helpers": "^0.7.9"
+    "@open-wc/testing-helpers": "^0.7.9",
+    "@pika/pack": "^0.3.0",
+    "@pika/plugin-build-web": "^0.3.0",
+    "@pika/plugin-bundle-web": "^0.3.0",
+    "@pika/plugin-standard-pkg": "^0.3.0"
+  },
+  "@pika/pack": {
+    "pipeline": [
+      ["@pika/plugin-standard-pkg"],
+      ["@pika/plugin-build-web"],
+      ["@pika/plugin-bundle-web"]
+    ]
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dist": "pack build"
   }
 }

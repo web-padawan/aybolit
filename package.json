@@ -8,6 +8,7 @@
     "build": "yarn build-styling",
     "build-styling": "./scripts/build-styling.sh",
     "deploy-storybook": "storybook-to-ghpages",
+    "dist": "lerna run dist",
     "lint": "eslint *.js packages",
     "lint:scss": "stylelint packages/**/*.scss",
     "storybook": "start-storybook -p 6006",
