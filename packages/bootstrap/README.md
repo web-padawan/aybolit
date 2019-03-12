@@ -33,7 +33,7 @@ import { AbsButton } from '@aybolit/bootstrap';
 You can also use get Aybolit Bootstrap from the CDN:
 
 ```html
-<script src="https://unpkg.com/@aybolit/bootstrap@latest?module" type="module"></script>
+<script src="http://unpkg.com/@aybolit/bootstrap/dist-web/index.bundled.js?module" type="module"></script>
 ```
 
 ## Components

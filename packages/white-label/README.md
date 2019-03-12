@@ -31,7 +31,7 @@ import { AbwButton } from '@aybolit/white-label';
 You can also use get Aybolit White Label from the CDN:
 
 ```html
-<script src="https://unpkg.com/@aybolit/white-label@latest?module" type="module"></script>
+<script src="http://unpkg.com/@aybolit/white-label/dist-web/index.bundled.js?module" type="module"></script>
 ```
 
 ## Components

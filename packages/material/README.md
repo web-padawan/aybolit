@@ -33,7 +33,7 @@ import { AbmButton } from '@aybolit/material';
 You can also use get Aybolit Material from the CDN:
 
 ```html
-<script src="https://unpkg.com/@aybolit/material@latest?module" type="module"></script>
+<script src="http://unpkg.com/@aybolit/material/dist-web/index.bundled.js?module" type="module"></script>
 ```
 
 ## Components

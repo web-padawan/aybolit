@@ -31,7 +31,7 @@ import { AbuButton } from '@aybolit/bulma';
 You can also use get Aybolit Bulma from the CDN:
 
 ```html
-<script src="https://unpkg.com/@aybolit/bulma@latest?module" type="module"></script>
+<script src="http://unpkg.com/@aybolit/bulma/dist-web/index.bundled.js?module" type="module"></script>
 ```
 
 ## Components
