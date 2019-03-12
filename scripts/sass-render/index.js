@@ -19,7 +19,7 @@ async function sassToCss(sassFile) {
   return result.css.toString();
 }
 
-async function sassRender(sourceFile, templateFile, outputFile) {
+async function sassRender(sourceFile, templateFile) {
   const template = await readFile(templateFile, 'utf-8');
   const match = delimiter.exec(template);
   if (!match) {
@@ -27,6 +27,9 @@ async function sassRender(sourceFile, templateFile, outputFile) {
   }
   const replacement = await sassToCss(sourceFile);
   const newContent = template.replace(delimiter, replacement);
+  const outputFile = sourceFile
+    .replace('.scss', '-css.js')
+    .replace('scss', 'src/components/styles');
   return writeFile(outputFile, newContent, 'utf-8');
 }
 

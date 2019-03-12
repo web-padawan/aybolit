@@ -8,7 +8,7 @@ const watchOptions = {
     if (path.indexOf('node_modules') > -1) {
       return false;
     }
-    if (path.indexOf('styles') === -1) {
+    if (path.indexOf('scss') === -1) {
       return false;
     }
     return /.(?:scss)$/.test(path);

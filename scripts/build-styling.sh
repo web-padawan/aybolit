@@ -9,7 +9,6 @@ for sassfile in ${sassfiles[@]}; do
   if [[ `basename ${sassfile}` =~ ^_ ]]; then
     continue
   fi
-  cssjs=`echo ${sassfile} | sed -e 's/.scss/-css.js/'`
-  echo "Generating ${cssjs}"
-  node scripts/sass-render/bin/sass-render.js -t sass-template.tmpl -s ${sassfile} -o ${cssjs}
+  echo "Processing ${sassfile}"
+  node scripts/sass-render/bin/sass-render.js -t sass-template.tmpl -s ${sassfile}
 done
