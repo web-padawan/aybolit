@@ -2,6 +2,8 @@
 
 Aybolit Bulma is a set of the web components inspired by [Bulma](https://bulma.io) CSS framework.
 
+[Live Demo ↗](https://web-padawan.github.io/aybolit/)
+
 ## Overview
 
 Bulma framework and [Bulma-extensions](https://wikiki.github.io) are used as a base, but Aybolit does not preserve all the original CSS and makes certain adjustments. The main idea behind these changes is flexible theming support, with reasonable bundle size.

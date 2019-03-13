@@ -4,6 +4,8 @@ Aybolit is a lightweight, standards-based, framework agnostic UI components libr
 
 > *Aybolit* is a fictional character from the children's poems by Korney Chukovsky. He is a traveling doctor who treats animals for free, regardless of their injuries. The name may be translated as "Ouch, [it] hurts!"
 
+[Live Demo ↗](https://web-padawan.github.io/aybolit/)
+
 ## Overview
 
 Aybolit is based on the modern web standards: [Custom Elements](https://caniuse.com/#feat=custom-elementsv1), [Shadow DOM](https://caniuse.com/#feat=shadowdomv1) and [CSS Custom Properties](https://caniuse.com/#feat=css-variables). Using these parts of the web platform allows Aybolit to easily solve several common problems which have been around for years:
