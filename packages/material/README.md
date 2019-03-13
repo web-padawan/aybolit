@@ -4,6 +4,8 @@ Aybolit Material is a set of the web components inspired by [Material Design](ht
 
 [Live Demo ↗](https://web-padawan.github.io/aybolit/)
 
+[![Package size](https://badgen.net/bundlephobia/minzip/@aybolit/material)](https://bundlephobia.com/result?p=@aybolit/material)
+
 ## Overview
 
 Aybolit Material is based on [Matter](https://github.com/finnhvman/matter), a library for creating Material Design Components in pure CSS. The reason to build on top of Matter is its custom CSS properties based architecture, which works with Web Components really nice.

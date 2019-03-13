@@ -4,6 +4,8 @@ Aybolit White Label is a set of the web components with bare minimum of styles.
 
 [Live Demo ↗](https://web-padawan.github.io/aybolit/)
 
+[![Package size](https://badgen.net/bundlephobia/minzip/@aybolit/white-label)](https://bundlephobia.com/result?p=@aybolit/white-label)
+
 ## Overview
 
 Aybolit White Label is opinionated library not based on any CSS framework. The idea behind it is to provide a meaningful set of default styles easy to extend and override. You might consider it a boilerplate for building your next  design system using Web Components. Unlike other Aybolit implementations, White Label doesn't provide any custom CSS properties.
