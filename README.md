@@ -6,6 +6,9 @@ Aybolit is a lightweight, standards-based, framework agnostic UI components libr
 
 [Live Demo ↗](https://web-padawan.github.io/aybolit/)
 
+[![CircleCI](https://img.shields.io/circleci/project/github/web-padawan/aybolit.svg?style=flat-square)](https://circleci.com/gh/web-padawan/aybolit)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
 ## Overview
 
 Aybolit is based on the modern web standards: [Custom Elements](https://caniuse.com/#feat=custom-elementsv1), [Shadow DOM](https://caniuse.com/#feat=shadowdomv1) and [CSS Custom Properties](https://caniuse.com/#feat=css-variables). Using these parts of the web platform allows Aybolit to easily solve several common problems which have been around for years:
