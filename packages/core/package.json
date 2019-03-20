@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@aybolit/test-helpers": "^0.1.0",
-    "@open-wc/testing-helpers": "^0.7.9",
+    "@open-wc/testing-helpers": "^0.7.24",
     "@pika/pack": "^0.3.0",
     "@pika/plugin-build-web": "^0.3.0",
     "@pika/plugin-bundle-web": "^0.3.0",

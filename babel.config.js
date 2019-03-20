@@ -23,6 +23,19 @@ module.exports = {
           }
         ]
       ]
+    },
+    visual: {
+      presets: [
+        [
+          '@babel/preset-env',
+          {
+            modules: false,
+            targets: {
+              chrome: 73
+            }
+          }
+        ]
+      ]
     }
   }
 };
