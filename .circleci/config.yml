@@ -2,47 +2,90 @@
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
-version: 2
-jobs:
-  build:
-    docker:
-      # specify the version you desire here
-      - image: circleci/node:10.15-browsers
+version: 2.1
 
-    working_directory: ~/repo
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: circleci/node:10.15-browsers
 
+commands:
+  install_js:
     steps:
-      - checkout
-
-      # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
-
-      # Install dependencies
+             - v2-yarn-sha-{{ checksum "yarn.lock" }}
+             - v2-yarn-sha-
       - run:
           name: Install Dependencies
           command: yarn
 
-      # Keep cache
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+jobs:
+  checkout:
+    <<: *defaults
 
-      # Run build
+    steps:
+      - checkout
+      - install_js
+      - run:
+          name: Should not have any git not staged
+          command: git diff --exit-code
+      - save_cache:
+          key: v2-yarn-sha-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn/v4
+
+  test_browser:
+    <<: *defaults
+
+    steps:
+      - checkout
+      - install_js
+
       - run:
           name: Build
           command: yarn build
 
-      # Run lint
       - run:
           name: Run lint
           command: yarn lint
 
-      # Run tests
       - run:
-          name: Run tests
+          name: Run tests in browsers
           command: yarn test
+
+  test_visual:
+    <<: *defaults
+
+    docker:
+      - image: circleci/node:10.15-browsers
+      - image: selenium/standalone-chrome:3.141.59
+
+    steps:
+      - checkout
+      - install_js
+
+      - run:
+          name: Build
+          command: yarn build
+
+      - run:
+          name: Run visual tests
+          command: |
+            DOCKER_TEST_URL=http://$(ip addr show lo | grep "inet\b" | awk '{print $2}' | cut -d/ -f1):3090 yarn test:visual
+            yarn argos
+
+workflows:
+  version: 2
+  pipeline:
+    jobs:
+      - checkout:
+          filters:
+            branches:
+              ignore: gh-pagest
+      - test_browser:
+          requires:
+            - checkout
+      - test_visual:
+          requires:
+            - test_browser
