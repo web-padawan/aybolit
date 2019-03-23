@@ -75,6 +75,21 @@ jobs:
             DOCKER_TEST_URL=http://$(ip addr show lo | grep "inet\b" | awk '{print $2}' | cut -d/ -f1):3090 yarn test:visual
             yarn argos
 
+  dist:
+    <<: *defaults
+
+    steps:
+      - checkout
+      - install_js
+
+      - run:
+          name: Build
+          command: yarn build
+
+      - run:
+          name: Generate dist
+          command: yarn dist
+
 workflows:
   version: 2
   pipeline:
@@ -82,10 +97,13 @@ workflows:
       - checkout:
           filters:
             branches:
-              ignore: gh-pagest
+              ignore: gh-pages
       - test_browser:
           requires:
             - checkout
       - test_visual:
           requires:
             - test_browser
+      - dist:
+          requires:
+            - checkout
