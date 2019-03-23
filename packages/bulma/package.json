@@ -17,7 +17,7 @@
     "lit-element": "^2.0.1"
   },
   "devDependencies": {
-    "@open-wc/testing-helpers": "^0.7.24",
+    "@open-wc/testing-helpers": "^0.7.25",
     "@pika/pack": "^0.3.0",
     "@pika/plugin-build-web": "^0.3.0",
     "@pika/plugin-bundle-web": "^0.3.0",
