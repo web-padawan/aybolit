@@ -1,0 +1,28 @@
+@import "variables";
+
+:host {
+  outline: none;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--abs-contrast, #{$white});
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  vertical-align: baseline;
+  background-color: var(--abs-color, #{$gray-900});
+  border-radius: var(--abs-badge-border-radius, 0.25rem);
+}
+
+:host([rounded]) {
+  .badge {
+    border-radius: 50rem;
+  }
+}

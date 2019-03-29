@@ -1,3 +1,4 @@
+export { AbsBadge } from './components/abs-badge.js';
 export { AbsButton } from './components/abs-button.js';
 export { AbsCheckbox } from './components/abs-checkbox.js';
 export { AbsProgress } from './components/abs-progress.js';
