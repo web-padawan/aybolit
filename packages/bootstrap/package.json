@@ -17,26 +17,6 @@
     "lit-element": "^2.0.1"
   },
   "devDependencies": {
-    "@open-wc/testing-helpers": "^0.7.25",
-    "@pika/pack": "^0.3.0",
-    "@pika/plugin-build-web": "^0.3.0",
-    "@pika/plugin-bundle-web": "^0.3.0",
-    "@pika/plugin-standard-pkg": "^0.3.0"
-  },
-  "@pika/pack": {
-    "pipeline": [
-      [
-        "@pika/plugin-standard-pkg"
-      ],
-      [
-        "@pika/plugin-build-web"
-      ],
-      [
-        "@pika/plugin-bundle-web"
-      ]
-    ]
-  },
-  "scripts": {
-    "dist": "pack build"
+    "@open-wc/testing-helpers": "^0.7.25"
   }
 }
