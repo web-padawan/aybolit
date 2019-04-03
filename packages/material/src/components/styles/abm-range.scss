@@ -42,7 +42,7 @@
   &::-webkit-slider-thumb {
     width: 2px;
     height: 2px;
-    background-color: rgb(var(--abm-primary-rgb, 33, 150, 243));
+    background-color: RGB(var(--abm-primary-rgb, 33, 150, 243));
     border-radius: 50%;
     transition: box-shadow 0.2s;
     transform: scale(6, 6);
@@ -51,7 +51,7 @@
   &::-moz-range-thumb {
     width: 2px;
     height: 2px;
-    background-color: rgb(var(--abm-primary-rgb, 33, 150, 243));
+    background-color: RGB(var(--abm-primary-rgb, 33, 150, 243));
     border-radius: 50%;
     transition: box-shadow 0.2s;
     transform: scale(6, 6);
@@ -61,7 +61,7 @@
     width: 2px;
     height: 2px;
     margin: 0 17px;
-    background-color: rgb(var(--abm-primary-rgb, 33, 150, 243));
+    background-color: RGB(var(--abm-primary-rgb, 33, 150, 243));
     border-radius: 50%;
     transition: box-shadow 0.2s;
     transform: scale(6, 6);
@@ -117,24 +117,24 @@
     }
 
     &::-webkit-slider-thumb {
-      color: rgb(var(--abm-surface-rgb, 255, 255, 255));
-      background-color: rgb(var(--abm-onsurface-rgb, 0, 0, 0));
+      color: RGB(var(--abm-surface-rgb, 255, 255, 255));
+      background-color: RGB(var(--abm-onsurface-rgb, 0, 0, 0));
       /* stylelint-disable-next-line declaration-no-important */
-      box-shadow: 0 0 0 1px rgb(var(--abm-surface-rgb, 255, 255, 255)) !important;
+      box-shadow: 0 0 0 1px RGB(var(--abm-surface-rgb, 255, 255, 255)) !important;
       transform: scale(4, 4);
     }
 
     &::-moz-range-thumb {
-      background-color: rgb(var(--abm-onsurface-rgb, 0, 0, 0));
+      background-color: RGB(var(--abm-onsurface-rgb, 0, 0, 0));
       /* stylelint-disable-next-line declaration-no-important */
-      box-shadow: 0 0 0 1px rgb(var(--abm-surface-rgb, 255, 255, 255)) !important;
+      box-shadow: 0 0 0 1px RGB(var(--abm-surface-rgb, 255, 255, 255)) !important;
       transform: scale(4, 4);
     }
 
     &::-ms-thumb {
-      background-color: rgb(var(--abm-onsurface-rgb, 0, 0, 0));
+      background-color: RGB(var(--abm-onsurface-rgb, 0, 0, 0));
       /* stylelint-disable-next-line declaration-no-important */
-      box-shadow: 0 0 0 1px rgb(var(--abm-surface-rgb, 255, 255, 255)) !important;
+      box-shadow: 0 0 0 1px RGB(var(--abm-surface-rgb, 255, 255, 255)) !important;
       transform: scale(4, 4);
     }
   }

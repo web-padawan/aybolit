@@ -53,22 +53,22 @@
     transform: scale(0);
 
     + .label::before {
-      border-color: rgb(var(--abm-primary-rgb, 33, 150, 243));
+      border-color: RGB(var(--abm-primary-rgb, 33, 150, 243));
     }
   }
 
   &:checked,
   &:indeterminate {
-    background-color: rgb(var(--abm-primary-rgb, 33, 150, 243));
+    background-color: RGB(var(--abm-primary-rgb, 33, 150, 243));
 
     + .label {
       &::before {
-        background-color: rgb(var(--abm-primary-rgb, 33, 150, 243));
-        border-color: rgb(var(--abm-primary-rgb, 33, 150, 243));
+        background-color: RGB(var(--abm-primary-rgb, 33, 150, 243));
+        border-color: RGB(var(--abm-primary-rgb, 33, 150, 243));
       }
 
       &::after {
-        border-color: rgb(var(--abm-onprimary-rgb, 255, 255, 255));
+        border-color: RGB(var(--abm-onprimary-rgb, 255, 255, 255));
       }
     }
   }

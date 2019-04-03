@@ -7,6 +7,7 @@
     "scss/dollar-variable-default": null,
     "scss/operator-no-newline-after": null,
     "number-leading-zero": null,
+    "function-name-case": null,
     "property-no-vendor-prefix": [true, {
       "ignoreProperties": ["appearance", "user-select"]
     }]

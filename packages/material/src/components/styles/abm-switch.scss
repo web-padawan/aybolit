@@ -48,7 +48,7 @@
 
   &:checked {
     right: -10px;
-    background-color: rgb(var(--abm-primary-rgb, 33, 150, 243));
+    background-color: RGB(var(--abm-primary-rgb, 33, 150, 243));
 
     + .label {
       &::before {
@@ -56,7 +56,7 @@
       }
 
       &::after {
-        background-color: rgb(var(--abm-primary-rgb, 33, 150, 243));
+        background-color: RGB(var(--abm-primary-rgb, 33, 150, 243));
         transform: translateX(16px);
       }
     }
@@ -80,7 +80,7 @@
     opacity: 0;
 
     + .label {
-      color: rgb(var(--abm-onsurface-rgb, 0, 0, 0));
+      color: RGB(var(--abm-onsurface-rgb, 0, 0, 0));
       cursor: default;
       opacity: 0.38;
 
@@ -119,7 +119,7 @@
     width: 20px;
     height: 20px;
     content: "";
-    background-color: rgb(var(--abm-onprimary-rgb, 255, 255, 255));
+    background-color: RGB(var(--abm-onprimary-rgb, 255, 255, 255));
     border-radius: 50%;
     box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
       0 1px 5px 0 rgba(0, 0, 0, 0.12);

@@ -1,6 +1,6 @@
 progress {
   height: 4px;
-  color: rgb(var(--abm-primary-rgb, 33, 150, 243));
+  color: RGB(var(--abm-primary-rgb, 33, 150, 243));
   background-color: rgba(var(--abm-primary-rgb, 33, 150, 243), 0.12);
 
   &::-webkit-progress-bar {
