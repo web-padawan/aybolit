@@ -28,6 +28,7 @@
     "@babel/runtime": "^7.4.2",
     "@open-wc/testing-helpers": "^0.7.25",
     "@storybook/addon-knobs": "^5.0.5",
+    "@storybook/addon-viewport": "^5.0.6",
     "@storybook/addons": "^5.0.5",
     "@storybook/core": "^5.0.5",
     "@storybook/polymer": "^5.0.5",
