@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+const path = require('path');
 const commandLineArgs = require('command-line-args');
 const commandLineUsage = require('command-line-usage');
 const glob = require('glob');
@@ -55,10 +56,12 @@ if (!(source && template)) {
 }
 
 glob(source, (err, files) => {
-  files.forEach(file => {
-    sassRender(file, template).catch(error => {
-      console.error(error);
-      process.exit(-1);
+  files
+    .filter(file => !path.basename(file).startsWith('_'))
+    .forEach(file => {
+      sassRender(file, template).catch(error => {
+        console.error(error);
+        process.exit(-1);
+      });
     });
-  });
 });
