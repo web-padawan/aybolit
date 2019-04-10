@@ -28,7 +28,7 @@ function printUsage() {
   const sections = [
     {
       header: 'sass-render',
-      content: "Render sass into an element's lit template"
+      content: 'Render sass into css tagged template literal'
     },
     {
       header: 'Options',

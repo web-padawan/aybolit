@@ -2,7 +2,6 @@ const watch = require('node-watch');
 const { promisify } = require('util');
 const exec = promisify(require('child_process').exec);
 
-/* eslint-disable no-console */
 const watchOptions = {
   recursive: true,
   filter: path => {
@@ -25,7 +24,7 @@ async function addToQueue(fileName) {
   console.log(`saw change to ${fileName}`);
   updating = true;
   console.log('building styles');
-  const execPromise = exec(`node packages/sass-render/bin/sass-render -s "${fileName}"`);
+  const execPromise = exec(`node packages/sass-render/bin/sass-render.js -s "${fileName}"`);
   try {
     const { stdout } = await execPromise;
     console.log(stdout);
