@@ -28,7 +28,6 @@ async function sassRender(sourceFile) {
   if (!match) {
     throw new Error(`Template file ${templateFile} did not contain template delimiters`);
   }
-  // eslint-disable-next-line no-console
   console.log(`Processing ${sourceFile}`);
   const replacement = await sassToCss(sourceFile);
   const newContent = template.replace(delimiter, replacement);
