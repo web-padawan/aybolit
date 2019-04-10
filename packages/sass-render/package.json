@@ -1,0 +1,17 @@
+{
+  "name": "@aybolit/sass-render",
+  "private": true,
+  "version": "0.1.0",
+  "author": "Serhii Kulykov <serguey.kulikov@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "command-line-args": "^5.0.2",
+    "command-line-usage": "^5.0.5",
+    "glob": "^7.1.3",
+    "node-sass-import": "^2.0.1",
+    "sass": "^1.17.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

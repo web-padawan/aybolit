@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const util = require('util');
 
 const sass = require('sass');
@@ -14,17 +15,20 @@ async function sassToCss(sassFile) {
   const result = await renderSass({
     file: sassFile,
     importer: nodeSassImport,
-    outputStyle: 'compressed',
+    outputStyle: 'compressed'
   });
   return result.css.toString();
 }
 
-async function sassRender(sourceFile, templateFile) {
+const templateFile = path.join(__dirname, './sass-template.tmpl');
+
+async function sassRender(sourceFile) {
   const template = await readFile(templateFile, 'utf-8');
   const match = delimiter.exec(template);
   if (!match) {
     throw new Error(`Template file ${templateFile} did not contain template delimiters`);
   }
+  // eslint-disable-next-line no-console
   console.log(`Processing ${sourceFile}`);
   const replacement = await sassToCss(sourceFile);
   const newContent = template.replace(delimiter, replacement);

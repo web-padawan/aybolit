@@ -15,12 +15,6 @@ const options = [
     defaultOption: true
   },
   {
-    name: 'template',
-    alias: 't',
-    type: String,
-    description: 'Template file to use, must use `<% content %>` as delimiter'
-  },
-  {
     name: 'help',
     alias: 'h',
     type: Boolean,
@@ -28,7 +22,7 @@ const options = [
   }
 ];
 
-const { source, template, help } = commandLineArgs(options);
+const { source, help } = commandLineArgs(options);
 
 function printUsage() {
   const sections = [
@@ -49,8 +43,8 @@ if (help) {
   process.exit(0);
 }
 
-if (!(source && template)) {
-  console.error('Must provide a source and template!');
+if (!source) {
+  console.error('Must provide a source!');
   printUsage();
   process.exit(-1);
 }
@@ -59,7 +53,7 @@ glob(source, (err, files) => {
   files
     .filter(file => !path.basename(file).startsWith('_'))
     .forEach(file => {
-      sassRender(file, template).catch(error => {
+      sassRender(file).catch(error => {
         console.error(error);
         process.exit(-1);
       });
