@@ -2,7 +2,8 @@
 
 const commandLineArgs = require('command-line-args');
 const commandLineUsage = require('command-line-usage');
-const {sassRender} = require('../index.js');
+const glob = require('glob');
+const { sassRender } = require('../index.js');
 
 const options = [
   {
@@ -10,34 +11,34 @@ const options = [
     alias: 's',
     type: String,
     description: 'Template file to render sass into.',
-    defaultOption: true,
+    defaultOption: true
   },
   {
     name: 'template',
     alias: 't',
     type: String,
-    description: 'Template file to use, must use `<% content %>` as delimiter',
+    description: 'Template file to use, must use `<% content %>` as delimiter'
   },
   {
     name: 'help',
     alias: 'h',
     type: Boolean,
-    description: 'Print this message.',
-  },
+    description: 'Print this message.'
+  }
 ];
 
-const {source, template, help} = commandLineArgs(options);
+const { source, template, help } = commandLineArgs(options);
 
 function printUsage() {
   const sections = [
     {
       header: 'sass-render',
-      content: 'Render sass into an element\'s lit template',
+      content: "Render sass into an element's lit template"
     },
     {
       header: 'Options',
-      optionList: options,
-    },
+      optionList: options
+    }
   ];
   console.log(commandLineUsage(sections));
 }
@@ -53,7 +54,11 @@ if (!(source && template)) {
   process.exit(-1);
 }
 
-sassRender(source, template).catch((err) => {
-  console.error(err);
-  process.exit(-1);
+glob(source, (err, files) => {
+  files.forEach(file => {
+    sassRender(file, template).catch(error => {
+      console.error(error);
+      process.exit(-1);
+    });
+  });
 });

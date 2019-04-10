@@ -16,7 +16,8 @@
     "storybook": "start-storybook -p 6006",
     "test": "karma start",
     "test:visual": "rimraf tmp && BABEL_ENV=visual webpack --config test/visual/webpack.config.js && rimraf test/visual/screenshots/chrome/* && vrtest run --config test/visual/vrtest.config.js --record",
-    "watch": "node scripts/watcher.js"
+    "watch": "node scripts/watcher.js",
+    "bootstrap": "lerna bootstrap"
   },
   "workspaces": [
     "packages/*"
