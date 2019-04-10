@@ -7,7 +7,7 @@
   "scripts": {
     "argos": "argos upload test/visual/screenshots/chrome --token $ARGOS_TOKEN || true",
     "build": "yarn build-styling",
-    "build-styling": "./scripts/build-styling.sh",
+    "build-styling": "node packages/sass-render/bin/sass-render.js -s 'packages/*/scss/*.scss'",
     "deploy-storybook": "storybook-to-ghpages",
     "dist": "lerna run dist",
     "lint": "npm-run-all --parallel lint:*",
@@ -21,6 +21,9 @@
   "workspaces": [
     "packages/*"
   ],
+  "dependencies": {
+    "node-watch": "^0.6.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@babel/plugin-transform-runtime": "^7.4.0",
@@ -36,8 +39,6 @@
     "argos-cli": "^0.1.1",
     "babel-loader": "^8.0.5",
     "chai": "^4.2.0",
-    "command-line-args": "^5.0.2",
-    "command-line-usage": "^5.0.5",
     "eslint": "^5.15.3",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^4.1.0",
@@ -59,15 +60,12 @@
     "lint-staged": "^8.1.5",
     "lit-html": "^1.0.0",
     "mocha": "^6.0.2",
-    "node-sass-import": "^2.0.1",
-    "node-watch": "^0.6.0",
     "npm-run-all": "^4.1.5",
     "polymer-webpack-loader": "^2.0.3",
     "prettier": "^1.16.4",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "rimraf": "^2.6.3",
-    "sass": "^1.17.3",
     "sinon": "^7.3.0",
     "sinon-chai": "^3.3.0",
     "stylelint": "^9.10.1",

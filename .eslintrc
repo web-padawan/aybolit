@@ -33,6 +33,15 @@
       "rules": {
         "no-unused-expressions": "off"
       }
+    },
+    {
+      "files": [
+        "packages/sass-render/**/*",
+        "scripts/watcher.js"
+      ],
+      "rules": {
+        "no-console": "off"
+      }
     }
   ],
   "parserOptions": {
