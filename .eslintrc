@@ -18,8 +18,7 @@
     "import/extensions": "off",
     "import/prefer-default-export": "off",
     "no-restricted-globals": "off",
-    "no-underscore-dangle": "off",
-    "import/no-extraneous-dependencies": "off"
+    "no-underscore-dangle": "off"
   },
   "overrides": [
     {
