@@ -31,9 +31,7 @@ async function sassRender(sourceFile) {
   console.log(`Processing ${sourceFile}`);
   const replacement = await sassToCss(sourceFile);
   const newContent = template.replace(delimiter, replacement);
-  const outputFile = sourceFile
-    .replace('.scss', '-css.js')
-    .replace('scss', 'src/components/styles');
+  const outputFile = sourceFile.replace('.scss', '-css.js').replace('scss', 'src/styles');
   return writeFile(outputFile, newContent, 'utf-8');
 }
 

@@ -1,5 +1,5 @@
 import { ProgressElement } from '@aybolit/core';
-import abwProgressStyles from './styles/abw-progress-css.js';
+import abwProgressStyles from '../styles/abw-progress-css.js';
 
 class AbwProgress extends ProgressElement {
   static get styles() {

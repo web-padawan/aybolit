@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit-element';
 import { ifDefined } from 'lit-html/directives/if-defined';
-import progressBaseStyles from './styles/progress-base-css.js';
+import progressBaseStyles from '../styles/progress-base-css.js';
 
 export class ProgressElement extends LitElement {
   static get properties() {

@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit-element';
 import { DelegateFocusMixin } from '../mixins/delegate-focus-mixin.js';
-import switchBaseStyles from './styles/switch-base-css.js';
+import switchBaseStyles from '../styles/switch-base-css.js';
 
 export class SwitchElement extends DelegateFocusMixin(LitElement) {
   static get properties() {
