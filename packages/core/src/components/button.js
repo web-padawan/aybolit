@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit-element';
 import { DelegateFocusMixin } from '../mixins/delegate-focus-mixin.js';
-import buttonBaseStyles from './styles/button-base-css.js';
+import buttonBaseStyles from '../styles/button-base-css.js';
 
 export class ButtonElement extends DelegateFocusMixin(LitElement) {
   static get properties() {

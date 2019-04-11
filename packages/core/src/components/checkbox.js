@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit-element';
 import { DelegateFocusMixin } from '../mixins/delegate-focus-mixin.js';
-import checkboxBaseStyles from './styles/checkbox-base-css.js';
+import checkboxBaseStyles from '../styles/checkbox-base-css.js';
 
 const $$name = Symbol('name');
 

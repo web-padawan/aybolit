@@ -1,5 +1,5 @@
 import { RangeElement } from '@aybolit/core';
-import abwRangeStyles from './styles/abw-range-css.js';
+import abwRangeStyles from '../styles/abw-range-css.js';
 
 class AbwRange extends RangeElement {
   static get styles() {

@@ -1,5 +1,5 @@
 import { CheckboxElement } from '@aybolit/core';
-import abwCheckboxStyles from './styles/abw-checkbox-css.js';
+import abwCheckboxStyles from '../styles/abw-checkbox-css.js';
 
 class AbwCheckbox extends CheckboxElement {
   static get styles() {
