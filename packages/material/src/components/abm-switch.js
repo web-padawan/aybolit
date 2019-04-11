@@ -1,5 +1,5 @@
 import { SwitchElement } from '@aybolit/core';
-import abmSwitchStyles from './styles/abm-switch-css.js';
+import abmSwitchStyles from '../styles/abm-switch-css.js';
 
 export class AbmSwitch extends SwitchElement {
   static get styles() {
