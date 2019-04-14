@@ -27,12 +27,6 @@ Aybolit project is a monorepo and contains the following npm packages:
 
 - [`@aybolit/core`](https://github.com/web-padawan/aybolit/tree/master/packages/core) - components base classes with "normalized" styles.
 
-- [`@aybolit/bootstrap`](https://github.com/web-padawan/aybolit/tree/master/packages/bootstrap) - set of components inspired by [Bootstrap](https://getbootstrap.com) framework.
-
-- [`@aybolit/bulma`](https://github.com/web-padawan/aybolit/tree/master/packages/bulma) - set of components inspired by [Bulma](https://bulma.io) CSS framework.
-
-- [`@aybolit/material`](https://github.com/web-padawan/aybolit/tree/master/packages/material) - set of components inspired by [Material Design](https://material.io).
-
 - [`@aybolit/white-label`](https://github.com/web-padawan/aybolit/tree/master/packages/white-label) - set of components with bare minimum of styles.
 
 Check the README of each individual package for more details.
