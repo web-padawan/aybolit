@@ -13,8 +13,7 @@
     "directory": "packages/white-label"
   },
   "dependencies": {
-    "@aybolit/core": "^0.1.0",
-    "lit-element": "^2.0.1"
+    "@aybolit/core": "^0.1.0"
   },
   "devDependencies": {
     "@pika/pack": "^0.3.0",
