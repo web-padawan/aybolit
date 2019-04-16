@@ -1,7 +1,7 @@
 import { configure } from '@storybook/polymer';
 
 function loadStories() {
-  const req = require.context('../packages/storybook', true, /\.stories\.js$/);
+  const req = require.context('../', true, /\.stories\.js$/);
   req.keys().forEach(filename => req(filename));
 }
 
