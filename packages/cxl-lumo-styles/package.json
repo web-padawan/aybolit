@@ -1,0 +1,15 @@
+{
+  "name": "@conversionxl/cxl-lumo-styles",
+  "version": "0.1.0",
+  "author": "CXL <leho@conversionxl.com>",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/conversionxl/aybolit",
+    "directory": "packages/cxl-lumo-styles"
+  },
+  "dependencies": {
+    "@vaadin/vaadin-lumo-styles": "^1.4.2"
+  }
+}

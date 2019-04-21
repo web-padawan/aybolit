@@ -1,0 +1,11 @@
+html,
+:host {
+  /**
+   * Primary
+   *
+   * @see https://github.com/vaadin/vaadin-lumo-styles/blob/v1.4.2/color.html#L57
+   */
+  --lumo-primary-color: hsl(8, 100%, 39%);
+  --lumo-primary-color-10pct: hsla(8, 100%, 39%, 0.1);
+  --lumo-primary-color-50pct: hsla(8, 100%, 39%, 0.5);
+}
