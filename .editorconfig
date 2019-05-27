@@ -12,3 +12,8 @@ trim_trailing_whitespace = true
 [*.md]
 max_line_length = off
 trim_trailing_whitespace = false
+
+[*.{js,scss}]
+block_comment_start = /**
+block_comment = *
+block_comment_end = */
