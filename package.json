@@ -11,7 +11,7 @@
     "deploy-storybook": "yarn --cwd packages/storybook storybook-to-ghpages",
     "dist": "lerna run dist",
     "lint": "npm-run-all --parallel lint:*",
-    "lint:eclint": "eclint check $(find . \\( -name '*.js' -o -name '*.scss' \\) -type f -not -path '*/\\.*' -not -path '*node_modules/*' -not -path '*tmp/*' -not -path '*/pkg/*' -not -path '*/node_modules/*' -not -path '*coverage/*')",
+    "lint:eclint": "eclint check packages scripts test . !.*/* !**/node_modules/** !**/pkg/**",
     "lint:js": "eslint *.js packages --ignore-path .gitignore",
     "lint:scss": "stylelint packages/**/*.scss",
     "storybook": "yarn --cwd packages/storybook start-storybook -p 6006",
