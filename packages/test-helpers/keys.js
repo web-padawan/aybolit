@@ -74,12 +74,30 @@ export function keyUpOn(target, keyCode, modifiers, key) {
   keyEventOn(target, 'keyup', keyCode, modifiers, key);
 }
 
+export function enterDown(target) {
+  keyDownOn(target, 13, [], 'Enter');
+}
+
+export function enterUp(target) {
+  keyUpOn(target, 13, [], 'Enter');
+}
+
+export function enter(target) {
+  enterDown(target);
+  enterUp(target);
+}
+
 export function spaceDown(target) {
   keyDownOn(target, 32, [], ' ');
 }
 
 export function spaceUp(target) {
   keyUpOn(target, 32, [], ' ');
+}
+
+export function space(target) {
+  spaceDown(target);
+  spaceUp(target);
 }
 
 export function shiftTabDown(target) {
