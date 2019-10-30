@@ -7,11 +7,11 @@
   "dependencies": {
     "@aybolit/white-label": "^0.1.0",
     "@conversionxl/cxl-lumo-styles": "^0.1.0",
-    "@storybook/addon-knobs": "^5.0.11",
-    "@storybook/addon-viewport": "^5.0.11",
-    "@storybook/addons": "^5.0.11",
-    "@storybook/core": "^5.0.11",
-    "@storybook/polymer": "^5.0.11",
+    "@storybook/addon-knobs": "^5.2.5",
+    "@storybook/addon-viewport": "^5.2.5",
+    "@storybook/addons": "^5.2.5",
+    "@storybook/core": "^5.2.5",
+    "@storybook/polymer": "^5.2.5",
     "@storybook/storybook-deployer": "^2.8.1",
     "@vaadin/vaadin-button": "^2.1.5",
     "lit-html": "^1.0.0"
