@@ -18,11 +18,11 @@
   },
   "devDependencies": {
     "@aybolit/test-helpers": "^0.1.0",
-    "@open-wc/testing-helpers": "^0.8.6",
+    "@open-wc/testing-helpers": "^0.9.5",
     "@pika/pack": "^0.3.0",
-    "@pika/plugin-build-web": "^0.3.0",
-    "@pika/plugin-bundle-web": "^0.3.0",
-    "@pika/plugin-standard-pkg": "^0.3.0"
+    "@pika/plugin-build-web": "^0.4.0",
+    "@pika/plugin-bundle-web": "^0.4.0",
+    "@pika/plugin-standard-pkg": "^0.4.0"
   },
   "@pika/pack": {
     "pipeline": [

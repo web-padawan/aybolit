@@ -7,9 +7,9 @@
   "dependencies": {
     "command-line-args": "^5.0.2",
     "command-line-usage": "^5.0.5",
-    "glob": "^7.1.3",
+    "glob": "^7.1.4",
     "node-sass-import": "^2.0.1",
-    "sass": "^1.17.3"
+    "sass": "^1.20.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
