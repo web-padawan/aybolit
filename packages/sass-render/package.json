@@ -1,8 +1,11 @@
 {
-  "name": "@aybolit/sass-render",
+  "name": "@conversionxl/sass-render",
   "private": true,
-  "version": "0.1.0",
-  "author": "Serhii Kulykov <serguey.kulikov@gmail.com>",
+  "version": "0.1.1",
+  "author": "CXL",
+  "contributors": [
+    "Serhii Kulykov <serguey.kulikov@gmail.com>"
+  ],
   "license": "MIT",
   "dependencies": {
     "command-line-args": "^5.0.2",

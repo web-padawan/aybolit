@@ -9,6 +9,12 @@
     "number-leading-zero": null,
     "property-no-vendor-prefix": [true, {
       "ignoreProperties": ["appearance", "user-select"]
+    }],
+    "selector-no-qualifying-type": [true, {
+      "ignore": ["attribute"]
+    }],
+    "selector-type-no-unknown": [true, {
+      "ignore": ["custom-elements"]
     }]
   }
 }

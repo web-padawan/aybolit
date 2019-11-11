@@ -2,12 +2,15 @@
   "name": "aybolit-workspace",
   "private": true,
   "description": "Web Components library built with LitElement",
-  "author": "Serhii Kulykov <serguey.kulikov@gmail.com>",
-  "license": "MIT",
+  "author": "CXL",
+  "contributors": [
+    "Serhii Kulykov <serguey.kulikov@gmail.com>"
+  ],
+  "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "argos": "argos upload test/visual/screenshots/chrome --token $ARGOS_TOKEN || true",
     "build": "yarn build-styling",
-    "build-styling": "node packages/sass-render/bin/sass-render.js -s 'packages/*/scss/*.scss'",
+    "build-styling": "node packages/sass-render/bin/sass-render.js -s 'packages/*/scss/**/*.scss'",
     "deploy-storybook": "yarn --cwd packages/storybook storybook-to-ghpages",
     "dist": "lerna run dist",
     "lint": "npm-run-all --parallel lint:*",
@@ -26,13 +29,15 @@
     "node-watch": "^0.6.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/plugin-transform-runtime": "^7.4.4",
-    "@babel/preset-env": "^7.4.5",
-    "@babel/runtime": "^7.4.5",
+    "@babel/core": "^7.7.0",
+    "@babel/plugin-proposal-decorators": "^7.7.0",
+    "@babel/plugin-transform-runtime": "^7.6.0",
+    "@babel/preset-env": "^7.7.0",
+    "@babel/runtime": "^7.7.0",
     "@open-wc/testing-helpers": "^0.9.5",
     "@webcomponents/webcomponentsjs": "^2.2.10",
     "argos-cli": "^0.1.1",
+    "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "chai": "^4.2.0",
     "eclint": "^2.8.1",

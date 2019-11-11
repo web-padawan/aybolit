@@ -1,6 +1,6 @@
 {
   "name": "@conversionxl/cxl-lumo-styles",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "CXL <leho@conversionxl.com>",
   "license": "SEE LICENSE IN LICENSE.md",
   "main": "src/index.js",
@@ -10,6 +10,8 @@
     "directory": "packages/cxl-lumo-styles"
   },
   "dependencies": {
-    "@vaadin/vaadin-lumo-styles": "^1.5.0"
+    "@polymer/iron-iconset-svg": "^3.0.1",
+    "@vaadin/vaadin-lumo-styles": "^1.5.0",
+    "lit-html": "^1.1.2"
   }
 }

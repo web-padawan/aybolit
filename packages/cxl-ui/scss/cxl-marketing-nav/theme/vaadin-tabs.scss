@@ -1,0 +1,22 @@
+/**
+ * Unify orientations side margins and padding
+ */
+$vaadin-tab-padding: 0.75rem;
+
+// Match container margins w/ spacing between tabs
+:host([orientation="horizontal"][theme~="cxl-marketing-nav"]) [part="tabs"] {
+  margin-right: $vaadin-tab-padding;
+  margin-left: $vaadin-tab-padding;
+}
+
+// Align horizontal Global nav with vertical Primary nav
+:host([orientation="horizontal"][theme~="cxl-marketing-nav"][wide="false"]) [part="tabs"] {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+// Reduce spacing between tabs
+:host([theme~="cxl-marketing-nav"]) ::slotted(.menu-item) {
+  padding-right: $vaadin-tab-padding;
+  padding-left: $vaadin-tab-padding;
+}

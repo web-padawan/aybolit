@@ -1,0 +1,49 @@
+:host {
+  // Avoid margin collapse
+  display: inline-block;
+  width: 100%;
+
+  background-color: var(--lumo-shade);
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+/**
+ * @see https://www.smashingmagazine.com/2019/08/bottom-navigation-pattern-mobile-web-pages/
+:host(:not([wide])) {
+  bottom: 0;
+  position: fixed;
+}
+ */
+
+/* stylelint-disable-next-line selector-class-pattern */
+:host([wide]) .menu-item\\\:not-wide {
+  display: none;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+:host(:not([wide])) .menu-item\\\:wide {
+  display: none;
+}
+
+// @todo Magic number "8" is fragile, depends on menu item count
+:host(:not([wide])) .menu-items:not([selected="8"]) + ::slotted(.menu-items) {
+  display: none;
+}
+
+::slotted(.menu-items) {
+  --lumo-tertiary-text-color: var(--lumo-base-color);
+}
+
+.menu-item-menu-toggle {
+  &[selected] iron-icon:first-child,
+  &:not([selected]) iron-icon + iron-icon {
+    display: none;
+  }
+}
+
+.menu-items {
+  background-color: var(--lumo-tint);
+}

@@ -1,8 +1,7 @@
 node_modules
 lerna-debug.log
-packages/**/src/**/styles/*-css.js
+packages/**/src/**/styles/**/*-css.js
 packages/**/pkg
 coverage
 tmp
 test/visual/screenshots
-

@@ -1,0 +1,8 @@
+/**
+ * Magic number
+ *
+ * @todo Any non-`!important` methods available?
+ */
+:host {
+  --vaadin-overlay-viewport-bottom: 33% !important; /* stylelint-disable-line declaration-no-important */
+}

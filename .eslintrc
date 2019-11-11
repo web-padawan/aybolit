@@ -44,7 +44,11 @@
       }
     }
   ],
+  "parser": "babel-eslint",
   "parserOptions": {
+    "ecmaFeatures": {
+      "legacyDecorators": true
+    },
     "ecmaVersion": 2018,
     "sourceType": "module"
   }
