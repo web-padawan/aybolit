@@ -16,10 +16,10 @@
     "@aybolit/core": "^0.1.0"
   },
   "devDependencies": {
-    "@pika/pack": "^0.3.0",
-    "@pika/plugin-build-web": "^0.4.0",
-    "@pika/plugin-bundle-web": "^0.4.0",
-    "@pika/plugin-standard-pkg": "^0.4.0"
+    "@pika/pack": "^0.5.0",
+    "@pika/plugin-build-web": "^0.7.1",
+    "@pika/plugin-bundle-web": "^0.7.1",
+    "@pika/plugin-standard-pkg": "^0.7.1"
   },
   "@pika/pack": {
     "pipeline": [
@@ -35,6 +35,6 @@
     ]
   },
   "scripts": {
-    "dist": "pack build"
+    "dist": "pika build"
   }
 }
