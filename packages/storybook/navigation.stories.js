@@ -1,6 +1,6 @@
 import { html } from 'lit-html';
 import { useEffect } from '@storybook/client-api';
-import '@conversionxl/cxl-ui/src/components/cxl-marketing-nav';
+import '@conversionxl/cxl-ui/src/components/cxl-marketing-nav.js';
 
 export default {
   title: 'CXL Navigation'

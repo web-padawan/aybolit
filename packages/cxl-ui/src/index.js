@@ -1,1 +1,1 @@
-export { CXLMarketingNavElement } from './components/cxl-marketing-nav/index.js';
+export { CXLMarketingNavElement } from './components/cxl-marketing-nav.js';
