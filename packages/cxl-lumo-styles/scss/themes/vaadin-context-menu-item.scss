@@ -1,0 +1,7 @@
+::slotted(a) {
+  color: inherit !important; /* stylelint-disable-line declaration-no-important */
+}
+
+::slotted(a:not(:hover)) {
+  text-decoration: none !important; /* stylelint-disable-line declaration-no-important */
+}

@@ -7,3 +7,15 @@ html {
 body {
   margin: 0;
 }
+
+a {
+  color: var(--lumo-primary-color);
+
+  // Avoid visual overload.
+  text-decoration: none;
+
+  // Only when navigable.
+  &[href]:hover {
+    text-decoration: underline;
+  }
+}

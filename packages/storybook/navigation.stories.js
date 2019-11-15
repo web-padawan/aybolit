@@ -77,6 +77,9 @@ export const CxlMarketingNav = () => {
         <vaadin-tab class="menu-item" theme="cxl-marketing-nav"><a>Help</a></vaadin-tab>
       </vaadin-tabs>
     </cxl-marketing-nav>
+
+    <p>We need to test context menu items vs body links styling, so here's a <a href="https://cxl.com">link somewhere like cxl.com</a>.</p>
+    <p><a href="https://cxl.com">Another link</a> for good measure.</p>
   `;
 };
 
