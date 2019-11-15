@@ -217,11 +217,16 @@ export class CXLMarketingNavElement extends LitElement {
    * Populate children `<vaadin-context-menu>` elements.
    *
    * @private
+   * @todo Links cannot be sub-menu hosts?
    */
   _updatedContextMenuItems() {
-    Object.keys(this.contextMenuItems).forEach(menuItemId => {
+    this.contextMenuItems.forEach(menuItem => {
+      if (! menuItem.children) {
+        return;
+      }
+
       const contextMenu = this.querySelector(
-        `vaadin-tab#menu-item-${menuItemId} > vaadin-context-menu`
+        `vaadin-tab#menu-item-${menuItem.id} > vaadin-context-menu`
       );
 
       /**
@@ -229,7 +234,7 @@ export class CXLMarketingNavElement extends LitElement {
        *
        * @see https://github.com/vaadin/vaadin-context-menu/issues/254
        */
-      const _contextMenuItems = this.contextMenuItems[menuItemId];
+      const _contextMenuItems = menuItem.children;
 
       _contextMenuItems.forEach((item, i, self) => {
         if (item.component === 'a') {
