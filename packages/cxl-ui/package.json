@@ -30,7 +30,13 @@
         "@pika/plugin-build-web"
       ],
       [
-        "@pika/plugin-bundle-web"
+        "@pika/plugin-bundle-web", {
+          "minify": {
+            "output": {
+              "comments": false
+            }
+          }
+        }
       ]
     ]
   },
