@@ -214,6 +214,36 @@ export class CXLMarketingNavElement extends LitElement {
   }
 
   /**
+   * Create `<vaadin-context-menu>` elements, with children nesting support.
+   * Support `{ component: a }`.
+   *
+   * @private
+   * @see https://github.com/vaadin/vaadin-context-menu/issues/254
+   */
+  _createContextMenuItems(contextMenuItems) {
+    contextMenuItems.forEach((item, i, self) => {
+      if (item.children) {
+        this._createContextMenuItems(item.children);
+      }
+
+      if (item.component === 'a') {
+        const menuItem = document.createElement('vaadin-context-menu-item');
+        const link = document.createElement('a');
+
+        link.href = item.href;
+        link.text = item.text;
+
+        menuItem.appendChild(link);
+
+        // eslint-disable-next-line no-param-reassign
+        self[i] = { component: menuItem };
+      }
+    });
+
+    return contextMenuItems;
+  }
+
+  /**
    * Populate children `<vaadin-context-menu>` elements.
    *
    * @private
@@ -229,30 +259,8 @@ export class CXLMarketingNavElement extends LitElement {
         `vaadin-tab#menu-item-${menuItem.id} > vaadin-context-menu`
       );
 
-      /**
-       * Support `{ component: a }`.
-       *
-       * @see https://github.com/vaadin/vaadin-context-menu/issues/254
-       */
-      const _contextMenuItems = menuItem.children;
-
-      _contextMenuItems.forEach((item, i, self) => {
-        if (item.component === 'a') {
-          const menuItem = document.createElement('vaadin-context-menu-item');
-          const link = document.createElement('a');
-
-          link.href = item.href;
-          link.text = item.text;
-
-          menuItem.appendChild(link);
-
-          // eslint-disable-next-line no-param-reassign
-          self[i] = { component: menuItem };
-        }
-      });
-
       // Populate.
-      contextMenu.items = _contextMenuItems;
+      contextMenu.items = this._createContextMenuItems(menuItem.children);
 
       // Prevent close on upstream events: clicks, keydown, etc
       contextMenu.addEventListener('item-selected', e => {
