@@ -1,5 +1,6 @@
 import { registerStyles } from '@vaadin/vaadin-themable-mixin/register-styles.js';
 import cxlVaadinContextMenuItemStyles from './styles/themes/vaadin-context-menu-item-css.js';
+import cxlVaadinContextMenuListBoxStyles from './styles/themes/vaadin-context-menu-list-box-css.js';
 import cxlVaadinOverlayStyles from './styles/themes/vaadin-overlay-css.js';
 import cxlVaadinTabStyles from './styles/themes/vaadin-tab-css.js';
 import cxlVaadinTabsStyles from './styles/themes/vaadin-tabs-css.js';
@@ -7,6 +8,9 @@ import cxlVaadinTabsStyles from './styles/themes/vaadin-tabs-css.js';
 /* Mixins */
 registerStyles('vaadin-context-menu-item', cxlVaadinContextMenuItemStyles, {
   moduleId: 'cxl-vaadin-context-menu-item-styles'
+});
+registerStyles('vaadin-context-menu-list-box', cxlVaadinContextMenuListBoxStyles, {
+  moduleId: 'cxl-vaadin-context-menu-list-box-styles'
 });
 registerStyles('vaadin-overlay', cxlVaadinOverlayStyles, {
   moduleId: 'cxl-vaadin-overlay-styles'
