@@ -1,7 +1,9 @@
 cxl-marketing-nav {
   .menu-item {
     color: var(--lumo-base-color);
+  }
 
+  &:not([wide]) {
     [icon="lumo:dropdown"] {
       margin-left: auto;
     }

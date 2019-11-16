@@ -15,6 +15,7 @@
     "@pika/plugin-build-web": "^0.7.1",
     "@pika/plugin-bundle-web": "^0.7.1",
     "@pika/plugin-standard-pkg": "^0.7.1",
+    "@vaadin/vaadin-button": "^2.2.1",
     "@vaadin/vaadin-context-menu": "^4.3.12",
     "@vaadin/vaadin-tabs": "^3.0.5",
     "@vaadin/vaadin-themable-mixin": "^1.5.2",
@@ -30,7 +31,8 @@
         "@pika/plugin-build-web"
       ],
       [
-        "@pika/plugin-bundle-web", {
+        "@pika/plugin-bundle-web",
+        {
           "minify": {
             "output": {
               "comments": false

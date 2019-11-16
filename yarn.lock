@@ -2817,7 +2817,7 @@
     "@types/unist" "*"
     "@types/vfile-message" "*"
 
-"@vaadin/vaadin-button@^2.1.5":
+"@vaadin/vaadin-button@^2.1.5", "@vaadin/vaadin-button@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@vaadin/vaadin-button/-/vaadin-button-2.2.1.tgz#129b585d176053289b13451767495727b2201763"
   integrity sha512-FjgC/NIRkmV5PVaZz4qvS7h8AJpAStcutZhn71gBeKVyKvSG4QUzZo1cP5XK050ZVOIQA/LFGimZfHVqJV350Q==

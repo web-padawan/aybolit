@@ -2,6 +2,7 @@ import { LitElement, html, customElement, property, query } from 'lit-element';
 import '@conversionxl/cxl-lumo-styles';
 import cxlMarketingNavStyles from '../styles/cxl-marketing-nav-css.js';
 import cxlMarketingNavGlobalStyles from '../styles/global/cxl-marketing-nav-css.js';
+import '@vaadin/vaadin-button';
 import '@vaadin/vaadin-tabs';
 import '@vaadin/vaadin-context-menu';
 
@@ -30,6 +31,15 @@ export class CXLMarketingNavElement extends LitElement {
   }
 
   render() {
+    /**
+     * Find search form template.
+     */
+    let searchFormTemplate = this.querySelector('#cxl-marketing-nav-search-form-template') || '';
+
+    if (searchFormTemplate && 'content' in searchFormTemplate) {
+      searchFormTemplate = searchFormTemplate.content;
+    }
+
     return html`
       <nav>
         <vaadin-tabs
@@ -118,10 +128,8 @@ export class CXLMarketingNavElement extends LitElement {
             class="menu-item menu-item-split-nav menu-item-has-children menu-item-search"
             theme="cxl-marketing-nav"
           >
-            <a>Search</a>
-            <vaadin-context-menu open-on="click" theme="cxl-marketing-nav">
-              <iron-icon icon="lumo:search"></iron-icon>
-            </vaadin-context-menu>
+            <a>Search <iron-icon icon="lumo:search"></iron-icon></a>
+            ${searchFormTemplate}
           </vaadin-tab>
           <vaadin-tab
             class="menu-item menu-item:not-wide menu-item-menu-toggle"
@@ -178,10 +186,11 @@ export class CXLMarketingNavElement extends LitElement {
      * `<vaadin-context-menu-item>` interferes with form input.
      *
      * @see https://github.com/vaadin/vaadin-item/blob/v2.1.1/src/vaadin-item-mixin.html#L136
-    const menuItemSearchContextMenu = this.querySelector('.menu-item-search > vaadin-context-menu');
+     */
+    const menuItemSearchContextMenu = this.shadowRoot.querySelector('.menu-item-search > vaadin-context-menu');
 
-    menuItemSearchContextMenu.addEventListener('opened-changed', ee => {
-      const searchForm = ee.target.$.overlay.querySelector('#search-form');
+    menuItemSearchContextMenu.$.overlay.addEventListener('content-changed', ee => {
+      const searchForm = ee.detail.value.querySelector('form');
 
       searchForm.addEventListener('keydown', ef => {
         // Allow Esc.
@@ -189,8 +198,7 @@ export class CXLMarketingNavElement extends LitElement {
           ef.stopPropagation()
         }
       });
-    }, { once: true });
-     */
+    }/*, { once: true } necessary for `content-changed`? */);
 
     /**
      * Decide `<vaadin-tabs>` initial orientation.
