@@ -9,3 +9,56 @@ cxl-marketing-nav {
     }
   }
 }
+
+/**
+ * PARTIALLY CORRECT
+ * Apparently our element styles get hoisted also into `vaadin-overlay` shadow parts.
+ * There is no other way to select slotted children protected by parent element's shadow.
+ * Browser compatibility problems: Firefox 70 (works, style tag copied) vs Chrome (style tag missing)
+ *
+ * @see https://stackoverflow.com/questions/48101046/force-flex-item-to-span-full-row-width
+ * @see https://github.com/vaadin/vaadin-overlay/issues/75
+ * @see https://github.com/vaadin/vaadin-overlay/pull/76
+ * @see https://polymer.slack.com/archives/C6ULJ2F7S/p1574015970159300
+ * @todo Document `vaadin-context-menu` differences for `items` vs `<template>` API. Styling is very different.
+ */
+vaadin-context-menu-item[theme~="cxl-marketing-nav"] {
+  // We only need to exclude this one specific thing.
+  /* stylelint-disable-next-line selector-no-qualifying-type */
+  &.menu-item-search {
+    background-color: unset;
+
+    /* stylelint-disable-next-line selector-no-qualifying-type */
+    &[focus-ring] {
+      box-shadow: none;
+    }
+  }
+
+  #search-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    // Cross-device compatibility, match `vaadin-button`.
+    > * {
+      margin: var(--lumo-space-xs);
+    }
+
+    input[type="search"] {
+      // Match `vaadin-button`.
+      --lumo-button-size: var(--lumo-size-m);
+      flex: 1;
+      height: var(--lumo-button-size);
+      font-size: var(--lumo-font-size-m);
+    }
+
+    label {
+      flex-basis: 100%;
+    }
+
+    // Avoid flex-wrap.
+    .search-submit {
+      margin-left: auto;
+    }
+  }
+}

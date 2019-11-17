@@ -10,6 +10,7 @@
     "property-no-vendor-prefix": [true, {
       "ignoreProperties": ["appearance", "user-select"]
     }],
+    "selector-max-id": 1,
     "selector-no-qualifying-type": [true, {
       "ignore": ["attribute"]
     }],

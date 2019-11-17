@@ -31,15 +31,6 @@ export class CXLMarketingNavElement extends LitElement {
   }
 
   render() {
-    /**
-     * Find search form template.
-     */
-    let searchFormTemplate = this.querySelector('#cxl-marketing-nav-search-form-template') || '';
-
-    if (searchFormTemplate && 'content' in searchFormTemplate) {
-      searchFormTemplate = searchFormTemplate.content;
-    }
-
     return html`
       <nav>
         <vaadin-tabs
@@ -129,7 +120,8 @@ export class CXLMarketingNavElement extends LitElement {
             theme="cxl-marketing-nav"
           >
             <a>Search <iron-icon icon="lumo:search"></iron-icon></a>
-            ${searchFormTemplate}
+            <vaadin-context-menu close-on="outside-click" open-on="click" theme="cxl-marketing-nav">
+            </vaadin-context-menu>
           </vaadin-tab>
           <vaadin-tab
             class="menu-item menu-item:not-wide menu-item-menu-toggle"
@@ -189,16 +181,34 @@ export class CXLMarketingNavElement extends LitElement {
      */
     const menuItemSearchContextMenu = this.shadowRoot.querySelector('.menu-item-search > vaadin-context-menu');
 
-    menuItemSearchContextMenu.$.overlay.addEventListener('content-changed', ee => {
-      const searchForm = ee.detail.value.querySelector('form');
+    menuItemSearchContextMenu.addEventListener('opened-changed', ee => {
+      const searchForm = ee.target.$.overlay.querySelector('#search-form');
 
       searchForm.addEventListener('keydown', ef => {
         // Allow Esc.
-        if (ef.keyCode !== 27) {
+        if (ef.key !== 'Esc') {
           ef.stopPropagation()
         }
       });
-    }/*, { once: true } necessary for `content-changed`? */);
+    }/* , { once: true } necessary for `content-changed`? */);
+
+    menuItemSearchContextMenu.addEventListener('item-selected', e => {
+      e.stopImmediatePropagation();
+    });
+
+    /**
+     * Find search form template.
+     */
+    const searchFormTemplate = this.querySelector('#cxl-marketing-nav-search-form-template') || '';
+
+    if (searchFormTemplate && 'content' in searchFormTemplate) {
+      menuItemSearchContextMenu.items = [
+        { component: searchFormTemplate.content.firstElementChild }
+      ];
+    }
+
+    // @todo Focus search box.
+    menuItemSearchContextMenu.$.overlay.focusTrap = true;
 
     /**
      * Decide `<vaadin-tabs>` initial orientation.

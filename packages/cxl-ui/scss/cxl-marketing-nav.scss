@@ -47,24 +47,3 @@
 .menu-items {
   background-color: var(--lumo-tint);
 }
-
-/**
- * Apparently our element styles get hoisted also into `vaadin-overlay` shadow parts.
- * There is no other way to select slotted children protected by parent element's shadow.
- *
- * @see https://stackoverflow.com/questions/48101046/force-flex-item-to-span-full-row-width
- */
-#search-form {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-
-  // Cross-device compatibility, match `vaadin-button` upstream.
-  > * {
-    margin: var(--lumo-space-xs);
-  }
-
-  input[type="search"] {
-    flex: 1;
-  }
-}

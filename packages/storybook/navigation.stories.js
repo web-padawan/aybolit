@@ -18,19 +18,15 @@ export const CxlMarketingNav = () => {
   return html`
     <cxl-marketing-nav id="menu-primary" class="menu menu-primary" role="navigation">
       <template id="cxl-marketing-nav-search-form-template">
-        <vaadin-context-menu close-on="outside-click" open-on="click" theme="cxl-marketing-nav">
-          <template>
-            <vaadin-context-menu-item>
-              <form id="search-form" role="search" method="get" class="search-form" action="https://conversionxl.com/institute/?s=">
-                  <label for="search-input"><span class="screen-reader-text">Search <em style="color: var(--lumo-primary-color);">C</em>XL Institute:</span></label>
-                  <input id="search-input" type="search" class="search-field" value="" name="s">
-                  <vaadin-button type="submit" class="search-submit" aria-label="Search" theme="icon" onclick="document.getElementById('search-form').submit();">
-                      <iron-icon icon="lumo:angle-right"></iron-icon>
-                  </vaadin-button>
-              </form>
-            </vaadin-context-menu-item>
-          </template>
-        </vaadin-context-menu>
+        <vaadin-context-menu-item class="menu-item-search">
+          <form id="search-form" role="search" method="get" class="search-form" action="https://conversionxl.com/institute/?s=">
+              <label for="search-input">Search <em style="color: var(--lumo-primary-color);">C</em>XL Institute:</label>
+              <input id="search-input" type="search" class="search-field" value="" name="s">
+              <vaadin-button type="submit" class="search-submit" aria-label="Search" theme="icon" onclick="document.getElementById('search-form').submit();">
+                <iron-icon icon="lumo:angle-right"></iron-icon>
+              </vaadin-button>
+          </form>
+        </vaadin-context-menu-item>
       </template>
 
       <vaadin-tabs
