@@ -1,4 +1,14 @@
-// Reduce upstream 2px thickness, compensate w/ stronger color.
-[part="items"] ::slotted([focus-ring]:not([disabled])) {
-  box-shadow: inset 0 0 0 1px var(--lumo-primary-color);
+/**
+ * Reduce upstream default thickness, compensate w/ stronger color.
+ * Media query targets only non-touch devices.
+ *
+ * @see https://github.com/vaadin/vaadin-list-box/blob/v1.2.0/theme/lumo/vaadin-list-box-styles.html#L60
+ * @see https://stackoverflow.com/a/42363147/35946
+ */
+@media not all and (pointer: coarse) {
+  $vaadin-focus-ring-thickness: 2px;
+
+  [part="items"] ::slotted([focus-ring]:not([disabled])) {
+    box-shadow: inset 0 0 0 ($vaadin-focus-ring-thickness * 0.5) var(--lumo-primary-color);
+  }
 }
