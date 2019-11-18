@@ -87,7 +87,7 @@ export const CxlMarketingNav = () => {
           <a href="https://conversionxl.com/institute/dashboard/"
             >My dashboard <iron-icon icon="lumo:dropdown"></iron-icon
           ></a>
-          <vaadin-context-menu open-on="click" class="sub-menu"></vaadin-context-menu>
+          <vaadin-context-menu open-on="click" class="sub-menu" theme="cxl-marketing-nav"></vaadin-context-menu>
         </vaadin-tab>
         <vaadin-tab
           id="menu-item-36"
@@ -98,7 +98,7 @@ export const CxlMarketingNav = () => {
             href="https://conversionxl.com/institute/online-courses/?_categories=minidegree-programs"
             >Minidegrees <iron-icon icon="lumo:dropdown"></iron-icon
           ></a>
-          <vaadin-context-menu open-on="click" class="sub-menu"></vaadin-context-menu>
+          <vaadin-context-menu open-on="click" class="sub-menu" theme="cxl-marketing-nav"></vaadin-context-menu>
         </vaadin-tab>
         <vaadin-tab
           id="menu-item-37"
@@ -108,7 +108,7 @@ export const CxlMarketingNav = () => {
           <a href="https://conversionxl.com/institute/online-courses/"
             >Online courses <iron-icon icon="lumo:dropdown"></iron-icon
           ></a>
-          <vaadin-context-menu open-on="click" class="sub-menu"></vaadin-context-menu>
+          <vaadin-context-menu open-on="click" class="sub-menu" theme="cxl-marketing-nav"></vaadin-context-menu>
         </vaadin-tab>
         <vaadin-tab class="menu-item" theme="cxl-marketing-nav"
           ><a href="https://conversionxl.com/institute/upcoming-courses/"
@@ -127,7 +127,7 @@ export const CxlMarketingNav = () => {
           ><a href="https://conversionxl.com/institute/my-account/"
             ><iron-icon icon="lumo:user"></iron-icon> My account <iron-icon icon="lumo:dropdown"></iron-icon
             ></a>
-            <vaadin-context-menu open-on="click" class="sub-menu"></vaadin-context-menu>
+            <vaadin-context-menu open-on="click" class="sub-menu" theme="cxl-marketing-nav"></vaadin-context-menu>
         </vaadin-tab>
         <vaadin-tab class="menu-item" theme="cxl-marketing-nav"><a>Help</a></vaadin-tab>
       </vaadin-tabs>

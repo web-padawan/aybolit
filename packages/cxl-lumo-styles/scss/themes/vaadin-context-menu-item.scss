@@ -1,4 +1,7 @@
 ::slotted(a) {
+  // Increase link click surface.
+  display: block;
+
   color: inherit !important; /* stylelint-disable-line declaration-no-important */
 }
 

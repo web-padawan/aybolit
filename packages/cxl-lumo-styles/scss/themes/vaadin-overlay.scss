@@ -1,8 +1,14 @@
-/**
- * Magic number
- *
- * @todo Any non-`!important` methods available?
- */
-:host {
-  --vaadin-overlay-viewport-bottom: 33% !important; /* stylelint-disable-line declaration-no-important */
+// Perfectly align modal in the center of the screen.
+:host([theme~="cxl-marketing-nav"][phone]) [part="overlay"]{
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+// Reduce visual noise below overlay.
+:host([theme~="cxl-marketing-nav"]) [part="backdrop"] {
+  $vaadin-overlay-shade-pct: 20;
+
+  background-color: var(--lumo-shade-#{$vaadin-overlay-shade-pct * 3.5}pct);
 }
