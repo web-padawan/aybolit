@@ -1,3 +1,9 @@
+// Collapse margins.
+:host([orientation="vertical"][theme~="cxl-marketing-nav"]) {
+  display: flex;
+  flex-direction: column;
+}
+
 /**
  * Unify orientations side margins and padding
  */
@@ -19,4 +25,28 @@ $vaadin-tab-padding: 0.75rem;
 :host([theme~="cxl-marketing-nav"]) ::slotted(.menu-item) {
   padding-right: $vaadin-tab-padding;
   padding-left: $vaadin-tab-padding;
+}
+
+/**
+ * User configurable menu item display for [non-]wide states.
+ */
+/* stylelint-disable-next-line selector-class-pattern */
+:host([orientation="horizontal"][theme~="cxl-marketing-nav"]) ::slotted(.menu-item-not-wide) {
+  display: none;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+:host([orientation="vertical"][theme~="cxl-marketing-nav"]) ::slotted(.menu-item-wide) {
+  display: none;
+}
+
+// Split navigation pattern.
+:host([orientation="horizontal"][theme~="cxl-marketing-nav"]) ::slotted(.menu-item-split-nav) {
+  margin-left: auto;
+}
+
+// Search menu item.
+:host([theme~="cxl-marketing-nav"]#menu-shadow-items) ::slotted(.menu-item-search) {
+  margin-right: auto;
+  margin-left: auto;
 }

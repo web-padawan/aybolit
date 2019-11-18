@@ -1,5 +1,5 @@
 :host {
-  // Avoid margin collapse
+  // Avoid margin collapse.
   display: inline-block;
   width: 100%;
 
@@ -18,32 +18,43 @@
 }
  */
 
-/* stylelint-disable-next-line selector-class-pattern */
-:host([wide]) .menu-item\\\:not-wide {
-  display: none;
-}
+/**
+ * Menu bar containers configuration.
+ */
+#menu-shadow-items {
+  box-shadow: var(--lumo-box-shadow-xs);
 
-/* stylelint-disable-next-line selector-class-pattern */
-:host(:not([wide])) .menu-item\\\:wide {
-  display: none;
-}
-
-// @todo Magic number "8" is fragile, depends on menu item count
-:host(:not([wide])) .menu-items:not([selected="8"]) + ::slotted(.menu-items) {
-  display: none;
-}
-
-::slotted(.menu-items) {
-  --lumo-tertiary-text-color: var(--lumo-base-color);
-}
-
-.menu-item-menu-toggle {
-  &[selected] iron-icon:first-child,
-  &:not([selected]) iron-icon + iron-icon {
+  :host([wide]) & {
     display: none;
+  }
+
+  .menu-item-menu-toggle {
+    &[selected] iron-icon:first-child,
+    &:not([selected]) iron-icon + iron-icon {
+      display: none;
+    }
   }
 }
 
-.menu-items {
+// Dark on light.
+#menu-shadow-items,
+::slotted(#menu-global-items) {
   background-color: var(--lumo-tint);
+}
+
+// Light on dark.
+::slotted(#menu-primary-items) {
+  --lumo-tertiary-text-color: var(--lumo-base-color);
+}
+
+/**
+ * Shadow menu toggle logic.
+ *
+ * @todo Magic "selected" number is fragile, depends on menu item count.
+ *       But might survive living in controlled shadow.
+ */
+$menu-item-menu-toggle-index: 2;
+
+:host(:not([wide])) #menu-shadow-items:not([selected="#{$menu-item-menu-toggle-index}"]) + nav > ::slotted(.menu-items) {
+  display: none;
 }

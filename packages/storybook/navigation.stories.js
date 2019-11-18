@@ -19,7 +19,7 @@ export const CxlMarketingNav = () => {
     <cxl-marketing-nav id="menu-primary" class="menu menu-primary" role="navigation">
       <template id="cxl-marketing-nav-search-form-template">
         <vaadin-context-menu-item class="menu-item-search">
-          <form id="search-form" role="search" method="get" class="search-form" action="https://conversionxl.com/institute/?s=">
+          <form role="search" method="get" class="search-form" action="https://conversionxl.com/institute/?s=">
               <label for="search-input">Search <em style="color: var(--lumo-primary-color);">C</em>XL Institute:</label>
               <input id="search-input" type="search" class="search-field" value="" name="s">
               <vaadin-button type="submit" class="search-submit" aria-label="Search" theme="icon" onclick="document.getElementById('search-form').submit();">
@@ -28,6 +28,49 @@ export const CxlMarketingNav = () => {
           </form>
         </vaadin-context-menu-item>
       </template>
+
+      <vaadin-tabs
+        id="menu-global-items"
+        class="menu-items"
+        orientation="vertical"
+        selected="-1"
+        theme="cxl-marketing-nav"
+      >
+        <vaadin-tab class="menu-item menu-item-logo menu-item-wide" theme="cxl-marketing-nav">
+          <a href="https://conversionxl.com"
+            ><iron-icon icon="cxl:logo" style="width: var(--lumo-icon-size-xl, 48px);"></iron-icon
+          ></a>
+        </vaadin-tab>
+        <vaadin-tab class="menu-item" theme="cxl-marketing-nav"
+          ><a href="https://conversionxl.com/institute/">Institute</a></vaadin-tab
+        >
+        <vaadin-tab class="menu-item" theme="cxl-marketing-nav"
+          ><a href="https://conversionxl.com/agency/"
+            >Conversion optimization services</a
+          ></vaadin-tab
+        >
+        <vaadin-tab class="menu-item" theme="cxl-marketing-nav"
+          ><a href="https://conversionxl.com/agency/case-studies/"
+            >Agency case studies</a
+          ></vaadin-tab
+        >
+        <vaadin-tab class="menu-item" theme="cxl-marketing-nav"
+          ><a href="https://conversionxl.com/blog/">Blog</a></vaadin-tab
+        >
+        <vaadin-tab class="menu-item" theme="cxl-marketing-nav"
+          ><a href="https://conversionxl.com/live/"
+            >CXL Live 2020
+            <iron-icon icon="cxl:live" style="color: var(--lumo-primary-color)"></iron-icon></a
+        ></vaadin-tab>
+        <vaadin-tab
+          class="menu-item menu-item-split-nav menu-item-has-children menu-item-wide menu-item-search"
+          theme="cxl-marketing-nav"
+        >
+          <a><iron-icon icon="lumo:search"></iron-icon> Search <iron-icon icon="lumo:dropdown"></iron-icon></a>
+          <vaadin-context-menu close-on="outside-click" open-on="click" theme="cxl-marketing-nav">
+          </vaadin-context-menu>
+        </vaadin-tab>
+      </vaadin-tabs>
 
       <vaadin-tabs
         id="menu-primary-items"

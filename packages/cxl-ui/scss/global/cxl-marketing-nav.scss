@@ -1,5 +1,5 @@
 cxl-marketing-nav {
-  .menu-item {
+  #menu-primary-items .menu-item {
     color: var(--lumo-base-color);
   }
 
@@ -34,7 +34,7 @@ vaadin-context-menu-item[theme~="cxl-marketing-nav"] {
     }
   }
 
-  #search-form {
+  .search-form {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
