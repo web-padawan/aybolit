@@ -19,7 +19,7 @@ export class CXLMarketingNavElement extends LitElement {
 
   @property({ type: HTMLElement })
   get menuItemSearchElement() {
-    return this.querySelector('.menu-item-search');
+    return this.shadowRoot.querySelector('.menu-item-search');
   }
 
   @property({ type: NodeList })
@@ -29,6 +29,10 @@ export class CXLMarketingNavElement extends LitElement {
 
   @property({ type: Number })
   menuShadowItemsSelectedIdx = -1;
+
+  // Conditionally hide distracting shadow menu items. Used for checkout, etc.
+  @property({ type: Boolean, reflect: true })
+  minimal = false;
 
   @property({ type: Boolean, reflect: true })
   wide;
@@ -58,12 +62,21 @@ export class CXLMarketingNavElement extends LitElement {
         <vaadin-tab
           class="menu-item menu-item-search"
           theme="cxl-marketing-nav"
+          ?hidden="${this.minimal}"
         >
-          <a><iron-icon icon="lumo:search"></iron-icon> Search <iron-icon icon="lumo:dropdown"></iron-icon></a>
-        </vaadin-tab>
+          <a
+            ><iron-icon icon="lumo:search"></iron-icon> Search <iron-icon icon="lumo:dropdown"></iron-icon
+          ></a>
+          <vaadin-context-menu
+            close-on="outside-click"
+            open-on="click"
+            theme="cxl-marketing-nav"
+          ></vaadin-context-menu
+        ></vaadin-tab>
         <vaadin-tab
           class="menu-item menu-item-menu-toggle"
           theme="cxl-marketing-nav"
+          ?hidden="${this.minimal}"
         >
           <a
             >Menu <iron-icon icon="lumo:menu"></iron-icon><iron-icon icon="lumo:cross"></iron-icon
@@ -250,8 +263,8 @@ export class CXLMarketingNavElement extends LitElement {
   _rotateMenuItemSearchListenOn() {
     let searchElement = this.menuItemSearchElement;
 
-    if (! this.wide) {
-      searchElement = this.shadowRoot.querySelector('.menu-item-search');
+    if (this.wide) {
+      searchElement = this.querySelector('.menu-item-search');
     }
 
     this.menuItemSearchElement.querySelector('vaadin-context-menu').listenOn = searchElement;

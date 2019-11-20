@@ -1,3 +1,7 @@
 :host([theme~="cxl-marketing-nav"]) ::slotted(a[href]:hover) {
   text-decoration: underline !important; /* stylelint-disable-line declaration-no-important */
 }
+
+:host([theme~="cxl-marketing-nav"][hidden]) {
+  visibility: hidden;
+}

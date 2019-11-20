@@ -76,8 +76,6 @@ export const CxlMarketingNav = () => {
           theme="cxl-marketing-nav"
         >
           <a><iron-icon icon="lumo:search"></iron-icon> Search <iron-icon icon="lumo:dropdown"></iron-icon></a>
-          <vaadin-context-menu close-on="outside-click" open-on="click" theme="cxl-marketing-nav">
-          </vaadin-context-menu>
         </vaadin-tab>
       </vaadin-tabs>
 
