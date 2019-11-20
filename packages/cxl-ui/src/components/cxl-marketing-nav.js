@@ -8,7 +8,7 @@ import '@vaadin/vaadin-context-menu';
 
 @customElement('cxl-marketing-nav')
 export class CXLMarketingNavElement extends LitElement {
-  @property({ type: NodeList })
+  @property({ type: Object })
   contextMenuItems;
 
   @property({ type: Boolean, reflect: true })
@@ -199,21 +199,23 @@ export class CXLMarketingNavElement extends LitElement {
    * @todo Links cannot be sub-menu hosts?
    */
   _updatedContextMenuItems() {
-    this.contextMenuItems.forEach(menuItem => {
-      if (! menuItem.children) {
-        return;
-      }
+    Object.values(this.contextMenuItems).forEach((items) => {
+      items.forEach(menuItem => {
+        if (! menuItem.children) {
+          return;
+        }
 
-      const contextMenu = this.querySelector(
-        `vaadin-tab#menu-item-${menuItem.id} > vaadin-context-menu`
-      );
+        const contextMenu = this.querySelector(
+          `vaadin-tab#menu-item-${menuItem.id} > vaadin-context-menu`
+        );
 
-      // Populate.
-      contextMenu.items = this._createContextMenuItems(menuItem.children);
+        // Populate.
+        contextMenu.items = this._createContextMenuItems(menuItem.children);
 
-      // Prevent close on upstream events: clicks, keydown, etc
-      contextMenu.addEventListener('item-selected', e => {
-        e.stopImmediatePropagation();
+        // Prevent close on upstream events: clicks, keydown, etc
+        contextMenu.addEventListener('item-selected', e => {
+          e.stopImmediatePropagation();
+        });
       });
     });
   }

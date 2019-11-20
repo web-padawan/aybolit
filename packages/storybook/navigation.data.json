@@ -1,474 +1,504 @@
-[
-  {
-    "depth": 0,
-    "text": "My dashboard <iron-icon icon=\"lumo:dropdown\"><\/iron-icon>",
-    "component": "a",
-    "href": "https:\/\/conversionxl.com\/institute\/dashboard\/",
-    "id": 35,
-    "parent": 0,
-    "children": [
-      {
-        "depth": 1,
-        "text": "See my roadmap",
-        "component": "a",
-        "href": "https:\/\/conversionxl.com\/institute\/dashboard\/roadmap\/",
-        "id": 43,
-        "parent": 35
-      },
-      {
-        "depth": 1,
-        "text": "Edit my roadmap",
-        "component": "a",
-        "href": "https:\/\/conversionxl.com\/institute\/roadmap\/individual\/",
-        "id": 44,
-        "parent": 35
-      },
-      {
-        "depth": 1,
-        "text": "Edit team roadmap",
-        "component": "a",
-        "href": "https:\/\/conversionxl.com\/institute\/roadmap\/team\/",
-        "id": 45,
-        "parent": 35
-      },
-      {
-        "depth": 1,
-        "text": "See team progress",
-        "component": "a",
-        "href": "https:\/\/conversionxl.com\/institute\/dashboard\/team\/",
-        "id": 46,
-        "parent": 35
-      }
-    ]
-  },
-  {
-    "depth": 0,
-    "text": "Minidegrees <iron-icon icon=\"lumo:dropdown\"><\/iron-icon>",
-    "component": "a",
-    "href": "https:\/\/conversionxl.com\/institute\/online-courses\/?_categories=minidegree-programs",
-    "id": 36,
-    "parent": 0,
-    "children": [
-      {
-        "depth": 1,
-        "text": "Conversion optimization",
-        "component": "a",
-        "href": "https:\/\/conversionxl.com\/institute\/certificate\/cxl-conversion-optimization\/",
-        "id": 47,
-        "parent": 36
-      },
-      {
-        "depth": 1,
-        "text": "Digital psychology and persuasion",
-        "component": "a",
-        "href": "https:\/\/conversionxl.com\/institute\/certificate\/cxl-psychology-persuasion\/",
-        "id": 48,
-        "parent": 36
-      },
-      {
-        "depth": 1,
-        "text": "Growth marketing",
-        "component": "a",
-        "href": "https:\/\/conversionxl.com\/institute\/certificate\/cxl-growth-marketing\/",
-        "id": 49,
-        "parent": 36
-      },
-      {
-        "depth": 1,
-        "text": "Digital analytics",
-        "component": "a",
-        "href": "https:\/\/conversionxl.com\/institute\/certificate\/cxl-digital-analytics\/",
-        "id": 50,
-        "parent": 36
-      }
-    ]
-  },
-  {
-    "depth": 0,
-    "text": "Online courses <iron-icon icon=\"lumo:dropdown\"><\/iron-icon>",
-    "component": "a",
-    "href": "https:\/\/conversionxl.com\/institute\/online-courses\/",
-    "id": 37,
-    "parent": 0,
-    "children": [
-      {
-        "depth": 1,
-        "text": "CRO & UX",
-        "id": 51,
-        "parent": 37,
-        "children": [
-          {
-            "depth": 2,
-            "text": "A\/B testing",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/ab-testing-mastery\/",
-            "id": 54,
-            "parent": 51
-          },
-          {
-            "depth": 2,
-            "text": "Conversion optimization audits",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/conversion-optimization-audits\/",
-            "id": 55,
-            "parent": 51
-          },
-          {
-            "depth": 2,
-            "text": "CRO agency masterclass",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/cro-agency\/",
-            "id": 56,
-            "parent": 51
-          },
-          {
-            "depth": 2,
-            "text": "Experimentation analysis",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/advanced-experimentation-analysis\/",
-            "id": 57,
-            "parent": 51
-          },
-          {
-            "depth": 2,
-            "text": "Landing page optimization",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/landing-page-optimization\/",
-            "id": 58,
-            "parent": 51
-          },
-          {
-            "depth": 2,
-            "text": "Neuromarketing",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/applied-neuromarketing\/",
-            "id": 59,
-            "parent": 51
-          },
-          {
-            "depth": 2,
-            "text": "Sales copywriting & product messaging",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/product-messaging\/",
-            "id": 60,
-            "parent": 51
-          },
-          {
-            "depth": 2,
-            "text": "Statistics for A\/B testing",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/statistics-for-ab-testing\/",
-            "id": 61,
-            "parent": 51
-          }
-        ]
-      },
-      {
-        "depth": 1,
-        "text": "Analytics",
-        "id": 52,
-        "parent": 37,
-        "children": [
-          {
-            "depth": 2,
-            "text": "Adobe Analytics \u2013 beginner",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/adobe-analytics\/",
-            "id": 62,
-            "parent": 52
-          },
-          {
-            "depth": 2,
-            "text": "Google Analytics \u2013 beginner",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/google-analytics-beginners\/",
-            "id": 63,
-            "parent": 52
-          },
-          {
-            "depth": 2,
-            "text": "Google Analytics \u2013 intermediate",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/intermediate-google-analytics\/",
-            "id": 64,
-            "parent": 52
-          },
-          {
-            "depth": 2,
-            "text": "Google Tag Manager \u2013 beginner",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/fundamentals-of-google-tag-manager\/",
-            "id": 65,
-            "parent": 52
-          },
-          {
-            "depth": 2,
-            "text": "Google Tag Manager \u2013 intermediate",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/intermediate-google-tag-manager\/",
-            "id": 66,
-            "parent": 52
-          },
-          {
-            "depth": 2,
-            "text": "Google Tag Manager \u2013 advanced",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/advanced-google-tag-manager\/",
-            "id": 67,
-            "parent": 52
-          },
-          {
-            "depth": 2,
-            "text": "Product analytics",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/product-analytics\/",
-            "id": 68,
-            "parent": 52
-          }
-        ]
-      },
-      {
-        "depth": 1,
-        "text": "Marketing",
-        "id": 53,
-        "parent": 37,
-        "children": [
-          {
-            "depth": 2,
-            "text": "Account based marketing",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/account-based-marketing\/",
-            "id": 69,
-            "parent": 53
-          },
-          {
-            "depth": 2,
-            "text": "Advanced AI for marketers",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/advanced-ai-marketing\/",
-            "id": 70,
-            "parent": 53
-          },
-          {
-            "depth": 2,
-            "text": "Content strategy \u2013 B2B",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/content-strategy-seo-lead-generation\/",
-            "id": 71,
-            "parent": 53
-          },
-          {
-            "depth": 2,
-            "text": "Data-driven influencer marketing",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/influencer-marketing\/",
-            "id": 72,
-            "parent": 53
-          },
-          {
-            "depth": 2,
-            "text": "Facebook ads",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/facebook-ads\/",
-            "id": 73,
-            "parent": 53
-          },
-          {
-            "depth": 2,
-            "text": "Google Ads \u2013 intermediate",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/google-ads\/",
-            "id": 74,
-            "parent": 53
-          },
-          {
-            "depth": 2,
-            "text": "Google Ads \u2013 maximizing audiences",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/maximizing-audiences-ppc\/",
-            "id": 75,
-            "parent": 53
-          },
-          {
-            "depth": 2,
-            "text": "LinkedIn advertising",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/linkedin-advertising\/",
-            "id": 76,
-            "parent": 53
-          },
-          {
-            "depth": 2,
-            "text": "Marketing management",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/marketing-management\/",
-            "id": 77,
-            "parent": 53
-          },
-          {
-            "depth": 2,
-            "text": "Marketing tech stack",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/optimizing-your-marketing-tech-stack\/",
-            "id": 78,
-            "parent": 53
-          },
-          {
-            "depth": 2,
-            "text": "Product marketing",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/product-marketing-for-technology-companies\/",
-            "id": 79,
-            "parent": 53
-          },
-          {
-            "depth": 2,
-            "text": "Project management for marketers",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/project-management-for-marketers\/",
-            "id": 80,
-            "parent": 53
-          },
-          {
-            "depth": 2,
-            "text": "Retention for subscription products",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/retention\/",
-            "id": 81,
-            "parent": 53
-          },
-          {
-            "depth": 2,
-            "text": "SEO \u2013 editorial calendar",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/editorial-calendar\/",
-            "id": 82,
-            "parent": 53
-          },
-          {
-            "depth": 2,
-            "text": "Technical SEO",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/technical-seo\/",
-            "id": 83,
-            "parent": 53
-          },
-          {
-            "depth": 2,
-            "text": "User-centric marketing",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/user-centric-marketing\/",
-            "id": 84,
-            "parent": 53
-          },
-          {
-            "depth": 2,
-            "text": "YouTube ads",
-            "component": "a",
-            "href": "https:\/\/conversionxl.com\/institute\/certificate\/youtube-ads\/",
-            "id": 85,
-            "parent": 53
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "depth": 0,
-    "text": "Upcoming courses",
-    "component": "a",
-    "href": "https:\/\/conversionxl.com\/institute\/upcoming-courses\/",
-    "id": 38,
-    "parent": 0
-  },
-  {
-    "depth": 0,
-    "text": "Event videos",
-    "component": "a",
-    "href": "https:\/\/conversionxl.com\/institute\/media\/",
-    "id": 39,
-    "parent": 0
-  },
-  {
-    "depth": 0,
-    "text": "<iron-icon icon=\"lumo:plus\"><\/iron-icon> Invite team",
-    "component": "a",
-    "href": "https:\/\/conversionxl.com\/institute\/my-account\/teams\/",
-    "id": 40,
-    "parent": 0
-  },
-  {
-    "depth": 0,
-    "text": "<iron-icon icon=\"lumo:user\"><\/iron-icon> My account <iron-icon icon=\"lumo:dropdown\"><\/iron-icon>",
-    "component": "a",
-    "href": "https:\/\/conversionxl.com\/institute\/my-account\/",
-    "id": 41,
-    "parent": 0,
-    "children": [
-      {
-        "depth": 1,
-        "text": "Account details",
-        "id": 88,
-        "parent": 41,
-        "children": [
-          {
-            "depth": 2,
-            "text": "Account hello!",
-            "component": "a",
-            "href": "http:\/\/localhost:8080\/hello-world\/",
-            "id": 92,
-            "parent": 88
-          },
-          {
-            "depth": 2,
-            "text": "Addresses",
-            "component": "a",
-            "href": "http:\/\/localhost:8080\/edit-address\/",
-            "id": 89,
-            "parent": 88,
-            "children": [
-              {
-                "depth": 3,
-                "text": "<span data-post-status=\"publish\"><\/span>Hello world!",
-                "component": "a",
-                "href": "http:\/\/localhost:8080\/hello-world\/",
-                "id": 93,
-                "parent": 89
-              },
-              {
-                "depth": 3,
-                "text": "Downloads",
-                "component": "a",
-                "href": "http:\/\/localhost:8080\/downloads\/",
-                "id": 90,
-                "parent": 89
-              }
-            ]
-          },
-          {
-            "depth": 2,
-            "text": "<span data-post-status=\"publish\"><\/span>Hello world!",
-            "component": "a",
-            "href": "http:\/\/localhost:8080\/hello-world\/",
-            "id": 91,
-            "parent": 88
-          }
-        ]
-      },
-      {
-        "depth": 1,
-        "text": "Orders",
-        "component": "a",
-        "href": "http:\/\/localhost:8080\/orders\/",
-        "id": 87,
-        "parent": 41
-      }
-    ]
-  },
-  {
-    "depth": 0,
-    "text": "Help",
-    "id": 42,
-    "parent": 0
-  }
-]
+{
+  "global": [
+    {
+      "depth": 0,
+      "text": "Conversion optimization services",
+      "component": "a",
+      "href": "https:\/\/conversionxl.com\/agency\/",
+      "id": 95,
+      "parent": 0,
+      "children": [
+        {
+          "depth": 1,
+          "text": "See Agency services",
+          "component": "a",
+          "href": "https:\/\/conversionxl.com\/agency\/",
+          "id": 101,
+          "parent": 95
+        },
+        {
+          "depth": 1,
+          "text": "Talk to a CRO expert +1 855 429-5295",
+          "component": "a",
+          "href": "tel:+1%20855%20429-5295",
+          "id": 102,
+          "parent": 95
+        }
+      ]
+    }
+  ],
+  "primary": [
+    {
+      "depth": 0,
+      "text": "My dashboard <iron-icon icon=\"lumo:dropdown\"><\/iron-icon>",
+      "component": "a",
+      "href": "https:\/\/conversionxl.com\/institute\/dashboard\/",
+      "id": 35,
+      "parent": 0,
+      "children": [
+        {
+          "depth": 1,
+          "text": "See my roadmap",
+          "component": "a",
+          "href": "https:\/\/conversionxl.com\/institute\/dashboard\/roadmap\/",
+          "id": 43,
+          "parent": 35
+        },
+        {
+          "depth": 1,
+          "text": "Edit my roadmap",
+          "component": "a",
+          "href": "https:\/\/conversionxl.com\/institute\/roadmap\/individual\/",
+          "id": 44,
+          "parent": 35
+        },
+        {
+          "depth": 1,
+          "text": "Edit team roadmap",
+          "component": "a",
+          "href": "https:\/\/conversionxl.com\/institute\/roadmap\/team\/",
+          "id": 45,
+          "parent": 35
+        },
+        {
+          "depth": 1,
+          "text": "See team progress",
+          "component": "a",
+          "href": "https:\/\/conversionxl.com\/institute\/dashboard\/team\/",
+          "id": 46,
+          "parent": 35
+        }
+      ]
+    },
+    {
+      "depth": 0,
+      "text": "Minidegrees <iron-icon icon=\"lumo:dropdown\"><\/iron-icon>",
+      "component": "a",
+      "href": "https:\/\/conversionxl.com\/institute\/online-courses\/?_categories=minidegree-programs",
+      "id": 36,
+      "parent": 0,
+      "children": [
+        {
+          "depth": 1,
+          "text": "Conversion optimization",
+          "component": "a",
+          "href": "https:\/\/conversionxl.com\/institute\/certificate\/cxl-conversion-optimization\/",
+          "id": 47,
+          "parent": 36
+        },
+        {
+          "depth": 1,
+          "text": "Digital psychology and persuasion",
+          "component": "a",
+          "href": "https:\/\/conversionxl.com\/institute\/certificate\/cxl-psychology-persuasion\/",
+          "id": 48,
+          "parent": 36
+        },
+        {
+          "depth": 1,
+          "text": "Growth marketing",
+          "component": "a",
+          "href": "https:\/\/conversionxl.com\/institute\/certificate\/cxl-growth-marketing\/",
+          "id": 49,
+          "parent": 36
+        },
+        {
+          "depth": 1,
+          "text": "Digital analytics",
+          "component": "a",
+          "href": "https:\/\/conversionxl.com\/institute\/certificate\/cxl-digital-analytics\/",
+          "id": 50,
+          "parent": 36
+        }
+      ]
+    },
+    {
+      "depth": 0,
+      "text": "Online courses <iron-icon icon=\"lumo:dropdown\"><\/iron-icon>",
+      "component": "a",
+      "href": "https:\/\/conversionxl.com\/institute\/online-courses\/",
+      "id": 37,
+      "parent": 0,
+      "children": [
+        {
+          "depth": 1,
+          "text": "CRO & UX",
+          "id": 51,
+          "parent": 37,
+          "children": [
+            {
+              "depth": 2,
+              "text": "A\/B testing",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/ab-testing-mastery\/",
+              "id": 54,
+              "parent": 51
+            },
+            {
+              "depth": 2,
+              "text": "Conversion optimization audits",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/conversion-optimization-audits\/",
+              "id": 55,
+              "parent": 51
+            },
+            {
+              "depth": 2,
+              "text": "CRO agency masterclass",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/cro-agency\/",
+              "id": 56,
+              "parent": 51
+            },
+            {
+              "depth": 2,
+              "text": "Experimentation analysis",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/advanced-experimentation-analysis\/",
+              "id": 57,
+              "parent": 51
+            },
+            {
+              "depth": 2,
+              "text": "Landing page optimization",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/landing-page-optimization\/",
+              "id": 58,
+              "parent": 51
+            },
+            {
+              "depth": 2,
+              "text": "Neuromarketing",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/applied-neuromarketing\/",
+              "id": 59,
+              "parent": 51
+            },
+            {
+              "depth": 2,
+              "text": "Sales copywriting & product messaging",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/product-messaging\/",
+              "id": 60,
+              "parent": 51
+            },
+            {
+              "depth": 2,
+              "text": "Statistics for A\/B testing",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/statistics-for-ab-testing\/",
+              "id": 61,
+              "parent": 51
+            }
+          ]
+        },
+        {
+          "depth": 1,
+          "text": "Analytics",
+          "id": 52,
+          "parent": 37,
+          "children": [
+            {
+              "depth": 2,
+              "text": "Adobe Analytics \u2013 beginner",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/adobe-analytics\/",
+              "id": 62,
+              "parent": 52
+            },
+            {
+              "depth": 2,
+              "text": "Google Analytics \u2013 beginner",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/google-analytics-beginners\/",
+              "id": 63,
+              "parent": 52
+            },
+            {
+              "depth": 2,
+              "text": "Google Analytics \u2013 intermediate",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/intermediate-google-analytics\/",
+              "id": 64,
+              "parent": 52
+            },
+            {
+              "depth": 2,
+              "text": "Google Tag Manager \u2013 beginner",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/fundamentals-of-google-tag-manager\/",
+              "id": 65,
+              "parent": 52
+            },
+            {
+              "depth": 2,
+              "text": "Google Tag Manager \u2013 intermediate",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/intermediate-google-tag-manager\/",
+              "id": 66,
+              "parent": 52
+            },
+            {
+              "depth": 2,
+              "text": "Google Tag Manager \u2013 advanced",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/advanced-google-tag-manager\/",
+              "id": 67,
+              "parent": 52
+            },
+            {
+              "depth": 2,
+              "text": "Product analytics",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/product-analytics\/",
+              "id": 68,
+              "parent": 52
+            }
+          ]
+        },
+        {
+          "depth": 1,
+          "text": "Marketing",
+          "id": 53,
+          "parent": 37,
+          "children": [
+            {
+              "depth": 2,
+              "text": "Account based marketing",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/account-based-marketing\/",
+              "id": 69,
+              "parent": 53
+            },
+            {
+              "depth": 2,
+              "text": "Advanced AI for marketers",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/advanced-ai-marketing\/",
+              "id": 70,
+              "parent": 53
+            },
+            {
+              "depth": 2,
+              "text": "Content strategy \u2013 B2B",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/content-strategy-seo-lead-generation\/",
+              "id": 71,
+              "parent": 53
+            },
+            {
+              "depth": 2,
+              "text": "Data-driven influencer marketing",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/influencer-marketing\/",
+              "id": 72,
+              "parent": 53
+            },
+            {
+              "depth": 2,
+              "text": "Facebook ads",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/facebook-ads\/",
+              "id": 73,
+              "parent": 53
+            },
+            {
+              "depth": 2,
+              "text": "Google Ads \u2013 intermediate",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/google-ads\/",
+              "id": 74,
+              "parent": 53
+            },
+            {
+              "depth": 2,
+              "text": "Google Ads \u2013 maximizing audiences",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/maximizing-audiences-ppc\/",
+              "id": 75,
+              "parent": 53
+            },
+            {
+              "depth": 2,
+              "text": "LinkedIn advertising",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/linkedin-advertising\/",
+              "id": 76,
+              "parent": 53
+            },
+            {
+              "depth": 2,
+              "text": "Marketing management",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/marketing-management\/",
+              "id": 77,
+              "parent": 53
+            },
+            {
+              "depth": 2,
+              "text": "Marketing tech stack",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/optimizing-your-marketing-tech-stack\/",
+              "id": 78,
+              "parent": 53
+            },
+            {
+              "depth": 2,
+              "text": "Product marketing",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/product-marketing-for-technology-companies\/",
+              "id": 79,
+              "parent": 53
+            },
+            {
+              "depth": 2,
+              "text": "Project management for marketers",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/project-management-for-marketers\/",
+              "id": 80,
+              "parent": 53
+            },
+            {
+              "depth": 2,
+              "text": "Retention for subscription products",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/retention\/",
+              "id": 81,
+              "parent": 53
+            },
+            {
+              "depth": 2,
+              "text": "SEO \u2013 editorial calendar",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/editorial-calendar\/",
+              "id": 82,
+              "parent": 53
+            },
+            {
+              "depth": 2,
+              "text": "Technical SEO",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/technical-seo\/",
+              "id": 83,
+              "parent": 53
+            },
+            {
+              "depth": 2,
+              "text": "User-centric marketing",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/user-centric-marketing\/",
+              "id": 84,
+              "parent": 53
+            },
+            {
+              "depth": 2,
+              "text": "YouTube ads",
+              "component": "a",
+              "href": "https:\/\/conversionxl.com\/institute\/certificate\/youtube-ads\/",
+              "id": 85,
+              "parent": 53
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "depth": 0,
+      "text": "Upcoming courses",
+      "component": "a",
+      "href": "https:\/\/conversionxl.com\/institute\/upcoming-courses\/",
+      "id": 38,
+      "parent": 0
+    },
+    {
+      "depth": 0,
+      "text": "Event videos",
+      "component": "a",
+      "href": "https:\/\/conversionxl.com\/institute\/media\/",
+      "id": 39,
+      "parent": 0
+    },
+    {
+      "depth": 0,
+      "text": "<iron-icon icon=\"lumo:plus\"><\/iron-icon> Invite team",
+      "component": "a",
+      "href": "https:\/\/conversionxl.com\/institute\/my-account\/teams\/",
+      "id": 40,
+      "parent": 0
+    },
+    {
+      "depth": 0,
+      "text": "<iron-icon icon=\"lumo:user\"><\/iron-icon> My account <iron-icon icon=\"lumo:dropdown\"><\/iron-icon>",
+      "component": "a",
+      "href": "https:\/\/conversionxl.com\/institute\/my-account\/",
+      "id": 41,
+      "parent": 0,
+      "children": [
+        {
+          "depth": 1,
+          "text": "Account details",
+          "id": 88,
+          "parent": 41,
+          "children": [
+            {
+              "depth": 2,
+              "text": "Account hello!",
+              "component": "a",
+              "href": "http:\/\/localhost:8080\/hello-world\/",
+              "id": 92,
+              "parent": 88
+            },
+            {
+              "depth": 2,
+              "text": "Addresses",
+              "component": "a",
+              "href": "http:\/\/localhost:8080\/edit-address\/",
+              "id": 89,
+              "parent": 88,
+              "children": [
+                {
+                  "depth": 3,
+                  "text": "<span data-post-status=\"publish\"><\/span>Hello world!",
+                  "component": "a",
+                  "href": "http:\/\/localhost:8080\/hello-world\/",
+                  "id": 93,
+                  "parent": 89
+                },
+                {
+                  "depth": 3,
+                  "text": "Downloads",
+                  "component": "a",
+                  "href": "http:\/\/localhost:8080\/downloads\/",
+                  "id": 90,
+                  "parent": 89
+                }
+              ]
+            },
+            {
+              "depth": 2,
+              "text": "<span data-post-status=\"publish\"><\/span>Hello world!",
+              "component": "a",
+              "href": "http:\/\/localhost:8080\/hello-world\/",
+              "id": 91,
+              "parent": 88
+            }
+          ]
+        },
+        {
+          "depth": 1,
+          "text": "Orders",
+          "component": "a",
+          "href": "http:\/\/localhost:8080\/orders\/",
+          "id": 87,
+          "parent": 41
+        }
+      ]
+    },
+    {
+      "depth": 0,
+      "text": "Help",
+      "id": 42,
+      "parent": 0
+    }
+  ]
+}

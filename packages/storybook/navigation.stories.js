@@ -44,11 +44,20 @@ export const CxlMarketingNav = () => {
         <vaadin-tab class="menu-item" theme="cxl-marketing-nav"
           ><a href="https://conversionxl.com/institute/">Institute</a></vaadin-tab
         >
-        <vaadin-tab class="menu-item" theme="cxl-marketing-nav"
-          ><a href="https://conversionxl.com/agency/"
-            >Conversion optimization services</a
-          ></vaadin-tab
+        <vaadin-tab
+          id="menu-item-95"
+          class="menu-item menu-item-95 menu-item-has-children"
+          theme="cxl-marketing-nav"
         >
+          <a href="https://conversionxl.com/agency/"
+            >Conversion optimization services <iron-icon icon="lumo:dropdown"></iron-icon
+          ></a>
+          <vaadin-context-menu
+            open-on="click"
+            class="sub-menu"
+            theme="cxl-marketing-nav"
+          ></vaadin-context-menu
+        ></vaadin-tab>
         <vaadin-tab class="menu-item" theme="cxl-marketing-nav"
           ><a href="https://conversionxl.com/agency/case-studies/"
             >Agency case studies</a
