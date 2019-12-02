@@ -1,6 +1,6 @@
 {
   "name": "@conversionxl/cxl-ui",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "CXL",
   "license": "SEE LICENSE IN LICENSE",
   "main": "src/index.js",
@@ -10,7 +10,7 @@
     "directory": "packages/cxl-ui"
   },
   "dependencies": {
-    "@conversionxl/cxl-lumo-styles": "^0.1.1",
+    "@conversionxl/cxl-lumo-styles": "^0.1.4",
     "@pika/pack": "^0.5.0",
     "@pika/plugin-build-web": "^0.7.1",
     "@pika/plugin-bundle-web": "^0.7.1",
