@@ -2457,10 +2457,10 @@
     "@vaadin/vaadin-material-styles" "^1.2.0"
     "@vaadin/vaadin-themable-mixin" "^1.2.1"
 
-"@vaadin/vaadin-context-menu@^4.3.12":
-  version "4.3.12"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-context-menu/-/vaadin-context-menu-4.3.12.tgz#793f04b5484a43ab2870ffb812d4eabe03a67220"
-  integrity sha512-DZsP8g7ZHXyb9XW75htHssyzuX5dM6yT25CieewxENxwCdJ3IWFj0C4OZTyjvCu9Z1q+/BAVObse90ziPg3/eg==
+"@vaadin/vaadin-context-menu@^4.3.14":
+  version "4.3.14"
+  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-context-menu/-/vaadin-context-menu-4.3.14.tgz#bc5a33e50ae32ddfc9e379bcbdd19f20d1cb2f92"
+  integrity sha512-ZN1uRH8jGypIV4SAj2k9uTXdGKW9f/HBsAjwWcvUqifMjOjcXmVDRoCxubt2w0iK/13RdctDLwJLt9QhhZXPRg==
   dependencies:
     "@polymer/iron-media-query" "^3.0.0"
     "@polymer/polymer" "^3.0.0"
