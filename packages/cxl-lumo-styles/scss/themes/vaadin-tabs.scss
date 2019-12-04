@@ -1,3 +1,5 @@
+@import "../mixins";
+
 // Collapse margins.
 :host([orientation="vertical"][theme~="cxl-marketing-nav"]) {
   display: flex;
@@ -5,26 +7,40 @@
 }
 
 /**
+ * Wrap.
+ */
+:host([orientation="horizontal"][theme~="cxl-marketing-nav"]) {
+  justify-content: center;
+}
+
+// Override `justify-content: center`.
+// @todo upstream `forward-button` has `right: 0`, but nothing for this. Bug?
+:host([orientation="horizontal"][theme~="cxl-marketing-nav"]) [part="back-button"] {
+  left: 0;
+}
+
+:host([orientation="horizontal"][theme~="cxl-marketing-nav"]) [part="tabs"] {
+  @include wrap;
+  margin: 0;
+}
+
+/**
  * Unify orientations side margins and padding
  */
-$vaadin-tab-padding: 0.75rem;
+$vaadin-tab-horizontal-padding: 0.75rem;
 
-// Match container margins w/ spacing between tabs
-:host([orientation="horizontal"][theme~="cxl-marketing-nav"]) [part="tabs"] {
-  margin-right: $vaadin-tab-padding;
-  margin-left: $vaadin-tab-padding;
+// Reduce spacing between tabs. Vertical is noop, upstream padding already matches our wrap.
+:host([orientation="horizontal"][theme~="cxl-marketing-nav"]) ::slotted(.menu-item) {
+  padding-right: $vaadin-tab-horizontal-padding;
+  padding-left: $vaadin-tab-horizontal-padding;
 }
 
-// Align horizontal Global nav with vertical Primary nav
-:host([orientation="horizontal"][theme~="cxl-marketing-nav"][wide="false"]) [part="tabs"] {
-  margin-right: 0;
-  margin-left: 0;
+// Match container wrap.
+:host([orientation="horizontal"][theme~="cxl-marketing-nav"]) ::slotted(.menu-item:first-child) {
+  padding-left: 0;
 }
-
-// Reduce spacing between tabs
-:host([theme~="cxl-marketing-nav"]) ::slotted(.menu-item) {
-  padding-right: $vaadin-tab-padding;
-  padding-left: $vaadin-tab-padding;
+:host([orientation="horizontal"][theme~="cxl-marketing-nav"]) ::slotted(.menu-item:last-child) {
+  padding-right: 0;
 }
 
 /**

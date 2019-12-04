@@ -1,9 +1,8 @@
 :host {
-  // Avoid margin collapse.
-  display: inline-block;
-  width: 100%;
+  display: flex;
 
-  background-color: var(--lumo-shade);
+  // Stretch children horizontally.
+  flex-direction: column;
 }
 
 :host([hidden]) {
@@ -45,6 +44,7 @@
 // Light on dark.
 ::slotted(#menu-primary-items) {
   --lumo-tertiary-text-color: var(--lumo-base-color);
+  background-color: var(--lumo-shade);
 }
 
 /**

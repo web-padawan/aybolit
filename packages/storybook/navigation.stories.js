@@ -140,8 +140,23 @@ export const CxlMarketingNav = () => {
       </vaadin-tabs>
     </cxl-marketing-nav>
 
-    <p>We need to test context menu items vs body links styling, so here's a <a href="https://cxl.com">link somewhere like cxl.com</a>.</p>
-    <p><a href="https://cxl.com">Another link</a> for good measure.</p>
+    <main>
+      <style>
+        /* @todo @include wrap mixin. */
+        .wrap {
+          margin: 0 auto;
+          max-width: var(--cxl-wrap-width, none);
+          padding: 0 var(--cxl-wrap-padding);
+          position: relative;
+        }
+      </style>
+
+      <div class="wrap">
+        <p>We need to test context menu items vs body links styling, so here's a <a href="https://cxl.com">link somewhere like cxl.com</a>.</p>
+        <p><a href="https://cxl.com">Another link</a> for good measure.</p>
+        <hr>
+      </div>
+    </main>
   `;
 };
 
