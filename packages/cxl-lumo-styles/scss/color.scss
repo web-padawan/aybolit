@@ -5,9 +5,9 @@ html,
    *
    * @see https://github.com/vaadin/vaadin-lumo-styles/blob/v1.5.0/color.html#L57
    */
-  --lumo-primary-color: hsl(8, 100%, 39%);
-  --lumo-primary-color-10pct: hsla(8, 100%, 39%, 0.1);
-  --lumo-primary-color-50pct: hsla(8, 100%, 39%, 0.5);
+  --lumo-primary-color: hsl(355.8, 74.7%, 48%);
+  --lumo-primary-color-10pct: hsla(355.8, 74.7%, 48%, 0.1);
+  --lumo-primary-color-50pct: hsla(355.8, 74.7%, 48%, 0.5);
 
   /**
    * Grayscale > Shade, Contrast
@@ -23,5 +23,5 @@ html,
    * @see https://cdn.vaadin.com/vaadin-lumo-styles/1.5.0/demo/colors.html#grayscale
    */
   --lumo-header-text-color: hsl(0, 0%, 10%);
-  --lumo-primary-text-color: hsl(8, 100%, 39%);
+  --lumo-primary-text-color: hsl(355.8, 74.7%, 48%);
 }
