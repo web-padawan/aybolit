@@ -55,6 +55,9 @@
  */
 $menu-item-menu-toggle-index: 2;
 
-:host(:not([wide])) #menu-shadow-items:not([selected="#{$menu-item-menu-toggle-index}"]) + nav > ::slotted(.menu-items) {
+:host(:not([wide]))
+  #menu-shadow-items:not([selected="#{$menu-item-menu-toggle-index}"])
+  + nav
+  > ::slotted(.menu-items) {
   display: none;
 }

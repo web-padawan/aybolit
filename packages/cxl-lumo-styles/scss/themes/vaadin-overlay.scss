@@ -1,5 +1,5 @@
 // Perfectly align modal in the center of the screen.
-:host([theme~="cxl-marketing-nav"][phone]) [part="overlay"]{
+:host([theme~="cxl-marketing-nav"][phone]) [part="overlay"] {
   top: 0;
   bottom: 0;
   margin-top: auto;
