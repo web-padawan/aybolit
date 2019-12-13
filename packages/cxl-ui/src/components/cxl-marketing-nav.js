@@ -65,7 +65,8 @@ export class CXLMarketingNavElement extends LitElement {
           ?hidden="${this.minimal}"
         >
           <a
-            ><iron-icon icon="lumo:search"></iron-icon> Search <iron-icon icon="lumo:dropdown"></iron-icon
+            ><iron-icon icon="lumo:search"></iron-icon> Search
+            <iron-icon icon="lumo:dropdown"></iron-icon
           ></a>
           <vaadin-context-menu
             close-on="outside-click"
@@ -124,18 +125,23 @@ export class CXLMarketingNavElement extends LitElement {
      *
      * @see https://github.com/vaadin/vaadin-item/blob/v2.1.1/src/vaadin-item-mixin.html#L136
      */
-    const menuItemSearchContextMenu = this.menuItemSearchElement.querySelector('vaadin-context-menu');
+    const menuItemSearchContextMenu = this.menuItemSearchElement.querySelector(
+      'vaadin-context-menu'
+    );
 
-    menuItemSearchContextMenu.addEventListener('opened-changed', ee => {
-      const searchForm = ee.target.$.overlay.querySelector('.search-form');
+    menuItemSearchContextMenu.addEventListener(
+      'opened-changed',
+      ee => {
+        const searchForm = ee.target.$.overlay.querySelector('.search-form');
 
-      searchForm.addEventListener('keydown', ef => {
-        // Allow Esc.
-        if (ef.key !== 'Esc') {
-          ef.stopPropagation()
-        }
-      });
-    }/* , { once: true } necessary for `content-changed`? */);
+        searchForm.addEventListener('keydown', ef => {
+          // Allow Esc.
+          if (ef.key !== 'Esc') {
+            ef.stopPropagation();
+          }
+        });
+      } /* , { once: true } necessary for `content-changed`? */
+    );
 
     menuItemSearchContextMenu.addEventListener('item-selected', e => {
       e.stopImmediatePropagation();
@@ -212,9 +218,9 @@ export class CXLMarketingNavElement extends LitElement {
    * @todo Links cannot be sub-menu hosts?
    */
   _updatedContextMenuItems() {
-    Object.values(this.contextMenuItems).forEach((items) => {
+    Object.values(this.contextMenuItems).forEach(items => {
       items.forEach(menuItem => {
-        if (! menuItem.children) {
+        if (!menuItem.children) {
           return;
         }
 
@@ -250,7 +256,7 @@ export class CXLMarketingNavElement extends LitElement {
     this.menuItemsElements.forEach(el => {
       el.setAttribute('orientation', orientation);
       el.setAttribute('wide', this.wide);
-    } );
+    });
 
     this.menuShadowItemsElement.setAttribute('wide', this.wide);
   }

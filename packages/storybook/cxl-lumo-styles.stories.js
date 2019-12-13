@@ -6,7 +6,7 @@ import { html } from 'lit-html';
 export default {
   decorators: [withKnobs],
   title: 'CXL Lumo Styles'
-}
+};
 
 export const VaadinButton = () => {
   const label = text('Label', 'Button');
@@ -16,8 +16,8 @@ export const VaadinButton = () => {
       ${label}
     </vaadin-button>
   `;
-}
+};
 
 VaadinButton.story = {
   name: '<vaadin-button>'
-}
+};
