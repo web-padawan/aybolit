@@ -10,5 +10,5 @@
 :host([theme~="cxl-marketing-nav"]) [part="backdrop"] {
   $vaadin-overlay-shade-pct: 20;
 
-  background-color: var(--lumo-shade-#{$vaadin-overlay-shade-pct * 3.5}pct);
+  background-color: var(--lumo-shade-#{$vaadin-overlay-shade-pct * 3.5}#{"pct"});
 }
