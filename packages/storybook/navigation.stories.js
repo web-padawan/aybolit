@@ -1,6 +1,7 @@
 import { html } from 'lit-html';
 import { useEffect } from '@storybook/client-api';
 import '@conversionxl/cxl-ui/src/components/cxl-marketing-nav.js';
+import '@conversionxl/cxl-ui/src/components/cxl-institute-pricing-table.js';
 import contextMenuItems from './navigation.data.json';
 
 export default {
@@ -155,6 +156,7 @@ export const CxlMarketingNav = () => {
         <p>We need to test context menu items vs body links styling, so here's a <a href="https://cxl.com">link somewhere like cxl.com</a>.</p>
         <p><a href="https://cxl.com">Another link</a> for good measure.</p>
         <hr>
+        <cxl-institute-pricing-table></cxl-institute-pricing-table>
       </div>
     </main>
   `;

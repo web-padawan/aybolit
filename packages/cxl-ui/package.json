@@ -15,6 +15,8 @@
     "@pika/plugin-build-web": "^0.8.1",
     "@pika/plugin-bundle-web": "^0.8.1",
     "@pika/plugin-standard-pkg": "^0.8.1",
+    "@polymer/iron-pages": "^3.0.1",
+    "@polymer/paper-toggle-button": "^3.0.1",
     "@vaadin/vaadin-button": "^2.2.1",
     "@vaadin/vaadin-context-menu": "^4.3.14",
     "@vaadin/vaadin-tabs": "^3.0.5",
