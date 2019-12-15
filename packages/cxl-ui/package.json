@@ -19,6 +19,7 @@
     "@vaadin/vaadin-context-menu": "^4.3.14",
     "@vaadin/vaadin-tabs": "^3.0.5",
     "@vaadin/vaadin-themable-mixin": "^1.5.2",
+    "headroom.js": "^0.10.3",
     "lit-element": "^2.2.1",
     "lit-html": "^1.1.2"
   },

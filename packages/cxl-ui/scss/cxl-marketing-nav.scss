@@ -61,3 +61,14 @@ $menu-item-menu-toggle-index: 2;
   > ::slotted(.menu-items) {
   display: none;
 }
+
+/**
+ * headroom.js
+ */
+:host(.headroom--pinned.headroom--not-top) {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}

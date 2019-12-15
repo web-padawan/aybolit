@@ -23,3 +23,19 @@ a {
     text-decoration: underline;
   }
 }
+
+/**
+ * headroom.js
+ */
+.headroom {
+  will-change: transform;
+  transition: transform 200ms linear;
+
+  &--pinned {
+    transform: translateY(0%);
+  }
+
+  &--unpinned {
+    transform: translateY(-100%);
+  }
+}
