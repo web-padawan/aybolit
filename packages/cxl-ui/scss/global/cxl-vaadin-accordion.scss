@@ -1,0 +1,25 @@
+cxl-vaadin-accordion[theme~="cxl-minidegree-track"] {
+  iron-icon {
+    &[icon="lumo:checkmark"] {
+      color: var(--lumo-success-color);
+    }
+
+    &[icon="lumo:angle-right"] {
+      color: var(--lumo-shade-50pct);
+    }
+
+    &[icon="lumo:play"] {
+      color: var(--lumo-primary-color);
+    }
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+
+  .user-status-completed,
+  .user-status-started {
+    font-weight: 600;
+  }
+}
