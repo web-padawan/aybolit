@@ -1,0 +1,15 @@
+html {
+  /**
+   * Font family.
+   *
+   * @see https://cdn.vaadin.com/vaadin-lumo-styles/1.5.0/demo/typography.html#font-family
+   */
+  --lumo-font-family: "Roboto", sans-serif;
+  --lumo-font-secondary: "Libre Baskerville", "Georgia", serif;
+  font-weight: 300;
+}
+
+p {
+  font-family: var(--lumo-font-secondary);
+  font-weight: 400;
+}
