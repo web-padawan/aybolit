@@ -21,6 +21,14 @@ a {
   }
 }
 
+// Heading highlights.
+strong {
+  h1 > &,
+  h2 > & {
+    color: var(--lumo-primary-color);
+  }
+}
+
 /**
  * headroom.js
  */
