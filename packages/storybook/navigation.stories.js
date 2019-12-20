@@ -16,7 +16,12 @@ export const CxlMarketingNav = () => {
     cxlMarketingNavElement.contextMenuItems = contextMenuItems;
 
     // headroom.js
-    const headroom = new Headroom(cxlMarketingNavElement);
+    const headroom = new Headroom(cxlMarketingNavElement, {
+      tolerance: {
+        up: 30,
+        down: 0
+      }
+    });
 
     headroom.init();
   }, []);
