@@ -1,0 +1,51 @@
+html {
+  /**
+   * Font family.
+   *
+   * @see https://cdn.vaadin.com/vaadin-lumo-styles/1.5.0/demo/typography.html#font-family
+   */
+  --lumo-font-family: "Roboto", sans-serif;
+  --cxl-lumo-font-secondary: "Libre Baskerville", "Georgia", serif;
+
+  /**
+   * Font size.
+   *
+   * @ see https://cdn.vaadin.com/vaadin-lumo-styles/1.5.0/demo/typography.html#font-size
+   */
+  --cxl-lumo-font-size-hero: 4rem;
+
+  /**
+   * Font weight.
+   */
+  font-weight: 300;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: var(--cxl-lumo-font-size-hero);
+}
+
+h2 {
+  font-size: var(--lumo-font-size-xxxl);
+}
+
+h3 {
+  font-size: var(--lumo-font-size-xxl);
+}
+
+h4 {
+  font-size: var(--lumo-font-size-xl);
+}
+
+h5 {
+  font-size: var(--lumo-font-size-l);
+}
+
+h6 {
+  font-size: var(--lumo-font-size-m);
+}
+
+p {
+  font-family: var(--cxl-lumo-font-secondary);
+  font-weight: 400;
+}

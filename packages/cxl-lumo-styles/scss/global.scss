@@ -2,9 +2,6 @@ html {
   // Variables.
   --cxl-wrap-width: 90rem;
   --cxl-wrap-padding: var(--lumo-space-m);
-
-  // @see https://github.com/necolas/normalize.css/blob/8.0.1/normalize.css#L12
-  line-height: 1.15; /* 1 */
 }
 
 // @see https://github.com/necolas/normalize.css/blob/8.0.1/normalize.css#L20
@@ -21,6 +18,14 @@ a {
   // Only when navigable.
   &[href]:hover {
     text-decoration: underline;
+  }
+}
+
+// Heading highlights.
+strong {
+  h1 > &,
+  h2 > & {
+    color: var(--lumo-primary-color);
   }
 }
 
