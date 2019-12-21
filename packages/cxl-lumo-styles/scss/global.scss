@@ -19,6 +19,11 @@ a {
   &[href]:hover {
     text-decoration: underline;
   }
+
+  // Icon alignment.
+  iron-icon + & {
+    vertical-align: middle;
+  }
 }
 
 // Heading highlights.

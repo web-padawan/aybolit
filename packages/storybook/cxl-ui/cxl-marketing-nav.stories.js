@@ -2,10 +2,10 @@ import { html } from 'lit-html';
 import { useEffect } from '@storybook/client-api';
 import '@conversionxl/cxl-ui/src/components/cxl-marketing-nav.js';
 import { Headroom } from '@conversionxl/cxl-ui';
-import contextMenuItems from './navigation.data.json';
+import contextMenuItems from './cxl-marketing-nav.data.json';
 
 export default {
-  title: 'CXL Navigation'
+  title: 'CXL UI'
 };
 
 export const CxlMarketingNav = () => {
@@ -191,7 +191,9 @@ export const CxlMarketingNav = () => {
     <main>
       <style>
         /* headroom.js */
-        body { min-height: 3000px; }
+        body {
+          min-height: 3000px;
+        }
 
         /* @todo @include wrap mixin. */
         .wrap {
@@ -208,7 +210,7 @@ export const CxlMarketingNav = () => {
           <a href="https://cxl.com">link somewhere like cxl.com</a>.
         </p>
         <p><a href="https://cxl.com">Another link</a> for good measure.</p>
-        <hr>
+        <hr />
       </div>
     </main>
   `;
