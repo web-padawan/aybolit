@@ -7,6 +7,14 @@ export default {
 
 export const CxlVaadinAccordion = () => {
   return html`
+    <style>
+      .plural .entry-title {
+        margin: var(--lumo-space-m) 0;
+      }
+      .entry-title a {
+        color: inherit;
+      }
+    </style>
     <cxl-vaadin-accordion
       id="cxl-vaadion-accordion-26107"
       class="archive archive-step plural"
@@ -23,6 +31,7 @@ export const CxlVaadinAccordion = () => {
           </h2>
         </header>
         <div class="entry-summary" itemprop="description">
+          <p>Foundations introduction copywriting here.</p>
           <h4>Courses in this track: 10</h4>
           <ul class="badgeos-required-achievements">
             <li
