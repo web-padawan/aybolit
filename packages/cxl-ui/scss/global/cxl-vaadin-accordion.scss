@@ -13,6 +13,13 @@ cxl-vaadin-accordion[theme~="cxl-minidegree-track"] {
     }
   }
 
+  label {
+    font-size: var(--lumo-font-size-xxs);
+    font-weight: 600;
+    color: var(--lumo-contrast-60pct); // vaadin-accordion-panel [part="toggle"]
+    text-transform: uppercase;
+  }
+
   ul {
     padding: 0;
     list-style: none;

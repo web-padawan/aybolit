@@ -9,14 +9,14 @@ export const CxlVaadinAccordion = () => {
   return html`
     <style>
       .plural .entry-title {
-        margin: var(--lumo-space-m) 0;
+        margin: 0;
       }
       .entry-title a {
         color: inherit;
       }
     </style>
     <cxl-vaadin-accordion
-      id="cxl-vaadion-accordion-26107"
+      id="cxl-vaadin-accordion-26107"
       class="archive archive-step plural"
       theme="cxl-minidegree-track"
     >
@@ -26,9 +26,10 @@ export const CxlVaadinAccordion = () => {
         theme="cxl-minidegree-track"
       >
         <header class="entry-header" slot="summary">
-          <h2 class="entry-title" itemprop="headline">
-            <a href="#post-310430">Track 1: Foundations (recommended for beginners)</a>
-          </h2>
+          <label>Track #1</label>
+          <h3 class="entry-title" itemprop="headline">
+            <a href="#post-310430">Foundations (recommended for beginners)</a>
+          </h3>
         </header>
         <div class="entry-summary" itemprop="description">
           <p>Foundations introduction copywriting here.</p>
@@ -101,9 +102,10 @@ export const CxlVaadinAccordion = () => {
         theme="cxl-minidegree-track"
       >
         <header class="entry-header" slot="summary">
-          <h2 class="entry-title no-anchor" itemprop="headline">
-            <a href="#post-14184">Track 2: Conversion research</a>
-          </h2>
+          <label>Track #2</label>
+          <h3 class="entry-title no-anchor" itemprop="headline">
+            <a href="#post-14184">Conversion research</a>
+          </h3>
         </header>
         <div class="entry-summary" itemprop="description">
           <p>

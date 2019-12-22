@@ -1,3 +1,21 @@
 [part="content"] {
   padding-left: var(--lumo-icon-size-s);
 }
+
+:host([theme~="cxl-minidegree-track"]) {
+  padding: var(--lumo-space-m);
+  border-bottom: 0;
+  box-shadow: var(--cxl-box-shadow);
+
+  [part="content"] {
+    padding-left: var(--lumo-icon-size-m);
+  }
+
+  [part="summary"] {
+    padding: 0;
+  }
+
+  [part="toggle"] {
+    font-size: var(--lumo-icon-size-m);
+  }
+}

@@ -2,6 +2,21 @@ html {
   // Variables.
   --cxl-wrap-width: 90rem;
   --cxl-wrap-padding: var(--lumo-space-m);
+
+  /**
+   * Shadow.
+   *
+   * @see https://cdn.vaadin.com/vaadin-lumo-styles/1.5.0/demo/styles.html#shadow
+   * @see https://sass-lang.com/documentation/style-rules/declarations#custom-properties
+   */
+  $cxl-box-shadow-width: var(--cxl-box-shadow-width, 1px);
+  $cxl-box-shadow-color: var(--cxl-box-shadow-color, var(--lumo-shade-10pct));
+
+  --cxl-box-shadow: #{$cxl-box-shadow-width} 0 0 0 #{$cxl-box-shadow-color},
+    0 #{$cxl-box-shadow-width} 0 0 #{$cxl-box-shadow-color},
+    #{$cxl-box-shadow-width} #{$cxl-box-shadow-width} 0 0 #{$cxl-box-shadow-color},
+    #{$cxl-box-shadow-width} 0 0 0 #{$cxl-box-shadow-color} inset,
+    0 #{$cxl-box-shadow-width} 0 0 #{$cxl-box-shadow-color} inset;
 }
 
 // @see https://github.com/necolas/normalize.css/blob/8.0.1/normalize.css#L20
