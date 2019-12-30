@@ -1,0 +1,4 @@
+:host([theme~="cxl-archive"]) {
+  column-gap: var(--lumo-space-m);
+  column-width: calc(var(--lumo-space-m) * 18);
+}

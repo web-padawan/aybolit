@@ -1,32 +1,99 @@
-cxl-vaadin-accordion[theme~="cxl-minidegree-track"] {
-  iron-icon {
-    &[icon="lumo:checkmark"] {
-      color: var(--lumo-success-color);
+cxl-vaadin-accordion {
+  /**
+   * Theme "cxl-archive".
+   */
+  &[theme~="cxl-archive"] {
+    iron-icon {
+      --iron-icon-height: var(--lumo-icon-size-s);
+      --iron-icon-width: var(--iron-icon-height);
     }
 
-    &[icon="lumo:angle-right"] {
-      color: var(--lumo-shade-50pct);
+    p {
+      font-family: inherit;
     }
 
-    &[icon="lumo:play"] {
-      color: var(--lumo-primary-color);
+    .entry-header {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .entry-byline {
+      display: flex; // iron-icon vs text alignment
+      flex-basis: 100%;
+      flex-wrap: wrap;
+      margin: var(--lumo-space-s) 0;
+      overflow: hidden;
+      font-weight: 300;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      // @see https://stackoverflow.com/questions/29732575/how-to-specify-line-breaks-in-a-multi-line-flexbox-layout
+      hr {
+        width: 100%;
+        margin: 0;
+        visibility: hidden;
+      }
+    }
+
+    .entry-summary {
+      font-family: var(--lumo-font-family);
+    }
+
+    .entry-title {
+      flex: 1;
+      height: calc(var(--lumo-line-height-xs) * 4em);
+      overflow: hidden;
+      font-size: var(--lumo-font-size-xl);
+      word-break: break-word;
+    }
+
+    vaadin-accordion-panel[opened] {
+      .entry-title {
+        overflow: visible;
+      }
+    }
+
+    .thumbnail {
+      --cxl-thumbnail-size: calc(var(--lumo-icon-size-l) * 3);
+      width: var(--cxl-thumbnail-size);
+      height: var(--cxl-thumbnail-size);
+      border-radius: 50%;
     }
   }
 
-  label {
-    font-size: var(--lumo-font-size-xxs);
-    font-weight: 600;
-    color: var(--lumo-contrast-60pct); // vaadin-accordion-panel [part="toggle"]
-    text-transform: uppercase;
-  }
+  /**
+   * Theme "cxl-minidegree-track".
+   */
+  &[theme~="cxl-minidegree-track"] {
+    iron-icon {
+      &[icon="lumo:checkmark"] {
+        color: var(--lumo-success-color);
+      }
 
-  ul {
-    padding: 0;
-    list-style: none;
-  }
+      &[icon="lumo:angle-right"] {
+        color: var(--lumo-shade-50pct);
+      }
 
-  .user-status-completed,
-  .user-status-started {
-    font-weight: 600;
+      &[icon="lumo:play"] {
+        color: var(--lumo-primary-color);
+      }
+    }
+
+    label {
+      font-size: var(--lumo-font-size-xxs);
+      font-weight: 600;
+      color: var(--lumo-contrast-60pct); // vaadin-accordion-panel [part="toggle"]
+      text-transform: uppercase;
+    }
+
+    ul {
+      padding: 0;
+      list-style: none;
+    }
+
+    .user-status-completed,
+    .user-status-started {
+      font-weight: 600;
+    }
   }
 }

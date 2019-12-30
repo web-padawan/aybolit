@@ -2,17 +2,85 @@
   padding-left: var(--lumo-icon-size-s);
 }
 
-:host([theme~="cxl-minidegree-track"]) {
+/**
+ * Theme "cxl" commons.
+ */
+:host([theme*="cxl"]) {
   padding: var(--lumo-space-m);
   border-bottom: 0;
   box-shadow: var(--cxl-box-shadow);
 
+  [part="summary"] {
+    padding: 0;
+  }
+}
+
+/**
+ * Theme "cxl-archive".
+ */
+:host([theme~="cxl-archive"]) {
+  margin-top: var(--lumo-space-m);
+  margin-bottom: var(--lumo-space-m);
+  background-color: var(--lumo-tint);
+  border-radius: var(--lumo-border-radius-s);
+  outline: 1px solid var(--lumo-shade-10pct);
+  box-shadow: var(--lumo-box-shadow-xs);
+  break-inside: avoid;
+  transform: translateZ(0); // @see https://stackoverflow.com/a/55110789/35946
+
   [part="content"] {
-    padding-left: var(--lumo-icon-size-m);
+    padding-left: unset;
   }
 
   [part="summary"] {
-    padding: 0;
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  [part="toggle"] {
+    align-self: center;
+
+    &::before {
+      content: var(--lumo-icons-angle-down);
+    }
+  }
+}
+
+:host([theme~="cxl-archive"]:hover) {
+  outline-color: var(--lumo-primary-color);
+  box-shadow: unset;
+}
+
+:host([theme~="cxl-archive"]:not([disabled])) {
+  [part="summary"]:hover {
+    [part="toggle"] {
+      color: var(--lumo-primary-color);
+    }
+  }
+}
+
+:host([theme~="cxl-archive"]:first-child) {
+  margin-top: unset;
+}
+
+:host([theme~="cxl-archive"]:last-child) {
+  margin-bottom: unset;
+}
+
+:host([theme~="cxl-archive"][opened]) {
+  outline-color: var(--lumo-primary-color);
+
+  [part="toggle"] {
+    transform: rotate(180deg);
+  }
+}
+
+/**
+ * Theme "cxl-minidegree-track".
+ */
+:host([theme~="cxl-minidegree-track"]) {
+  [part="content"] {
+    padding-left: var(--lumo-icon-size-m);
   }
 
   [part="toggle"] {
