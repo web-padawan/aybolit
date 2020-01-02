@@ -21,6 +21,7 @@
 :host([theme~="cxl-archive"]) {
   margin-top: var(--lumo-space-m);
   margin-bottom: var(--lumo-space-m);
+  overflow: hidden; // @see https://stackoverflow.com/a/19348665/35946
   background-color: var(--lumo-tint);
   border-radius: var(--lumo-border-radius-s);
   outline: 1px solid var(--lumo-shade-10pct);
