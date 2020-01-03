@@ -26,6 +26,9 @@ export const CxlVaadinAccordionThemeArchive = () => {
 
   return html`
     <style>
+      body {
+        background-color: var(--lumo-shade-5pct);
+      }
       .plural .entry-title {
         margin: 0;
       }
