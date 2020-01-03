@@ -25,3 +25,33 @@ html,
   --lumo-header-text-color: hsl(0, 0%, 10%);
   --lumo-primary-text-color: hsl(355.8, 74.7%, 48%);
 }
+
+/**
+ * Dark theme.
+ *
+ * @see https://github.com/vaadin/vaadin-lumo-styles/blob/v1.5.0/color.html#L84
+ */
+[theme~="dark"] {
+  /**
+   * Base
+   *
+   * @see https://cdn.vaadin.com/vaadin-lumo-styles/1.5.0/demo/colors.html#base
+   */
+  --lumo-base-color: hsl(0, 0%, 10%);
+
+  /**
+   * Primary
+   *
+   * @see https://github.com/vaadin/vaadin-lumo-styles/blob/v1.5.0/color.html#L57
+   */
+  --lumo-primary-color: hsl(355.8, 74.7%, 48%);
+  --lumo-primary-color-10pct: hsla(355.8, 74.7%, 48%, 0.1);
+  --lumo-primary-color-50pct: hsla(355.8, 74.7%, 48%, 0.5);
+
+  /**
+   * Text
+   *
+   * @see https://cdn.vaadin.com/vaadin-lumo-styles/1.5.0/demo/colors.html#grayscale
+   */
+  --lumo-primary-text-color: hsl(355.8, 74.7%, 48%);
+}

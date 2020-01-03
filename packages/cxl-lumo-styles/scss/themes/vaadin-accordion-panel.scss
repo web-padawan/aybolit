@@ -23,8 +23,8 @@
   margin-bottom: var(--lumo-space-m);
   overflow: hidden; // @see https://stackoverflow.com/a/19348665/35946
   background-color: var(--lumo-tint);
+  border: 1px solid var(--lumo-shade-10pct);
   border-radius: var(--lumo-border-radius-s);
-  outline: 1px solid var(--lumo-shade-10pct);
   box-shadow: var(--lumo-box-shadow-xs);
   break-inside: avoid;
   transform: translateZ(0); // @see https://stackoverflow.com/a/55110789/35946
@@ -48,7 +48,7 @@
 }
 
 :host([theme~="cxl-archive"]:hover) {
-  outline-color: var(--lumo-primary-color);
+  border-color: var(--lumo-primary-color);
   box-shadow: unset;
 }
 
@@ -69,11 +69,15 @@
 }
 
 :host([theme~="cxl-archive"][opened]) {
-  outline-color: var(--lumo-primary-color);
+  border-color: var(--lumo-primary-color);
 
   [part="toggle"] {
     transform: rotate(180deg);
   }
+}
+
+:host([theme~="cxl-archive"][theme~="dark"]) {
+  background-color: var(--lumo-contrast);
 }
 
 /**

@@ -47,7 +47,11 @@ export const CxlVaadinAccordionThemeArchive = () => {
           <vaadin-accordion-panel
             id="${el.cxl_hybrid_attr_post['@attributes'].id}"
             class="${el.cxl_hybrid_attr_post['@attributes'].class}"
-            theme="cxl-archive"
+            theme="cxl-archive ${el.cxl_hybrid_attr_post['@attributes'].class.includes(
+              'category-minidegree-programs'
+            )
+              ? 'dark'
+              : ''}"
           >
             <header class="entry-header" slot="summary">
               <h3 class="entry-title no-anchor" itemprop="headline">${el.title.raw}</h3>
