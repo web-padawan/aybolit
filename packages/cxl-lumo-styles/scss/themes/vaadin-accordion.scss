@@ -1,4 +1,5 @@
 :host([theme~="cxl-archive"]) {
-  column-gap: var(--lumo-space-m);
+  column-gap: calc(var(--lumo-space-m) * 2);
+  column-rule: 1px solid var(--lumo-shade-10pct); // match panel `outline`
   column-width: calc(var(--lumo-space-m) * 18);
 }
