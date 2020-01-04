@@ -5,7 +5,7 @@ import { html } from 'lit-html';
 
 export default {
   decorators: [withKnobs],
-  title: 'CXL Lumo Styles'
+  title: 'CXL Lumo Styles|Elements'
 };
 
 // @see https://github.com/vaadin/vaadin-lumo-styles/blob/v1.5.0/demo/typography.html
