@@ -1,6 +1,7 @@
 import { html } from 'lit-html';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html';
 import '@conversionxl/cxl-ui/src/components/cxl-vaadin-accordion.js';
+import '@conversionxl/cxl-ui/src/components/cxl-accordion-card.js';
 import archiveData from './theme=cxl-archive.data.json';
 
 export default {
@@ -39,15 +40,15 @@ export const CxlVaadinAccordionThemeArchive = () => {
     <cxl-vaadin-accordion
       id="cxl-vaadin-accordion-26107"
       class="archive archive-certificate plural"
-      theme="cxl-archive"
+      theme="cxl-accordion-card"
     >
       ${archiveData.map(
         el => html`
           ${firstLetterHeading(el)}
-          <vaadin-accordion-panel
+          <cxl-accordion-card
             id="${el.cxl_hybrid_attr_post['@attributes'].id}"
             class="${el.cxl_hybrid_attr_post['@attributes'].class}"
-            theme="cxl-archive ${el.cxl_hybrid_attr_post['@attributes'].class.includes(
+            theme="${el.cxl_hybrid_attr_post['@attributes'].class.includes(
               'category-minidegree-programs'
             )
               ? 'dark'
@@ -79,7 +80,7 @@ export const CxlVaadinAccordionThemeArchive = () => {
                 >View training<iron-icon icon="lumo:angle-right"></iron-icon
               ></a>
             </div>
-          </vaadin-accordion-panel>
+          </cxl-accordion-card>
         `
       )}
     </cxl-vaadin-accordion>
@@ -88,5 +89,5 @@ export const CxlVaadinAccordionThemeArchive = () => {
 
 // @todo localStorage data panel?
 CxlVaadinAccordionThemeArchive.story = {
-  name: 'Theme: Archive'
+  name: 'cxl-accordion-card'
 };

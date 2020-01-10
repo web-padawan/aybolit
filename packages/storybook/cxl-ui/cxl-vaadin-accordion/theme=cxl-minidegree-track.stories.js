@@ -208,5 +208,5 @@ export const CxlVaadinAccordionThemeMinidegreeTrack = () => {
 
 // @todo localStorage data panel?
 CxlVaadinAccordionThemeMinidegreeTrack.story = {
-  name: 'Theme: Minidegree track'
+  name: '[theme=cxl-minidegree-track]'
 };

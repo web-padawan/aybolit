@@ -1,8 +1,8 @@
 cxl-vaadin-accordion {
   /**
-   * Theme "cxl-archive".
+   * Theme "cxl-accordion-card".
    */
-  &[theme~="cxl-archive"] {
+  &[theme~="cxl-accordion-card"] {
     iron-icon {
       --iron-icon-height: var(--lumo-icon-size-s);
       --iron-icon-width: var(--iron-icon-height);
@@ -10,11 +10,6 @@ cxl-vaadin-accordion {
 
     p {
       font-family: inherit;
-    }
-
-    .entry-header {
-      display: flex;
-      flex-wrap: wrap;
     }
 
     .entry-byline {
@@ -35,10 +30,6 @@ cxl-vaadin-accordion {
       }
     }
 
-    .entry-summary {
-      font-family: var(--lumo-font-family);
-    }
-
     .entry-title {
       flex: 1;
       height: calc(var(--lumo-line-height-xs) * 4em);
@@ -47,7 +38,7 @@ cxl-vaadin-accordion {
       word-break: break-word;
     }
 
-    vaadin-accordion-panel[opened] {
+    cxl-accordion-card[opened] {
       .entry-title {
         overflow: visible;
       }

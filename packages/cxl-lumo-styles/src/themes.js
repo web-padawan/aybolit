@@ -1,4 +1,5 @@
 import { registerStyles } from '@vaadin/vaadin-themable-mixin/register-styles.js';
+import cxlAccordionCardStyles from './styles/themes/cxl-accordion-card-css.js';
 import cxlVaadinAccordionStyles from './styles/themes/vaadin-accordion-css.js';
 import cxlVaadinAccordionPanelStyles from './styles/themes/vaadin-accordion-panel-css.js';
 import cxlVaadinContextMenuItemStyles from './styles/themes/vaadin-context-menu-item-css.js';
@@ -8,6 +9,9 @@ import cxlVaadinTabStyles from './styles/themes/vaadin-tab-css.js';
 import cxlVaadinTabsStyles from './styles/themes/vaadin-tabs-css.js';
 
 /* Mixins */
+registerStyles('cxl-accordion-card', cxlAccordionCardStyles, {
+  moduleId: 'cxl-accordion-card-styles'
+});
 registerStyles('vaadin-accordion', cxlVaadinAccordionStyles, {
   moduleId: 'cxl-vaadin-accordion-styles'
 });
