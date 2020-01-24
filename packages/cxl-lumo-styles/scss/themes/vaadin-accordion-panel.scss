@@ -83,3 +83,27 @@
     border-bottom-color: var(--lumo-primary-color-10pct);
   }
 }
+
+/**
+ * Theme "cxl-faq".
+ */
+:host([theme~="cxl-faq"]) {
+  padding-left: 0;
+  box-shadow: none;
+
+  [part="toggle"]::before {
+    color: var(--lumo-primary-color);
+    content: var(--lumo-icons-plus);
+  }
+}
+
+:host([theme~="cxl-faq"][opened]) {
+  [part="toggle"] {
+    transform: rotate(0deg);
+
+    &::before {
+      color: var(--lumo-secondary-color);
+      content: var(--lumo-icons-minus);
+    }
+  }
+}
