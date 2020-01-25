@@ -9,23 +9,6 @@
   box-shadow: var(--lumo-box-shadow-xs);
   break-inside: avoid;
   transform: translateZ(0); // @see https://stackoverflow.com/a/55110789/35946
-
-  [part="content"] {
-    padding-left: unset;
-  }
-
-  [part="summary"] {
-    flex-direction: column-reverse;
-    align-items: stretch;
-  }
-
-  [part="toggle"] {
-    align-self: center;
-
-    &::before {
-      content: var(--lumo-icons-angle-down);
-    }
-  }
 }
 
 :host(:hover) {
@@ -60,6 +43,29 @@
   background-color: var(--lumo-contrast);
 }
 
+/**
+ * Shadow parts.
+ */
+[part="content"] {
+  padding: unset;
+}
+
+[part="summary"] {
+  flex-direction: column-reverse;
+  align-items: stretch;
+}
+
+[part="toggle"] {
+  align-self: center;
+
+  &::before {
+    content: var(--lumo-icons-angle-down);
+  }
+}
+
+/**
+ * Slots.
+ */
 ::slotted(.entry-header) {
   display: flex;
   flex-wrap: wrap;
