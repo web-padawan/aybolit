@@ -65,3 +65,12 @@ strong {
     transform: translateY(-100%);
   }
 }
+
+/**
+ * Classes.
+ */
+// @see https://tailwindcss.com/docs/font-weight/
+// @todo Integrate tailwindcss.
+.font-light {
+  font-weight: 300;
+}

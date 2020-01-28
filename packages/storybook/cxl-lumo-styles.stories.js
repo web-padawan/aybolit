@@ -20,14 +20,15 @@ export const Typograhy = () => {
     <h5>Heading 5</h5>
     <h6>Heading 6</h6>
     <p>Paragraph text.</p>
-    <p><a href>Link</a></p>
-    <p><strong>Strong text.</strong></p>
-    <p><em>Italic text.</em></p>
-    <p><small>Small text.</small></p>
+    <p><a href>Paragraph link</a></p>
+    <p><strong>Paragraph strong text.</strong></p>
+    <p><em>Paragraph italic text.</em></p>
+    <p><small>Paragraph small text.</small></p>
     <div><span>Element text.</span></div>
-    <div><a href>Link</a></div>
-    <div><em>Italic text.</em></div>
-    <div><small>Small text.</small></div>
+    <div class="font-light"><span>Light element text.</span></div>
+    <div><a href>Element link</a></div>
+    <div><em>Element italic text.</em></div>
+    <div><small>Element small text.</small></div>
   `;
 };
 

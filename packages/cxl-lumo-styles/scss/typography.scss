@@ -13,11 +13,6 @@ html {
    * @ see https://cdn.vaadin.com/vaadin-lumo-styles/1.5.0/demo/typography.html#font-size
    */
   --cxl-lumo-font-size-hero: 4rem;
-
-  /**
-   * Font weight.
-   */
-  font-weight: 300;
 }
 
 b,
@@ -67,5 +62,4 @@ h6 {
 
 p {
   font-family: var(--cxl-lumo-font-secondary);
-  font-weight: 400;
 }
