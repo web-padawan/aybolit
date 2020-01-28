@@ -2,6 +2,7 @@ import { customElement } from 'lit-element';
 import '@conversionxl/cxl-lumo-styles';
 import '@vaadin/vaadin-accordion';
 import { AccordionElement } from '@vaadin/vaadin-accordion/src/vaadin-accordion';
+import { registerGlobalStyles } from '@conversionxl/cxl-lumo-styles/src/utils';
 import cxlVaadinAccordionGlobalStyles from '../styles/global/cxl-vaadin-accordion-css.js';
 
 /**
@@ -12,16 +13,13 @@ import cxlVaadinAccordionGlobalStyles from '../styles/global/cxl-vaadin-accordio
 export class CXLVaadinAccordion extends AccordionElement {
   /**
    * Global styles.
-   *
-   * @todo Helper function usable across components.
-   * @todo ^^^ guard against multiple instances.
    */
   ready() {
     super.ready();
 
-    const tmpl = document.createElement('template');
-    tmpl.innerHTML = `<style id="cxl-vaadin-accordion-global">${cxlVaadinAccordionGlobalStyles}</style>`;
-    document.head.appendChild(tmpl.content);
+    registerGlobalStyles(cxlVaadinAccordionGlobalStyles, {
+      moduleId: 'cxl-vaadin-accordion-global'
+    });
   }
 
   // Keep track of accordion panels state.

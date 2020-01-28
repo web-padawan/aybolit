@@ -1,11 +1,12 @@
+import { css } from '@vaadin/vaadin-themable-mixin/register-styles.js';
+import { registerGlobalStyles } from './utils.js';
 import '@vaadin/vaadin-lumo-styles/font-icons.js';
 import '@vaadin/vaadin-lumo-styles/icons.js';
 import '@vaadin/vaadin-lumo-styles/sizing.js';
 import '@polymer/iron-iconset-svg/iron-iconset-svg.js';
 
-const $documentContainer = document.createElement('template');
-$documentContainer.innerHTML = `
-  <style id="cxl-lumo-styles-icons">
+registerGlobalStyles(
+  css`
     iron-icon.size-s {
       width: var(--lumo-icon-size-s);
       height: var(--lumo-icon-size-s);
@@ -20,8 +21,14 @@ $documentContainer.innerHTML = `
       width: var(--lumo-icon-size-l);
       height: var(--lumo-icon-size-l);
     }
-  </style>
+  `,
+  {
+    moduleId: 'cxl-lumo-styles-icons'
+  }
+);
 
+const $documentContainer = document.createElement('template');
+$documentContainer.innerHTML = `
   <iron-iconset-svg size="1000" id="cxl-iconset-svg" name="cxl">
     <svg xmlns="http://www.w3.org/2000/svg">
       <defs>

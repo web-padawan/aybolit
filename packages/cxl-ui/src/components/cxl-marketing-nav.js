@@ -1,5 +1,6 @@
 import { LitElement, html, customElement, property, query } from 'lit-element';
 import '@conversionxl/cxl-lumo-styles';
+import { registerGlobalStyles } from '@conversionxl/cxl-lumo-styles/src/utils';
 import cxlMarketingNavStyles from '../styles/cxl-marketing-nav-css.js';
 import cxlMarketingNavGlobalStyles from '../styles/global/cxl-marketing-nav-css.js';
 import '@vaadin/vaadin-button';
@@ -100,12 +101,10 @@ export class CXLMarketingNavElement extends LitElement {
   firstUpdated(changedProperties) {
     /**
      * Global styles.
-     *
-     * @todo Helper function usable across components.
      */
-    const tmpl = document.createElement('template');
-    tmpl.innerHTML = `<style id="cxl-marketing-nav-global">${cxlMarketingNavGlobalStyles}</style>`;
-    document.head.appendChild(tmpl.content);
+    registerGlobalStyles(cxlMarketingNavGlobalStyles, {
+      moduleId: 'cxl-marketing-nav-global'
+    });
 
     /**
      * Configure context menu trigger on main link click.
