@@ -74,3 +74,10 @@ strong {
 .font-light {
   font-weight: 300;
 }
+
+.thumbnail {
+  --cxl-thumbnail-size: calc(var(--lumo-icon-size-l) * 3);
+  width: var(--cxl-thumbnail-size);
+  height: var(--cxl-thumbnail-size);
+  border-radius: 50%;
+}

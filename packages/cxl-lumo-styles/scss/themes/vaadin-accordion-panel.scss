@@ -1,24 +1,85 @@
 [part="content"] {
-  padding-left: var(--lumo-icon-size-s);
+  padding-left: var(--lumo-space-m);
+}
+
+[part="summary"] {
+  border-radius: unset;
+}
+
+/**
+ * Improve toggle visibility.
+ */
+[part="toggle"] {
+  padding: var(--lumo-space-xs);
+  background-color: var(--lumo-shade-10pct);
+  border-radius: 50%;
+
+  :host([opened]) & {
+    color: var(--lumo-primary-color);
+    background-color: var(--lumo-primary-color-10pct);
+  }
+}
+
+// @see https://github.com/vaadin/vaadin-details/blob/v1.0.1/theme/lumo/vaadin-details-styles.html#L57
+@media (hover: hover) {
+  :host(:not([disabled])) {
+    [part="summary"]:hover {
+      [part="toggle"] {
+        color: var(--lumo-primary-color);
+      }
+    }
+  }
 }
 
 /**
  * Theme "cxl-minidegree-track".
  */
 :host([theme~="cxl-minidegree-track"]) {
-  padding: var(--lumo-space-m);
-  border-bottom: 0;
-  box-shadow: var(--cxl-box-shadow);
+  margin-top: var(--lumo-space-l);
+  border-bottom: unset;
 
   [part="content"] {
-    padding-left: var(--lumo-icon-size-m);
+    padding-left: unset;
   }
 
   [part="summary"] {
-    padding: 0;
+    --vaadin-accordion-panel-border-bottom: solid 1px;
+    padding-top: var(--lumo-space-m);
+    padding-bottom: var(--lumo-space-m);
+    border-bottom: var(--vaadin-accordion-panel-border-bottom) transparent;
+
+    &:hover {
+      background-color: var(--lumo-primary-color-2pct);
+      border-bottom-color: var(--lumo-primary-color-10pct);
+    }
   }
 
   [part="toggle"] {
+    margin-right: var(--lumo-space-m);
     font-size: var(--lumo-icon-size-m);
+  }
+}
+
+/**
+ * Theme "cxl-minidegree-course".
+ */
+:host([theme~="cxl-minidegree-course"]) {
+  [part="content"] {
+    padding-right: var(--lumo-space-m);
+  }
+
+  [part="summary"] {
+    --cxl-minidegree-course-border: solid 1px transparent;
+    padding: var(--lumo-space-l) var(--lumo-space-m);
+    border-top: var(--cxl-minidegree-course-border);
+    border-bottom: var(--cxl-minidegree-course-border);
+  }
+}
+
+:host([theme~="cxl-minidegree-course"][opened]) {
+  [part="summary"] {
+    background-color: var(--lumo-primary-color-2pct);
+    border-top-color: var(--lumo-primary-color);
+    border-bottom-color: var(--lumo-primary-color-10pct);
   }
 }
