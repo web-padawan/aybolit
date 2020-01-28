@@ -42,7 +42,6 @@ export const CxlVaadinAccordionThemeFaq = () => {
   `;
 };
 
-// @todo localStorage data panel?
 CxlVaadinAccordionThemeFaq.story = {
   name: 'Theme: FAQ'
 };
