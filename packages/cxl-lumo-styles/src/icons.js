@@ -1,3 +1,4 @@
+import '@vaadin/vaadin-lumo-styles/font-icons.js';
 import '@vaadin/vaadin-lumo-styles/icons.js';
 import '@vaadin/vaadin-lumo-styles/sizing.js';
 import '@polymer/iron-iconset-svg/iron-iconset-svg.js';
