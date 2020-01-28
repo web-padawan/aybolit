@@ -81,7 +81,7 @@ export class CXLVaadinAccordion extends AccordionElement {
     if (storageId) {
       const stateItems = [];
 
-      items.forEach(function(value, key) {
+      items.forEach((value, key) => {
         stateItems[key] = items[key].opened;
       });
 
