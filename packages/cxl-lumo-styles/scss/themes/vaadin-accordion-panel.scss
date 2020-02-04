@@ -91,7 +91,10 @@
   border-bottom: 0;
 
   [part="toggle"] {
-    margin-right: var(--lumo-space-s);
+    margin-right: var(--lumo-space-m);
+    color: var(--lumo-base-color);
+    background-color: var(--lumo-shade);
+    border-radius: unset;
 
     &::before {
       content: var(--lumo-icons-plus);
@@ -101,6 +104,9 @@
 
 :host([theme~="cxl-faq"][opened]) {
   [part="toggle"] {
+    color: var(--lumo-base-color);
+    background-color: var(--lumo-primary-color);
+    border-radius: unset;
     transform: rotate(0deg);
 
     &::before {
@@ -113,6 +119,26 @@
   }
 
   [part="content"] {
-    padding-left: var(--lumo-icon-size-l);
+    padding-left: calc(var(--lumo-icon-size-m) + var(--lumo-space-m));
+  }
+}
+
+@media (hover: hover) {
+  :host([theme~="cxl-faq"][opened]:not([disabled])) {
+    [part="summary"]:hover {
+      [part="toggle"] {
+        color: var(--lumo-base-color);
+      }
+    }
+  }
+}
+
+@media (hover: hover) {
+  :host([theme~="cxl-faq"][opened]:not([disabled])) {
+    [part="summary"]:hover {
+      [part="toggle"] {
+        color: var(--lumo-shade);
+      }
+    }
   }
 }
