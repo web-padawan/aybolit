@@ -29,7 +29,7 @@ export const CxlVaadinAccordionThemeFaq = () => {
           >
             <header class="entry-header" slot="summary">
               <h5 class="entry-title" itemprop="headline">
-                <a href="#">${unsafeHTML(el.title.rendered)}</a>
+                <a>${unsafeHTML(el.title.rendered)}</a>
               </h5>
             </header>
             <div class="entry-summary" itemprop="description">
