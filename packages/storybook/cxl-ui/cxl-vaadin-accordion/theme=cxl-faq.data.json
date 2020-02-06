@@ -1,0 +1,211 @@
+[
+  {
+    "id": 1036942,
+    "date": "2020-01-27T04:30:04",
+    "date_gmt": "2020-01-27T10:30:04",
+    "guid": {
+      "rendered": "https:\/\/conversionxli.warmpress.com\/?post_type=cxli_faq&#038;p=1036942"
+    },
+    "modified": "2020-01-27T04:30:05",
+    "modified_gmt": "2020-01-27T10:30:05",
+    "slug": "what-would-make-a-student-overqualified-for-this-course",
+    "status": "publish",
+    "type": "faq",
+    "link": "https:\/\/conversionxli.warmpress.com\/faq\/what-would-make-a-student-overqualified-for-this-course\/",
+    "title": {
+      "rendered": "<span data-post-status=\"publish\"><\/span>What would make a student overqualified for this course?"
+    },
+    "content": {
+      "rendered": "\n<p>If You believe there’s a magic checklist with 10 tips that will make your website the best in the world. That list doesn’t exist. I’ll give you a framework and a hands-on process to make your website better.<\/p>\n",
+      "protected": false
+    },
+    "template": "",
+    "yst_prominent_words": [
+      1354
+    ],
+    "cxl_hybrid_attr_post": {
+      "@attributes": {
+        "class": "entry author-anna-maria-erik post-1036942 faq type-faq status-publish column pure-u-1 pure-u-sm-1-2 pure-u-lg-1-3",
+        "itemscope": "itemscope",
+        "itemtype": "http:\/\/schema.org\/CreativeWork",
+        "id": "post-1036942"
+      }
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/conversionxli.warmpress.com\/wp-json\/wp\/v2\/faq\/1036942"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/conversionxli.warmpress.com\/wp-json\/wp\/v2\/faq"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/conversionxli.warmpress.com\/wp-json\/wp\/v2\/types\/faq"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/conversionxli.warmpress.com\/wp-json\/wp\/v2\/media?parent=1036942"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "yst_prominent_words",
+          "embeddable": true,
+          "href": "https:\/\/conversionxli.warmpress.com\/wp-json\/wp\/v2\/yst_prominent_words?post=1036942"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 1036941,
+    "date": "2020-01-27T03:31:30",
+    "date_gmt": "2020-01-27T09:31:30",
+    "guid": {
+      "rendered": "https:\/\/conversionxli.warmpress.com\/?post_type=cxli_faq&#038;p=1036941"
+    },
+    "modified": "2020-01-27T03:31:30",
+    "modified_gmt": "2020-01-27T09:31:30",
+    "slug": "what-books-or-resources-should-i-be-familiar-with",
+    "status": "publish",
+    "type": "faq",
+    "link": "https:\/\/conversionxli.warmpress.com\/faq\/what-books-or-resources-should-i-be-familiar-with\/",
+    "title": {
+      "rendered": "<span data-post-status=\"publish\"><\/span>What books or resources should I be familiar with?"
+    },
+    "content": {
+      "rendered": "<p>Like they say ‘knowledge is power’, and although knowledge is becoming faster and easier to obtain online, there’s still something incredibly special, intimate and tactile about reading a book. There’s no distractions, no notifications or noise, just you and a book…and potentially a pen for taking notes.<\/p>\n",
+      "protected": false
+    },
+    "template": "",
+    "yst_prominent_words": [
+      2728
+    ],
+    "cxl_hybrid_attr_post": {
+      "@attributes": {
+        "class": "entry author-anna-maria-erik post-1036941 faq type-faq status-publish column pure-u-1 pure-u-sm-1-2 pure-u-lg-1-3",
+        "itemscope": "itemscope",
+        "itemtype": "http:\/\/schema.org\/CreativeWork",
+        "id": "post-1036941"
+      }
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/conversionxli.warmpress.com\/wp-json\/wp\/v2\/faq\/1036941"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/conversionxli.warmpress.com\/wp-json\/wp\/v2\/faq"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/conversionxli.warmpress.com\/wp-json\/wp\/v2\/types\/faq"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/conversionxli.warmpress.com\/wp-json\/wp\/v2\/media?parent=1036941"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "yst_prominent_words",
+          "embeddable": true,
+          "href": "https:\/\/conversionxli.warmpress.com\/wp-json\/wp\/v2\/yst_prominent_words?post=1036941"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 1036938,
+    "date": "2020-01-27T03:30:15",
+    "date_gmt": "2020-01-27T09:30:15",
+    "guid": {
+      "rendered": "https:\/\/conversionxli.warmpress.com\/?post_type=cxli_faq&#038;p=1036938"
+    },
+    "modified": "2020-01-27T03:30:15",
+    "modified_gmt": "2020-01-27T09:30:15",
+    "slug": "how-long-should-i-have-been-working-in-ux",
+    "status": "publish",
+    "type": "faq",
+    "link": "https:\/\/conversionxli.warmpress.com\/faq\/how-long-should-i-have-been-working-in-ux\/",
+    "title": {
+      "rendered": "<span data-post-status=\"publish\"><\/span>How long should I have been working in UX"
+    },
+    "content": {
+      "rendered": "<p>It would be good if you have has some experience working in UX.<\/p>\n<p>This is the most important part of conversion optimization process. Conversion research done right ensures that you’ll be tackling the right issues which leads to more wins and bigger wins.<\/p>\n",
+      "protected": false
+    },
+    "template": "",
+    "yst_prominent_words": [
+      846,
+      1079,
+      1359
+    ],
+    "cxl_hybrid_attr_post": {
+      "@attributes": {
+        "class": "entry author-anna-maria-erik post-1036938 faq type-faq status-publish column pure-u-1 pure-u-sm-1-2 pure-u-lg-1-3",
+        "itemscope": "itemscope",
+        "itemtype": "http:\/\/schema.org\/CreativeWork",
+        "id": "post-1036938"
+      }
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/conversionxli.warmpress.com\/wp-json\/wp\/v2\/faq\/1036938"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/conversionxli.warmpress.com\/wp-json\/wp\/v2\/faq"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/conversionxli.warmpress.com\/wp-json\/wp\/v2\/types\/faq"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/conversionxli.warmpress.com\/wp-json\/wp\/v2\/media?parent=1036938"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "yst_prominent_words",
+          "embeddable": true,
+          "href": "https:\/\/conversionxli.warmpress.com\/wp-json\/wp\/v2\/yst_prominent_words?post=1036938"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]
