@@ -1,4 +1,5 @@
-@use "@conversionxl/cxl-lumo-styles/scss/mq";
+@use "~@conversionxl/cxl-lumo-styles/scss/mq";
+@use "../mixins";
 
 cxl-vaadin-accordion {
   /**
@@ -55,21 +56,9 @@ cxl-vaadin-accordion {
       margin-top: var(--lumo-space-m);
     }
 
-    iron-icon {
-      &[icon="lumo:checkmark"] {
-        color: var(--lumo-success-color);
-      }
-
-      &[icon="lumo:angle-right"] {
-        color: var(--lumo-shade-50pct);
-      }
-
-      &[icon="lumo:play"] {
-        color: var(--lumo-primary-color);
-      }
-    }
-
     .entry-title {
+      @include mixins.entry-title-with-progress-icons();
+
       margin: 0;
     }
 
@@ -82,7 +71,7 @@ cxl-vaadin-accordion {
         width: 1em;
         height: 1em;
         padding: var(--lumo-space-s);
-        margin-right: var(--lumo-space-xs);
+        margin-right: var(--lumo-space-s);
         font-size: 60%;
         line-height: 1;
         color: var(--lumo-tint);

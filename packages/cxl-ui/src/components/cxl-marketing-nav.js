@@ -35,6 +35,7 @@ export class CXLMarketingNavElement extends LitElement {
   @property({ type: Boolean, reflect: true })
   minimal = false;
 
+  // vaadin-device-detector.
   @property({ type: Boolean, reflect: true })
   wide;
 
@@ -92,7 +93,18 @@ export class CXLMarketingNavElement extends LitElement {
 
       <vaadin-device-detector
         @wide-changed="${e => {
-          this.wide = e.target.wide;
+          /**
+           * Initial page load doesn't seem to trigger `wide` attribute reflection.
+           *
+           * @see https://github.com/Polymer/lit-element/issues/549
+           * @see https://polymer.slack.com/archives/C03PF4L4L/p1581109849195000
+           * @see https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/queueMicrotask
+           */
+          const { wide } = e.target;
+
+          Promise.resolve().then(() => {
+            this.wide = wide;
+          });
         }}"
       ></vaadin-device-detector>
     `;
@@ -272,7 +284,10 @@ export class CXLMarketingNavElement extends LitElement {
       searchElement = this.querySelector('.menu-item-search');
     }
 
-    this.menuItemSearchElement.querySelector('vaadin-context-menu').listenOn = searchElement;
+    // Empty `cxl-marketing-nav` check.
+    if (searchElement) {
+      this.menuItemSearchElement.querySelector('vaadin-context-menu').listenOn = searchElement;
+    }
   }
 
   /**

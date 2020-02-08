@@ -1,0 +1,24 @@
+@mixin entry-title-with-progress-icons {
+  display: flex;
+  align-items: flex-start;
+
+  [icon] {
+    --iron-icon-width: var(--lumo-icon-size-s);
+    --iron-icon-height: var(--iron-icon-width);
+
+    flex-shrink: 0;
+    margin-right: var(--lumo-space-s);
+  }
+
+  [icon="lumo:angle-right"] {
+    color: var(--lumo-contrast-20pct);
+  }
+
+  [icon="vaadin:check-circle"] {
+    color: var(--lumo-success-color);
+  }
+
+  [icon="vaadin:play-circle"] {
+    color: var(--lumo-contrast-80pct);
+  }
+}

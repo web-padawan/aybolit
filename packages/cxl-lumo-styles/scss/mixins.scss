@@ -1,8 +1,0 @@
-@mixin wrap {
-  position: relative;
-  max-width: var(--cxl-wrap-width, none);
-  padding-right: var(--cxl-wrap-padding);
-  padding-left: var(--cxl-wrap-padding);
-  margin-right: auto;
-  margin-left: auto;
-}

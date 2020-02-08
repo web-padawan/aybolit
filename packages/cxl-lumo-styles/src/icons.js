@@ -7,19 +7,8 @@ import '@polymer/iron-iconset-svg/iron-iconset-svg.js';
 
 registerGlobalStyles(
   css`
-    iron-icon.size-s {
-      width: var(--lumo-icon-size-s);
-      height: var(--lumo-icon-size-s);
-    }
-
-    iron-icon.size-m {
-      width: var(--lumo-icon-size-m);
-      height: var(--lumo-icon-size-m);
-    }
-
-    iron-icon.size-l {
-      width: var(--lumo-icon-size-l);
-      height: var(--lumo-icon-size-l);
+    iron-icon[icon='vaadin:play-circle'] {
+      clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%, 0% 75%); // "In-progress".
     }
   `,
   {
@@ -50,6 +39,19 @@ $documentContainer.innerHTML = `
         <path d="M5.614.416a4.538 4.538 0 011.824.086A4.259 4.259 0 005.614.416zM2.322 12.449l.002.009c-.747-1.19-.94-.39-.97-.224-.587-1.581-.96-2.743-.96-2.743a10.93 10.93 0 01-.15-.61L.22 8.77c-.034-.168-.063-.33-.09-.484v-.003a16.671 16.671 0 01-.077-.583C-.04 6.725.04 5.89.23 5.176c.011-.039.02-.08.034-.117.01-.034.02-.07.033-.102.335-1.039.72-1.273.72-1.273 1-.892.963.434.963.434-1.05 2.304.227 7.84.338 8.312.003.006.003.013.005.019zM3.472 1.432A4.452 4.452 0 015.24.492a4.102 4.102 0 00-1.768.94z"/>
         <path d="M1.355 12.234l-.006.029A17.108 17.108 0 01.243 8.88c.043.2.094.403.15.61 0 0 .374 1.16.962 2.743zM.054 7.7C-.064 6.576.05 5.967.05 5.967c.055-.3.116-.563.18-.79-.19.714-.269 1.549-.175 2.525z"/>
       </g>
+      </defs>
+    </svg>
+  </iron-iconset-svg>
+  <iron-iconset-svg size="1000" id="vaadin-iconset-svg" name="vaadin">
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <g id="check-circle" viewBox="0 0 16 16">
+          <path d="M8 0c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zM7.1 11.7l-4.2-4.1 1.4-1.4 2.7 2.7 5-4.9 1.4 1.4-6.3 6.3z"></path>
+        </g>
+        <g id="play-circle" viewBox="0 0 16 16">
+          <path d="M8 1c3.9 0 7 3.1 7 7s-3.1 7-7 7-7-3.1-7-7 3.1-7 7-7zM8 0c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8v0z"></path>
+          <path d="M6 4v8l6-4z"></path>
+        </g>
       </defs>
     </svg>
   </iron-iconset-svg>

@@ -1,5 +1,6 @@
 html {
   // Variables.
+  --cxl-content-width: 36em;
   --cxl-wrap-width: 72rem;
   --cxl-wrap-padding: var(--lumo-space-m);
 
@@ -48,6 +49,11 @@ strong {
   h2 > & {
     color: var(--lumo-primary-color);
   }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /**

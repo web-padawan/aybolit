@@ -66,7 +66,7 @@ export const CxlVaadinAccordionThemeMinidegreeTrack = () => {
                     height="150"
                 /></a>
                 <h4 class="entry-title no-anchor" itemprop="headline">
-                  <iron-icon icon="lumo:angle-right"></iron-icon>
+                  <iron-icon icon="vaadin:check-circle"></iron-icon>
                   <a
                     href="https://conversionxli.warmpress.com/course/cro-foundations/"
                     rel="bookmark"
@@ -121,7 +121,7 @@ export const CxlVaadinAccordionThemeMinidegreeTrack = () => {
                   height="150"
                 />
                 <h4 class="entry-title no-anchor" itemprop="headline">
-                  <iron-icon icon="lumo:angle-right"></iron-icon>
+                  <iron-icon icon="vaadin:check-circle"></iron-icon>
                   <a
                     href="https://conversionxli.warmpress.com/course/best-practices/"
                     rel="bookmark"
@@ -191,7 +191,7 @@ export const CxlVaadinAccordionThemeMinidegreeTrack = () => {
                     height="150"
                 /></a>
                 <h4 class="entry-title no-anchor" itemprop="headline">
-                  <iron-icon icon="lumo:angle-right"></iron-icon>
+                  <iron-icon icon="vaadin:play-circle"></iron-icon>
                   <a
                     href="https://conversionxli.warmpress.com/course/conversion-copywriting/"
                     rel="bookmark"
@@ -245,7 +245,7 @@ export const CxlVaadinAccordionThemeMinidegreeTrack = () => {
                     height="150"
                 /></a>
                 <h4 class="entry-title no-anchor" itemprop="headline">
-                  <iron-icon icon="lumo:angle-right"></iron-icon>
+                  <iron-icon icon="vaadin:play-circle"></iron-icon>
                   <a
                     href="https://conversionxli.warmpress.com/course/product-messaging-sales-page-copywriting/"
                     rel="bookmark"

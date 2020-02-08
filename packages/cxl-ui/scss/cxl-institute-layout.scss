@@ -1,0 +1,155 @@
+@use "~@conversionxl/cxl-lumo-styles/scss/mixins";
+
+:host {
+  display: block;
+}
+
+#main {
+  @include mixins.wrap();
+}
+
+/**
+ * Fixed container, scrolling content columns.
+ *
+ * @see https://codepen.io/geon/pen/obrWxm
+ */
+:host([wide]) {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  #main {
+    display: flex;
+    flex-grow: 1; // Short content.
+    height: 100%; // Safari.
+    overflow: hidden;
+
+    > * {
+      height: 100%;
+      overflow-y: auto;
+      scrollbar-width: thin;
+
+      @include mixins.better-webkit-scrollbars();
+    }
+
+    > aside {
+      flex: 0 0 auto;
+    }
+
+    > main {
+      flex-grow: 1;
+    }
+  }
+}
+
+/**
+ * Drawer.
+ */
+/* stylelint-disable no-duplicate-selectors */
+$toggle-icon: "lumo:angle-right";
+
+aside {
+  // @see https://stackoverflow.com/questions/3508605/how-can-i-transition-height-0-to-height-auto-using-css
+  max-height: var(--lumo-font-size-xxl);
+  opacity: 0.2;
+  transition: 0.25s cubic-bezier(0, 1, 0, 1);
+
+  &[opened] {
+    max-height: calc(100vh * 2);
+    opacity: unset;
+
+    + main [icon="#{$toggle-icon}"] {
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+main {
+  position: relative; // Avoid `aside:not([opened])` bleeding through.
+  display: flow-root;
+  margin-top: calc(39px + var(--lumo-space-m));
+  background-color: var(--lumo-base-color);
+  border-top: solid 1px var(--lumo-contrast-10pct);
+
+  [icon="#{$toggle-icon}"] {
+    transform: rotate(90deg);
+  }
+
+  > vaadin-button {
+    position: absolute;
+    background-color: var(--lumo-base-color);
+    border: solid 1px var(--lumo-contrast-10pct);
+    transform: translateY(-39px);
+
+    :host(:not([wide])) & {
+      border-bottom: unset;
+    }
+  }
+}
+
+:host([wide]) {
+  aside {
+    --cxl-institute-layout-drawer-width: 16em;
+
+    width: var(--cxl-institute-layout-drawer-width);
+    max-height: unset;
+    padding-right: var(--cxl-wrap-padding);
+    margin-right: calc(
+      (var(--cxl-institute-layout-drawer-width) - var(--lumo-space-xl) + var(--cxl-wrap-padding)) *
+        -1
+    );
+
+    &[opened] {
+      margin-right: 0;
+
+      + main [icon="#{$toggle-icon}"] {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  main {
+    @include mixins.wrap($padding: var(--lumo-space-l));
+
+    position: initial; // Toggle icon needs overflow.
+    z-index: 0;
+    margin-top: unset;
+
+    [icon="#{$toggle-icon}"] {
+      transform: unset;
+    }
+
+    > vaadin-button {
+      border-right: unset;
+      transform: translate3d(
+        calc(-1 * (var(--lumo-space-l) + var(--lumo-size-m) + 6px)),
+        calc(var(--lumo-space-l) / 1.25),
+        0
+      );
+
+      &:hover {
+        color: var(--lumo-primary-color);
+      }
+    }
+  }
+
+  #main {
+    // @todo #main @include mixins.wrap() shrinks flex child. Flex-native expand solution?
+    width: calc(100% - var(--cxl-wrap-padding) * 2);
+  }
+}
+/* stylelint-enable no-duplicate-selectors */
+
+/**
+ * Visuals.
+ */
+/* stylelint-disable no-duplicate-selectors */
+:host([wide]) {
+  main {
+    border-top-left-radius: var(--lumo-border-radius-l);
+    box-shadow: var(--lumo-box-shadow-s);
+  }
+}
+/* stylelint-enable no-duplicate-selectors */

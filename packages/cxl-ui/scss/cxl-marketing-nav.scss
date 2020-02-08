@@ -38,7 +38,7 @@
 // Dark on light.
 #menu-shadow-items,
 ::slotted(#menu-global-items) {
-  background-color: var(--lumo-tint);
+  background-color: var(--lumo-base-color);
 }
 
 // Light on dark.

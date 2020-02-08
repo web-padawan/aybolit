@@ -1,0 +1,106 @@
+@use "../mixins";
+
+cxl-institute-layout {
+  $iframe-height: 200px;
+
+  %label-contrast-50pct {
+    font-weight: 300;
+    color: var(--lumo-contrast-50pct);
+    text-transform: uppercase;
+  }
+
+  iframe {
+    width: 100%;
+    height: $iframe-height;
+    border: 0;
+  }
+
+  > .entry {
+    margin-top: var(--cxl-wrap-padding);
+    margin-bottom: var(--cxl-wrap-padding);
+
+    .entry-header {
+      label {
+        @extend %label-contrast-50pct;
+      }
+    }
+
+    .entry-media {
+      margin: var(--cxl-wrap-padding) calc(var(--cxl-wrap-padding) * -1); // Full screen width, while padded.
+      background-color: var(--lumo-shade);
+    }
+
+    .entry-title {
+      font-size: var(--lumo-font-size-xxxl);
+    }
+  }
+
+  > .widget {
+    margin-top: var(--cxl-wrap-padding);
+    margin-bottom: var(--cxl-wrap-padding);
+
+    .widget-title {
+      margin-top: 0;
+      font-weight: 300;
+    }
+
+    &_sensei_course_progress {
+      a {
+        color: inherit;
+      }
+
+      label {
+        @extend %label-contrast-50pct;
+      }
+
+      .entry-title {
+        @include mixins.entry-title-with-progress-icons();
+
+        font-size: var(--lumo-font-size-m);
+        font-weight: 300;
+      }
+
+      .course-progress-navigation {
+        display: flex;
+        margin-top: var(--cxl-wrap-padding);
+
+        > * {
+          flex-basis: 50%;
+        }
+
+        :first-child {
+          margin-right: var(--lumo-space-s);
+
+          /* stylelint-disable-next-line selector-max-compound-selectors */
+          + :last-child {
+            margin-left: var(--lumo-space-s);
+          }
+        }
+      }
+
+      .current-menu-item {
+        .entry-title {
+          font-weight: 700;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &[wide] {
+    --cxl-wrap-padding: var(--lumo-space-l);
+
+    iframe {
+      height: $iframe-height * 2;
+    }
+
+    > .entry {
+      .entry-content,
+      .entry-footer {
+        max-width: var(--cxl-content-width);
+        padding: 0 var(--cxl-wrap-padding);
+        margin: 0 auto;
+      }
+    }
+  }
+}

@@ -2646,6 +2646,17 @@
     "@vaadin/vaadin-material-styles" "^1.2.0"
     "@vaadin/vaadin-themable-mixin" "^1.2.1"
 
+"@vaadin/vaadin-progress-bar@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-progress-bar/-/vaadin-progress-bar-1.1.2.tgz#6b64328279147611ddad9f3abbc858d4f3f09ff5"
+  integrity sha512-/qQPn4tlGKjjrP+0SIqqrDk/We8+gLM635EXEzhKwoioFf/j1G7bpamkHB5dYHb38RqHDoeclLcNi+Uy8JF9NQ==
+  dependencies:
+    "@polymer/polymer" "^3.0.0"
+    "@vaadin/vaadin-element-mixin" "^2.0.0"
+    "@vaadin/vaadin-lumo-styles" "^1.1.0"
+    "@vaadin/vaadin-material-styles" "^1.1.0"
+    "@vaadin/vaadin-themable-mixin" "^1.2.1"
+
 "@vaadin/vaadin-tabs@^3.0.5":
   version "3.0.5"
   resolved "https://registry.yarnpkg.com/@vaadin/vaadin-tabs/-/vaadin-tabs-3.0.5.tgz#211619e1c8994c421ecd4f340e6b9e0ddadc6e1a"
@@ -6811,6 +6822,11 @@ find-cache-dir@^3.0.0, find-cache-dir@^3.2.0:
     make-dir "^3.0.0"
     pkg-dir "^4.1.0"
 
+find-parent-dir@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/find-parent-dir/-/find-parent-dir-0.3.0.tgz#33c44b429ab2b2f0646299c5f9f718f376ff8d54"
+  integrity sha1-M8RLQpqysvBkYpnF+fcY83b/jVQ=
+
 find-replace@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/find-replace/-/find-replace-3.0.0.tgz#3e7e23d3b05167a76f770c9fbd5258b0def68c38"
@@ -10628,6 +10644,13 @@ node-sass-import@^2.0.1:
     path-parse "1.0.5"
     resolve "1.5.0"
     yargs "11.0.0"
+
+node-sass-tilde-importer@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/node-sass-tilde-importer/-/node-sass-tilde-importer-1.0.2.tgz#1a15105c153f648323b4347693fdb0f331bad1ce"
+  integrity sha512-Swcmr38Y7uB78itQeBm3mThjxBy9/Ah/ykPIaURY/L6Nec9AyRoL/jJ7ECfMR+oZeCTVQNxVMu/aHU+TLRVbdg==
+  dependencies:
+    find-parent-dir "^0.3.0"
 
 node-watch@^0.6.2:
   version "0.6.3"

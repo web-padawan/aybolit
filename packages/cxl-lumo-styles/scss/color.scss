@@ -11,6 +11,15 @@ html,
   --lumo-primary-color-50pct: hsla(355.8, 74.7%, 48%, 0.5);
 
   /**
+   * Success
+   *
+   * @see https://cdn.vaadin.com/vaadin-lumo-styles/1.6.0/demo/colors.html#success
+   */
+  --lumo-success-color: hsl(149, 47%, 54%);
+  --lumo-success-color-10pct: hsl(149, 47%, 54%, 0.1);
+  --lumo-success-color-50pct: hsl(149, 47%, 54%, 0.5);
+
+  /**
    * Grayscale > Shade, Contrast
    *
    * @see https://cdn.vaadin.com/vaadin-lumo-styles/1.5.0/demo/colors.html#grayscale
@@ -49,6 +58,15 @@ html,
   --lumo-primary-color-2pct: hsla(355.8, 74.7%, 48%, 0.02);
   --lumo-primary-color-10pct: hsla(355.8, 74.7%, 48%, 0.1);
   --lumo-primary-color-50pct: hsla(355.8, 74.7%, 48%, 0.5);
+
+  /**
+   * Success
+   *
+   * @see https://cdn.vaadin.com/vaadin-lumo-styles/1.6.0/demo/colors.html#success
+   */
+  --lumo-success-color: hsl(149, 47%, 54%);
+  --lumo-success-color-10pct: hsl(149, 47%, 54%, 0.1);
+  --lumo-success-color-50pct: hsl(149, 47%, 54%, 0.5);
 
   /**
    * Text

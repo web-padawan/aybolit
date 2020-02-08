@@ -4,6 +4,7 @@ const util = require('util');
 
 const sass = require('sass');
 const nodeSassImport = require('node-sass-import');
+const nodeSassTildeImporter = require('node-sass-tilde-importer');
 
 const renderSass = util.promisify(sass.render);
 const readFile = util.promisify(fs.readFile);
@@ -14,7 +15,7 @@ const delimiter = /<%\s*content\s*%>/;
 async function sassToCss(sassFile) {
   const result = await renderSass({
     file: sassFile,
-    importer: nodeSassImport,
+    importer: [nodeSassTildeImporter, nodeSassImport],
     outputStyle: 'compressed'
   });
   return result.css.toString();

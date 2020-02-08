@@ -1,0 +1,39 @@
+// @see https://www.filamentgroup.com/lab/scrollbars/ 2019-09-10
+@mixin better-webkit-scrollbars {
+  --scrollbar-track-color: transparent;
+  --scrollbar-color: var(--lumo-contrast-30pct);
+  --scrollbar-size: 0.375rem;
+  --scrollbar-minlength: 1.5rem; // Minimum length of scrollbar thumb (width of horizontal, height of vertical).
+
+  &::-webkit-scrollbar {
+    width: var(--scrollbar-size);
+    height: var(--scrollbar-size);
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-track-color);
+  }
+
+  // Add :hover, :active as needed
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-color);
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb:vertical {
+    min-height: var(--scrollbar-minlength);
+  }
+
+  &::-webkit-scrollbar-thumb:horizontal {
+    min-width: var(--scrollbar-minlength);
+  }
+}
+
+@mixin wrap($max-width: var(--cxl-wrap-width, none), $padding: var(--cxl-wrap-padding, none)) {
+  position: relative;
+  max-width: $max-width;
+  padding-right: $padding;
+  padding-left: $padding;
+  margin-right: auto;
+  margin-left: auto;
+}
