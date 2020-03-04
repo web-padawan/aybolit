@@ -40,34 +40,46 @@ export class CXLInstituteLayout extends LitElement {
   }
 
   render() {
+    const asideElement = html`
+      <aside
+        role="complementary"
+        aria-label="Primary sidebar"
+        itemscope="itemscope"
+        itemtype="https://schema.org/WPSideBar"
+        ?opened="${this.asideOpened}"
+      >
+        <vaadin-button
+          aria-label="Toggle sidebar"
+          theme="contrast icon"
+          @click="${() => {
+            this.asideOpened = !this.asideOpened;
+          }}"
+        >
+          <iron-icon icon="lumo:angle-right"></iron-icon>
+        </vaadin-button>
+        <slot name="sidebar"></slot>
+      </aside>
+    `;
+
+    const mainElement = html`
+      <main role="main" itemprop="mainContentOfPage">
+        <slot></slot>
+      </main>
+    `;
+
     return html`
       <header role="banner" itemscope="itemscope" itemtype="https://schema.org/WPHeader">
         <slot name="header"></slot>
       </header>
 
       <div id="main">
-        <aside
-          role="complementary"
-          aria-label="Primary sidebar"
-          itemscope="itemscope"
-          itemtype="https://schema.org/WPSideBar"
-          ?opened="${this.asideOpened}"
-        >
-          <slot name="sidebar"></slot>
-        </aside>
-
-        <main role="main" itemprop="mainContentOfPage">
-          <vaadin-button
-            aria-label="Toggle sidebar"
-            theme="contrast icon"
-            @click="${() => {
-              this.asideOpened = !this.asideOpened;
-            }}"
-          >
-            <iron-icon icon="lumo:angle-right"></iron-icon>
-          </vaadin-button>
-          <slot></slot>
-        </main>
+        ${this.getAttribute('theme') === '2c-l'
+          ? html`
+              ${mainElement} ${asideElement}
+            `
+          : html`
+              ${asideElement} ${mainElement}
+            `}
       </div>
 
       <footer role="contentinfo" itemscope="itemscope" itemtype="https://schema.org/WPFooter">

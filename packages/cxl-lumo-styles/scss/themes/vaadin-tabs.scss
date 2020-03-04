@@ -1,4 +1,4 @@
-@import "../mixins";
+@use "../mixins";
 
 // Collapse margins.
 :host([orientation="vertical"][theme~="cxl-marketing-nav"]) {
@@ -20,8 +20,7 @@
 }
 
 :host([orientation="horizontal"][theme~="cxl-marketing-nav"]) [part="tabs"] {
-  @include wrap;
-  margin: 0;
+  @include mixins.wrap();
 }
 
 /**
