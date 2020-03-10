@@ -26,7 +26,12 @@
     height: 100%; // Safari.
     overflow: hidden;
 
-    > * {
+    slot {
+      display: block;
+    }
+
+    > aside > slot[name="sidebar"],
+    > main {
       height: 100%;
       overflow-y: auto;
       scrollbar-width: thin;
@@ -77,7 +82,7 @@ aside {
   }
 
   > vaadin-button {
-    position: absolute;
+    position: absolute; // `position: sticky` retains position on scroll, but creates vertical space.
     bottom: -1px; // Clip border.
     z-index: 1;
     padding: 0;
@@ -99,18 +104,23 @@ main {
 }
 
 :host([wide]) {
-  --cxl-institute-layout-drawer-width: 16em;
-
   aside {
+    --cxl-institute-layout-drawer-width: calc(22 * var(--lumo-space-m));
     --cxl-institute-layout-drawer-padding: calc(var(--cxl-wrap-padding) * 2);
+    --cxl-institute-layout-drawer-peek-margin: calc(
+      -1 * (var(--cxl-institute-layout-drawer-width) - var(--cxl-institute-layout-drawer-padding) +
+            12px)
+    );
 
     z-index: 0;
     width: var(--cxl-institute-layout-drawer-width);
     max-height: unset;
-    padding-right: var(--cxl-institute-layout-drawer-padding);
-    margin-right: calc(
-      (var(--cxl-institute-layout-drawer-width) + var(--cxl-wrap-padding) - 12px) * -1
-    );
+    padding-bottom: unset;
+    margin-right: var(--cxl-institute-layout-drawer-peek-margin);
+
+    > slot[name="sidebar"] {
+      padding-right: var(--cxl-institute-layout-drawer-padding);
+    }
 
     > vaadin-button {
       top: calc(var(--cxl-wrap-padding) - 6px);
@@ -205,7 +215,13 @@ main {
 
 :host([theme~="2c-l"][wide]) {
   aside {
-    padding-left: var(--cxl-institute-layout-drawer-padding);
+    margin-right: calc(
+      var(--cxl-institute-layout-drawer-peek-margin) + var(--cxl-institute-layout-drawer-padding)
+    );
+
+    > slot[name="sidebar"] {
+      padding-left: var(--cxl-institute-layout-drawer-padding);
+    }
 
     > vaadin-button {
       left: -1px;
@@ -228,6 +244,8 @@ main {
     }
 
     &[opened] {
+      margin-right: 0;
+
       > vaadin-button {
         transform: unset;
       }
