@@ -4,6 +4,16 @@ import { AccordionPanelElement } from '@vaadin/vaadin-accordion/src/vaadin-accor
 
 @customElement('cxl-accordion-card')
 export class CXLAccordionCard extends AccordionPanelElement {
+  ready() {
+    super.ready();
+
+    this.querySelectorAll('a[href]').forEach(el => {
+      el.addEventListener('click', e => {
+        e.stopPropagation();
+      });
+    });
+  }
+
   static get is() {
     return 'cxl-accordion-card';
   }
