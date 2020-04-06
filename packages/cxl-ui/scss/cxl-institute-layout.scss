@@ -188,10 +188,6 @@ main {
   #main {
     display: flex;
     flex-direction: column;
-
-    > aside {
-      order: -1; // @todo Flicker issues vs [wide] detection.
-    }
   }
 }
 
@@ -266,9 +262,5 @@ main {
     // Stop padding-box overflow leak.
     padding-right: unset;
     border-right: solid var(--cxl-wrap-padding) transparent;
-
-    > aside {
-      order: unset;
-    }
   }
 }
