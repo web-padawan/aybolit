@@ -63,17 +63,18 @@ cxl-vaadin-accordion {
     }
 
     .track > .entry-header > .entry-title {
+      align-items: center;
       font-weight: 900;
 
       /* stylelint-disable-next-line selector-max-compound-selectors */
       > span {
         display: inline-block;
-        width: 1em;
-        height: 1em;
+        width: var(--lumo-space-l);
+        height: var(--lumo-space-l);
         padding: var(--lumo-space-s);
         margin-right: var(--lumo-space-s);
         font-size: 60%;
-        line-height: 1;
+        line-height: var(--lumo-space-l);
         color: var(--lumo-tint);
         text-align: center;
         vertical-align: bottom;

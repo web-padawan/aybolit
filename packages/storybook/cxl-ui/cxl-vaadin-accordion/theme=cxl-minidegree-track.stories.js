@@ -690,7 +690,7 @@ export const CxlVaadinAccordionThemeMinidegreeTrack = () => {
       >
         <header class="entry-header" slot="summary">
           <h3 class="entry-title no-anchor" itemprop="headline">
-            <span>2</span>
+            <span>99</span>
             <a href="#post-14137"><span data-post-status="publish"></span>Conversion Research</a>
           </h3>
         </header>
