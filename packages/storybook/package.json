@@ -1,16 +1,16 @@
 {
   "name": "@conversionxl/storybook",
   "private": true,
-  "version": "0.1.7",
-  "author": "CXL",
+  "version": "0.1.9",
+  "author": "CXL <leho@cxl.com>",
   "contributors": [
     "Serhii Kulykov <serguey.kulikov@gmail.com>"
   ],
   "license": "MIT",
   "dependencies": {
     "@aybolit/white-label": "^0.1.0",
-    "@conversionxl/cxl-lumo-styles": "^0.2.0",
-    "@conversionxl/cxl-ui": "^0.1.9",
+    "@conversionxl/cxl-lumo-styles": "^0.2.1",
+    "@conversionxl/cxl-ui": "^0.2.0",
     "@storybook/addon-knobs": "^5.3.13",
     "@storybook/addon-viewport": "^5.3.13",
     "@storybook/addons": "^5.3.13",
