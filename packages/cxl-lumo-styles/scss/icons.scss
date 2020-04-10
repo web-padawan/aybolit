@@ -1,0 +1,26 @@
+// Unicode character map for the icons
+$icons: (
+  quote-right: '\\275e'
+);
+
+// For adding font icons to elements using CSS pseudo-elements
+// Based on: http://jaydenseric.com/blog/fun-with-sass-and-font-icons
+@mixin mixin-icon($icon: false, $pseudo: before, $styles: true) {
+
+  // Either a :before or :after pseudo-element, or both, defaulting to :before
+  &:#{$pseudo} {
+    @if $icon {
+      // A particular icon has been specified
+      content: "#{map-get($icons, $icon)}";
+    }
+    @if $styles {
+      font-family: 'lumo-icons';
+      color: var(--lumo-primary-color);
+      font-size: var(--lumo-font-size-xxl);
+      right: 1rem;
+      line-height: 1;
+      position: absolute;
+      font-style: normal
+    }
+  }
+}

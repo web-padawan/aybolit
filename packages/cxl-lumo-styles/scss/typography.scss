@@ -1,3 +1,5 @@
+@import "./icons";
+
 html {
   /**
    * Font family.
@@ -63,4 +65,26 @@ h6 {
 
 p {
   font-family: var(--cxl-lumo-font-secondary);
+}
+
+blockquote {
+  --lumo-secondary-text-color: var(--lumo-tint);
+  position: relative;
+  box-sizing: border-box;
+  padding: 1em var(--lumo-space-xl);
+  margin: 0;
+  font-style: italic;
+  background-color: var(--lumo-shade);
+  border-left: var(--lumo-space-s) solid var(--lumo-primary-color);
+  box-shadow: var(--lumo-box-shadow-xs);
+
+  p {
+    > img {
+      float: left;
+      margin-top: -1em;
+      margin-right: 1em;
+    }
+  }
+
+  @include mixin-icon('quote-right');
 }

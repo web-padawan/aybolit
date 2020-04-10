@@ -136,7 +136,7 @@ export const CxlVaadinAccordionThemeMinidegreeTrack = () => {
 
               <div class="entry-summary">
                 <p><strong>Total Time:</strong> 1 hour 30 minutes</p>
-                <blockquote class="wp-block-quote">
+                <blockquote>
                   <p style="text-align: center;">
                     <i
                       >Half the money I spend on advertising is wasted;<br />the trouble is I don’t
