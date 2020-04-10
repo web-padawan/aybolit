@@ -183,6 +183,7 @@ export class CXLMarketingNavElement extends LitElement {
   updated(changedProps) {
     if (changedProps.has('contextMenuItems')) {
       this._updatedContextMenuItems();
+      this._updatedSelectCurrentTab()
     }
 
     if (changedProps.has('wide')) {
@@ -220,6 +221,20 @@ export class CXLMarketingNavElement extends LitElement {
     });
 
     return contextMenuItems;
+  }
+
+  /**
+   * The can't have a default selection. WordPress provides a `current-menu-item` class for the current item
+   * This sets `selected` attribute for with that tab index when menu items are ready. Happens once.
+   * @private
+   */
+  _updatedSelectCurrentTab() {
+    const currentTab = this.querySelector('.current-menu-item');
+    if (currentTab && currentTab.id) {
+      const tabsContainer = currentTab.parentElement;
+      const idx = tabsContainer.items.findIndex(i => i.id === currentTab.id);
+      tabsContainer.selected = idx;
+    }
   }
 
   /**

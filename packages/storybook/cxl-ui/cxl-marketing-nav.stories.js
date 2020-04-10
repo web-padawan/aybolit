@@ -66,7 +66,7 @@ export const CxlMarketingNav = () => {
             ><iron-icon icon="cxl:logo" style="width: var(--lumo-icon-size-xl, 48px);"></iron-icon
           ></a>
         </vaadin-tab>
-        <vaadin-tab class="menu-item" theme="cxl-marketing-nav"
+        <vaadin-tab id="menu-item-94" class="current-menu-item menu-item menu-item-94" theme="cxl-marketing-nav"
           ><a href="https://conversionxl.com/institute/">Institute</a></vaadin-tab
         >
         <vaadin-tab
