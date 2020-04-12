@@ -177,13 +177,17 @@ export class CXLMarketingNavElement extends LitElement {
      */
     this._updatedWide();
 
+    /**
+     * Highlight current menu item.
+     */
+    this._highlightCurrentMenuItem();
+
     super.firstUpdated(changedProperties);
   }
 
   updated(changedProps) {
     if (changedProps.has('contextMenuItems')) {
       this._updatedContextMenuItems();
-      this._updatedSelectCurrentTab()
     }
 
     if (changedProps.has('wide')) {
@@ -224,17 +228,22 @@ export class CXLMarketingNavElement extends LitElement {
   }
 
   /**
-   * The can't have a default selection. WordPress provides a `current-menu-item` class for the current item
-   * This sets `selected` attribute for with that tab index when menu items are ready. Happens once.
+   * Highlight menu item with special class.
+   * Improves visual "Where am I?" navigation clarity.
+   *
+   * @since 2020.04.12
    * @private
    */
-  _updatedSelectCurrentTab() {
-    const currentTab = this.querySelector('.current-menu-item');
-    if (currentTab && currentTab.id) {
-      const tabsContainer = currentTab.parentElement;
-      const idx = tabsContainer.items.findIndex(i => i.id === currentTab.id);
-      tabsContainer.selected = idx;
-    }
+  _highlightCurrentMenuItem() {
+    this.menuItemsElements.forEach(menuItemsEl => {
+      const currentMenuItemEl = menuItemsEl.querySelector('.current-menu-item');
+
+      if (currentMenuItemEl && currentMenuItemEl.id) {
+        const idx = menuItemsEl.items.findIndex(i => i.id === currentMenuItemEl.id);
+
+        menuItemsEl.setAttribute('selected', idx);
+      }
+    });
   }
 
   /**
