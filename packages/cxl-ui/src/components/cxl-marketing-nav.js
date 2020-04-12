@@ -177,6 +177,11 @@ export class CXLMarketingNavElement extends LitElement {
      */
     this._updatedWide();
 
+    /**
+     * Highlight current menu item.
+     */
+    this._highlightCurrentMenuItem();
+
     super.firstUpdated(changedProperties);
   }
 
@@ -220,6 +225,25 @@ export class CXLMarketingNavElement extends LitElement {
     });
 
     return contextMenuItems;
+  }
+
+  /**
+   * Highlight menu item with special class.
+   * Improves visual "Where am I?" navigation clarity.
+   *
+   * @since 2020.04.12
+   * @private
+   */
+  _highlightCurrentMenuItem() {
+    this.menuItemsElements.forEach(menuItemsEl => {
+      const currentMenuItemEl = menuItemsEl.querySelector('.current-menu-item');
+
+      if (currentMenuItemEl && currentMenuItemEl.id) {
+        const idx = menuItemsEl.items.findIndex(i => i.id === currentMenuItemEl.id);
+
+        menuItemsEl.setAttribute('selected', idx);
+      }
+    });
   }
 
   /**
