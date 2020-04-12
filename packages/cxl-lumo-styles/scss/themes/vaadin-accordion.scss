@@ -1,5 +1,5 @@
 :host([theme~="cxl-accordion-card"]) {
   column-gap: calc(var(--lumo-space-m) * 2);
   column-rule: 1px solid var(--lumo-shade-10pct); // match panel `outline`
-  column-width: calc(var(--lumo-space-m) * 18);
+  column-width: calc(var(--cxl-wrap-width) / 4);
 }
