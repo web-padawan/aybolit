@@ -138,14 +138,14 @@ export class CXLMarketingNavElement extends LitElement {
      */
     const menuItemSearchContextMenu = this.menuItemSearchElement.querySelector(
       'vaadin-context-menu'
-    );
+    ); /* , { once: true } necessary for `content-changed`? */
 
     menuItemSearchContextMenu.addEventListener(
       'opened-changed',
       ee => {
         const searchForm = ee.target.$.overlay.querySelector('.search-form');
-
-        searchForm.addEventListener('keydown', ef => {
+        searchForm.parentElement.addEventListener('keydown', ef => {
+          searchForm.querySelector('input').focus();
           // Allow Esc.
           if (ef.key !== 'Esc') {
             ef.stopPropagation();
