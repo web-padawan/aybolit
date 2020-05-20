@@ -33,6 +33,44 @@ export const Typograhy = () => {
   `;
 };
 
+export const TypograhyUseCases = () => {
+  const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  Nam hendrerit pharetra neque, non gravida neque interdum ac.
+  Donec porttitor quis velit nec tempor. Sed arcu est, molestie ut aliquet at, egestas eu augue. Nunc lobortis imperdiet massa sed pharetra.
+  `;
+
+  return html`
+    <h1>Become great at <strong>content marketing research</strong></h1>
+    <h2>Produce relevant, authoritative content that hits money-making KPIs</h2>
+    <h3>Online Course</h3>
+    <p>By <strong>Derek Gleason</strong>, Content Lead @ CXL</p>
+    <p><strong>Course Length:</strong> 1h 07min</p>
+
+    <br />
+    <hr />
+    <h1>Digital psychology & behavioral design training</h1>
+    <p>${loremIpsum}</p>
+    <br />
+    <hr />
+    <h1>How to Design, Roll Out, & Scale an Optimization Program</h1>
+    <p>${loremIpsum}</p>
+    <br />
+    <hr />
+    <h1>Heuristic Analysis frameworks for conversion optimization audits</h1>
+    <p>${loremIpsum}</p>
+    <br />
+    <hr />
+    <h1>Implementing Urgency on eCommerce Product Pages For a 27.1% Lift [Case Study]</h1>
+    <p>${loremIpsum}</p>
+    <br />
+    <hr />
+    <h1>
+      Checkout Optimization: How Do Trust Seals Affect Security Perception? [Original Research]
+    </h1>
+    <p>${loremIpsum}</p>
+  `;
+};
+
 export const VaadinButton = () => {
   const label = text('Label', 'Button');
 
