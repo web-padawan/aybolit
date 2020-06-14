@@ -10653,9 +10653,9 @@ node-sass-tilde-importer@^1.0.2:
     find-parent-dir "^0.3.0"
 
 node-watch@^0.6.2:
-  version "0.6.3"
-  resolved "https://registry.yarnpkg.com/node-watch/-/node-watch-0.6.3.tgz#9abf739ae0638435be6c0d1c99d4dc2e53df7317"
-  integrity sha512-InVPsg51EemnMVH3fvrrSVgqVBMlksZ/mK7ZDWx/NuWdNQi28wcVJX1/BP38alraPFXbRi9jZ35OfK4Ra7l8Bg==
+  version "0.6.4"
+  resolved "https://registry.yarnpkg.com/node-watch/-/node-watch-0.6.4.tgz#50e564046eb7be15151c25f9c5aac4b5f495c291"
+  integrity sha512-cI6CHzivIFESe8djiK3Wh90CtWQBxLwMem8x8S+2GSvCvFgoMuOKVlfJtQ/2v3Afg3wOnHl/+tXotEs8z5vOrg==
 
 "nopt@2 || 3":
   version "3.0.6"
