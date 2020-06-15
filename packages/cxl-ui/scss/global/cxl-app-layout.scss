@@ -1,0 +1,239 @@
+@use "../mixins";
+
+cxl-app-layout {
+  /**
+   * Jobs theme
+   */
+
+  &[theme~="cxl-jobs-home"] {
+    .entry {
+      margin-top: var(--cxl-wrap-padding);
+      margin-bottom: var(--cxl-wrap-padding);
+
+      .entry-header {
+        margin: auto;
+      }
+
+      .entry-title {
+        padding-top: calc(var(--cxl-wrap-padding) * 3);
+        text-align: center;
+      }
+
+      .entry-byline {
+        text-align: center;
+      }
+    }
+
+    &[wide] {
+      --cxl-wrap-padding: var(--lumo-space-l);
+
+      .entry {
+        .entry-header,
+        .entry-content,
+        .entry-footer {
+          max-width: var(--cxl-content-width);
+          padding: 0 var(--cxl-wrap-padding);
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  /**
+   * Intitute theme
+   */
+  &[theme~="cxl-institute"] {
+    $iframe-height: 200px;
+
+    %label-contrast-50pct {
+      font-weight: 300;
+      color: var(--lumo-contrast-50pct);
+      text-transform: uppercase;
+    }
+
+    iframe {
+      width: 100%;
+      height: $iframe-height;
+      border: 0;
+    }
+
+    > .entry {
+      margin-top: var(--cxl-wrap-padding);
+      margin-bottom: var(--cxl-wrap-padding);
+
+      .entry-header {
+        label {
+          @extend %label-contrast-50pct;
+        }
+      }
+
+      .entry-media {
+        margin: var(--cxl-wrap-padding) calc(var(--cxl-wrap-padding) * -1); // Full screen width, while padded.
+        background-color: var(--lumo-shade);
+      }
+
+      .entry-title {
+        font-size: var(--lumo-font-size-xxxl);
+      }
+    }
+
+    > .widget {
+      margin-top: var(--cxl-wrap-padding);
+      margin-bottom: var(--cxl-wrap-padding);
+
+      .widget-title {
+        margin-top: 0;
+        font-weight: 300;
+      }
+
+      &_sensei_course_progress {
+        a {
+          color: inherit;
+        }
+
+        label {
+          @extend %label-contrast-50pct;
+        }
+
+        .entry-title {
+          @include mixins.entry-title-with-progress-icons();
+
+          font-size: var(--lumo-font-size-m);
+          font-weight: 300;
+        }
+
+        .course-progress-navigation {
+          display: flex;
+          margin-top: var(--cxl-wrap-padding);
+
+          > * {
+            flex-basis: 50%;
+          }
+
+          :first-child {
+            margin-right: var(--lumo-space-s);
+
+            /* stylelint-disable-next-line selector-max-compound-selectors */
+            + :last-child {
+              margin-left: var(--lumo-space-s);
+            }
+          }
+        }
+
+        .current-menu-item {
+          .entry-title {
+            font-weight: 700;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    &[wide] {
+      --cxl-wrap-padding: var(--lumo-space-l);
+
+      iframe {
+        height: $iframe-height * 2;
+      }
+
+      > .entry {
+        .entry-content,
+        .entry-footer {
+          max-width: var(--cxl-content-width);
+          padding: 0 var(--cxl-wrap-padding);
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  /**
+   * Flipped layout.
+   * Padding is affected by scrollbar positions.
+   */
+  /* stylelint-disable selector-max-type */
+  /* stylelint-disable selector-max-attribute */
+
+  &[theme~="2c-l"] {
+    #main {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  /**
+   * No reason to hide anything when at screen bottom.
+   */
+  &[theme~="2c-l"]:not([wide]) {
+    aside {
+      max-height: unset;
+      padding-bottom: unset;
+
+      > vaadin-button {
+        display: none;
+      }
+
+      ::slotted(*) {
+        opacity: unset;
+      }
+    }
+  }
+
+  &[theme~="2c-l"][wide] {
+    aside {
+      margin-right: calc(
+        var(--cxl-app-layout-drawer-peek-margin) + var(--cxl-app-layout-drawer-padding)
+      );
+
+      > slot[name="sidebar"] {
+        padding-left: var(--cxl-app-layout-drawer-padding);
+      }
+
+      > vaadin-button {
+        left: -1px;
+      }
+
+      .aside-toggle-button [icon] {
+        transform: rotate(180deg);
+      }
+
+      // Better closed drawer fade.
+      &::after {
+        position: absolute;
+        top: 0;
+        left: var(--cxl-app-layout-drawer-padding);
+        display: block;
+        width: var(--cxl-app-layout-drawer-padding);
+        height: 100%;
+        content: "";
+        background: linear-gradient(to right, rgba(255, 255, 255, 0), var(--lumo-base-color));
+      }
+
+      &[opened] {
+        margin-right: 0;
+
+        > vaadin-button {
+          transform: unset;
+        }
+
+        .aside-toggle-button [icon] {
+          transform: unset;
+        }
+
+        &::after {
+          content: unset;
+        }
+      }
+    }
+
+    #main {
+      flex-direction: unset;
+
+      // Stop padding-box overflow leak.
+      padding-right: unset;
+      border-right: solid var(--cxl-wrap-padding) transparent;
+    }
+  }
+}
+/* stylelint-enable selector-max-type */
+/* stylelint-enable selector-max-attribute */
