@@ -1,0 +1,104 @@
+cxl-featured-card {
+  box-sizing: border-box;
+  padding: var(--lumo-space-s) var(--lumo-space-m);
+  margin: var(--lumo-space-m);
+  overflow: hidden;
+  font-family: inherit;
+  text-overflow: ellipsis;
+  background: var(--lumo-base-color);
+  border: 1px solid var(--lumo-contrast-10pct);
+  border-radius: var(--lumo-border-radius);
+
+  &:hover {
+    border-color: var(--lumo-primary-color);
+  }
+
+  iron-icon {
+    --iron-icon-height: var(--lumo-icon-size-s);
+    --iron-icon-width: var(--iron-icon-height);
+  }
+
+  .card-entry-header {
+    margin: 0;
+    font-family: inherit;
+    font-style: normal;
+
+    .card-headshot {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto;
+      border: 5px solid var(--lumo-base-color);
+      border-radius: 100%;
+    }
+
+    .card-company-logo {
+      max-width: 100px;
+      margin: var(--lumo-space-s) auto;
+    }
+
+    .card-name,
+    h4 {
+      padding: 0;
+      margin: 0;
+    }
+
+    .card-description,
+    p {
+      margin: 0 auto;
+      font-family: inherit;
+      font-size: var(--lumo-font-size-s);
+    }
+  }
+
+  .card-entry-summmary {
+    padding: 0 var(--lumo-space-s);
+
+    p {
+      font-family: inherit;
+    }
+  }
+
+  &[theme~="cxl-testimonial"] {
+    width: 400px;
+    min-width: 400px;
+    height: 500px;
+
+    .card-entry-header {
+      text-align: center;
+    }
+  }
+
+  &[theme~="cxl-office"] {
+    width: 350px;
+    min-width: 350px;
+    height: 350px;
+    padding: var(--lumo-space-l);
+
+    .card-entry-header {
+      text-align: left;
+
+      .card-headshot {
+        margin: 0;
+      }
+
+      .card-name,
+      h4 {
+        padding: 0;
+        margin-top: var(--lumo-space-m);
+      }
+
+      .card-description,
+      p {
+        margin-bottom: var(--lumo-space-m);
+        font-family: inherit;
+        font-size: var(--lumo-font-size-m);
+        line-height: 2;
+      }
+    }
+
+    .card-headshot {
+      width: 90px;
+      height: 90px;
+    }
+  }
+}

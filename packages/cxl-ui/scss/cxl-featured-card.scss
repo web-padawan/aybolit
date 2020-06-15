@@ -1,0 +1,8 @@
+:host {
+  display: block;
+  font-family: var(--lumo-font-family);
+}
+
+:host([hidden]) {
+  display: none;
+}
