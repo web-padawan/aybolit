@@ -6,6 +6,9 @@
   "rules": {
     "scss/dollar-variable-default": null,
     "scss/operator-no-newline-after": null,
+    "font-family-no-missing-generic-family-keyword": [true, {
+      "ignoreFontFamilies": ["/icons/"]
+    }],
     "number-leading-zero": null,
     "property-no-vendor-prefix": [true, {
       "ignoreProperties": ["appearance", "user-select"]

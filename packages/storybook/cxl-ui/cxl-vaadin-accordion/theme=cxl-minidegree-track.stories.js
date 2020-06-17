@@ -136,7 +136,7 @@ export const CxlVaadinAccordionThemeMinidegreeTrack = () => {
 
               <div class="entry-summary">
                 <p><strong>Total Time:</strong> 1 hour 30 minutes</p>
-                <blockquote class="wp-block-quote">
+                <blockquote>
                   <p style="text-align: center;">
                     <i
                       >Half the money I spend on advertising is wasted;<br />the trouble is I don’t
@@ -191,7 +191,7 @@ export const CxlVaadinAccordionThemeMinidegreeTrack = () => {
                     height="150"
                 /></a>
                 <h4 class="entry-title no-anchor" itemprop="headline">
-                  <iron-icon icon="vaadin:play-circle"></iron-icon>
+                  <iron-icon icon="vaadin:play-circle-o"></iron-icon>
                   <a
                     href="https://conversionxli.warmpress.com/course/conversion-copywriting/"
                     rel="bookmark"
@@ -245,7 +245,7 @@ export const CxlVaadinAccordionThemeMinidegreeTrack = () => {
                     height="150"
                 /></a>
                 <h4 class="entry-title no-anchor" itemprop="headline">
-                  <iron-icon icon="vaadin:play-circle"></iron-icon>
+                  <iron-icon icon="vaadin:play-circle-o"></iron-icon>
                   <a
                     href="https://conversionxli.warmpress.com/course/product-messaging-sales-page-copywriting/"
                     rel="bookmark"

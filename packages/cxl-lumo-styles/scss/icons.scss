@@ -1,0 +1,21 @@
+@use "sass:string";
+
+// For adding font icons to elements using CSS pseudo-elements
+// Based on: http://jaydenseric.com/blog/fun-with-sass-and-font-icons
+@mixin mixin-icon($icon: false, $pseudo: before, $styles: true) {
+  // Either a :before or :after pseudo-element, or both, defaulting to :before
+  &:#{$pseudo} {
+    font-family: lumo-icons;
+    @if string.index($icon, "vaadin-icons") {
+      font-family: vaadin-icons;
+    }
+    font-style: normal;
+
+    @if $icon {
+      // A particular icon has been specified
+      content: var(--#{$icon});
+    }
+
+    @content;
+  }
+}

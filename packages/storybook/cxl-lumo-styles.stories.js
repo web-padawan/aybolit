@@ -29,6 +29,7 @@ export const Typograhy = () => {
     <div><a href>Element link</a></div>
     <div><em>Element italic text.</em></div>
     <div><small>Element small text.</small></div>
+    <blockquote><p>I am a simple blockquote.</p></blockquote>
   `;
 };
 
@@ -49,7 +50,12 @@ export const VaadinButton = () => {
     <h6>Tertiary inline</h6>
     <vaadin-button theme="tertiary-inline">${label}</vaadin-button>
     <h6>Upstream</h6>
-    <p>Also see <a href="https://vaadin.com/components/vaadin-button/html-examples">https://vaadin.com/components/vaadin-button/html-examples</a></p>
+    <p>
+      Also see
+      <a href="https://vaadin.com/components/vaadin-button/html-examples"
+        >https://vaadin.com/components/vaadin-button/html-examples</a
+      >
+    </p>
   `;
 };
 
