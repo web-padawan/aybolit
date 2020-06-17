@@ -39,7 +39,7 @@ export const CxlInstituteLayout = () => {
         <article class="entry author-susie has-excerpt post-3671 lesson type-lesson status-publish has-post-thumbnail post course membership-content access-granted " itemscope="itemscope" itemtype="http://schema.org/CreativeWork" id="post-3671">
           <header class="entry-header">
             <h4 class="entry-title no-anchor" itemprop="headline">
-              <iron-icon class="iron-icon" icon="vaadin:play-circle"></iron-icon>
+              <iron-icon class="iron-icon" icon="vaadin:play-circle-o"></iron-icon>
               <a href="https://conversionxli.warmpress.com/lesson/persuasion-slide-introduction/" rel="bookmark" itemprop="url"><span data-post-status="publish"></span>Why Market to the Brain?</a></h4>        </header><!-- .entry-header -->
         </article><!-- .entry -->
 
@@ -55,7 +55,7 @@ export const CxlInstituteLayout = () => {
         <article class="entry author-susie post-3693 lesson type-lesson status-publish has-post-thumbnail post course membership-content access-granted current-menu-item" itemscope="itemscope" itemtype="http://schema.org/CreativeWork" id="post-3693">
           <header class="entry-header">
             <h4 class="entry-title no-anchor" itemprop="headline">
-              <iron-icon class="iron-icon" icon="vaadin:play-circle"></iron-icon>
+              <iron-icon class="iron-icon" icon="vaadin:play-circle-o"></iron-icon>
               <a href="https://conversionxli.warmpress.com/lesson/3-persuasion-slide/" rel="bookmark" itemprop="url"><span data-post-status="publish"></span>The Persuasion Slide</a></h4>        </header><!-- .entry-header -->
         </article><!-- .entry -->
 
@@ -71,7 +71,7 @@ export const CxlInstituteLayout = () => {
         <article class="entry author-susie post-3701 lesson type-lesson status-publish has-post-thumbnail post course membership-content access-granted " itemscope="itemscope" itemtype="http://schema.org/CreativeWork" id="post-3701">
           <header class="entry-header">
             <h4 class="entry-title no-anchor" itemprop="headline">
-              <iron-icon class="iron-icon" icon="vaadin:play-circle"></iron-icon>
+              <iron-icon class="iron-icon" icon="vaadin:play-circle-o"></iron-icon>
               <a href="https://conversionxli.warmpress.com/lesson/5-nudge/" rel="bookmark" itemprop="url"><span data-post-status="publish"></span>Nudge</a></h4>        </header><!-- .entry-header -->
         </article><!-- .entry -->
 

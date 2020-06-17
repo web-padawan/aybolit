@@ -70,7 +70,7 @@
     "rimraf": "^3.0.0",
     "sinon": "^7.3.2",
     "sinon-chai": "^3.3.0",
-    "stylelint": "^12.0.1",
+    "stylelint": "^13.6.1",
     "stylelint-config-prettier": "^8.0.0",
     "stylelint-config-twbs-bootstrap": "^1.1.0",
     "vrtest": "^0.2.0",
