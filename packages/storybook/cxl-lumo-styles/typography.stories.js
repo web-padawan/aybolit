@@ -1,15 +1,15 @@
 import '@conversionxl/cxl-lumo-styles';
 import '@vaadin/vaadin-button';
-import { withKnobs, text } from '@storybook/addon-knobs';
+import { withKnobs } from '@storybook/addon-knobs';
 import { html } from 'lit-html';
 
 export default {
   decorators: [withKnobs],
-  title: 'CXL Lumo Styles|Elements'
+  title: 'CXL Lumo Styles|Typography'
 };
 
 // @see https://github.com/vaadin/vaadin-lumo-styles/blob/v1.5.0/demo/typography.html
-export const Typograhy = () => {
+export const Base = () => {
   return html`
     <h1>Heading 1</h1>
     <h1>Heading 1 with <strong>highlight</strong></h1>
@@ -33,10 +33,10 @@ export const Typograhy = () => {
   `;
 };
 
-export const TypograhyUseCases = () => {
+export const Examples = () => {
   const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  Nam hendrerit pharetra neque, non gravida neque interdum ac.
-  Donec porttitor quis velit nec tempor. Sed arcu est, molestie ut aliquet at, egestas eu augue. Nunc lobortis imperdiet massa sed pharetra.
+    Nam hendrerit pharetra neque, non gravida neque interdum ac.
+    Donec porttitor quis velit nec tempor. Sed arcu est, molestie ut aliquet at, egestas eu augue. Nunc lobortis imperdiet massa sed pharetra.
   `;
 
   return html`
@@ -46,57 +46,21 @@ export const TypograhyUseCases = () => {
     <p>By <strong>Derek Gleason</strong>, Content Lead @ CXL</p>
     <p><strong>Course Length:</strong> 1h 07min</p>
 
-    <br />
-    <hr />
     <h1>Digital psychology & behavioral design training</h1>
     <p>${loremIpsum}</p>
-    <br />
-    <hr />
+
     <h1>How to Design, Roll Out, & Scale an Optimization Program</h1>
     <p>${loremIpsum}</p>
-    <br />
-    <hr />
+
     <h1>Heuristic Analysis frameworks for conversion optimization audits</h1>
     <p>${loremIpsum}</p>
-    <br />
-    <hr />
+
     <h1>Implementing Urgency on eCommerce Product Pages For a 27.1% Lift [Case Study]</h1>
     <p>${loremIpsum}</p>
-    <br />
-    <hr />
+
     <h1>
       Checkout Optimization: How Do Trust Seals Affect Security Perception? [Original Research]
     </h1>
     <p>${loremIpsum}</p>
   `;
-};
-
-export const VaadinButton = () => {
-  const label = text('Label', 'Button');
-
-  return html`
-    <h6>Basic</h6>
-    <vaadin-button>${label}</vaadin-button>
-    <h6>Disabled</h6>
-    <vaadin-button disabled>${label}</vaadin-button>
-    <h6>Primary</h6>
-    <vaadin-button theme="primary">${label}</vaadin-button>
-    <h6>Secondary</h6>
-    <vaadin-button>${label}</vaadin-button>
-    <h6>Tertiary</h6>
-    <vaadin-button theme="tertiary">${label}</vaadin-button>
-    <h6>Tertiary inline</h6>
-    <vaadin-button theme="tertiary-inline">${label}</vaadin-button>
-    <h6>Upstream</h6>
-    <p>
-      Also see
-      <a href="https://vaadin.com/components/vaadin-button/html-examples"
-        >https://vaadin.com/components/vaadin-button/html-examples</a
-      >
-    </p>
-  `;
-};
-
-VaadinButton.story = {
-  name: '<vaadin-button>'
 };

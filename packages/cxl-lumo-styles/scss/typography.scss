@@ -1,5 +1,5 @@
+@use "./icons";
 @use "./mq";
-@import "./icons";
 
 html {
   /**
@@ -90,7 +90,7 @@ blockquote {
   border-left: var(--lumo-space-s) solid var(--lumo-primary-color);
   box-shadow: var(--lumo-box-shadow-xs);
 
-  @include mixin-icon("vaadin-icons-quote-right") {
+  @include icons.mixin-icon("vaadin-icons-quote-right") {
     color: var(--lumo-primary-color);
   }
 }
