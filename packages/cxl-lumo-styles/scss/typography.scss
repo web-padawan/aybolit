@@ -1,4 +1,5 @@
-@import "./icons";
+@use "./icons";
+@use "./mq";
 
 html {
   /**
@@ -14,7 +15,11 @@ html {
    *
    * @ see https://cdn.vaadin.com/vaadin-lumo-styles/1.5.0/demo/typography.html#font-size
    */
-  --cxl-lumo-font-size-hero: 4rem;
+  --cxl-lumo-font-size-hero: var(--lumo-font-size-xxxl);
+
+  @media #{mq.$small} {
+    --cxl-lumo-font-size-hero: 4rem;
+  }
 }
 
 b,
@@ -44,15 +49,24 @@ h1 {
 }
 
 h2 {
-  font-size: var(--lumo-font-size-xxxl);
+  font-size: var(--lumo-font-size-xxl);
+  @media #{mq.$small} {
+    font-size: var(--lumo-font-size-xxxl);
+  }
 }
 
 h3 {
-  font-size: var(--lumo-font-size-xxl);
+  font-size: var(--lumo-font-size-xl);
+  @media #{mq.$small} {
+    font-size: var(--lumo-font-size-xxl);
+  }
 }
 
 h4 {
-  font-size: var(--lumo-font-size-xl);
+  font-size: var(--lumo-font-size-l);
+  @media #{mq.$small} {
+    font-size: var(--lumo-font-size-xl);
+  }
 }
 
 h5 {
@@ -76,7 +90,7 @@ blockquote {
   border-left: var(--lumo-space-s) solid var(--lumo-primary-color);
   box-shadow: var(--lumo-box-shadow-xs);
 
-  @include mixin-icon("vaadin-icons-quote-right") {
+  @include icons.mixin-icon("vaadin-icons-quote-right") {
     color: var(--lumo-primary-color);
   }
 }
