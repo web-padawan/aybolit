@@ -147,7 +147,7 @@ export class CXLMarketingNavElement extends LitElement {
 
         searchForm.addEventListener('keydown', ef => {
           // Allow Esc.
-          if (ef.key !== 'Esc') {
+          if (ef.key !== 'Escape') {
             ef.stopPropagation();
           }
         });
