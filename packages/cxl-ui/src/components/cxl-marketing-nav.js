@@ -130,16 +130,17 @@ export class CXLMarketingNavElement extends LitElement {
     });
 
     /**
-     * Configure .menu-item-search keydown listeners.
-     *
+     * Configure `.menu-item-search`.
+     */
+    const menuItemSearchContextMenu = this.menuItemSearchElement.querySelector(
+      'vaadin-context-menu'
+    );
+
+    /**
      * `<vaadin-context-menu-item>` interferes with form input.
      *
      * @see https://github.com/vaadin/vaadin-item/blob/v2.1.1/src/vaadin-item-mixin.html#L136
      */
-    const menuItemSearchContextMenu = this.menuItemSearchElement.querySelector(
-      'vaadin-context-menu'
-    ); /* , { once: true } necessary for `content-changed`? */
-
     menuItemSearchContextMenu.addEventListener(
       'opened-changed',
       ee => {
@@ -151,9 +152,13 @@ export class CXLMarketingNavElement extends LitElement {
             ef.stopPropagation();
           }
         });
-      } /* , { once: true } necessary for `content-changed`? */
+      },
+      { once: true }
     );
 
+    /**
+     * Avoid upstream default immediate close behavior.
+     */
     menuItemSearchContextMenu.addEventListener('item-selected', e => {
       e.stopImmediatePropagation();
     });
