@@ -130,16 +130,17 @@ export class CXLMarketingNavElement extends LitElement {
     });
 
     /**
-     * Configure .menu-item-search keydown listeners.
-     *
-     * `<vaadin-context-menu-item>` interferes with form input.
-     *
-     * @see https://github.com/vaadin/vaadin-item/blob/v2.1.1/src/vaadin-item-mixin.html#L136
+     * Configure `.menu-item-search`.
      */
     const menuItemSearchContextMenu = this.menuItemSearchElement.querySelector(
       'vaadin-context-menu'
     );
 
+    /**
+     * `<vaadin-context-menu-item>` interferes with form input.
+     *
+     * @see https://github.com/vaadin/vaadin-item/blob/v2.1.1/src/vaadin-item-mixin.html#L136
+     */
     menuItemSearchContextMenu.addEventListener(
       'opened-changed',
       ee => {
@@ -147,13 +148,17 @@ export class CXLMarketingNavElement extends LitElement {
 
         searchForm.addEventListener('keydown', ef => {
           // Allow Esc.
-          if (ef.key !== 'Esc') {
+          if (ef.key !== 'Escape') {
             ef.stopPropagation();
           }
         });
-      } /* , { once: true } necessary for `content-changed`? */
+      },
+      { once: true }
     );
 
+    /**
+     * Avoid upstream default immediate close behavior.
+     */
     menuItemSearchContextMenu.addEventListener('item-selected', e => {
       e.stopImmediatePropagation();
     });
@@ -169,8 +174,12 @@ export class CXLMarketingNavElement extends LitElement {
       ];
     }
 
-    // @todo Focus search box.
-    menuItemSearchContextMenu.$.overlay.focusTrap = true;
+    /**
+     * Enable instant typing, avoid focus click.
+     */
+    menuItemSearchContextMenu.$.overlay.addEventListener('vaadin-overlay-open', e =>
+      e.target.querySelector('#search-input').focus()
+    );
 
     /**
      * Decide `<vaadin-tabs>` initial orientation.
