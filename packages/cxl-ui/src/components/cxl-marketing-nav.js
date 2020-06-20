@@ -144,8 +144,8 @@ export class CXLMarketingNavElement extends LitElement {
       'opened-changed',
       ee => {
         const searchForm = ee.target.$.overlay.querySelector('.search-form');
-        searchForm.parentElement.addEventListener('keydown', ef => {
-          searchForm.querySelector('input').focus();
+
+        searchForm.addEventListener('keydown', ef => {
           // Allow Esc.
           if (ef.key !== 'Esc') {
             ef.stopPropagation();
@@ -169,8 +169,12 @@ export class CXLMarketingNavElement extends LitElement {
       ];
     }
 
-    // @todo Focus search box.
-    menuItemSearchContextMenu.$.overlay.focusTrap = true;
+    /**
+     * Enable instant typing, avoid focus click.
+     */
+    menuItemSearchContextMenu.$.overlay.addEventListener('vaadin-overlay-open', e =>
+      e.target.querySelector('#search-input').focus()
+    );
 
     /**
      * Decide `<vaadin-tabs>` initial orientation.
