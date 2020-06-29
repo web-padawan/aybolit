@@ -1,6 +1,6 @@
 import * as Headroom from 'headroom.js';
 
-export { CXLInstituteLayout } from './components/cxl-institute-layout.js';
+export { CXLAppLayout } from './components/cxl-app-layout.js';
 export { CXLMarketingNavElement } from './components/cxl-marketing-nav.js';
 
 // Order matters.

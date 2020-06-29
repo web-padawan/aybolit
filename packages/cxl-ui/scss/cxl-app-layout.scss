@@ -56,13 +56,13 @@
 $toggle-icon: "lumo:angle-right";
 
 aside {
-  --cxl-institute-layout-drawer-transition: 0.25s cubic-bezier(0, 1, 0, 1);
+  --cxl-app-layout-drawer-transition: 0.25s cubic-bezier(0, 1, 0, 1);
 
   position: relative;
   // @see https://stackoverflow.com/questions/3508605/how-can-i-transition-height-0-to-height-auto-using-css
   max-height: var(--lumo-font-size-xxl);
   padding-bottom: calc(35px + var(--lumo-space-m));
-  transition: var(--cxl-institute-layout-drawer-transition);
+  transition: var(--cxl-app-layout-drawer-transition);
 
   // Exclude vaadin-button.
   ::slotted(*) {
@@ -105,28 +105,27 @@ main {
 
 :host([wide]) {
   aside {
-    --cxl-institute-layout-drawer-width: calc(22 * var(--lumo-space-m));
-    --cxl-institute-layout-drawer-padding: calc(var(--cxl-wrap-padding) * 2);
-    --cxl-institute-layout-drawer-peek-margin: calc(
-      -1 * (var(--cxl-institute-layout-drawer-width) - var(--cxl-institute-layout-drawer-padding) +
-            12px)
+    --cxl-app-layout-drawer-width: calc(22 * var(--lumo-space-m));
+    --cxl-app-layout-drawer-padding: calc(var(--cxl-wrap-padding) * 2);
+    --cxl-app-layout-drawer-peek-margin: calc(
+      -1 * (var(--cxl-app-layout-drawer-width) - var(--cxl-app-layout-drawer-padding) + 12px)
     );
 
     z-index: 0;
-    width: var(--cxl-institute-layout-drawer-width);
+    width: var(--cxl-app-layout-drawer-width);
     max-height: unset;
     padding-bottom: unset;
-    margin-right: var(--cxl-institute-layout-drawer-peek-margin);
+    margin-right: var(--cxl-app-layout-drawer-peek-margin);
 
     > slot[name="sidebar"] {
-      padding-right: var(--cxl-institute-layout-drawer-padding);
+      padding-right: var(--cxl-app-layout-drawer-padding);
     }
 
     > vaadin-button {
       top: calc(var(--cxl-wrap-padding) - 6px);
       bottom: unset;
       left: 1px;
-      transition: var(--cxl-institute-layout-drawer-transition);
+      transition: var(--cxl-app-layout-drawer-transition);
 
       &:hover {
         color: var(--lumo-primary-color);
@@ -212,11 +211,11 @@ main {
 :host([theme~="2c-l"][wide]) {
   aside {
     margin-right: calc(
-      var(--cxl-institute-layout-drawer-peek-margin) + var(--cxl-institute-layout-drawer-padding)
+      var(--cxl-app-layout-drawer-peek-margin) + var(--cxl-app-layout-drawer-padding)
     );
 
     > slot[name="sidebar"] {
-      padding-left: var(--cxl-institute-layout-drawer-padding);
+      padding-left: var(--cxl-app-layout-drawer-padding);
     }
 
     > vaadin-button {
@@ -231,9 +230,9 @@ main {
     &::after {
       position: absolute;
       top: 0;
-      left: var(--cxl-institute-layout-drawer-padding);
+      left: var(--cxl-app-layout-drawer-padding);
       display: block;
-      width: var(--cxl-institute-layout-drawer-padding);
+      width: var(--cxl-app-layout-drawer-padding);
       height: 100%;
       content: "";
       background: linear-gradient(to right, rgba(255, 255, 255, 0), var(--lumo-base-color));

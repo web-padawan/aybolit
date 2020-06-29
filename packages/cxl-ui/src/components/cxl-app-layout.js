@@ -4,17 +4,17 @@
 import { LitElement, html, customElement, property, query } from 'lit-element';
 import '@conversionxl/cxl-lumo-styles';
 import { registerGlobalStyles } from '@conversionxl/cxl-lumo-styles/src/utils';
-import cxlInstituteLayoutStyles from '../styles/cxl-institute-layout-css.js';
-import cxlInstituteLayoutGlobalStyles from '../styles/global/cxl-institute-layout-css.js';
+import cxlAppLayoutStyles from '../styles/cxl-app-layout-css.js';
+import cxlAppLayoutGlobalStyles from '../styles/global/cxl-app-layout-css.js';
 import '@vaadin/vaadin-button';
 import '@vaadin/vaadin-context-menu/src/vaadin-device-detector.js';
 import '@vaadin/vaadin-tabs';
 import '@vaadin/vaadin-progress-bar';
 
-const ASIDE_LOCAL_STORAGE_KEY = 'cxl-institute-layout-aside-opened';
+const ASIDE_LOCAL_STORAGE_KEY = 'cxl-app-layout-aside-opened';
 
-@customElement('cxl-institute-layout')
-export class CXLInstituteLayout extends LitElement {
+@customElement('cxl-app-layout')
+export class CXLAppLayout extends LitElement {
   @query('aside')
   asideElement;
 
@@ -36,7 +36,7 @@ export class CXLInstituteLayout extends LitElement {
   wide;
 
   static get styles() {
-    return [cxlInstituteLayoutStyles];
+    return [cxlAppLayoutStyles];
   }
 
   render() {
@@ -102,8 +102,8 @@ export class CXLInstituteLayout extends LitElement {
     super.firstUpdated(_changedProperties);
 
     // Global styles.
-    registerGlobalStyles(cxlInstituteLayoutGlobalStyles, {
-      moduleId: 'cxl-institute-layout-global'
+    registerGlobalStyles(cxlAppLayoutGlobalStyles, {
+      moduleId: 'cxl-app-layout-global'
     });
   }
 }
