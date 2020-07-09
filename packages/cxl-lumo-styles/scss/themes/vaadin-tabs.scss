@@ -65,3 +65,43 @@ $vaadin-tab-horizontal-padding: 0.75rem;
   margin-right: auto;
   margin-left: auto;
 }
+
+// show horizontal scrollbar
+// needs to refactor, so utilize custom css properties
+:host([orientation="horizontal"][theme~="cxl-jobs-horizontal-slider"]) [part="tabs"] {
+  // override default vaadin-tabs overflow
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    // override default vaadin-tabs scrollbar display
+    display: initial;
+
+    width: 2px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #d61f2c;
+    border: 0 none #fff;
+    border-radius: 50px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #d61f2c;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    border: 0 none #fff;
+    border-radius: 50px;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}
