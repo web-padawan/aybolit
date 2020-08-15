@@ -61,6 +61,11 @@ img {
   height: auto;
 }
 
+ol,
+ul {
+  padding-left: var(--lumo-space-l);
+}
+
 /**
  * headroom.js
  */
