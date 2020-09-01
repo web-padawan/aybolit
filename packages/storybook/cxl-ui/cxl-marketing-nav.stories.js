@@ -26,9 +26,8 @@ export const CXLMarketingNav = () => {
     headroom.init();
   }, []);
 
-  // @todo https://github.com/43081j/eslint-plugin-lit/issues/63
   return html`
-    <cxl-marketing-nav id="menu-primary" class="menu menu-primary" role="navigation">
+    <cxl-marketing-nav id="menu-primary" class="menu menu-primary" role="navigation" slot="header">
       <template id="cxl-marketing-nav-search-form-template">
         <vaadin-context-menu-item class="menu-item-search">
           <form
@@ -190,32 +189,6 @@ export const CXLMarketingNav = () => {
         <vaadin-tab class="menu-item" theme="cxl-marketing-nav"><a>Help</a></vaadin-tab>
       </vaadin-tabs>
     </cxl-marketing-nav>
-
-    <main>
-      <style>
-        /* headroom.js */
-        body {
-          min-height: 3000px;
-        }
-
-        /* @todo @include wrap mixin. */
-        .wrap {
-          margin: 0 auto;
-          max-width: var(--cxl-wrap-width, none);
-          padding: 0 var(--cxl-wrap-padding);
-          position: relative;
-        }
-      </style>
-
-      <div class="wrap">
-        <p>
-          We need to test context menu items vs body links styling, so here's a
-          <a href="https://cxl.com">link somewhere like cxl.com</a>.
-        </p>
-        <p><a href="https://cxl.com">Another link</a> for good measure.</p>
-        <hr />
-      </div>
-    </main>
   `;
 };
 

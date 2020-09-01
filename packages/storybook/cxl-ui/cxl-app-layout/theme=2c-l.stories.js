@@ -1,6 +1,7 @@
 import { html } from 'lit-html';
 import '@conversionxl/cxl-ui/src/components/cxl-app-layout.js';
 import '@conversionxl/cxl-ui/src/components/cxl-marketing-nav.js';
+import { CxlMarketingNav } from '../cxl-marketing-nav.stories';
 
 export default {
   title: 'CXL UI/cxl-app-layout'
@@ -9,32 +10,8 @@ export default {
 export const CXLAppLayoutTheme2CL = () => {
   return html`
     <cxl-app-layout id="container" theme="2c-l">
-      <cxl-marketing-nav slot="header">
-        <vaadin-tabs
-          id="menu-primary-items"
-          class="menu-items"
-          orientation="vertical"
-          selected="-1"
-          theme="cxl-marketing-nav"
-        >
-          <vaadin-tab class="menu-item menu-item-logo menu-item-wide" theme="cxl-marketing-nav">
-            <a href="https://conversionxl.com"
-              ><iron-icon icon="cxl:logo" style="width: var(--lumo-icon-size-xl, 48px);"></iron-icon
-            ></a>
-          </vaadin-tab>
-          <vaadin-tab
-            theme="cxl-marketing-nav"
-            id="menu-item-1820277"
-            class="menu-item-split-nav menu-item-wide menu-item-search menu-item menu-item-type-custom menu-item-object-custom menu-item-1820277 menu-item-depth-0"
-            aria-selected="false"
-            role="tab"
-            orientation="horizontal"
-            tabindex="0"
-          >
-            <a>Search <iron-icon icon="lumo:search"></iron-icon></a>
-          </vaadin-tab>
-        </vaadin-tabs>
-      </cxl-marketing-nav>
+      ${CxlMarketingNav()}
+
       <div slot="sidebar">
         <h3>Menu</h3>
         <ul>
