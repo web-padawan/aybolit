@@ -188,6 +188,11 @@ main {
     display: flex;
     flex-direction: column;
   }
+
+  // Make sure main container stays atop other elements
+  main {
+    z-index: 1;
+  }
 }
 
 /**
