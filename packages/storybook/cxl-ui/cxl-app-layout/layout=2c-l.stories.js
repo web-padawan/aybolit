@@ -1,16 +1,16 @@
 import { html } from 'lit-html';
 import '@conversionxl/cxl-ui/src/components/cxl-app-layout.js';
 import '@conversionxl/cxl-ui/src/components/cxl-marketing-nav.js';
-import { CxlMarketingNav } from '../cxl-marketing-nav.stories';
+import { CXLMarketingNav } from '../cxl-marketing-nav.stories';
 
 export default {
   title: 'CXL UI/cxl-app-layout'
 };
 
-export const CXLAppLayout = () => {
+export const CXLAppLayout2cl = () => {
   return html`
-    <cxl-app-layout id="container" theme="cxl-institute">
-      ${CxlMarketingNav()}
+    <cxl-app-layout id="container" layout="2c-l">
+      ${CXLMarketingNav()}
 
       <div slot="sidebar">
         <h3>Menu</h3>
@@ -28,4 +28,4 @@ export const CXLAppLayout = () => {
   `;
 };
 
-CXLAppLayout.storyName = 'cxl-app-layout';
+CXLAppLayout2cl.storyName = '[layout=2c-l]';

@@ -73,13 +73,17 @@ export class CXLAppLayout extends LitElement {
       </header>
 
       <div id="main">
-        ${this.getAttribute('theme') === '2c-l'
+        ${this.getAttribute('layout') === '2c-r'
           ? html`
-              ${mainElement} ${asideElement}
+              ${asideElement}
             `
-          : html`
-              ${asideElement} ${mainElement}
-            `}
+          : ''}
+        ${mainElement}
+        ${this.getAttribute('layout') === '2c-l'
+          ? html`
+              ${asideElement}
+            `
+          : ''}
       </div>
 
       <footer role="contentinfo" itemscope="itemscope" itemtype="https://schema.org/WPFooter">

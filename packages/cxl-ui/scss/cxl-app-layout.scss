@@ -183,7 +183,7 @@ main {
  * Flipped layout.
  * Padding is affected by scrollbar positions.
  */
-:host([theme~="2c-l"]) {
+:host([layout~="2c-l"]) {
   #main {
     display: flex;
     flex-direction: column;
@@ -198,7 +198,7 @@ main {
 /**
  * No reason to hide anything when at screen bottom.
  */
-:host([theme~="2c-l"]:not([wide])) {
+:host([layout~="2c-l"]:not([wide])) {
   aside {
     max-height: unset;
     padding-bottom: unset;
@@ -213,7 +213,7 @@ main {
   }
 }
 
-:host([theme~="2c-l"][wide]) {
+:host([layout~="2c-l"][wide]) {
   aside {
     margin-right: calc(
       var(--cxl-app-layout-drawer-peek-margin) + var(--cxl-app-layout-drawer-padding)

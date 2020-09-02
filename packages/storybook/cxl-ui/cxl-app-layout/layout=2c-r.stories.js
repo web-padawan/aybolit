@@ -1,16 +1,16 @@
 import { html } from 'lit-html';
 import '@conversionxl/cxl-ui/src/components/cxl-app-layout.js';
 import '@conversionxl/cxl-ui/src/components/cxl-marketing-nav.js';
-import { CxlMarketingNav } from '../cxl-marketing-nav.stories';
+import { CXLMarketingNav } from '../cxl-marketing-nav.stories';
 
 export default {
   title: 'CXL UI/cxl-app-layout'
 };
 
-export const CXLAppLayoutThemeCXLInstitute = () => {
+export const CXLAppLayout2cr = () => {
   return html`
-    <cxl-app-layout id="container" theme="cxl-institute">
-      ${CxlMarketingNav()}
+    <cxl-app-layout id="container" layout="2c-r">
+      ${CXLMarketingNav()}
 
       <section id="sensei_course_progress-2" class="widget-odd widget-last widget-first widget-1 widget widget_sensei_course_progress" slot="sidebar">
         <label>Course</label>
@@ -158,4 +158,4 @@ export const CXLAppLayoutThemeCXLInstitute = () => {
 `;
 };
 
-CXLAppLayoutThemeCXLInstitute.storyName = '[theme=cxl-institute]';
+CXLAppLayout2cr.storyName = '[layout=2c-r]';
