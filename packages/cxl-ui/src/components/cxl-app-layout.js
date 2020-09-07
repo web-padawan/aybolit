@@ -14,7 +14,7 @@ import '@vaadin/vaadin-progress-bar';
 const ASIDE_LOCAL_STORAGE_KEY = 'cxl-app-layout-aside-opened';
 
 @customElement('cxl-app-layout')
-export class CXLAppLayout extends LitElement {
+export class CXLAppLayoutElement extends LitElement {
   @query('aside')
   asideElement;
 

@@ -1,0 +1,33 @@
+/**
+ * Layout commons.
+ */
+$toggle-icon: "lumo:angle-right";
+
+:host {
+  display: block;
+}
+
+/**
+ * Sticky footer.
+ */
+:host([wide]) {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  #main {
+    flex-grow: 1; // Short content.
+  }
+}
+
+/**
+ * Avoid hugging header and footer.
+ */
+:host([layout^="1c"]:not([layout="1c"])),
+:host([layout^="2c"]) {
+  aside,
+  main {
+    padding-top: var(--cxl-wrap-padding);
+    padding-bottom: var(--cxl-wrap-padding);
+  }
+}

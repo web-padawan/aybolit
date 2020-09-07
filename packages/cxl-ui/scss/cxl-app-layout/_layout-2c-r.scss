@@ -1,0 +1,24 @@
+/**
+ * Layout: 2-column, content right.
+ */
+@use "~@conversionxl/cxl-lumo-styles/scss/mixins";
+@use "layout";
+
+:host([layout="2c-r"][wide]) {
+  aside {
+    > vaadin-button {
+      left: 1px;
+    }
+
+    &[opened] {
+      > vaadin-button {
+        left: calc(100% + 1px);
+        transform: translateX(-100%);
+      }
+    }
+  }
+
+  main {
+    border-top-left-radius: var(--lumo-border-radius-l);
+  }
+}

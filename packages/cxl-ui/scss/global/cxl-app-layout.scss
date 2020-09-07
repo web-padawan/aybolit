@@ -1,3 +1,4 @@
+@use "~@conversionxl/cxl-lumo-styles/scss/mixins" as cxl-lumo-styles-mixins;
 @use "../mixins";
 
 cxl-app-layout {
@@ -15,10 +16,10 @@ cxl-app-layout {
     border: 0;
   }
 
+  /**
+   * Entry.
+   */
   > .entry {
-    margin-top: var(--cxl-wrap-padding);
-    margin-bottom: var(--cxl-wrap-padding);
-
     .entry-header {
       label {
         @extend %label-contrast-50pct;
@@ -29,16 +30,12 @@ cxl-app-layout {
       margin: var(--cxl-wrap-padding) calc(var(--cxl-wrap-padding) * -1); // Full screen width, while padded.
       background-color: var(--lumo-shade);
     }
-
-    .entry-title {
-      font-size: var(--lumo-font-size-xxxl);
-    }
   }
 
+  /**
+   * Widget.
+   */
   > .widget {
-    margin-top: var(--cxl-wrap-padding);
-    margin-bottom: var(--cxl-wrap-padding);
-
     .widget-title {
       margin-top: 0;
       font-weight: 300;
@@ -87,7 +84,15 @@ cxl-app-layout {
     }
   }
 
-  &[wide] {
+  &[layout^="2c"] {
+    > .entry {
+      .entry-title {
+        font-size: var(--lumo-font-size-xxxl);
+      }
+    }
+  }
+
+  &[layout^="2c"][wide] {
     --cxl-wrap-padding: var(--lumo-space-l);
 
     iframe {
@@ -97,9 +102,7 @@ cxl-app-layout {
     > .entry {
       .entry-content,
       .entry-footer {
-        max-width: var(--cxl-content-width);
-        padding: 0 var(--cxl-wrap-padding);
-        margin: 0 auto;
+        @include cxl-lumo-styles-mixins.wrap(var(--cxl-content-width));
       }
     }
   }

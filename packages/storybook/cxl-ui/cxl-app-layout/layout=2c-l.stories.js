@@ -20,10 +20,17 @@ export const CXLAppLayout2cl = () => {
           <li>Menu item 3</li>
         </ul>
       </div>
-      <div>
-        <h2>Content</h2>
-        <p>Lorem ipsum....</p>
-      </div>
+      <article class="entry">
+        <header class="entry-header">
+          <label>Page</label>
+          <h1 class="entry-title">Title: 2-column, content left</h1>
+          <p>Lorem ipsum....</p>
+        </header>
+        <div class="entry-content">
+          <h2>Headline</h2>
+          <p>Lorem ipsum....</p>
+        </div>
+      </article>
     </cxl-app-layout>
   `;
 };

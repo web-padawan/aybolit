@@ -70,7 +70,7 @@ $menu-item-menu-toggle-index: 2;
   top: 0;
   right: 0;
   left: 0;
-  z-index: 1;
+  z-index: 2; // @see `cxl-app-layout[layout=2c-l]`.
 }
 
 :host(.headroom--pinned.headroom--not-top[wide]) ::slotted(#menu-global-items) {
