@@ -22,7 +22,11 @@ export class CXLAppLayoutElement extends LitElement {
   get asideOpened() {
     this._asideOpened = JSON.parse(localStorage.getItem(ASIDE_LOCAL_STORAGE_KEY));
 
-    return this._asideOpened === null || this._asideOpened;
+    return (
+      this._asideOpened === null ||
+      (this.scroll !== 'panels' && this.layout === '2c-l') ||
+      this._asideOpened
+    );
   }
 
   set asideOpened(value) {
@@ -30,6 +34,22 @@ export class CXLAppLayoutElement extends LitElement {
 
     this.requestUpdate('asideOpened', this._asideOpened);
   }
+
+  /**
+   * 2-column layouts can scroll individual content panels, or document.
+   *
+   * @type {string}
+   */
+  @property({ reflect: true })
+  scroll = 'document';
+
+  /**
+   * Configurable layout.
+   *
+   * @type {string}
+   */
+  @property()
+  layout = '1c';
 
   // vaadin-device-detector.
   @property({ type: Boolean, reflect: true })

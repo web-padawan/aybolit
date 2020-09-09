@@ -11,43 +11,6 @@
 }
 
 /**
- * Fixed container, scrolling content columns.
- *
- * @see https://codepen.io/geon/pen/obrWxm
- */
-:host([layout^="2c"][wide]) {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-
-  #main {
-    display: flex;
-    height: 100%; // Safari.
-    overflow: hidden;
-
-    slot {
-      display: block;
-    }
-
-    aside > slot[name="sidebar"],
-    main {
-      overflow-y: auto;
-      scrollbar-width: thin;
-
-      @include mixins.better-webkit-scrollbars();
-    }
-
-    aside {
-      flex: 0 0 auto;
-    }
-
-    main {
-      flex-grow: 1;
-    }
-  }
-}
-
-/**
  * Drawer.
  */
 /* stylelint-disable no-duplicate-selectors */
@@ -110,6 +73,7 @@
     );
 
     z-index: 0;
+    flex: 0 0 auto;
     width: var(--cxl-app-layout-drawer-width);
     max-height: unset;
     padding-bottom: unset;
@@ -143,8 +107,7 @@
   }
 
   main {
-    @include mixins.wrap($padding: var(--lumo-space-l));
-
+    flex-grow: 1;
     border-top: unset;
 
     [icon="#{layout.$toggle-icon}"] {
@@ -153,8 +116,34 @@
   }
 
   #main {
+    display: flex;
+
     // @todo #main @include mixins.wrap() shrinks flex child. Flex-native expand solution?
     width: calc(100% - var(--cxl-wrap-padding) * 2);
+  }
+}
+
+/**
+ * Fixed container, scrolling content panels.
+ *
+ * @see https://codepen.io/geon/pen/obrWxm
+ */
+:host([layout^="2c"][wide][scroll="panels"]) {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  #main {
+    height: 100%; // Safari.
+    overflow: hidden;
+
+    aside,
+    main {
+      overflow-y: auto;
+      scrollbar-width: thin;
+
+      @include mixins.better-webkit-scrollbars();
+    }
   }
 }
 

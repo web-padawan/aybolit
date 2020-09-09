@@ -89,3 +89,15 @@
     border-right: solid var(--cxl-wrap-padding) transparent;
   }
 }
+
+/**
+ * Creates horizontal scroll, prohibitively difficult to upgrade.
+ * Try again later.
+ */
+:host([layout="2c-l"][wide][scroll="document"]) {
+  aside {
+    > vaadin-button {
+      display: none;
+    }
+  }
+}
