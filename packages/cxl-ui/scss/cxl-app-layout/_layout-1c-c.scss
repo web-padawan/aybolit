@@ -1,5 +1,5 @@
 /**
- * Layout: 1-column, wrapped.
+ * Layout: 1-column, content.
  */
 @use "~@conversionxl/cxl-lumo-styles/scss/mixins";
 
@@ -7,7 +7,9 @@
   #main {
     // `[wide] #main` flex column item with narrow content doesn't auto-fill x-axis.
     main {
-      @include mixins.wrap(var(--cxl-content-width));
+      > slot {
+        max-width: var(--cxl-content-width);
+      }
     }
   }
 }

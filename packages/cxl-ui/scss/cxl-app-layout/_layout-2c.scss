@@ -4,11 +4,7 @@
 @use "~@conversionxl/cxl-lumo-styles/scss/mixins";
 @use "layout";
 
-:host([layout^="2c"]) {
-  #main {
-    @include mixins.wrap();
-  }
-}
+$vertical-padding: var(--cxl-wrap-padding);
 
 /**
  * Drawer.
@@ -21,7 +17,7 @@
     position: relative;
     // @see https://stackoverflow.com/questions/3508605/how-can-i-transition-height-0-to-height-auto-using-css
     max-height: var(--lumo-font-size-xxl);
-    padding-bottom: calc(35px + var(--lumo-space-m)); // Peek partial content.
+    padding-bottom: calc(35px + var(--lumo-space-xl)); // Peek partial content.
     transition: var(--cxl-app-layout-drawer-transition);
 
     // Exclude vaadin-button.
@@ -31,6 +27,7 @@
 
     &[opened] {
       max-height: calc(100vh * 2);
+      padding-bottom: var(--lumo-space-xl);
 
       ::slotted(*) {
         opacity: unset;
@@ -46,13 +43,32 @@
       bottom: -1px; // Clip border.
       z-index: 1;
       padding: 0;
-      margin: 0;
+      margin: unset;
+      margin-left: var(--cxl-wrap-padding);
       background-color: var(--lumo-base-color);
       border: solid 1px var(--lumo-contrast-10pct);
     }
 
     [icon="#{layout.$toggle-icon}"] {
       transform: rotate(90deg);
+    }
+
+    /**
+     * Widgets.
+     */
+    ::slotted(.widget) {
+      // Match `main`.
+      @include mixins.wrap();
+
+      margin-top: $vertical-padding;
+      margin-bottom: $vertical-padding;
+    }
+
+    ::slotted(.widget.has-background) {
+      padding-top: $vertical-padding;
+      padding-bottom: $vertical-padding;
+      margin-top: unset;
+      margin-bottom: unset;
     }
   }
 
@@ -79,13 +95,18 @@
     padding-bottom: unset;
     margin-right: var(--cxl-app-layout-drawer-peek-margin);
 
-    slot[name="sidebar"] {
-      padding-right: var(--cxl-app-layout-drawer-padding);
+    &[opened] {
+      margin-right: 0;
+
+      [icon="#{layout.$toggle-icon}"] {
+        transform: rotate(180deg);
+      }
     }
 
     > vaadin-button {
-      top: calc(var(--cxl-wrap-padding) - 6px);
+      top: calc(#{$vertical-padding} - 6px);
       bottom: unset;
+      margin-left: unset;
       transition: var(--cxl-app-layout-drawer-transition);
 
       &:hover {
@@ -96,14 +117,6 @@
     [icon="#{layout.$toggle-icon}"] {
       transform: unset;
     }
-
-    &[opened] {
-      margin-right: 0;
-
-      [icon="#{layout.$toggle-icon}"] {
-        transform: rotate(180deg);
-      }
-    }
   }
 
   main {
@@ -113,9 +126,15 @@
     [icon="#{layout.$toggle-icon}"] {
       transform: unset;
     }
+
+    > slot {
+      @include mixins.wrap($padding: var(--lumo-space-l));
+    }
   }
 
   #main {
+    @include mixins.wrap();
+
     display: flex;
 
     // @todo #main @include mixins.wrap() shrinks flex child. Flex-native expand solution?

@@ -36,6 +36,10 @@ cxl-app-layout {
    * Widget.
    */
   > .widget {
+    > label:first-child {
+      @extend %label-contrast-50pct;
+    }
+
     .widget-title {
       margin-top: 0;
       font-weight: 300;
@@ -44,10 +48,6 @@ cxl-app-layout {
     &_sensei_course_progress {
       a {
         color: inherit;
-      }
-
-      label {
-        @extend %label-contrast-50pct;
       }
 
       .entry-title {

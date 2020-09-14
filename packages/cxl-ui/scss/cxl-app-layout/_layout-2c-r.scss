@@ -12,9 +12,24 @@
 
     &[opened] {
       > vaadin-button {
-        left: calc(100% + 1px);
+        left: 100%;
+        overflow: hidden; // Shadow internals create horizontal scroll.
+        border-right: unset;
+        border-top-right-radius: unset;
+        border-bottom-right-radius: unset;
         transform: translateX(-100%);
       }
+    }
+
+    /**
+     * Widgets.
+     */
+    ::slotted(.widget) {
+      padding-right: calc(var(--cxl-wrap-padding) * 2);
+    }
+
+    ::slotted(.widget:not(.has-background)) {
+      padding-left: unset;
     }
   }
 

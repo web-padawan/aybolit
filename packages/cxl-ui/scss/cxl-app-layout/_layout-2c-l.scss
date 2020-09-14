@@ -38,12 +38,10 @@
       var(--cxl-app-layout-drawer-peek-margin) + var(--cxl-app-layout-drawer-padding)
     );
 
-    slot[name="sidebar"] {
-      padding-left: var(--cxl-app-layout-drawer-padding);
-    }
-
     > vaadin-button {
-      left: -1px;
+      border-left: unset;
+      border-top-left-radius: unset;
+      border-bottom-left-radius: unset;
     }
 
     [icon="#{layout.$toggle-icon}"] {
@@ -74,6 +72,13 @@
       &::after {
         content: unset;
       }
+    }
+
+    /**
+     * Widgets.
+     */
+    ::slotted(.widget) {
+      padding-left: calc(var(--cxl-wrap-padding) * 2);
     }
   }
 
