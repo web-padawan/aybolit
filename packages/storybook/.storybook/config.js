@@ -1,4 +1,4 @@
-import { configure } from '@storybook/polymer';
+import { configure } from '@storybook/web-components';
 
 // @see https://github.com/storybookjs/storybook/tree/v5.3.0-alpha.42/app/web-components#user-content-setup-page-reload-via-hmr
 const req = require.context('../', true, /\.stories\.(js)$/);
