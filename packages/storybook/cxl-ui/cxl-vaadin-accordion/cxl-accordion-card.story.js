@@ -4,11 +4,7 @@ import '@conversionxl/cxl-ui/src/components/cxl-vaadin-accordion.js';
 import '@conversionxl/cxl-ui/src/components/cxl-accordion-card.js';
 import archiveData from './theme=cxl-archive.data.json';
 
-export default {
-  title: 'CXL UI|cxl-vaadin-accordion'
-};
-
-export const CxlVaadinAccordionThemeArchive = () => {
+export const CXLVaadinAccordionThemeArchive = () => {
   let lastEntryTitle1stLetter = 'Z';
 
   const firstLetterHeading = el => {
@@ -91,9 +87,4 @@ export const CxlVaadinAccordionThemeArchive = () => {
       )}
     </cxl-vaadin-accordion>
   `;
-};
-
-// @todo localStorage data panel?
-CxlVaadinAccordionThemeArchive.story = {
-  name: 'cxl-accordion-card'
 };

@@ -5,10 +5,10 @@ import { Headroom } from '@conversionxl/cxl-ui';
 import contextMenuItems from './cxl-marketing-nav.data.json';
 
 export default {
-  title: 'CXL UI'
+  title: 'CXL UI/cxl-marketing-nav'
 };
 
-export const CxlMarketingNav = () => {
+export const CXLMarketingNav = () => {
   useEffect(() => {
     // Populate `<cxl-marketing-nav>` context menus.
     const cxlMarketingNavElement = document.querySelector('cxl-marketing-nav');
@@ -219,6 +219,4 @@ export const CxlMarketingNav = () => {
   `;
 };
 
-CxlMarketingNav.story = {
-  name: 'cxl-marketing-nav'
-};
+CXLMarketingNav.storyName = 'menu-primary';
