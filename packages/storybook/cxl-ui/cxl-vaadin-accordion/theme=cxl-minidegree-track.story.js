@@ -1,11 +1,7 @@
 import { html } from 'lit-html';
 import '@conversionxl/cxl-ui/src/components/cxl-vaadin-accordion.js';
 
-export default {
-  title: 'CXL UI|cxl-vaadin-accordion'
-};
-
-export const CxlVaadinAccordionThemeMinidegreeTrack = () => {
+export const CXLVaadinAccordionThemeMinidegreeTrack = () => {
   return html`
     <style>
       .entry-title a {
@@ -1068,9 +1064,4 @@ export const CxlVaadinAccordionThemeMinidegreeTrack = () => {
       </vaadin-accordion-panel>
     </cxl-vaadin-accordion>
   `;
-};
-
-// @todo localStorage data panel?
-CxlVaadinAccordionThemeMinidegreeTrack.story = {
-  name: '[theme=cxl-minidegree-track]'
 };

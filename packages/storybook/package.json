@@ -8,7 +8,6 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@aybolit/white-label": "^0.1.0",
     "@conversionxl/cxl-lumo-styles": "^0.2.2",
     "@conversionxl/cxl-ui": "^0.2.1",
     "@storybook/addon-knobs": "^6.1.14",

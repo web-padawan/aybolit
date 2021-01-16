@@ -27,8 +27,6 @@ Aybolit project is a monorepo and contains the following npm packages:
 
 - [`@aybolit/core`](https://github.com/web-padawan/aybolit/tree/master/packages/core) - components base classes with "normalized" styles.
 
-- [`@aybolit/white-label`](https://github.com/web-padawan/aybolit/tree/master/packages/white-label) - set of components with bare minimum of styles.
-
 Check the README of each individual package for more details.
 
 ## Supported Browsers

@@ -3,11 +3,7 @@ import { unsafeHTML } from 'lit-html/directives/unsafe-html';
 import '@conversionxl/cxl-ui/src/components/cxl-vaadin-accordion.js';
 import faqData from './theme=cxl-faq.data.json';
 
-export default {
-  title: 'CXL UI|cxl-vaadin-accordion'
-};
-
-export const CxlVaadinAccordionThemeFaq = () => {
+export const CXLVaadinAccordionThemeFaq = () => {
   return html`
     <style>
       .plural .entry-title {
@@ -40,8 +36,4 @@ export const CxlVaadinAccordionThemeFaq = () => {
       )}
     </cxl-vaadin-accordion>
   `;
-};
-
-CxlVaadinAccordionThemeFaq.story = {
-  name: '[theme=cxl-faq]'
 };

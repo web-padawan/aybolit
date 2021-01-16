@@ -3,10 +3,10 @@ import '@conversionxl/cxl-ui/src/components/cxl-institute-layout.js';
 import '@conversionxl/cxl-ui/src/components/cxl-marketing-nav.js';
 
 export default {
-  title: 'CXL UI'
+  title: 'CXL UI/cxl-institute-layout'
 };
 
-export const CxlInstituteLayout = () => {
+export const CXLInstituteLayout = () => {
   return html`
     <cxl-institute-layout id="container">
       <cxl-marketing-nav slot="header">
@@ -174,6 +174,4 @@ export const CxlInstituteLayout = () => {
 `;
 };
 
-CxlInstituteLayout.story = {
-  name: 'cxl-institute-layout'
-};
+CXLInstituteLayout.storyName = '[id=container]';
