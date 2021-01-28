@@ -1,6 +1,7 @@
+@use "~@conversionxl/cxl-lumo-styles/scss/mixins" as cxl-lumo-styles-mixins;
 @use "../mixins";
 
-cxl-institute-layout {
+cxl-app-layout {
   $iframe-height: 200px;
 
   %label-contrast-50pct {
@@ -15,10 +16,10 @@ cxl-institute-layout {
     border: 0;
   }
 
+  /**
+   * Entry.
+   */
   > .entry {
-    margin-top: var(--cxl-wrap-padding);
-    margin-bottom: var(--cxl-wrap-padding);
-
     .entry-header {
       label {
         @extend %label-contrast-50pct;
@@ -29,15 +30,15 @@ cxl-institute-layout {
       margin: var(--cxl-wrap-padding) calc(var(--cxl-wrap-padding) * -1); // Full screen width, while padded.
       background-color: var(--lumo-shade);
     }
-
-    .entry-title {
-      font-size: var(--lumo-font-size-xxxl);
-    }
   }
 
+  /**
+   * Widget.
+   */
   > .widget {
-    margin-top: var(--cxl-wrap-padding);
-    margin-bottom: var(--cxl-wrap-padding);
+    > label:first-child {
+      @extend %label-contrast-50pct;
+    }
 
     .widget-title {
       margin-top: 0;
@@ -47,10 +48,6 @@ cxl-institute-layout {
     &_sensei_course_progress {
       a {
         color: inherit;
-      }
-
-      label {
-        @extend %label-contrast-50pct;
       }
 
       .entry-title {
@@ -87,7 +84,15 @@ cxl-institute-layout {
     }
   }
 
-  &[wide] {
+  &[layout^="2c"] {
+    > .entry {
+      .entry-title {
+        font-size: var(--lumo-font-size-xxxl);
+      }
+    }
+  }
+
+  &[layout^="2c"][wide] {
     --cxl-wrap-padding: var(--lumo-space-l);
 
     iframe {
@@ -97,9 +102,7 @@ cxl-institute-layout {
     > .entry {
       .entry-content,
       .entry-footer {
-        max-width: var(--cxl-content-width);
-        padding: 0 var(--cxl-wrap-padding);
-        margin: 0 auto;
+        @include cxl-lumo-styles-mixins.wrap(var(--cxl-content-width));
       }
     }
   }

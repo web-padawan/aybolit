@@ -1,3 +1,5 @@
+@use "mixins";
+
 html {
   // Variables.
   --cxl-content-width: 36em;
@@ -96,4 +98,8 @@ ul {
   width: var(--cxl-thumbnail-size);
   height: var(--cxl-thumbnail-size);
   border-radius: 50%;
+}
+
+.wrap {
+  @include mixins.wrap();
 }

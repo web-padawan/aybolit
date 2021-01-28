@@ -1,0 +1,39 @@
+/**
+ * Layout: 2-column, content right.
+ */
+@use "~@conversionxl/cxl-lumo-styles/scss/mixins";
+@use "layout";
+
+:host([layout="2c-r"][wide]) {
+  aside {
+    > vaadin-button {
+      left: 1px;
+    }
+
+    &[opened] {
+      > vaadin-button {
+        left: 100%;
+        overflow: hidden; // Shadow internals create horizontal scroll.
+        border-right: unset;
+        border-top-right-radius: unset;
+        border-bottom-right-radius: unset;
+        transform: translateX(-100%);
+      }
+    }
+
+    /**
+     * Widgets.
+     */
+    ::slotted(.widget) {
+      padding-right: calc(var(--cxl-wrap-padding) * 2);
+    }
+
+    ::slotted(.widget:not(.has-background)) {
+      padding-left: unset;
+    }
+  }
+
+  main {
+    border-top-left-radius: var(--lumo-border-radius-l);
+  }
+}

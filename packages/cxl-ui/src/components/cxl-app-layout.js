@@ -4,17 +4,17 @@
 import { LitElement, html, customElement, property, query } from 'lit-element';
 import '@conversionxl/cxl-lumo-styles';
 import { registerGlobalStyles } from '@conversionxl/cxl-lumo-styles/src/utils';
-import cxlInstituteLayoutStyles from '../styles/cxl-institute-layout-css.js';
-import cxlInstituteLayoutGlobalStyles from '../styles/global/cxl-institute-layout-css.js';
+import cxlAppLayoutStyles from '../styles/cxl-app-layout-css.js';
+import cxlAppLayoutGlobalStyles from '../styles/global/cxl-app-layout-css.js';
 import '@vaadin/vaadin-button';
 import '@vaadin/vaadin-context-menu/src/vaadin-device-detector.js';
 import '@vaadin/vaadin-tabs';
 import '@vaadin/vaadin-progress-bar';
 
-const ASIDE_LOCAL_STORAGE_KEY = 'cxl-institute-layout-aside-opened';
+const ASIDE_LOCAL_STORAGE_KEY = 'cxl-app-layout-aside-opened';
 
-@customElement('cxl-institute-layout')
-export class CXLInstituteLayout extends LitElement {
+@customElement('cxl-app-layout')
+export class CXLAppLayoutElement extends LitElement {
   @query('aside')
   asideElement;
 
@@ -22,7 +22,11 @@ export class CXLInstituteLayout extends LitElement {
   get asideOpened() {
     this._asideOpened = JSON.parse(localStorage.getItem(ASIDE_LOCAL_STORAGE_KEY));
 
-    return this._asideOpened === null || this._asideOpened;
+    return (
+      this._asideOpened === null ||
+      (this.scroll !== 'panels' && this.layout === '2c-l') ||
+      this._asideOpened
+    );
   }
 
   set asideOpened(value) {
@@ -31,12 +35,28 @@ export class CXLInstituteLayout extends LitElement {
     this.requestUpdate('asideOpened', this._asideOpened);
   }
 
+  /**
+   * 2-column layouts can scroll individual content panels, or document.
+   *
+   * @type {string}
+   */
+  @property({ reflect: true })
+  scroll = 'document';
+
+  /**
+   * Configurable layout.
+   *
+   * @type {string}
+   */
+  @property()
+  layout = '1c';
+
   // vaadin-device-detector.
   @property({ type: Boolean, reflect: true })
   wide;
 
   static get styles() {
-    return [cxlInstituteLayoutStyles];
+    return [cxlAppLayoutStyles];
   }
 
   render() {
@@ -73,13 +93,17 @@ export class CXLInstituteLayout extends LitElement {
       </header>
 
       <div id="main">
-        ${this.getAttribute('theme') === '2c-l'
+        ${this.getAttribute('layout') === '2c-r'
           ? html`
-              ${mainElement} ${asideElement}
+              ${asideElement}
             `
-          : html`
-              ${asideElement} ${mainElement}
-            `}
+          : ''}
+        ${mainElement}
+        ${this.getAttribute('layout') === '2c-l'
+          ? html`
+              ${asideElement}
+            `
+          : ''}
       </div>
 
       <footer role="contentinfo" itemscope="itemscope" itemtype="https://schema.org/WPFooter">
@@ -102,8 +126,8 @@ export class CXLInstituteLayout extends LitElement {
     super.firstUpdated(_changedProperties);
 
     // Global styles.
-    registerGlobalStyles(cxlInstituteLayoutGlobalStyles, {
-      moduleId: 'cxl-institute-layout-global'
+    registerGlobalStyles(cxlAppLayoutGlobalStyles, {
+      moduleId: 'cxl-app-layout-global'
     });
   }
 }

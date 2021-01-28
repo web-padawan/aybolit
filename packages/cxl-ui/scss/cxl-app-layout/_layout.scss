@@ -1,0 +1,50 @@
+/**
+ * Layout commons.
+ */
+@use "~@conversionxl/cxl-lumo-styles/scss/mixins";
+
+$toggle-icon: "lumo:angle-right";
+
+:host {
+  display: block;
+
+  aside,
+  main {
+    > slot {
+      display: block;
+    }
+  }
+}
+
+/**
+ * Sticky footer.
+ */
+:host([wide]) {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  #main {
+    flex-grow: 1; // Short content.
+  }
+}
+:host([layout^="1c"]:not([layout="1c"])),
+:host([layout^="2c"]) {
+  main {
+    > slot {
+      /**
+       * Wrap content, space edges.
+       */
+      @include mixins.wrap();
+
+      /**
+       * Avoid hugging header and footer.
+       * Padding vs overflow: padding inner container (`<slot>`) currently works best.
+       *
+       * @see https://bugzilla.mozilla.org/show_bug.cgi?id=748518#c55
+       */
+      padding-top: var(--cxl-wrap-padding);
+      padding-bottom: var(--cxl-wrap-padding);
+    }
+  }
+}

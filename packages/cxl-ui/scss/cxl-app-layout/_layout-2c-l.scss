@@ -1,0 +1,108 @@
+/**
+ * Layout: 2-column, content left.
+ */
+@use "layout";
+
+/**
+ * Flipped layout.
+ * Padding is affected by scrollbar positions.
+ */
+:host([layout="2c-l"]) {
+  // vaadin-button tries to sit on our shadow.
+  main {
+    z-index: 1;
+  }
+}
+
+/**
+ * No reason to hide anything when at screen bottom.
+ */
+:host([layout="2c-l"]:not([wide])) {
+  aside {
+    max-height: unset;
+    padding-bottom: unset;
+
+    > vaadin-button {
+      display: none;
+    }
+
+    ::slotted(*) {
+      opacity: unset;
+    }
+  }
+}
+
+:host([layout="2c-l"][wide]) {
+  aside {
+    margin-right: calc(
+      var(--cxl-app-layout-drawer-peek-margin) + var(--cxl-app-layout-drawer-padding)
+    );
+
+    > vaadin-button {
+      border-left: unset;
+      border-top-left-radius: unset;
+      border-bottom-left-radius: unset;
+    }
+
+    [icon="#{layout.$toggle-icon}"] {
+      transform: rotate(180deg);
+    }
+
+    // Better closed drawer fade.
+    &::after {
+      position: absolute;
+      top: 0;
+      left: var(--cxl-app-layout-drawer-padding);
+      display: block;
+      width: var(--cxl-app-layout-drawer-padding);
+      height: 100%;
+      content: "";
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), var(--lumo-base-color));
+    }
+
+    &[opened] {
+      > vaadin-button {
+        transform: unset;
+      }
+
+      [icon="#{layout.$toggle-icon}"] {
+        transform: unset;
+      }
+
+      &::after {
+        content: unset;
+      }
+    }
+
+    /**
+     * Widgets.
+     */
+    ::slotted(.widget) {
+      padding-left: calc(var(--cxl-wrap-padding) * 2);
+    }
+  }
+
+  main {
+    border-top-right-radius: var(--lumo-border-radius-l);
+  }
+
+  #main {
+    flex-direction: unset;
+
+    // Stop padding-box overflow leak.
+    padding-right: unset;
+    border-right: solid var(--cxl-wrap-padding) transparent;
+  }
+}
+
+/**
+ * Creates horizontal scroll, prohibitively difficult to upgrade.
+ * Try again later.
+ */
+:host([layout="2c-l"][wide][scroll="document"]) {
+  aside {
+    > vaadin-button {
+      display: none;
+    }
+  }
+}

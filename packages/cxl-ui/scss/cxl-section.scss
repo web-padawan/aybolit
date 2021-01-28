@@ -1,0 +1,58 @@
+@use "~@conversionxl/cxl-lumo-styles/scss/mixins";
+
+:host {
+  display: block;
+}
+
+/**
+ * Avoid margin collapse with background.
+ */
+:host(.has-background) {
+  display: flow-root;
+}
+
+/**
+ * Wave design bottom.
+ */
+:host(.has-wave) {
+  position: relative;
+
+  .wrap {
+    z-index: 1;
+  }
+}
+
+#wave {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+}
+
+/**
+ * Content readability.
+ */
+.wrap {
+  @include mixins.wrap();
+
+  max-width: var(--cxl-content-width);
+
+  /**
+   * Spacious section spacing.
+   */
+  --lumo-space-xxl: calc(var(--lumo-space-xl) + var(--lumo-space-l));
+
+  margin-top: var(--lumo-space-xxl);
+  margin-bottom: var(--lumo-space-xxl);
+
+  /**
+   * Block editor integration.
+   */
+  :host(.alignfull) > & {
+    max-width: unset;
+  }
+
+  :host(.alignwide) > & {
+    max-width: var(--cxl-wrap-width);
+  }
+}
