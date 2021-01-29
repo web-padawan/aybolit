@@ -9,7 +9,7 @@
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "argos": "argos upload test/visual/screenshots/chrome --token $ARGOS_TOKEN || true",
-    "build": "yarn build-styling",
+    "build": "rimraf packages/**/styles/**/*.js && yarn build-styling",
     "build-styling": "node packages/sass-render/bin/sass-render.js -s \"packages/*/scss/**/*.scss\"",
     "deploy-storybook": "yarn --cwd packages/storybook storybook-to-ghpages",
     "dist": "lerna run dist",
