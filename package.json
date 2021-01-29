@@ -25,9 +25,6 @@
   "workspaces": [
     "packages/*"
   ],
-  "dependencies": {
-    "node-watch": "^0.6.2"
-  },
   "devDependencies": {
     "@babel/core": "^7.7.0",
     "@babel/plugin-proposal-decorators": "^7.7.0",
@@ -62,6 +59,7 @@
     "lint-staged": "^10.5.3",
     "lit-html": "^1.0.0",
     "mocha": "^6.1.4",
+    "node-watch": "^0.7.1",
     "npm-run-all": "^4.1.5",
     "polymer-webpack-loader": "^2.0.3",
     "prettier": "^2.2.1",
