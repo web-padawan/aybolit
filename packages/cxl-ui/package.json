@@ -21,7 +21,7 @@
     "@vaadin/vaadin-progress-bar": "^1.1.2",
     "@vaadin/vaadin-tabs": "^3.0.5",
     "@vaadin/vaadin-themable-mixin": "^1.5.2",
-    "headroom.js": "^0.11.0",
+    "headroom.js": "^0.12.0",
     "lit-element": "^2.2.1",
     "lit-html": "^1.1.2"
   },
