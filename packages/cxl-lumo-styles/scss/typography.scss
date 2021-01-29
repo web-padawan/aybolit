@@ -49,21 +49,18 @@ h1 {
 }
 
 h2 {
-  font-size: var(--lumo-font-size-xxl);
   @media #{mq.$small} {
     font-size: var(--lumo-font-size-xxxl);
   }
 }
 
 h3 {
-  font-size: var(--lumo-font-size-xl);
   @media #{mq.$small} {
     font-size: var(--lumo-font-size-xxl);
   }
 }
 
 h4 {
-  font-size: var(--lumo-font-size-l);
   @media #{mq.$small} {
     font-size: var(--lumo-font-size-xl);
   }
