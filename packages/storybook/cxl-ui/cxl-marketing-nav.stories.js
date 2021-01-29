@@ -19,7 +19,7 @@ export const CXLMarketingNav = () => {
     const headroom = new Headroom(cxlMarketingNavElement, {
       tolerance: {
         up: 30,
-        down: 0
+        down: 30
       }
     });
 
