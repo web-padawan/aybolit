@@ -102,7 +102,9 @@ cxl-app-layout {
     > .entry {
       .entry-content,
       .entry-footer {
-        @include cxl-lumo-styles-mixins.wrap(var(--cxl-content-width));
+        max-width: var(--cxl-content-width);
+        margin-right: auto;
+        margin-left: auto;
       }
     }
   }

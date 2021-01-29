@@ -126,18 +126,15 @@ $vertical-padding: var(--cxl-wrap-padding);
     [icon="#{layout.$toggle-icon}"] {
       transform: unset;
     }
-
-    > slot {
-      @include mixins.wrap($padding: var(--lumo-space-l));
-    }
   }
 
   #main {
+    /**
+     * Wrap content, space edges.
+     */
     @include mixins.wrap();
 
     display: flex;
-
-    // @todo #main @include mixins.wrap() shrinks flex child. Flex-native expand solution?
     width: calc(100% - var(--cxl-wrap-padding) * 2);
   }
 }

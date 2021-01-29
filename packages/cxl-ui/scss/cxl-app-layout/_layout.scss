@@ -33,7 +33,7 @@ $toggle-icon: "lumo:angle-right";
   main {
     > slot {
       /**
-       * Wrap content, space edges.
+       * Wrap layout, space edges.
        */
       @include mixins.wrap();
 
