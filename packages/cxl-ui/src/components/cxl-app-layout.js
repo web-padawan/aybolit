@@ -8,8 +8,6 @@ import cxlAppLayoutStyles from '../styles/cxl-app-layout-css.js';
 import cxlAppLayoutGlobalStyles from '../styles/global/cxl-app-layout-css.js';
 import '@vaadin/vaadin-button';
 import '@vaadin/vaadin-context-menu/src/vaadin-device-detector.js';
-import '@vaadin/vaadin-tabs';
-import '@vaadin/vaadin-progress-bar';
 
 const ASIDE_LOCAL_STORAGE_KEY = 'cxl-app-layout-aside-opened';
 
