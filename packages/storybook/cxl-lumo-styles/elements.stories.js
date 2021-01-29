@@ -18,6 +18,8 @@ export const VaadinButton = () => {
     <vaadin-button disabled>${label}</vaadin-button>
     <h6>Primary</h6>
     <vaadin-button theme="primary">${label}</vaadin-button>
+    <h6>Primary Contrast</h6>
+    <vaadin-button theme="primary contrast">${label}</vaadin-button>
     <h6>Secondary</h6>
     <vaadin-button>${label}</vaadin-button>
     <h6>Tertiary</h6>
