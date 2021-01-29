@@ -12,9 +12,9 @@
   "dependencies": {
     "@conversionxl/cxl-lumo-styles": "^0.2.2",
     "@pika/pack": "^0.5.0",
-    "@pika/plugin-build-web": "^0.8.1",
-    "@pika/plugin-bundle-web": "^0.8.1",
-    "@pika/plugin-standard-pkg": "^0.8.1",
+    "@pika/plugin-build-web": "^0.9.2",
+    "@pika/plugin-bundle-web": "^0.9.2",
+    "@pika/plugin-standard-pkg": "^0.9.2",
     "@vaadin/vaadin-accordion": "^1.0.1",
     "@vaadin/vaadin-button": "^2.2.1",
     "@vaadin/vaadin-context-menu": "^4.3.14",
