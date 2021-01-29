@@ -44,11 +44,12 @@ a {
   }
 }
 
-// Heading highlights.
+// Heading highlights w/ formatting (strikethrough etc) support.
 b,
 strong {
-  h1 > &,
-  h2 > & {
+  h1 &,
+  h2 &,
+  h3 & {
     color: var(--lumo-primary-color);
   }
 }
