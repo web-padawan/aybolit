@@ -17,7 +17,7 @@
     "@storybook/core": "^6.1.14",
     "@storybook/storybook-deployer": "^2.8.1",
     "@storybook/web-components": "^6.1.14",
-    "@vaadin/vaadin-button": "^2.1.5",
+    "@vaadin/vaadin-button": "^3.0.0-alpha1",
     "lit-html": "^1.0.0"
   },
   "scripts": {
