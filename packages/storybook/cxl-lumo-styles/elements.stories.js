@@ -5,7 +5,7 @@ import { html } from 'lit-html';
 
 export default {
   decorators: [withKnobs],
-  title: 'CXL Lumo Styles/Elements'
+  title: 'CXL Lumo Styles/Elements',
 };
 
 export const VaadinButton = () => {

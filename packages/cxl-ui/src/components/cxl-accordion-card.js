@@ -7,8 +7,8 @@ export class CXLAccordionCard extends AccordionPanelElement {
   ready() {
     super.ready();
 
-    this.querySelectorAll('a[href]').forEach(el => {
-      el.addEventListener('click', e => {
+    this.querySelectorAll('a[href]').forEach((el) => {
+      el.addEventListener('click', (e) => {
         e.stopPropagation();
       });
     });

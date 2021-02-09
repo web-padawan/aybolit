@@ -5,7 +5,7 @@ import { Headroom } from '@conversionxl/cxl-ui';
 import contextMenuItems from './cxl-marketing-nav.data.json';
 
 export default {
-  title: 'CXL UI/cxl-marketing-nav'
+  title: 'CXL UI/cxl-marketing-nav',
 };
 
 export const CXLMarketingNav = () => {
@@ -19,8 +19,8 @@ export const CXLMarketingNav = () => {
     const headroom = new Headroom(cxlMarketingNavElement, {
       tolerance: {
         up: 30,
-        down: 30
-      }
+        down: 30,
+      },
     });
 
     headroom.init();

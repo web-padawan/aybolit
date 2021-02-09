@@ -51,7 +51,7 @@ export class CXLMarketingNavElement extends LitElement {
         selected="${this.menuShadowItemsSelectedIdx}"
         orientation="horizontal"
         theme="cxl-marketing-nav hide-scroll-buttons minimal"
-        @selected-changed="${e => {
+        @selected-changed="${(e) => {
           this.menuShadowItemsSelectedIdx = e.detail.value;
         }}"
         @click="${this._menuShadowItemsClick}"
@@ -92,7 +92,7 @@ export class CXLMarketingNavElement extends LitElement {
       </nav>
 
       <vaadin-device-detector
-        @wide-changed="${e => {
+        @wide-changed="${(e) => {
           /**
            * Initial page load doesn't seem to trigger `wide` attribute reflection.
            *
@@ -115,7 +115,7 @@ export class CXLMarketingNavElement extends LitElement {
      * Global styles.
      */
     registerGlobalStyles(cxlMarketingNavGlobalStyles, {
-      moduleId: 'cxl-marketing-nav-global'
+      moduleId: 'cxl-marketing-nav-global',
     });
 
     /**
@@ -124,7 +124,7 @@ export class CXLMarketingNavElement extends LitElement {
      * @see https://github.com/vaadin/vaadin-context-menu/blob/v4.3.12/src/vaadin-context-menu.html#L172
      * @see https://www.nngroup.com/articles/split-buttons-navigation/
      */
-    this.querySelectorAll('.menu-item > vaadin-context-menu').forEach(contextMenu => {
+    this.querySelectorAll('.menu-item > vaadin-context-menu').forEach((contextMenu) => {
       // eslint-disable-next-line no-param-reassign
       contextMenu.listenOn = contextMenu.parentElement;
     });
@@ -143,10 +143,10 @@ export class CXLMarketingNavElement extends LitElement {
      */
     menuItemSearchContextMenu.addEventListener(
       'opened-changed',
-      ee => {
+      (ee) => {
         const searchForm = ee.target.$.overlay.querySelector('.search-form');
 
-        searchForm.addEventListener('keydown', ef => {
+        searchForm.addEventListener('keydown', (ef) => {
           // Allow Esc.
           if (ef.key !== 'Escape') {
             ef.stopPropagation();
@@ -159,7 +159,7 @@ export class CXLMarketingNavElement extends LitElement {
     /**
      * Avoid upstream default immediate close behavior.
      */
-    menuItemSearchContextMenu.addEventListener('item-selected', e => {
+    menuItemSearchContextMenu.addEventListener('item-selected', (e) => {
       e.stopImmediatePropagation();
     });
 
@@ -170,14 +170,14 @@ export class CXLMarketingNavElement extends LitElement {
 
     if (searchFormTemplate && 'content' in searchFormTemplate) {
       menuItemSearchContextMenu.items = [
-        { component: searchFormTemplate.content.firstElementChild }
+        { component: searchFormTemplate.content.firstElementChild },
       ];
     }
 
     /**
      * Enable instant typing, avoid focus click.
      */
-    menuItemSearchContextMenu.$.overlay.addEventListener('vaadin-overlay-open', e =>
+    menuItemSearchContextMenu.$.overlay.addEventListener('vaadin-overlay-open', (e) =>
       e.target.querySelector('#search-input').focus()
     );
 
@@ -244,11 +244,11 @@ export class CXLMarketingNavElement extends LitElement {
    * @private
    */
   _highlightCurrentMenuItem() {
-    this.menuItemsElements.forEach(menuItemsEl => {
+    this.menuItemsElements.forEach((menuItemsEl) => {
       const currentMenuItemEl = menuItemsEl.querySelector('.current-menu-item');
 
       if (currentMenuItemEl && currentMenuItemEl.id) {
-        const idx = menuItemsEl.items.findIndex(i => i.id === currentMenuItemEl.id);
+        const idx = menuItemsEl.items.findIndex((i) => i.id === currentMenuItemEl.id);
 
         menuItemsEl.setAttribute('selected', idx);
       }
@@ -262,8 +262,8 @@ export class CXLMarketingNavElement extends LitElement {
    * @todo Links cannot be sub-menu hosts?
    */
   _updatedContextMenuItems() {
-    Object.values(this.contextMenuItems).forEach(items => {
-      items.forEach(menuItem => {
+    Object.values(this.contextMenuItems).forEach((items) => {
+      items.forEach((menuItem) => {
         if (!menuItem.children) {
           return;
         }
@@ -276,7 +276,7 @@ export class CXLMarketingNavElement extends LitElement {
         contextMenu.items = this._createContextMenuItems(menuItem.children);
 
         // Prevent close on upstream events: clicks, keydown, etc
-        contextMenu.addEventListener('item-selected', e => {
+        contextMenu.addEventListener('item-selected', (e) => {
           e.stopImmediatePropagation();
         });
       });
@@ -297,7 +297,7 @@ export class CXLMarketingNavElement extends LitElement {
       orientation = 'horizontal';
     }
 
-    this.menuItemsElements.forEach(el => {
+    this.menuItemsElements.forEach((el) => {
       el.setAttribute('orientation', orientation);
       el.setAttribute('wide', this.wide);
     });

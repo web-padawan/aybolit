@@ -13,7 +13,7 @@ export const registerGlobalStyles = (styles, options) => {
     styles = styles ? [styles] : [];
   }
 
-  styles.forEach(cssResult => {
+  styles.forEach((cssResult) => {
     if (!(cssResult instanceof CSSResult)) {
       throw new Error('An item in styles is not of type CSSResult. Use `unsafeCSS` or `css`.');
     }

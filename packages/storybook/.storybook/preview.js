@@ -1,7 +1,7 @@
 import { configure } from '@storybook/web-components';
 
 export const parameters = {
-  layout: 'none' // disable default 'padded'
+  layout: 'none', // disable default 'padded'
 };
 
 // Needed to force a full page reload as custom element definitions tend to conflict

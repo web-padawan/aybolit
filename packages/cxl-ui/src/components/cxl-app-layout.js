@@ -91,17 +91,8 @@ export class CXLAppLayoutElement extends LitElement {
       </header>
 
       <div id="main">
-        ${this.getAttribute('layout') === '2c-r'
-          ? html`
-              ${asideElement}
-            `
-          : ''}
-        ${mainElement}
-        ${this.getAttribute('layout') === '2c-l'
-          ? html`
-              ${asideElement}
-            `
-          : ''}
+        ${this.getAttribute('layout') === '2c-r' ? html`${asideElement}` : ''} ${mainElement}
+        ${this.getAttribute('layout') === '2c-l' ? html`${asideElement}` : ''}
       </div>
 
       <footer role="contentinfo" itemscope="itemscope" itemtype="https://schema.org/WPFooter">
@@ -109,7 +100,7 @@ export class CXLAppLayoutElement extends LitElement {
       </footer>
 
       <vaadin-device-detector
-        @wide-changed="${e => {
+        @wide-changed="${(e) => {
           const { wide } = e.target;
 
           Promise.resolve().then(() => {
@@ -125,7 +116,7 @@ export class CXLAppLayoutElement extends LitElement {
 
     // Global styles.
     registerGlobalStyles(cxlAppLayoutGlobalStyles, {
-      moduleId: 'cxl-app-layout-global'
+      moduleId: 'cxl-app-layout-global',
     });
   }
 }

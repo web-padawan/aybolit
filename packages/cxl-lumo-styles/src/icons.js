@@ -12,7 +12,7 @@ registerGlobalStyles(
     }
   `,
   {
-    moduleId: 'cxl-lumo-styles-icons'
+    moduleId: 'cxl-lumo-styles-icons',
   }
 );
 

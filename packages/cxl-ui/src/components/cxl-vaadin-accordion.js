@@ -18,7 +18,7 @@ export class CXLVaadinAccordion extends AccordionElement {
     super.ready();
 
     registerGlobalStyles(cxlVaadinAccordionGlobalStyles, {
-      moduleId: 'cxl-vaadin-accordion-global'
+      moduleId: 'cxl-vaadin-accordion-global',
     });
   }
 
@@ -33,7 +33,7 @@ export class CXLVaadinAccordion extends AccordionElement {
       }
 
       this.opened = idx;
-    } else if (!this.items.some(item => item.opened)) {
+    } else if (!this.items.some((item) => item.opened)) {
       this.opened = null;
     }
 

@@ -7,14 +7,12 @@ import archiveData from './theme=cxl-archive.data.json';
 export const CXLVaadinAccordionThemeArchive = () => {
   let lastEntryTitle1stLetter = 'Z';
 
-  const firstLetterHeading = el => {
+  const firstLetterHeading = (el) => {
     const firstLetter = el.title.raw.charAt(0);
     let heading = html``;
 
     if (firstLetter !== lastEntryTitle1stLetter) {
-      heading = html`
-        <h3 id="letter-${firstLetter}">${firstLetter}</h3>
-      `;
+      heading = html`<h3 id="letter-${firstLetter}">${firstLetter}</h3>`;
       lastEntryTitle1stLetter = firstLetter;
     }
 
@@ -39,7 +37,7 @@ export const CXLVaadinAccordionThemeArchive = () => {
       theme="cxl-accordion-card"
     >
       ${archiveData.map(
-        el => html`
+        (el) => html`
           ${firstLetterHeading(el)}
           <cxl-accordion-card
             id="${el.cxl_hybrid_attr_post['@attributes'].id}"

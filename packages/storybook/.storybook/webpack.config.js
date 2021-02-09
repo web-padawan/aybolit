@@ -12,13 +12,13 @@ module.exports = ({ config }) => {
           [
             '@babel/preset-env',
             {
-              useBuiltIns: 'entry'
-            }
-          ]
+              useBuiltIns: 'entry',
+            },
+          ],
         ],
-        babelrc: false
-      }
-    }
+        babelrc: false,
+      },
+    },
   });
 
   config.module.rules.push({
@@ -28,10 +28,10 @@ module.exports = ({ config }) => {
       options: {
         plugins: [
           ['@babel/plugin-proposal-decorators', { decoratorsBeforeExport: true }],
-          '@babel/plugin-proposal-class-properties'
-        ]
-      }
-    }
+          '@babel/plugin-proposal-class-properties',
+        ],
+      },
+    },
   });
 
   return config;

@@ -10,26 +10,26 @@ import cxlVaadinTabsStyles from './styles/themes/vaadin-tabs-css.js';
 
 /* Mixins */
 registerStyles('cxl-accordion-card', cxlAccordionCardStyles, {
-  moduleId: 'cxl-accordion-card-styles'
+  moduleId: 'cxl-accordion-card-styles',
 });
 registerStyles('vaadin-accordion', cxlVaadinAccordionStyles, {
-  moduleId: 'cxl-vaadin-accordion-styles'
+  moduleId: 'cxl-vaadin-accordion-styles',
 });
 registerStyles('vaadin-accordion-panel', cxlVaadinAccordionPanelStyles, {
-  moduleId: 'cxl-vaadin-accordion-panel-styles'
+  moduleId: 'cxl-vaadin-accordion-panel-styles',
 });
 registerStyles('vaadin-context-menu-item', cxlVaadinContextMenuItemStyles, {
-  moduleId: 'cxl-vaadin-context-menu-item-styles'
+  moduleId: 'cxl-vaadin-context-menu-item-styles',
 });
 registerStyles('vaadin-context-menu-list-box', cxlVaadinContextMenuListBoxStyles, {
-  moduleId: 'cxl-vaadin-context-menu-list-box-styles'
+  moduleId: 'cxl-vaadin-context-menu-list-box-styles',
 });
 registerStyles('vaadin-overlay', cxlVaadinOverlayStyles, {
-  moduleId: 'cxl-vaadin-overlay-styles'
+  moduleId: 'cxl-vaadin-overlay-styles',
 });
 registerStyles('vaadin-tab', cxlVaadinTabStyles, {
-  moduleId: 'cxl-vaadin-tab-styles'
+  moduleId: 'cxl-vaadin-tab-styles',
 });
 registerStyles('vaadin-tabs', cxlVaadinTabsStyles, {
-  moduleId: 'cxl-vaadin-tabs-styles'
+  moduleId: 'cxl-vaadin-tabs-styles',
 });

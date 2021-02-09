@@ -3,7 +3,7 @@ import { CXLVaadinAccordionThemeFaq } from './cxl-vaadin-accordion/theme=cxl-faq
 import { CXLVaadinAccordionThemeMinidegreeTrack } from './cxl-vaadin-accordion/theme=cxl-minidegree-track.story';
 
 export default {
-  title: 'CXL UI/cxl-vaadin-accordion'
+  title: 'CXL UI/cxl-vaadin-accordion',
 };
 
 // @todo localStorage data panel?
@@ -14,5 +14,5 @@ CXLVaadinAccordionThemeMinidegreeTrack.storyName = '[theme=cxl-minidegree-track]
 export {
   CXLVaadinAccordionThemeArchive,
   CXLVaadinAccordionThemeFaq,
-  CXLVaadinAccordionThemeMinidegreeTrack
+  CXLVaadinAccordionThemeMinidegreeTrack,
 };

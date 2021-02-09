@@ -6,7 +6,7 @@ import { CXLMarketingNav } from '../cxl-marketing-nav.stories';
 
 export default {
   decorators: [withKnobs],
-  title: 'CXL UI/cxl-app-layout'
+  title: 'CXL UI/cxl-app-layout',
 };
 
 export const CXLAppLayout2cr = () => {
