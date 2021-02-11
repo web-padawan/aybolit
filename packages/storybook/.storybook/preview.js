@@ -1,8 +1,8 @@
-import { configure } from '@storybook/web-components';
+import { configure, addParameters } from '@storybook/web-components';
 
-export const parameters = {
+addParameters({
   layout: 'none', // disable default 'padded'
-};
+});
 
 // Needed to force a full page reload as custom element definitions tend to conflict
 // @see https://github.com/storybookjs/storybook/blob/next/examples/web-components-kitchen-sink/.storybook/preview.js#L29
