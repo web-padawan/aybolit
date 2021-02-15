@@ -16,7 +16,7 @@ async function sassToCss(sassFile) {
   const result = await renderSass({
     file: sassFile,
     importer: [nodeSassTildeImporter, nodeSassImport],
-    outputStyle: 'compressed'
+    outputStyle: 'compressed',
   });
   return result.css.toString();
 }
