@@ -18,6 +18,19 @@ export const CXLAppLayout2cr = () => {
       .widget.has-background {
         background-color: var(--lumo-shade-5pct);
       }
+
+      [slot='action-bar'] > * {
+        margin-left: var(--lumo-space-xs);
+      }
+
+      [slot='action-bar'] > *:first-child {
+        flex: 1;
+        margin-left: unset;
+      }
+
+      cxl-app-layout[wide] [slot='action-bar'] > *:first-child {
+        flex: unset;
+      }
     </style>
 
     <cxl-app-layout
@@ -254,23 +267,6 @@ export const CXLAppLayout2cr = () => {
           <!-- .entry-header -->
         </article>
         <!-- .entry -->
-
-        <p class="course-progress-navigation">
-          <vaadin-button
-            theme="contrast"
-            onclick="window.location.href='https://conversionxli.warmpress.com/lesson/persuasion-slide-introduction/'"
-            tabindex="0"
-            role="button"
-            >Prev<iron-icon slot="prefix" icon="lumo:arrow-left"></iron-icon
-          ></vaadin-button>
-          <vaadin-button
-            theme="secondary"
-            onclick="window.location.href='https://conversionxli.warmpress.com/lesson/3-persuasion-slide/'"
-            tabindex="0"
-            role="button"
-            >Next<iron-icon slot="suffix" icon="lumo:arrow-right"></iron-icon
-          ></vaadin-button>
-        </p>
       </section>
 
       <article
@@ -370,6 +366,49 @@ export const CXLAppLayout2cr = () => {
           <p>Ending paragraph here.</p>
         </div>
       </article>
+
+      <div slot="action-bar">
+        <!--
+        <vaadin-button
+          theme="contrast"
+          onclick="window.location.href='https://conversionxli.warmpress.com/lesson/persuasion-slide-introduction/'"
+          tabindex="0"
+          role="button"
+        >Prev<iron-icon slot="prefix" icon="lumo:arrow-left"></iron-icon
+        ></vaadin-button>
+        <vaadin-button
+          theme="secondary"
+          onclick="window.location.href='https://conversionxli.warmpress.com/lesson/3-persuasion-slide/'"
+          tabindex="0"
+          role="button"
+        >Next<iron-icon slot="suffix" icon="lumo:arrow-right"></iron-icon
+        ></vaadin-button>
+        -->
+        <vaadin-button theme="primary"
+          >Complete lesson <iron-icon icon="vaadin:check-circle" slot="suffix"></iron-icon
+        ></vaadin-button>
+        <vaadin-button>Secondary action</vaadin-button>
+        <vaadin-context-menu selector="vaadin-button" open-on="click" theme="cxl-marketing-nav">
+          <template>
+            <vaadin-context-menu-list-box theme="cxl-marketing-nav">
+              <vaadin-context-menu-item class="vaadin-menu-item" theme="cxl-marketing-nav"
+                >Next lesson <iron-icon icon="lumo:arrow-right"></iron-icon
+              ></vaadin-context-menu-item>
+              <vaadin-context-menu-item class="vaadin-menu-item" theme="cxl-marketing-nav"
+                ><iron-icon icon="lumo:arrow-left"></iron-icon> Previous
+                lesson</vaadin-context-menu-item
+              >
+              <hr />
+              <vaadin-context-menu-item class="vaadin-menu-item" theme="cxl-marketing-nav"
+                >Go to course</vaadin-context-menu-item
+              >
+            </vaadin-context-menu-list-box>
+          </template>
+          <vaadin-button theme="icon contrast" aria-label="More actions"
+            ><iron-icon icon="vaadin:ellipsis-dots-v"></iron-icon
+          ></vaadin-button>
+        </vaadin-context-menu>
+      </div>
     </cxl-app-layout>
   `;
 };

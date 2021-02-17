@@ -5,6 +5,9 @@
 
 $toggle-icon: "lumo:angle-right";
 
+/**
+ * Global defaults.
+ */
 :host {
   display: block;
 
@@ -12,6 +15,42 @@ $toggle-icon: "lumo:angle-right";
   main {
     > slot {
       display: block;
+    }
+  }
+}
+
+:host([layout^="1c"]:not([layout="1c"])),
+:host([layout^="2c"]) {
+  main {
+    > slot:not([name]) {
+      /**
+       * Wrap layout, space edges.
+       */
+      @include mixins.wrap();
+
+      /**
+       * Avoid hugging header and footer.
+       * Padding vs overflow: padding inner container (`<slot>`) currently works best.
+       *
+       * @see https://bugzilla.mozilla.org/show_bug.cgi?id=748518#c55
+       */
+      padding-top: var(--cxl-wrap-padding);
+      padding-bottom: var(--cxl-wrap-padding);
+    }
+
+    > [name="action-bar"] {
+      position: sticky;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: var(--lumo-base-color);
+
+      &::slotted(*) {
+        @include mixins.wrap();
+
+        padding-top: var(--lumo-space-s);
+        padding-bottom: var(--lumo-space-s);
+      }
     }
   }
 }
@@ -28,23 +67,13 @@ $toggle-icon: "lumo:angle-right";
     flex-grow: 1; // Short content.
   }
 }
-:host([layout^="1c"]:not([layout="1c"])),
-:host([layout^="2c"]) {
-  main {
-    > slot {
-      /**
-       * Wrap layout, space edges.
-       */
-      @include mixins.wrap();
 
-      /**
-       * Avoid hugging header and footer.
-       * Padding vs overflow: padding inner container (`<slot>`) currently works best.
-       *
-       * @see https://bugzilla.mozilla.org/show_bug.cgi?id=748518#c55
-       */
-      padding-top: var(--cxl-wrap-padding);
-      padding-bottom: var(--cxl-wrap-padding);
-    }
-  }
+/**
+ * Action bar.
+ */
+slot[name="action-bar"]::slotted(div) {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  box-shadow: var(--lumo-box-shadow-m);
 }
