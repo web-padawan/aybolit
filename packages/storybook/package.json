@@ -10,14 +10,16 @@
   "dependencies": {
     "@conversionxl/cxl-lumo-styles": "^0.2.2",
     "@conversionxl/cxl-ui": "^0.2.1",
-    "@storybook/addon-knobs": "^6.1.14",
-    "@storybook/addon-viewport": "^6.1.14",
-    "@storybook/addons": "^6.1.14",
-    "@storybook/client-api": "^6.1.14",
-    "@storybook/core": "^6.1.14",
+    "@storybook/addon-controls": "^6.1.21",
+    "@storybook/addon-knobs": "^6.1.21",
+    "@storybook/addon-viewport": "^6.1.21",
+    "@storybook/addons": "^6.1.21",
+    "@storybook/client-api": "^6.1.21",
+    "@storybook/core": "^6.1.21",
     "@storybook/storybook-deployer": "^2.8.1",
-    "@storybook/web-components": "^6.1.14",
+    "@storybook/web-components": "^6.1.21",
     "@vaadin/vaadin-button": "^3.0.0-alpha1",
+    "@vaadin/vaadin-notification": "^2.0.0-alpha1",
     "lit-html": "^1.0.0"
   },
   "scripts": {
