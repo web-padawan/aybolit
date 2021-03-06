@@ -3,6 +3,7 @@
  */
 html {
   --cxl-loading-spinner-url: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: rgb(255, 255, 255) none repeat scroll 0%25 0%25; display: block; shape-rendering: auto;" width="48px" height="48px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid"%3E%3Ccircle cx="50" cy="50" fill="none" stroke="%23d61f2c" stroke-width="10" r="35" stroke-dasharray="164.93361431346415 56.97787143782138"%3E%3CanimateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 50 50;360 50 50" keyTimes="0;1"%3E%3C/animateTransform%3E%3C/circle%3E%3C/svg%3E');
+  --cxl-loading-transition: opacity 0.3s ease-in-out;
 }
 
 /**
@@ -23,11 +24,22 @@ body::before {
   content: '';
   background-color: #fff;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  transition: var(--cxl-loading-transition);
   will-change: opacity;
 }
 
 body[unresolved]::before {
   content: var(--cxl-loading-spinner-url);
   opacity: 1;
+}
+
+/**
+ * Avoid custom element FOUC.
+ *
+ * @see https://github.com/conversionxl/aybolit/issues/11
+ */
+:not(:defined) {
+  opacity: 0;
+  transition: var(--cxl-loading-transition);
+  will-change: opacity;
 }
