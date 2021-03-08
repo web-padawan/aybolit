@@ -28,6 +28,10 @@ body::before {
   will-change: opacity;
 }
 
+body[unresolved] {
+  overflow: hidden;
+}
+
 body[unresolved]::before {
   content: var(--cxl-loading-spinner-url);
   opacity: 1;
