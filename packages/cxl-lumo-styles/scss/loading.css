@@ -1,14 +1,15 @@
 /**
  * App should inline this in `<style>` tag, early in <head>.
+ *
+ * @see https://css-tricks.com/snippets/css/toggle-visibility-when-hiding-elements/
  */
 html {
   --cxl-loading-spinner-url: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: rgb(255, 255, 255) none repeat scroll 0%25 0%25; display: block; shape-rendering: auto;" width="48px" height="48px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid"%3E%3Ccircle cx="50" cy="50" fill="none" stroke="%23d61f2c" stroke-width="10" r="35" stroke-dasharray="164.93361431346415 56.97787143782138"%3E%3CanimateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 50 50;360 50 50" keyTimes="0;1"%3E%3C/animateTransform%3E%3C/circle%3E%3C/svg%3E');
-  --cxl-loading-transition: opacity 0.3s ease-in-out;
+  --cxl-loading-transition: visibility 0.3s ease-in-out, opacity 0.3s, z-index 0.3s;
 }
 
 /**
  * Avoid animated SVG `content` on resolved state, browser continues to animate and CPU burn with `opacity: 0`.
- * CSS `transition` only works if almost no other non-opacity property changes.
  */
 body::before {
   position: absolute;
@@ -16,16 +17,17 @@ body::before {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 2; /* vs `cxl-section.has-wave` */
+  z-index: 0; /* vs `cxl-section.has-wave` */
   display: flex;
   align-items: center;
   justify-content: center;
   pointer-events: none;
+  visibility: hidden;
   content: '';
   background-color: #fff;
   opacity: 0;
   transition: var(--cxl-loading-transition);
-  will-change: opacity;
+  will-change: opacity, visibility, z-index;
 }
 
 body[unresolved] {
@@ -33,6 +35,8 @@ body[unresolved] {
 }
 
 body[unresolved]::before {
+  z-index: 2; /* vs `cxl-section.has-wave` */
+  visibility: visible;
   content: var(--cxl-loading-spinner-url);
   opacity: 1;
 }
@@ -43,7 +47,8 @@ body[unresolved]::before {
  * @see https://github.com/conversionxl/aybolit/issues/11
  */
 :not(:defined) {
+  visibility: hidden;
   opacity: 0;
   transition: var(--cxl-loading-transition);
-  will-change: opacity;
+  will-change: opacity, visibility;
 }
