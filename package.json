@@ -31,6 +31,8 @@
     "@babel/plugin-transform-runtime": "^7.6.0",
     "@babel/preset-env": "^7.7.0",
     "@babel/runtime": "^7.7.0",
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
     "@open-wc/testing-helpers": "^0.9.5",
     "@webcomponents/webcomponentsjs": "^2.2.10",
     "argos-cli": "^0.1.1",
@@ -77,6 +79,7 @@
   },
   "husky": {
     "hooks": {
+      "commit-msg": "commitlint --edit $1",
       "pre-commit": "lint-staged"
     }
   },
