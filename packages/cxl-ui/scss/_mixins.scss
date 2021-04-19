@@ -22,3 +22,17 @@
     color: var(--lumo-contrast-80pct);
   }
 }
+
+@mixin label-contrast($selector: "") {
+  #{$selector} > label {
+    font-weight: 300;
+    color: var(--lumo-contrast-50pct);
+    text-transform: uppercase;
+
+    @content;
+  }
+
+  &[theme~="dark"] #{$selector} > label {
+    color: var(--lumo-contrast-90pct);
+  }
+}

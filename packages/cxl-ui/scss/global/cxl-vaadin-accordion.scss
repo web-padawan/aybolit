@@ -15,6 +15,12 @@ cxl-vaadin-accordion {
       font-family: inherit;
     }
 
+    .entry {
+      @include mixins.label-contrast("> .entry-header") {
+        flex-basis: 100%;
+      }
+    }
+
     .entry-byline {
       display: flex; // iron-icon vs text alignment
       flex-basis: 100%;
@@ -36,7 +42,6 @@ cxl-vaadin-accordion {
     .entry-title {
       flex: 1;
       height: calc(var(--lumo-line-height-xs) * 4em);
-      overflow: hidden;
       font-size: var(--lumo-font-size-xl);
       word-break: break-word;
     }

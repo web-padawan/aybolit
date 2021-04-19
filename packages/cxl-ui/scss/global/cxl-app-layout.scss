@@ -4,12 +4,6 @@
 cxl-app-layout {
   $iframe-height: 200px;
 
-  %label-contrast-50pct {
-    font-weight: 300;
-    color: var(--lumo-contrast-50pct);
-    text-transform: uppercase;
-  }
-
   iframe {
     width: 100%;
     height: $iframe-height;
@@ -20,11 +14,7 @@ cxl-app-layout {
    * Entry.
    */
   > .entry {
-    .entry-header {
-      label {
-        @extend %label-contrast-50pct;
-      }
-    }
+    @include mixins.label-contrast("> .entry-header");
 
     .entry-media {
       margin: var(--cxl-wrap-padding) calc(var(--cxl-wrap-padding) * -1); // Full screen width, while padded.
@@ -36,9 +26,7 @@ cxl-app-layout {
    * Widget.
    */
   > .widget {
-    > label:first-child {
-      @extend %label-contrast-50pct;
-    }
+    @include mixins.label-contrast();
 
     .widget-title {
       margin-top: 0;

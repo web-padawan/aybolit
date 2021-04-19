@@ -49,6 +49,7 @@ export const CXLVaadinAccordionThemeArchive = () => {
               : ''}"
           >
             <header class="entry-header" slot="summary">
+              <label class="entry-type">Course</label>
               <h3 class="entry-title no-anchor" itemprop="headline">
                 <a href="${el.conversionxl_certificate_sales_page}" rel="bookmark" itemprop="url"
                   >${el.title.raw}</a
