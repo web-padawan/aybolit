@@ -1,5 +1,6 @@
 import { html } from 'lit-html';
 import '../../../cxl-ui/src/components/cxl-card';
+import archiveData from '../../cxl-ui/cxl-vaadin-accordion/theme=cxl-archive.data.json';
 
 export default {
   title: 'CXL Lumo Styles/Elements/vaadin-tabs',
@@ -40,19 +41,23 @@ export const Default = () => html`
   </style>
 
   <vaadin-tabs orientation="horizontal" theme="cxl-tabs-slider minimal">
-    ${Array(7)
-      .fill(
+    ${archiveData.map(
+      (el) =>
         html`
           <vaadin-tab>
-            <cxl-card theme="cxl-testimonial">
+            <cxl-card
+              id="${el.cxl_hybrid_attr_post['@attributes'].id}"
+              class="${el.cxl_hybrid_attr_post['@attributes'].class}"
+              theme="cxl-testimonial"
+            >
               <article class="entry">
-                <header class="card-entry-header">
+                <header class="entry-header">
                   <img
-                    class="card-headshot"
+                    class="headshot"
                     src="https://cxl.com/institute/wp-content/uploads/2020/05/48192546_10156982340630746_8127333122065825792_n-wpv_400pxx400px_center_center.jpg"
                   />
                   <img
-                    class="card-company-logo"
+                    class="company-logo"
                     src="https://cxl.com/institute/wp-content/uploads/2020/05/Screenshot-2020-05-27-at-13.28.50.png"
                   />
                   <h4>Kurt S.</h4>
@@ -60,7 +65,7 @@ export const Default = () => html`
                   <p>Estonia</p>
                 </header>
 
-                <div class="card-entry-summary">
+                <div class="entry-summary">
                   <p>
                     Having completed the Conversion Optimization mini degree, this has given me a
                     perfect overall base for my current role in marketing where I’m trying to always
@@ -75,8 +80,7 @@ export const Default = () => html`
             </cxl-card>
           </vaadin-tab>
         `
-      )
-      .map((item) => item)}
+    )}
   </vaadin-tabs>
 `;
 
