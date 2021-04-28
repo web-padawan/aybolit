@@ -18,12 +18,12 @@ cxl-card {
     --iron-icon-width: var(--iron-icon-height);
   }
 
-  .card-entry-header {
+  .entry-header {
     margin: 0;
     font-family: inherit;
     font-style: normal;
 
-    .card-headshot {
+    .headshot {
       width: 120px;
       height: 120px;
       margin: 0 auto;
@@ -31,7 +31,7 @@ cxl-card {
       border-radius: 100%;
     }
 
-    .card-company-logo {
+    .company-logo {
       max-width: 100px;
       margin: var(--lumo-space-s) auto;
     }
@@ -50,7 +50,7 @@ cxl-card {
     }
   }
 
-  .card-entry-summmary {
+  .entry-summary {
     padding: 0 var(--lumo-space-s);
 
     p {
@@ -62,42 +62,8 @@ cxl-card {
     width: 400px;
     min-width: 400px;
 
-    .card-entry-header {
+    .entry-header {
       text-align: center;
-    }
-  }
-
-  &[theme~="cxl-office"] {
-    width: 350px;
-    min-width: 350px;
-    height: 350px;
-    padding: var(--lumo-space-l);
-
-    .card-entry-header {
-      text-align: left;
-
-      .card-headshot {
-        margin: 0;
-      }
-
-      .card-name,
-      h4 {
-        padding: 0;
-        margin-top: var(--lumo-space-m);
-      }
-
-      .card-description,
-      p {
-        margin-bottom: var(--lumo-space-m);
-        font-family: inherit;
-        font-size: var(--lumo-font-size-m);
-        line-height: 2;
-      }
-    }
-
-    .card-headshot {
-      width: 90px;
-      height: 90px;
     }
   }
 }

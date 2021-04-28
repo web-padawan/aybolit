@@ -29,13 +29,13 @@ export const CXLTestimonial = () => html`
 
   <cxl-card theme="cxl-testimonial">
     <article class="entry">
-      <header class="card-entry-header">
+      <header class="entry-header">
         <img
-          class="card-headshot"
+          class="headshot"
           src="https://cxl.com/institute/wp-content/uploads/2020/05/48192546_10156982340630746_8127333122065825792_n-wpv_400pxx400px_center_center.jpg"
         />
         <img
-          class="card-company-logo"
+          class="company-logo"
           src="https://cxl.com/institute/wp-content/uploads/2020/05/Screenshot-2020-05-27-at-13.28.50.png"
         />
         <h4>Kurt S.</h4>
@@ -43,7 +43,7 @@ export const CXLTestimonial = () => html`
         <p>Estonia</p>
       </header>
 
-      <div class="card-entry-summary">
+      <div class="entry-summary">
         <p>
           Having completed the Conversion Optimization mini degree, this has given me a perfect
           overall base for my current role in marketing where I’m trying to always improve the web
