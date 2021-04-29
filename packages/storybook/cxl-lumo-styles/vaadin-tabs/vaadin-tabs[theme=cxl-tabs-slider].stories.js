@@ -7,6 +7,12 @@ export default {
 };
 
 export const Default = () => html`
+  <style>
+    vaadin-tab {
+      width: calc(var(--cxl-wrap-width) / 2.5);
+    }
+  </style>
+
   <vaadin-tabs orientation="horizontal" theme="cxl-tabs-slider minimal">
     ${archiveData.map(
       (el) =>

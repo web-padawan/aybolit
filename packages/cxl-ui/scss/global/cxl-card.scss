@@ -48,8 +48,6 @@ cxl-card {
   }
 
   &[theme~="cxl-testimonial"] {
-    width: 400px;
-
     .company-logo {
       max-width: 100px;
       margin: var(--lumo-space-s) auto;
