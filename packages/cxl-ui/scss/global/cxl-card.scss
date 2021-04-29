@@ -23,12 +23,9 @@ cxl-card {
     font-family: inherit;
     font-style: normal;
 
-    .headshot {
-      width: 120px;
-      height: 120px;
+    .thumbnail {
       margin: 0 auto;
       border: 5px solid var(--lumo-base-color);
-      border-radius: 100%;
     }
 
     .company-logo {

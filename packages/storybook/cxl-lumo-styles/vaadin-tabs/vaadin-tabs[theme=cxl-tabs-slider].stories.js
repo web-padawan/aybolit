@@ -53,7 +53,7 @@ export const Default = () => html`
               <article class="entry">
                 <header class="entry-header">
                   <img
-                    class="headshot"
+                    class="thumbnail"
                     src="https://cxl.com/institute/wp-content/uploads/2020/05/48192546_10156982340630746_8127333122065825792_n-wpv_400pxx400px_center_center.jpg"
                   />
                   <img
