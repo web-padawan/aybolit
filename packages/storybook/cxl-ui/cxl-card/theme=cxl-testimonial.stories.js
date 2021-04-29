@@ -7,26 +7,6 @@ export default {
 };
 
 export const CXLTestimonial = () => html`
-  <style>
-    html {
-      font-family: var(--lumo-font-family);
-    }
-
-    .entry {
-      transition: all 0.2s ease-in;
-    }
-
-    img {
-      display: block;
-    }
-
-    p,
-    blockquote {
-      margin-top: 0.5em;
-      margin-bottom: 0.75em;
-    }
-  </style>
-
   <cxl-card theme="cxl-testimonial">
     <article class="entry">
       <header class="entry-header">
