@@ -45,11 +45,6 @@ cxl-card {
   }
 
   &[theme~="cxl-testimonial"] {
-    .company-logo {
-      max-width: 100px;
-      margin: var(--lumo-space-s) auto;
-    }
-
     .entry-header {
       text-align: center;
     }

@@ -14,15 +14,10 @@ export const CXLTestimonial = () => html`
           class="thumbnail"
           src="https://cxl.com/institute/wp-content/uploads/2020/05/48192546_10156982340630746_8127333122065825792_n-wpv_400pxx400px_center_center.jpg"
         />
-        <img
-          class="company-logo"
-          src="https://cxl.com/institute/wp-content/uploads/2020/05/Screenshot-2020-05-27-at-13.28.50.png"
-        />
         <h4>Kurt S.</h4>
         <p>Web Conversion Manager @ Pipedrive</p>
         <p>Estonia</p>
       </header>
-
       <div class="entry-summary">
         <p>
           Having completed the Conversion Optimization mini degree, this has given me a perfect
