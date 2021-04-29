@@ -7,41 +7,16 @@ export default {
 };
 
 export const Default = () => html`
-  <style>
-    html {
-      font-family: var(--lumo-font-family);
-    }
-
-    .entry {
-      transition: all 0.2s ease-in;
-    }
-
-    img {
-      display: block;
-    }
-
-    p,
-    blockquote {
-      margin-top: 0.5em;
-      margin-bottom: 0.75em;
-    }
-
-    vaadin-tab[selected] {
-      color: inherit;
-    }
-  </style>
-
   <vaadin-tabs orientation="horizontal" theme="cxl-tabs-slider minimal">
     ${archiveData.map(
       (el) =>
         html`
           <vaadin-tab>
-            <cxl-card
-              id="${el.cxl_hybrid_attr_post['@attributes'].id}"
-              class="${el.cxl_hybrid_attr_post['@attributes'].class}"
-              theme="cxl-testimonial"
-            >
-              <article class="entry">
+            <cxl-card theme="cxl-testimonial">
+              <article
+                class="${el.cxl_hybrid_attr_post['@attributes'].class}"
+                id="${el.cxl_hybrid_attr_post['@attributes'].id}"
+              >
                 <header class="entry-header">
                   <img
                     class="thumbnail"
