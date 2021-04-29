@@ -27,11 +27,6 @@ cxl-card {
       border: 5px solid var(--lumo-base-color);
     }
 
-    .company-logo {
-      max-width: 100px;
-      margin: var(--lumo-space-s) auto;
-    }
-
     .card-name,
     h4 {
       padding: 0;
@@ -57,6 +52,11 @@ cxl-card {
   &[theme~="cxl-testimonial"] {
     width: 400px;
     min-width: 400px;
+
+    .company-logo {
+      max-width: 100px;
+      margin: var(--lumo-space-s) auto;
+    }
 
     .entry-header {
       text-align: center;
