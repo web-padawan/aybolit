@@ -20,15 +20,6 @@ export const Default = () => html`
       display: block;
     }
 
-    .testimonials-container {
-      font-family: var(--lumo-font-family);
-      display: flex;
-      flex-flow: row;
-      overflow-x: scroll;
-      max-width: 90%;
-      margin: 0 auto;
-    }
-
     p,
     blockquote {
       margin-top: 0.5em;
