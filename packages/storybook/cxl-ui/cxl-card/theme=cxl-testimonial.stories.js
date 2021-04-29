@@ -6,17 +6,22 @@ export default {
   title: 'CXL UI/cxl-card',
 };
 
-export const CXLTestimonial = () => html`
+const Template = ({ el }) => html`
   <cxl-card theme="cxl-testimonial">
-    <article class="entry">
+    <article
+      class="${el.cxl_hybrid_attr_post['@attributes'].class}"
+      id="${el.cxl_hybrid_attr_post['@attributes'].id}"
+    >
       <header class="entry-header">
         <img
           class="thumbnail"
           src="https://cxl.com/institute/wp-content/uploads/2020/05/48192546_10156982340630746_8127333122065825792_n-wpv_400pxx400px_center_center.jpg"
         />
-        <h4>Kurt S.</h4>
-        <p>Web Conversion Manager @ Pipedrive</p>
-        <p>Estonia</p>
+        <h4 class="entry-title">Kurt S.</h4>
+        <div class="entry-byline">
+          <p>Web Conversion Manager @ Pipedrive</p>
+          <p>Estonia</p>
+        </div>
       </header>
       <div class="entry-summary">
         <p>
@@ -32,6 +37,12 @@ export const CXLTestimonial = () => html`
     </article>
   </cxl-card>
 `;
+
+export const CXLTestimonial = Template.bind({});
+
+CXLTestimonial.args = {
+  el: { cxl_hybrid_attr_post: { '@attributes': {} } },
+};
 
 CXLTestimonial.story = {
   name: '[theme=cxl-testimonial]',
