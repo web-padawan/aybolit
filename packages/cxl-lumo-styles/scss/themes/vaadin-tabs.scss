@@ -103,4 +103,9 @@ $vaadin-tab-horizontal-padding: 0.75rem;
   [part="tabs"] {
     --_lumo-tabs-overflow-mask-image: unset !important; /* stylelint-disable-line declaration-no-important */
   }
+
+  // Equal height elements.
+  ::slotted(vaadin-tab) {
+    align-items: stretch;
+  }
 }
