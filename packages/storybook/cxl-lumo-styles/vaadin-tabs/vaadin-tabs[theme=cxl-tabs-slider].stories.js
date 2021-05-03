@@ -10,7 +10,7 @@ export default {
 export const Default = () => html`
   <style>
     vaadin-tab {
-      width: calc(var(--cxl-wrap-width) / 2.5);
+      max-width: 80%;
     }
   </style>
 

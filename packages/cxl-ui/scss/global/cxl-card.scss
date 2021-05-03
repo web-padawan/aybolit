@@ -1,6 +1,5 @@
 cxl-card {
   padding: var(--lumo-space-s) var(--lumo-space-m);
-  margin: var(--lumo-space-m);
   overflow: hidden;
   text-overflow: ellipsis;
   background: var(--lumo-base-color);
@@ -37,18 +36,11 @@ cxl-card {
     .entry-byline {
       margin: 0 auto;
       font-size: var(--lumo-font-size-s);
+      font-weight: 300;
     }
-  }
-
-  .entry-summary {
-    padding: 0 var(--lumo-space-s);
   }
 
   &[theme~="cxl-testimonial"] {
-    .entry-header {
-      text-align: center;
-    }
-
     .thumbnail {
       display: block;
     }

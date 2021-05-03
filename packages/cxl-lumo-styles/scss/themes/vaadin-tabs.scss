@@ -70,6 +70,7 @@ $vaadin-tab-horizontal-padding: 0.75rem;
 :host([orientation="horizontal"][theme~="cxl-tabs-slider"]) {
   ::slotted(vaadin-tab) {
     color: inherit;
+    text-align: inherit;
   }
 
   [part="tabs"] {
