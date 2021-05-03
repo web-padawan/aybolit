@@ -1,29 +1,19 @@
 cxl-card {
-  * {
+  p {
     font-family: inherit;
   }
 
-  iron-icon {
-    --iron-icon-height: var(--lumo-icon-size-s);
-    --iron-icon-width: var(--iron-icon-height);
-  }
-
   .entry-header {
-    margin: 0;
-    font-style: normal;
-
     .thumbnail {
       margin: 0 auto;
-      border: 5px solid var(--lumo-base-color);
+      border: solid var(--lumo-border-radius) var(--lumo-base-color);
     }
 
     .entry-title {
-      padding: 0;
       margin: 0;
     }
 
     .entry-byline {
-      margin: 0 auto;
       font-size: var(--lumo-font-size-s);
       font-weight: 300;
     }

@@ -19,7 +19,7 @@ const Template = ({ el }) => html`
       />
       <h4 class="entry-title">Kurt S.</h4>
       <div class="entry-byline">
-        <p>Web Conversion Manager @ Pipedrive</p>
+        <span>Web Conversion Manager @ Pipedrive</span>
       </div>
     </header>
     <div class="entry-summary">
