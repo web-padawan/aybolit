@@ -10,6 +10,37 @@ export default {
 };
 
 /**
+ * CXLLoadingSpinner.
+ *
+ * @param Loading
+ * @returns {TemplateResult}
+ * @constructor
+ */
+export const CXLLoadingSpinner = ({ Loading }) => {
+  setTimeout(() => {
+    if (Loading) {
+      document.body.setAttribute('unresolved', '');
+    } else {
+      document.body.removeAttribute('unresolved');
+    }
+  }, 1000);
+
+  return html`
+    <style>
+      ${cxlLoadingStyles}
+    </style>
+    ${CXLAppLayout()}
+  `;
+};
+
+Object.assign(CXLLoadingSpinner, {
+  args: {
+    Loading: true,
+  },
+  storyName: 'body[unresolved] loading',
+});
+
+/**
  * VaadinButton.
  *
  * @param Label
@@ -110,35 +141,4 @@ Object.assign(VaadinNotification, {
     },
   },
   storyName: '<vaadin-notification>',
-});
-
-/**
- * CXLLoadingSpinner.
- *
- * @param Loading
- * @returns {TemplateResult}
- * @constructor
- */
-export const CXLLoadingSpinner = ({ Loading }) => {
-  setTimeout(() => {
-    if (Loading) {
-      document.body.setAttribute('unresolved', '');
-    } else {
-      document.body.removeAttribute('unresolved');
-    }
-  }, 1000);
-
-  return html`
-    <style>
-      ${cxlLoadingStyles}
-    </style>
-    ${CXLAppLayout()}
-  `;
-};
-
-Object.assign(CXLLoadingSpinner, {
-  args: {
-    Loading: true,
-  },
-  storyName: 'body[unresolved] loading',
 });

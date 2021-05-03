@@ -4,7 +4,7 @@ import archiveData from '../../cxl-ui/cxl-vaadin-accordion/theme=cxl-archive.dat
 import { CXLTestimonial } from '../../cxl-ui/cxl-card/[theme=cxl-testimonial].stories';
 
 export default {
-  title: 'CXL Lumo Styles/Elements/vaadin-tabs',
+  title: 'CXL Lumo Styles/Elements/<vaadin-tabs>',
 };
 
 export const Default = () => html`
