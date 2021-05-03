@@ -1,7 +1,7 @@
 import { html } from 'lit-html';
 import '../../../cxl-ui/src/components/cxl-card';
 import archiveData from '../../cxl-ui/cxl-vaadin-accordion/theme=cxl-archive.data.json';
-import { CXLTestimonial } from '../../cxl-ui/cxl-card/theme=cxl-testimonial.stories';
+import { CXLTestimonial } from '../../cxl-ui/cxl-card/[theme=cxl-testimonial].stories';
 
 export default {
   title: 'CXL Lumo Styles/Elements/vaadin-tabs',
