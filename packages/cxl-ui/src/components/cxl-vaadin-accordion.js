@@ -10,7 +10,7 @@ import cxlVaadinAccordionGlobalStyles from '../styles/global/cxl-vaadin-accordio
  * Saves panel state, restores on page load.
  */
 @customElement('cxl-vaadin-accordion')
-export class CXLVaadinAccordion extends AccordionElement {
+export class CXLVaadinAccordionElement extends AccordionElement {
   /**
    * Global styles.
    */

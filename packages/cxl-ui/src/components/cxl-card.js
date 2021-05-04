@@ -5,7 +5,7 @@ import cxlCardGlobalStyles from '../styles/global/cxl-card-css.js';
 import cxlCardStyles from '../styles/cxl-card-css.js';
 
 @customElement('cxl-card')
-export class CXLCard extends LitElement {
+export class CXLCardElement extends LitElement {
   static get styles() {
     return [cxlCardStyles];
   }
