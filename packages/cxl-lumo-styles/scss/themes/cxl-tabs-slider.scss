@@ -1,0 +1,33 @@
+@use "../mixins";
+
+::slotted(vaadin-tab) {
+  align-items: stretch; // Equal height elements.
+  color: inherit;
+  text-align: inherit;
+}
+
+// Increase scroll buttons visibility.
+[part="back-button"],
+[part="forward-button"] {
+  top: unset;
+  height: 1.5em; // Upstream width.
+  font-size: var(--lumo-icon-size-l);
+  background-color: var(--lumo-tint);
+  box-shadow: var(--lumo-box-shadow-s);
+
+  &:hover {
+    color: var(--lumo-primary-color);
+  }
+}
+
+:host([orientation="horizontal"]) [part="tabs"] {
+  @include mixins.better-webkit-scrollbars();
+
+  // Fading content doesn't work well on slider.
+  --_lumo-tabs-overflow-mask-image: unset !important; /* stylelint-disable-line declaration-no-important */
+
+  // Show horizontal scrollbar.
+  &::-webkit-scrollbar {
+    display: initial;
+  }
+}

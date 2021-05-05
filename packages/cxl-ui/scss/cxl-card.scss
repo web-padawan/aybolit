@@ -1,0 +1,40 @@
+:host {
+  display: block;
+  padding: var(--lumo-space-m);
+  margin-top: var(--lumo-space-m);
+  margin-bottom: var(--lumo-space-m);
+  overflow: hidden; // CSS columns @see https://stackoverflow.com/a/19348665/35946
+  background: var(--lumo-tint);
+  border: 1px solid var(--lumo-contrast-10pct);
+  border-radius: var(--lumo-border-radius-s);
+  box-shadow: var(--lumo-box-shadow-xs);
+  break-inside: avoid;
+  transform: translateZ(0); // CSS columns @see https://stackoverflow.com/a/55110789/35946
+}
+
+:host(:hover) {
+  border-color: var(--lumo-primary-color);
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+:host(:first-child) {
+  margin-top: unset;
+}
+
+:host(:last-child) {
+  margin-bottom: unset;
+}
+
+:host([theme~="dark"]) {
+  background-color: var(--lumo-contrast);
+}
+
+/**
+ * Slots.
+ */
+::slotted(.entry-summary) {
+  font-family: var(--lumo-font-family);
+}

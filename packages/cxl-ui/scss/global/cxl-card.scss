@@ -1,0 +1,27 @@
+cxl-card {
+  p {
+    font-family: inherit;
+  }
+
+  .entry-header {
+    .thumbnail {
+      margin: 0 auto;
+      border: solid var(--lumo-border-radius) var(--lumo-base-color);
+    }
+
+    .entry-title {
+      margin: 0;
+    }
+
+    .entry-byline {
+      font-size: var(--lumo-font-size-s);
+      font-weight: 300;
+    }
+  }
+
+  &[theme~="cxl-testimonial"] {
+    .thumbnail {
+      display: block;
+    }
+  }
+}
