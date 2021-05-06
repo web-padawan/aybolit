@@ -73,10 +73,8 @@ cxl-app-layout {
   }
 
   &[layout^="2c"] {
-    > .entry {
-      .entry-title {
-        font-size: var(--lumo-font-size-xxxl);
-      }
+    > .entry > .entry-header > .entry-title {
+      font-size: var(--lumo-font-size-xxxl);
     }
   }
 
