@@ -16,7 +16,7 @@
     "@storybook/addons": "^6.1.21",
     "@storybook/client-api": "^6.1.21",
     "@storybook/core": "^6.1.21",
-    "@storybook/storybook-deployer": "^2.8.1",
+    "@storybook/storybook-deployer": "^2.8.8",
     "@storybook/web-components": "^6.1.21",
     "@vaadin/vaadin-button": "^3.0.0-alpha1",
     "@vaadin/vaadin-notification": "^2.0.0-alpha1",
