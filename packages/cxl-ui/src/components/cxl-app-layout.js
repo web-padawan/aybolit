@@ -11,6 +11,18 @@ import '@vaadin/vaadin-context-menu/src/vaadin-device-detector.js';
 
 const ASIDE_LOCAL_STORAGE_KEY = 'cxl-app-layout-aside-opened';
 
+const getScrollLineHeight = function getScrollLineHeight() {
+  const el = document.createElement('div');
+  el.style.fontSize = 'initial';
+  el.style.display = 'none';
+  document.body.appendChild(el);
+  const { fontSize } = window.getComputedStyle(el);
+  document.body.removeChild(el);
+  return fontSize ? window.parseInt(fontSize) : undefined;
+};
+
+const scrollLineHeight = getScrollLineHeight();
+
 @customElement('cxl-app-layout')
 export class CXLAppLayoutElement extends LitElement {
   @query('aside')
@@ -118,5 +130,14 @@ export class CXLAppLayoutElement extends LitElement {
     registerGlobalStyles(cxlAppLayoutGlobalStyles, {
       moduleId: 'cxl-app-layout-global',
     });
+
+    this.addEventListener('wheel', this._onWheel.bind(this));
+  }
+
+  _onWheel(e) {
+    if (e.target.tagName === 'CXL-APP-LAYOUT') {
+      const main = this.shadowRoot.querySelector('main');
+      main.scrollTop += e.deltaY * scrollLineHeight;
+    }
   }
 }
