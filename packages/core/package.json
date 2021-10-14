@@ -38,6 +38,11 @@
     ]
   },
   "scripts": {
-    "dist": "pack build"
-  }
+    "dist": "pack build && size-limit"
+  },
+  "size-limit": [
+    {
+      "path": "pkg/dist-web/index.bundled.js"
+    }
+  ]
 }

@@ -4,9 +4,9 @@ Aybolit is a lightweight, standards-based, framework agnostic UI components libr
 
 > *Aybolit* is a fictional character from the children's poems by Korney Chukovsky. He is a traveling doctor who treats animals for free, regardless of their injuries. The name may be translated as "Ouch, [it] hurts!"
 
-[Live Demo ↗](https://web-padawan.github.io/aybolit/)
+[Live Demo ↗](https://conversionxl.github.io/aybolit/)
 
-[![CircleCI](https://img.shields.io/circleci/project/github/web-padawan/aybolit.svg?style=flat-square)](https://circleci.com/gh/web-padawan/aybolit)
+[![Size Limit](https://github.com/conversionxl/aybolit/actions/workflows/size-limit.yml/badge.svg)](https://github.com/conversionxl/aybolit/actions/workflows/size-limit.yml)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 ## Overview

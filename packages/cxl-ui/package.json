@@ -48,6 +48,11 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dist": "pika build"
-  }
+    "dist": "pika build && size-limit"
+  },
+  "size-limit": [
+    {
+      "path": "pkg/dist-web/index.bundled.js"
+    }
+  ]
 }
