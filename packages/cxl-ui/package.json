@@ -24,7 +24,8 @@
     "@vaadin/vaadin-themable-mixin": "^1.6.2",
     "headroom.js": "^0.12.0",
     "lit-element": "^2.2.1",
-    "lit-html": "^2.0.0-rc.3"
+    "lit-html": "^2.0.0-rc.3",
+    "normalize-wheel": "^1.0.1"
   },
   "@pika/pack": {
     "pipeline": [

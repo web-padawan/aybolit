@@ -1,32 +1,24 @@
 /**
  * @todo implement primary action button.
  */
-import { LitElement, html, customElement, property, query } from 'lit-element';
 import '@conversionxl/cxl-lumo-styles';
 import { registerGlobalStyles } from '@conversionxl/cxl-lumo-styles/src/utils';
-import cxlAppLayoutStyles from '../styles/cxl-app-layout-css.js';
-import cxlAppLayoutGlobalStyles from '../styles/global/cxl-app-layout-css.js';
 import '@vaadin/vaadin-button';
 import '@vaadin/vaadin-context-menu/src/vaadin-device-detector.js';
+import { customElement, html, LitElement, property, query } from 'lit-element';
+import normalizeWheel from 'normalize-wheel';
+import cxlAppLayoutStyles from '../styles/cxl-app-layout-css.js';
+import cxlAppLayoutGlobalStyles from '../styles/global/cxl-app-layout-css.js';
 
 const ASIDE_LOCAL_STORAGE_KEY = 'cxl-app-layout-aside-opened';
-
-const getScrollLineHeight = function getScrollLineHeight() {
-  const el = document.createElement('div');
-  el.style.fontSize = 'initial';
-  el.style.display = 'none';
-  document.body.appendChild(el);
-  const { fontSize } = window.getComputedStyle(el);
-  document.body.removeChild(el);
-  return fontSize ? window.parseInt(fontSize) : undefined;
-};
-
-const scrollLineHeight = getScrollLineHeight();
 
 @customElement('cxl-app-layout')
 export class CXLAppLayoutElement extends LitElement {
   @query('aside')
   asideElement;
+
+  @query('main')
+  mainElement;
 
   @property({ type: Boolean })
   get asideOpened() {
@@ -136,8 +128,7 @@ export class CXLAppLayoutElement extends LitElement {
 
   _onWheel(e) {
     if (e.target.tagName === 'CXL-APP-LAYOUT') {
-      const main = this.shadowRoot.querySelector('main');
-      main.scrollTop += e.deltaY * scrollLineHeight;
+      this.mainElement.scrollTop += normalizeWheel(e).pixelY;
     }
   }
 }
