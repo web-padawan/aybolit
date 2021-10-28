@@ -12340,10 +12340,9 @@ normalize-url@^6.0.1:
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-6.0.1.tgz#a4f27f58cf8c7b287b440b8a8201f42d0b00d256"
   integrity sha512-VU4pzAuh7Kip71XEmO9aNREYAdMHFGTVj/i+CaTImS8x0i1d3jUZkXhqluy/PRgjPLMgsLQulYY3PJ/aSbSjpQ==
 
-normalize-wheel@^1.0.1:
+"normalize-wheel@https://github.com/anoblet/normalize-wheel#esm":
   version "1.0.1"
-  resolved "https://registry.yarnpkg.com/normalize-wheel/-/normalize-wheel-1.0.1.tgz#aec886affdb045070d856447df62ecf86146ec45"
-  integrity sha1-rsiGr/2wRQcNhWRH32Ls+GFG7EU=
+  resolved "https://github.com/anoblet/normalize-wheel#0cf7fc1d1f47a9c9b88184cae97cd06707ce9998"
 
 now-and-later@^2.0.0:
   version "2.0.1"
