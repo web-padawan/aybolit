@@ -58,7 +58,7 @@ export class CXLAppLayoutElement extends LitElement {
   wide;
 
   // Event listener for the wheel event to allow scrolling from outside of the main pane.
-  boundWheelEventListener;
+  _boundWheelEventListener;
 
   static get styles() {
     return [cxlAppLayoutStyles];
@@ -120,7 +120,7 @@ export class CXLAppLayoutElement extends LitElement {
 
   constructor() {
     super();
-    this.boundWheelEventListener = this._onWheel.bind(this);
+    this._boundWheelEventListener = this._onWheel.bind(this);
   }
 
   updated(changedProperties) {
@@ -128,9 +128,9 @@ export class CXLAppLayoutElement extends LitElement {
 
     if (changedProperties.has('wide')) {
       if (this.wide) {
-        this.addEventListener('wheel', this.boundWheelEventListener);
+        this.addEventListener('wheel', this._boundWheelEventListener);
       } else {
-        this.removeEventListener('wheel', this.boundWheelEventListener);
+        this.removeEventListener('wheel', this._boundWheelEventListener);
       }
     }
   }
