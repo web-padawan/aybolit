@@ -1,14 +1,14 @@
 /**
  * @todo implement primary action button.
  */
+import { LitElement, html, customElement, property, query } from 'lit-element';
 import '@conversionxl/cxl-lumo-styles';
 import { registerGlobalStyles } from '@conversionxl/cxl-lumo-styles/src/utils';
-import '@vaadin/vaadin-button';
-import '@vaadin/vaadin-context-menu/src/vaadin-device-detector.js';
-import { customElement, html, LitElement, property, query } from 'lit-element';
 import normalizeWheel from 'normalize-wheel';
 import cxlAppLayoutStyles from '../styles/cxl-app-layout-css.js';
 import cxlAppLayoutGlobalStyles from '../styles/global/cxl-app-layout-css.js';
+import '@vaadin/vaadin-button';
+import '@vaadin/vaadin-context-menu/src/vaadin-device-detector.js';
 
 const ASIDE_LOCAL_STORAGE_KEY = 'cxl-app-layout-aside-opened';
 
