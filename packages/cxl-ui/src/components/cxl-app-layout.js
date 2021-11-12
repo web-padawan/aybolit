@@ -4,6 +4,7 @@
 import { LitElement, html, customElement, property, query } from 'lit-element';
 import '@conversionxl/cxl-lumo-styles';
 import { registerGlobalStyles } from '@conversionxl/cxl-lumo-styles/src/utils';
+import normalizeWheel from '@conversionxl/normalize-wheel';
 import cxlAppLayoutStyles from '../styles/cxl-app-layout-css.js';
 import cxlAppLayoutGlobalStyles from '../styles/global/cxl-app-layout-css.js';
 import '@vaadin/vaadin-button';
@@ -15,6 +16,9 @@ const ASIDE_LOCAL_STORAGE_KEY = 'cxl-app-layout-aside-opened';
 export class CXLAppLayoutElement extends LitElement {
   @query('aside')
   asideElement;
+
+  @query('main')
+  mainElement;
 
   @property({ type: Boolean })
   get asideOpened() {
@@ -52,6 +56,9 @@ export class CXLAppLayoutElement extends LitElement {
   // vaadin-device-detector.
   @property({ type: Boolean, reflect: true })
   wide;
+
+  // Event listener for the wheel event to allow scrolling from outside of the main pane.
+  _boundWheelEventListener;
 
   static get styles() {
     return [cxlAppLayoutStyles];
@@ -111,6 +118,23 @@ export class CXLAppLayoutElement extends LitElement {
     `;
   }
 
+  constructor() {
+    super();
+    this._boundWheelEventListener = this._onWheel.bind(this);
+  }
+
+  updated(changedProperties) {
+    super.updated(changedProperties);
+
+    if (changedProperties.has('wide')) {
+      if (this.wide && this.scroll === 'panels') {
+        this.addEventListener('wheel', this._boundWheelEventListener);
+      } else {
+        this.removeEventListener('wheel', this._boundWheelEventListener);
+      }
+    }
+  }
+
   firstUpdated(_changedProperties) {
     super.firstUpdated(_changedProperties);
 
@@ -118,5 +142,11 @@ export class CXLAppLayoutElement extends LitElement {
     registerGlobalStyles(cxlAppLayoutGlobalStyles, {
       moduleId: 'cxl-app-layout-global',
     });
+  }
+
+  _onWheel(event) {
+    if (event.target.tagName === 'CXL-APP-LAYOUT') {
+      this.mainElement.scrollTop += normalizeWheel(event).pixelY;
+    }
   }
 }
