@@ -128,7 +128,7 @@ export class CXLAppLayoutElement extends LitElement {
 
     if (changedProperties.has('wide')) {
       if (this.wide && this.scroll === 'panels') {
-        this.addEventListener('wheel', this._boundWheelEventListener);
+        this.addEventListener('wheel', this._boundWheelEventListener, { passive: true });
       } else {
         this.removeEventListener('wheel', this._boundWheelEventListener);
       }
